@@ -1,0 +1,47 @@
+.sub-menu-wrap {
+  background-color: white;
+  border-radius: .5rem;
+}
+
+.sub-menu {
+  margin: 0;
+  padding: 6px 0;
+  border-top: .5px dotted $color-3;
+}
+
+.sub-menu:first-child{
+  margin-top: 10px;
+  border-top: initial !important;
+}
+
+.sub-menu .menu-item {
+  display: inline-block !important;
+
+  & a {
+    padding: initial !important;
+    margin: 5px 10px;
+  }
+
+  & a:hover {
+    background: initial !important;
+    color: $sidebar-highlight;
+  }
+}
+
+.sub-menu .menu-item-active a {
+  background: #fff !important;
+  color: $sidebar-highlight;
+  border-bottom-color: $sidebar-highlight;
+
+  &:hover {
+    background: #fff !important;
+    border-bottom-color: $sidebar-highlight;
+  }
+
+  badges = hexo-config('menu_settings.badges');
+  if not badges {
+    &:after {
+      content: initial;
+    }
+  }
+}
