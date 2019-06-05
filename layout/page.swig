@@ -75,6 +75,11 @@
         {% else %}
           {{ page.content }}
         {% endif %}
+    
+        {% if page.reward %}
+          {{ partial( '_partials/post/reward.swig') }}
+        {% endif %}
+
       </div>
       {#####################}
       {### END PAGE BODY ###}
