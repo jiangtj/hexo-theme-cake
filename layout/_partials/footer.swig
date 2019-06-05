@@ -50,7 +50,7 @@
 
 {% if theme.footer.theme.enable %}
   <div class="theme-info">{#
-  #}{{ __('footer.theme') }} – {{ next_url('https://www.dnocm.com/cake', 'Cake', {class: 'theme-link'}) }}{#
+  #}{{ __('footer.theme') }} – {{ next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) }}{#
   #}{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
 #}</div>
 {% endif %}

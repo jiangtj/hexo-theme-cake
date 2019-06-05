@@ -4,16 +4,28 @@
 
 <img src="https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg">
 
-## Feature
+## Preview & Docs
 
-Inject
-```js
-hexo.extend.filter.register('theme_inject', function(injects) {
-  injects.head.file('custom', 'source/_data/head.swig', {}, {cache: true});
-  injects.sidebar.raw('custom', 'Put some in sidebar!');
-});
+- https://www.dnocm.com/cake/
+
+## Quick Start
+
+```bash
+# Create a new hexo project
+hexo init <dir>
+cd <dir>
+# Add Cake as git submodule
+git init
+git add .
+git submodule add https://github.com/JiangTJ/hexo-theme-cake themes/cake
 ```
 
+Modify `theme` to `cake` in `_config.yml`.
+
+Run `hexo s`, and preview.
+
+## Browser Support
+Modern browser (not IE)
 
 ## Issues
 - [ ] Categories/Tags count contains _drafts.
