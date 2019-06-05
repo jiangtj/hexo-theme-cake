@@ -3,17 +3,6 @@
 # See: https://theme-next.org/docs/theme-settings/
 # ---------------------------------------------------------------
 
-# Redefine custom file paths. Introduced in NexT v6.0.2. If commented, will be used default custom file paths.
-# For example, you want to put your custom styles file outside theme directory in root `source/_data`, set `styles: source/_data/styles.styl`
-custom_file_path:
-  # Default path: source/css/_variables/custom.styl
-  #variables: source/_data/variables.styl
-  # Default path: source/css/_mixins/custom.styl
-  #mixins: source/_data/mixins.styl
-  # Default path: source/css/_custom/custom.styl
-  #styles: source/_data/styles.styl
-
-
 # ---------------------------------------------------------------
 # Site Information Settings
 # See: https://theme-next.org/docs/getting-started/
@@ -131,8 +120,8 @@ index_with_subtitle: false
 # External url should start with http:// or https://
 menu:
   home: / || home
-  tags: /tags/ || tags
-  categories: /categories/ || th
+  #tags: /tags/ || tags
+  #categories: /categories/ || th
   archives: /archives/ || archive
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
