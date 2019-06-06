@@ -104,7 +104,6 @@
   {{ partial( '_third-party/search/index.swig') }}
   {{ partial( '_third-party/analytics/lean-analytics.swig') }}
   {{ partial( '_third-party/analytics/firestore.swig') }}
-  {{ partial( '_third-party/math/index.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/rating.swig') }}

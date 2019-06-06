@@ -378,38 +378,6 @@ tagcloud:
 #   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
 # ---------------------------------------------------------------
 
-# Math Equations Render Support
-math:
-  enable: false
-
-  # Default (true) will load mathjax / katex script on demand.
-  # That is it only render those page which has `mathjax: true` in Front Matter.
-  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
-  per_page: true
-
-  engine: mathjax
-  #engine: katex
-
-  # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
-  mathjax:
-    cdn: //cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML
-
-    # See: https://mhchem.github.io/MathJax-mhchem/
-    #mhchem: //cdn.jsdelivr.net/npm/mathjax-mhchem@3
-    #mhchem: //cdnjs.cloudflare.com/ajax/libs/mathjax-mhchem/3.3.0
-
-  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) needed to full Katex support.
-  katex:
-    cdn: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
-    #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
-
-    copy_tex:
-      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-      enable: false
-      copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
-      copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
-
 # Han Support
 # Dependencies: https://github.com/theme-next/theme-next-han
 han: false
