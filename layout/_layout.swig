@@ -108,7 +108,6 @@
   {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/rating.swig') }}
   {{ partial( '_third-party/pangu.swig', {}, {cache: true}) }}
-  {{ partial( '_third-party/bookmark.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
   {% for inject_name,inject_args in theme.injects.bodyEnd %}
