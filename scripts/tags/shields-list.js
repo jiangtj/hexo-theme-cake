@@ -18,13 +18,12 @@ function renderShields(data) {
   let items = Object.keys(config).map((key) => {
     let value = config[key];
     let aArgs = {
+      class: 'un-decoration',
       href: value.href,
       target: value.href||'_blank'
     }
     value.src = value.src || 'https://img.shields.io/badge/'+ encodeURI(value.name||key) + '-' + encodeURI(value.des) + '-' + encodeURI(value.color) + '.svg'
     let imgArgs = {
-      class: 'un-lozad',
-      style: 'margin:0;float:left;',
       src: value.src,
       alt: value.alt||key,
       title: value.title
@@ -33,8 +32,7 @@ function renderShields(data) {
     return htmlTag('a',aArgs,
       htmlTag('img',imgArgs)
     );
-  })
-  items.push('<div style="clear:both;"></div>')
+  });
   return items.join('');
 }
 
