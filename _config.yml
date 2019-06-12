@@ -378,10 +378,6 @@ tagcloud:
 #   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
 # ---------------------------------------------------------------
 
-# Han Support
-# Dependencies: https://github.com/theme-next/theme-next-han
-han: false
-
 # Pangu Support
 # Dependencies: https://github.com/theme-next/theme-next-pangu
 # For more information: https://github.com/vinta/pangu.js
@@ -767,13 +763,6 @@ vendors:
   # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
   pace: //cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js
   pace_css: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/pace-theme-minimal.css
-
-  # Internal version: 3.3.0
-  # See: https://github.com/ethantw/Han
-  # Example:
-  # han: //cdn.jsdelivr.net/npm/han-css@3/dist/han.min.css
-  # han: //cdnjs.cloudflare.com/ajax/libs/Han/3.3.0/han.min.css
-  han:
 
   # Internal version: 4.0.7
   # See: https://github.com/vinta/pangu.js
