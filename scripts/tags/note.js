@@ -1,5 +1,15 @@
 /**
  * note.js | https://theme-next.org/docs/tag-plugins/note
+ * 
+ * {% note [type [title]] [icon:disable] %}
+ * content
+ * {% endnote %}
+ * 
+ * Example:
+ * {% note default default title icon:disable %}
+ * content
+ * {% endnote %}
+ * 
  */
 
 /* global hexo */
@@ -13,4 +23,3 @@ function postNote(args, content) {
 }
 
 hexo.extend.tag.register('note', postNote, {ends: true});
-hexo.extend.tag.register('subnote', postNote, {ends: true});
