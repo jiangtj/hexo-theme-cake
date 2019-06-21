@@ -113,14 +113,14 @@ $code-background                = $gainsboro
 // --------------------------------------------------
 $btn-font-weight                = normal
 
-$btn-default-radius             = 0
-$btn-default-bg                 = $black-deep
-$btn-default-color              = white
+$btn-default-radius             = 2px
+$btn-default-bg                 = white
+$btn-default-color              = $text-color
 $btn-default-font-size          = 14px
 $btn-default-border-width       = 2px
-$btn-default-border-color       = $black-deep
-$btn-default-hover-bg           = white
-$btn-default-hover-color        = $black-deep
+$btn-default-border-color       = $text-color
+$btn-default-hover-bg           = $black-deep
+$btn-default-hover-color        = white
 $btn-default-hover-border-color = $black-deep
 
 
@@ -175,7 +175,7 @@ $logo-font-family='Lobster', $font-family-base
 
 $site-subtitle-color            = $grey-dark
 $subtitle-font-size             = 13px
-$subtitle-color                 = $grey-dark
+$subtitle-color                 = $gray-lighter
 
 // Menu
 $menu-link-border               = transparent
@@ -198,55 +198,54 @@ $posts-collapse-left-mobile     = 5px
 // --------------------------------------------------
 $sidebar-offset                       = 12px
 $sidebar-nav-color                    = $black-light
-$sidebar-nav-hover-color              = $whitesmoke
-$sidebar-highlight                    = $blue-bright
+$sidebar-nav-hover-color              = $orange
+$sidebar-highlight                    = $orange
 
 $site-author-image-padding            = 2px
-$site-author-image-width              = 96px
+$site-author-image-width              = 120px
 $site-author-image-height             = auto
-$site-author-image-border-width       = 2px
-$site-author-image-border-color       = $black-dim
+$site-author-image-border-width       = 1px
+$site-author-image-border-color       = $gainsboro
 
-$site-author-name-margin              = 5px 0 0
-$site-author-name-color               = $whitesmoke
+$site-author-name-margin              = 0
+$site-author-name-color               = $black-deep
 $site-author-name-align               = center
-$site-author-name-weight              = normal
+$site-author-name-weight              = $font-weight-bold
 
-$site-description-font-size           = 14px
+$site-description-font-size           = 13px
 $site-description-color               = $grey-dark
-$site-description-margin-top          = 5px
+$site-description-margin-top          = 0
 $site-description-align               = center
 
 $site-state-align                     = center
-$site-state-item-count-font-size      = 18px
+$site-state-item-count-font-size      = 16px
 $site-state-item-count-color          = inherit
 $site-state-item-name-font-size       = 13px
-$site-state-item-name-color           = inherit
-$site-state-item-border-color         = $black-dim
+$site-state-item-name-color           = $grey-dark
+$site-state-item-border-color         = $gainsboro
 
-$toc-link-color                       = $grey-dark
-$toc-link-border-color                = $black-light
-$toc-link-hover-color                 = $grey-light
-$toc-link-hover-border-color          = $grey-light
+$toc-link-color                       = $grey-dim
+$toc-link-border-color                = $grey-light
+$toc-link-hover-color                 = black
+$toc-link-hover-border-color          = black
 $toc-link-active-color                = $sidebar-highlight
 $toc-link-active-border-color         = $sidebar-highlight
 $toc-link-active-current-color        = $sidebar-highlight
 $toc-link-active-current-border-color = $sidebar-highlight
 
-
 // Components
 // --------------------------------------------------
 // Back to top
-$b2t-opacity                  = 1
+$b2t-opacity                  = .6
 $b2t-opacity-hover            = 0.8
 $b2t-position-bottom          = -100px
-$b2t-position-bottom-on       = 19px
+$b2t-position-bottom-on       = 30px
 $b2t-position-right           = 30px
 $b2t-position-right-mobile    = 20px
 $b2t-font-size                = 12px
 $b2t-color                    = white
 $b2t-bg-color                 = $black-deep
-$b2t-sidebar-bg-color         = $black-deep
+$b2t-sidebar-bg-color         = $body-bg-color
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
@@ -343,6 +342,15 @@ $label-success              = lighten(spin($note-success-border, 10), 85% + lbg)
 $label-warning              = lighten(spin($note-warning-border, 10), 83% + lbg)
 $label-danger               = lighten(spin($note-danger-border, -10), 87% + lbg)
 
+// Sidebar
+$sidebar-width                = hexo-config('sidebar.width') is a 'unit' ? hexo-config('sidebar.width') : 240
+$sidebar-desktop              = unit($sidebar-width, 'px')
+$content-wrap                 = 'calc(100% - %s)' % unit($sidebar-width + $sidebar-offset, 'px')
+
+// Borders
+// --------------------------------------------------
+$border-radius-inner              = .5rem
+$border-radius                    = .5rem
 
 @import "link.styl";
 @import "post.styl";

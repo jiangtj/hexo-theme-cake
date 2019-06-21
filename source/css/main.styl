@@ -1,16 +1,11 @@
 // CSS Style Guide: http://codeguide.co/#css
 
-
 $scheme    = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
-
-$variables = base $scheme;
-$mixins    = base $scheme;
 
 
 // Variables Layer
 // --------------------------------------------------
-for $variable in $variables
-  @import "_variables/" + $variable;
+@import "_variables/base";
 for $inject_variable in hexo-config('injects.variable')
   @import "../../../../" + $inject_variable;
 
@@ -18,8 +13,7 @@ for $inject_variable in hexo-config('injects.variable')
 
 // Mixins Layer
 // --------------------------------------------------
-for $mixin in $mixins
-  @import "_mixins/" + $mixin;
+@import "_mixins/base";
 
 
 // Common Layer
