@@ -6,11 +6,14 @@
   border-left-width: 5px;
   border-radius: 3px;
 
-  h2, h3, h4, h5, h6 {
+  header {
     margin-top: 3px;
     margin-bottom: 0;
     border-bottom: initial;
     padding-top: 0 !important;
+    font-size: 1.2em;
+    line-height: 1.2rem;
+    font-weight: bold;
   }
 
   p, ul, ol, table, pre, blockquote {
@@ -35,79 +38,73 @@
 
   &.default {
     border-left-color: $note-default-border;
-    h2, h3, h4, h5, h6 {
+    header, &:before {
       color: $note-default-text;
     }
     &:not(.no-icon) {
       &:before {
         content: $note-default-icon;
-        color: $note-default-text;
       }
     }
   }
 
   &.primary {
     border-left-color: $note-primary-border;
-    h2, h3, h4, h5, h6 {
+    header, &:before {
       color: $note-primary-text;
     }
     &:not(.no-icon) {
       &:before {
         content: $note-primary-icon;
-        color: $note-primary-text;
       }
     }
   }
 
   &.info {
-      border-left-color:   $note-info-border;
-      h2, h3, h4, h5, h6 {
-        color:             $note-info-text;
+    border-left-color: $note-info-border;
+    header, &:before {
+      color: $note-info-text;
+    }
+    &:not(.no-icon) {
+      &:before {
+        content: $note-info-icon;
       }
-      &:not(.no-icon) {
-        &:before {
-          content:         $note-info-icon;
-            color :        $note-info-text;
-        }
-      }
+    }
   }
 
   &.success {
-      border-left-color:   $note-success-border;
-      h2, h3, h4, h5, h6 {
-        color:             $note-success-text;
+    border-left-color:   $note-success-border;
+    header, &:before {
+      color:             $note-success-text;
+    }
+    &:not(.no-icon) {
+      &:before {
+        content:         $note-success-icon;
       }
-      &:not(.no-icon) {
-        &:before {
-          content:         $note-success-icon;
-            color :        $note-success-text;
-        }
-      }
+    }
   }
 
   &.warning {
-      border-left-color:   $note-warning-border;
-      h2, h3, h4, h5, h6 {
-        color:             $note-warning-text;
+    border-left-color:   $note-warning-border;
+    header, &:before {
+      color:             $note-warning-text;
+    }
+    &:not(.no-icon) {
+      &:before {
+        content:         $note-warning-icon;
       }
-      &:not(.no-icon) {
-        &:before {
-          content:         $note-warning-icon;
-            color :        $note-warning-text;
-        }
-      }
+    }
   }
 
   &.danger {
-      border-left-color:   $note-danger-border;
-      h2, h3, h4, h5, h6 {
-        color:             $note-danger-text;
+    border-left-color:   $note-danger-border;
+    header, &:before {
+      color:             $note-danger-text;
+    }
+    &:not(.no-icon) {
+      &:before {
+        content:         $note-danger-icon;
       }
-      &:not(.no-icon) {
-        &:before {
-          content:         $note-danger-icon;
-            color :        $note-danger-text;
-        }
-      }
+    }
   }
 }
