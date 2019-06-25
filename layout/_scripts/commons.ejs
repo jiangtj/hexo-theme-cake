@@ -1,0 +1,13 @@
+<%#
+    'motion.js',
+%>
+<%
+  var js_commons = [
+    'utils.js',
+    'affix.js',
+    'schemes/pisces.js',
+  ]
+%>
+<% js_commons.forEach(function(common){ %>
+  <script src="<%- url_for(theme.js) %>/<%- common %>?v=<%- version %>"></script>
+<% }); %>

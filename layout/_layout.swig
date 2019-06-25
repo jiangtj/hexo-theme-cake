@@ -94,7 +94,7 @@
   </div>
 
   {{ partial( '_scripts/vendors.swig', {}, {cache: true}) }}
-  {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
+  {{ partial( '_scripts/commons.ejs', {}, {cache: true}) }}
 
   {% block script_extra %}{% endblock %}
 
