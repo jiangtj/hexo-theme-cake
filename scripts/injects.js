@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 
 const stylusInjectTypes = ['variable', 'style'];
 class StylusInject {
@@ -30,23 +31,27 @@ class ViewInject {
 }
 
 // init injects var
-const injects = {}
-stylusInjectTypes.forEach((item) => {
-  injects[item] = new StylusInject();
-});
-viewInjectTypes.forEach((item) => {
-  injects[item] = new ViewInject();
-});
+function initInject () {
+  let injects = {};
+  stylusInjectTypes.forEach((item) => {
+    injects[item] = new StylusInject();
+  });
+  viewInjectTypes.forEach((item) => {
+    injects[item] = new ViewInject();
+  });
+  return injects;
+}
 
 module.exports =  function(hexo) {
   // exec theme_inject filter
+  let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
   //inject stylus
   stylusInjectTypes.forEach((type) => {
-    hexo.theme.config.injects[type] = injects[type].files;
-  })
+    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir,item));
+  });
 
   // inject views
   viewInjectTypes.forEach((type) => {
