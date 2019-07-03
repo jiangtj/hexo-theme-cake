@@ -3,7 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const stylusInjectTypes = ['variable', 'style'];
+// Defining stylus types
+const stylusTypes = ['variable', 'style'];
 class StylusInject {
   constructor() {
     this.files = [];
@@ -13,7 +14,8 @@ class StylusInject {
   }
 }
 
-const viewInjectTypes = ['head', 'header', 'bodyEnd', 'sidebar', 'reward'];
+// Defining view types
+const viewTypes = ['head', 'header', 'bodyEnd', 'sidebar', 'reward'];
 class ViewInject {
   constructor() {
     this.raws = [];
@@ -30,34 +32,39 @@ class ViewInject {
   }
 }
 
-// init injects var
+// Init injects
 function initInject () {
   let injects = {};
-  stylusInjectTypes.forEach((item) => {
+  stylusTypes.forEach((item) => {
     injects[item] = new StylusInject();
   });
-  viewInjectTypes.forEach((item) => {
+  viewTypes.forEach((item) => {
     injects[item] = new ViewInject();
   });
   return injects;
 }
 
 module.exports =  function(hexo) {
-  // exec theme_inject filter
+
+  // Exec theme_inject filter 
   let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
-  //inject stylus
-  stylusInjectTypes.forEach((type) => {
+  // Inject stylus, and get relative path base on hexo dir.
+  stylusTypes.forEach((type) => {
     hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir,item));
   });
 
-  // inject views
-  viewInjectTypes.forEach((type) => {
+  // Inject views
+  viewTypes.forEach((type) => {
     hexo.theme.config.injects[type] = {};
     injects[type].raws.forEach((injectObj) => {
-      let viewName = `inject/${type}/${injectObj.name}.swig`;
+      // If there is no suffix, will add `.swig`
+      if (injectObj.name.indexOf('.') < 0) {
+        injectObj.name += '.swig';
+      }
+      let viewName = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(viewName, injectObj.raw);
       hexo.theme.config.injects[type][injectObj.name] = {
         layout: viewName,
@@ -66,6 +73,7 @@ module.exports =  function(hexo) {
       };
     });
   });
+
 };
 
 
