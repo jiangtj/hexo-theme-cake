@@ -2,7 +2,7 @@
   <div>{{ theme.reward_settings.comment }}</div>
   {# <div onmouseout="rewardFunc.out()"> #}
   {% for inject_name,inject_args in theme.injects.reward %}
-    <div class="reward-box {{inject_name}}">
+    <div class="reward-box {{inject_name.split('.')[0]}}">
       {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
     </div>
   {% endfor %}
