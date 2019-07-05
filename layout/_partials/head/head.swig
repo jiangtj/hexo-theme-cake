@@ -109,6 +109,6 @@
 </script>
 
 {# {{ partial('_custom/head.swig') }} #}
-{% for inject_name,inject_args in theme.injects.head %}
-  {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+{% for inject_item in theme.injects.head %}
+  {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
 {% endfor %}

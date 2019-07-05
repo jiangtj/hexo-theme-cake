@@ -110,8 +110,8 @@
   {{ partial( '_third-party/pangu.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
-  {% for inject_name,inject_args in theme.injects.bodyEnd %}
-    {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+  {% for inject_item in theme.injects.bodyEnd %}
+    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
   {% endfor %}
 
 </body>

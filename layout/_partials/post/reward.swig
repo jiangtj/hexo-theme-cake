@@ -1,9 +1,9 @@
 <div class="reward-container" onmouseleave="rewardFunc.out()">
   <div>{{ theme.reward_settings.comment }}</div>
   {# <div onmouseout="rewardFunc.out()"> #}
-  {% for inject_name,inject_args in theme.injects.reward %}
-    <div class="reward-box {{inject_name.split('.')[0]}}">
-      {{ partial(inject_args.layout, inject_args.locals, inject_args.options) }}
+  {% for inject_item in theme.injects.reward %}
+    <div class="reward-box {{inject_item.locals.reward_name}}">
+      {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
     </div>
   {% endfor %}
   {# </div> #}

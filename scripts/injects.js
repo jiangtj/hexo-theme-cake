@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Defining stylus types
-const stylusTypes = ['variable', 'style'];
+const stylusTypes = ['variable', 'mixin', 'style'];
 class StylusInject {
   constructor() {
     this.files = [];
@@ -33,7 +33,7 @@ class ViewInject {
 }
 
 // Init injects
-function initInject () {
+function initInject() {
   let injects = {};
   stylusTypes.forEach((item) => {
     injects[item] = new StylusInject();
@@ -45,20 +45,19 @@ function initInject () {
 }
 
 module.exports =  function(hexo) {
-
-  // Exec theme_inject filter 
+  // Exec theme_inject filter
   let injects = initInject();
   hexo.execFilterSync('theme_inject', injects);
   hexo.theme.config.injects = {};
 
   // Inject stylus, and get relative path base on hexo dir.
   stylusTypes.forEach((type) => {
-    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir,item));
+    hexo.theme.config.injects[type] = injects[type].files.map((item) => path.relative(hexo.base_dir, item));
   });
 
   // Inject views
   viewTypes.forEach((type) => {
-    hexo.theme.config.injects[type] = {};
+    hexo.theme.config.injects[type] = [];
     injects[type].raws.forEach((injectObj) => {
       // If there is no suffix, will add `.swig`
       if (injectObj.name.indexOf('.') < 0) {
@@ -66,14 +65,12 @@ module.exports =  function(hexo) {
       }
       let viewName = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(viewName, injectObj.raw);
-      hexo.theme.config.injects[type][injectObj.name] = {
+      hexo.theme.config.injects[type].push({
         layout: viewName,
         locals: injectObj.args[0],
         options: injectObj.args[1]
-      };
+      });
     });
   });
-
+  console.log(hexo.theme.config.injects.reward) ; 
 };
-
-
