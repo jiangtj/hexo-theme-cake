@@ -72,5 +72,4 @@ module.exports =  function(hexo) {
       });
     });
   });
-  console.log(hexo.theme.config.injects.reward) ; 
 };
