@@ -692,16 +692,6 @@ vendors:
   # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
   fastclick:
 
-  # Internal version: 1.2.1
-  # See: http://velocityjs.org
-  # Example:
-  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-  # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
-  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-  # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
-  velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
-  velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
-
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
