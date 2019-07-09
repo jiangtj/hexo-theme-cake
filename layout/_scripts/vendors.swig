@@ -1,5 +1,4 @@
 {# Reset `window.Promise` when it was not a function. #}
-{# IE refers the element whose id is `Promise` as `window.Promise`, this causes Velocity throwing an exception #}
 <script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
@@ -12,9 +11,6 @@
 {% if theme.fastclick %}
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}
-
-{% set js_vendors.velocity = 'velocity/velocity.min.js?v=1.2.1' %}
-{% set js_vendors.velocity_ui = 'velocity/velocity.ui.min.js?v=1.2.1' %}
 
 {% if theme.fancybox %}
   {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}

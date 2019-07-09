@@ -15,5 +15,3 @@ source/lib/font-awesome/scss/
 !source/lib/font-awesome/*
 
 !source/lib/jquery/
-
-!source/lib/velocity/

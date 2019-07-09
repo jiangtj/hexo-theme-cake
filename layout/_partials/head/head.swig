@@ -97,7 +97,6 @@
     back2top_sidebar: {{ theme.back2top.sidebar }},
     fancybox: {{ theme.fancybox }},
     tabs: {{ theme.tabs.enable }},
-    motion: {{ theme.motion | json_encode }},
     algolia: {
       applicationID: '{{ theme.algolia.applicationID }}',
       apiKey: '{{ theme.algolia.apiKey }}',

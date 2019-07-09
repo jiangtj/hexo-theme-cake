@@ -12,7 +12,7 @@
       {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
 
       {% if display_toc and toc(page.content).length > 1 %}
-        <ul class="sidebar-nav motion-element">
+        <ul class="sidebar-nav">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             {{ __('sidebar.toc') }}
           </li>
@@ -24,18 +24,18 @@
 
       <div class="site-overview-wrap sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
             {% if theme.avatar.url %}
               <img class="site-author-image" itemprop="image"
                 src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
                 alt="{{ author }}"/>
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
-              <div class="site-description motion-element" itemprop="description">{{ description }}</div>
+              <div class="site-description itemprop="description">{{ description }}</div>
           </div>
 
           {% if theme.site_state %}
-            <nav class="site-state motion-element">
+            <nav class="site-state">
               {% if config.archive_dir != '/' and site.posts.length > 0 %}
                 <div class="site-state-item site-state-posts">
                 {% if theme.menu.archives %}
@@ -78,7 +78,7 @@
           {% endif %}
 
           {% if theme.social %}
-            <div class="links-of-author motion-element">
+            <div class="links-of-author">
               {% for name, link in theme.social %}
                 <span class="links-of-author-item">
                   {% set sidebarURL = link.split('||')[0] | trim %}
@@ -95,7 +95,7 @@
           {% endif %}
 
           {% if theme.creative_commons.license and theme.creative_commons.sidebar %}
-             <div class="cc-license motion-element" itemprop="license">
+             <div class="cc-license" itemprop="license">
               {% set ccLanguage = theme.creative_commons.language %}
               {% if theme.creative_commons.license === 'zero' %}
                 {% set ccType = 'publicdomain/zero/1.0/' + ccLanguage %}
@@ -110,7 +110,7 @@
 
           {# Blogroll #}
           {% if theme.links %}
-            <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+            <div class="links-of-blogroll {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
                 <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
                 {{ theme.links_title }}
@@ -133,7 +133,7 @@
 
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <div class="post-toc-wrap sidebar-panel sidebar-panel-active">
           <div class="post-toc">
 
             {% set next_toc_number = theme.toc.number %}

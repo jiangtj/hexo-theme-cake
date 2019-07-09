@@ -1,6 +1,3 @@
-{#
-    'motion.js',
-#}
 {%
   set js_commons = [
     'utils.js',
