@@ -9,7 +9,6 @@ yaml = require('js-yaml')
 gulp.task 'lint', ->
   return gulp.src([
     './source/js/utils.js',
-    './source/js/motion.js',
     './source/js/algolia-search.js',
     './source/js/bootstrap.js',
     './source/js/post-details.js',

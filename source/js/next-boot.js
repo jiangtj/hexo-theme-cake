@@ -30,17 +30,5 @@ $(document).ready(function() {
 
   NexT.utils.embeddedVideoTransformer();
 
-  // Define Motion Sequence.
-  // NexT.motion.integrator
-  //   .add(NexT.motion.middleWares.logo)
-  //   .add(NexT.motion.middleWares.menu)
-  //   .add(NexT.motion.middleWares.postList)
-  //   .add(NexT.motion.middleWares.sidebar);
-
-  $(document).trigger('motion:before');
-
-  // Bootstrap Motion.
-  CONFIG.motion.enable && NexT.motion.integrator.bootstrap();
-
   $(document).trigger('bootstrap:after');
 });
