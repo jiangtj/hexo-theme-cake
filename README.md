@@ -27,6 +27,3 @@ Run `hexo s`, and preview.
 
 ## Browser Support
 Modern Browser (No IE)
-
-## Known Issues
-- [ ] Categories/Tags count contains _drafts.
