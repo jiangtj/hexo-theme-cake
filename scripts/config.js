@@ -1,8 +1,6 @@
-/* global hexo */
-
 'use strict';
 
-hexo.on('generateBefore', function () {
+module.exports = function(hexo) {
 
   let data = hexo.locals.get('data');
 
@@ -15,8 +13,8 @@ hexo.on('generateBefore', function () {
 
   // Custom languages support.
   if (data && data.languages) {
-    var lang = this.config.language;
-    var i18n = this.theme.i18n;
+    var lang = hexo.config.language;
+    var i18n = hexo.theme.i18n;
     var mergeLang = function (lang) {
       i18n.set(lang, Object.assign(i18n.get([lang]), data.languages[lang]));
     };
@@ -32,25 +30,4 @@ hexo.on('generateBefore', function () {
   // Only Gemini.
   hexo.theme.config.scheme = 'Gemini';
 
-  // Add filter type `theme_inject`.
-  require('./injects')(hexo);
-
-  // Only Gemini.
-  let visibleTags = 0;
-  hexo.locals.get('tags').forEach((tag) => {
-    if (tag.length) {
-      visibleTags += 1;
-    }
-  })
-  hexo.theme.config.visibleTags = visibleTags;
-
-  
-  let visibleCategories = 0;
-  hexo.locals.get('categories').forEach((categorie) => {
-    if (categorie.length) {
-      visibleCategories += 1;
-    }
-  })
-  hexo.theme.config.visibleCategories = visibleCategories;
-
-});
+};
