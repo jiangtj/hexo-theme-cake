@@ -25,29 +25,25 @@
   }
 }
 
-.post-symbolscount {
-  if !hexo-config('symbols_count_time.separated_meta') { display: inline-block; }
-}
-
 .post-meta-divider {
   margin: 0 .5em;
 }
 
+.post-meta .post-meta-item + .post-meta-item::before {
+  content: "|";
+  margin: 0 .5em;
+}
+
+
 .post-meta-item-icon {
   margin-right: 3px;
-  +tablet() {
-    display: inline-block;
-  }
-  +mobile() {
+  +tablet-mobile() {
     display: inline-block;
   }
 }
 
 .post-meta-item-text {
-  +tablet() {
-    hide();
-  }
-  +mobile() {
+  +tablet-mobile() {
     hide();
   }
 }

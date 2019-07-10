@@ -1,11 +1,11 @@
         <div class="post-meta">
-          <span class="post-time">
 
-            {% set date_diff = date(post.date) != date(post.updated) %}
-            {% set time_diff = time(post.date) != time(post.updated) %}
-            {% set datetime_diff = date_diff or time_diff %}
+          {% set date_diff = date(post.date) != date(post.updated) %}
+          {% set time_diff = time(post.date) != time(post.updated) %}
+          {% set datetime_diff = date_diff or time_diff %}
 
-            {% if theme.post_meta.created_at %}
+          {% if theme.post_meta.created_at %}
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
@@ -22,16 +22,14 @@
               <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
               #}{{ date(post.date) -}}
               </time>
-            {% endif %}
+            </span>
+          {% endif %}
 
             {% if theme.post_meta.updated_at.enable && datetime_diff %}
               {% set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {% if display_updated or !theme.post_meta.created_at %}
-                {% if theme.post_meta.created_at and theme.post_meta.updated_at.enable %}
-                <span class="post-meta-divider">|</span>
-                {% endif %}
-
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
@@ -41,15 +39,13 @@
                 <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
                 #}{{ date(post.updated) -}}
                 </time>
+              </span>
               {% endif %}
             {% endif %}
           </span>
 
           {% if post.categories and post.categories.length and theme.post_meta.categories %}
-            <span class="post-category">
-            {% if theme.post_meta.created_at or theme.post_meta.updated_at %}
-              <span class="post-meta-divider">|</span>
-            {% endif %}
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
