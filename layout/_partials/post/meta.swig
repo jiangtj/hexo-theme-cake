@@ -76,6 +76,12 @@
             {% endif %}
           {% endif %}
 
+          {% for inject_item in theme.injects.postMeta %}
+            <span class="post-meta-item">
+              {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+            </span>
+          {% endfor %}
+
           {% if post.description %}
             <div class="post-description">{#
               #}{{ post.description }}{#
