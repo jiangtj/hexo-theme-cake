@@ -645,11 +645,8 @@ medium_zoom:
   cdn: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
 # lozad lib
-# ${src}: image's src
 lozad:
   enable: true
-  # If you use netlify LM
-  #background: ${src}?nf_resize=fit&w=256
   cdn: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
 # Progress bar in the top during page loading.
