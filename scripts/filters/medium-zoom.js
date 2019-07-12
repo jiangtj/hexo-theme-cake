@@ -2,18 +2,26 @@
 
 'use strict';
 
-hexo.extend.filter.register('theme_inject', function(injects) {
+// images.forEach(element => {
+//   let hdAttr = element.getAttribute(mediumZoom.hd_attr);
+//   if (hdAttr) {
+//     element.setAttribute('data-zoom-src', hdAttr);
+//   }
+// });
 
-  if (!hexo.theme.config.medium_zoom) return;
+hexo.extend.filter.register('theme_inject', function(injects) {
+  let mediumZoom = hexo.theme.config.medium_zoom;
+
+  if (!mediumZoom.enable) return;
 
   injects.bodyEnd.raw('medium-zoom', `
-  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js" crossorigin="anonymous"></script>
+  <script src="${mediumZoom.cdn}" crossorigin="anonymous"></script>
   <script>
     const images = [
       ...document.querySelectorAll('.post-body img'),
       ...document.querySelectorAll('[data-zoomable]'),
     ]
-    mediumZoom(images)
+    mediumZoom(images);
   </script>
   `, {}, {cache: true});
 });

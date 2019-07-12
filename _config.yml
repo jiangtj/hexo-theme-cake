@@ -634,7 +634,14 @@ tabs:
   border_radius: 0
 
 # A JavaScript library for zooming images like Medium
-medium_zoom: true
+medium_zoom:
+  enable: true
+  cdn: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+
+# lozad lib
+lozad:
+  enable: true
+  cdn: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
