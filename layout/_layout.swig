@@ -77,12 +77,6 @@
       </div>
     {% endif %}
 
-    {% if theme.baidushare and theme.baidushare.type === "slide" %}
-      <div>
-        {{ partial( '_partials/share/baidushare.swig') }}
-      </div>
-    {% endif %}
-
     {% if theme.add_this_id %}
       <div>
         {{ partial( '_partials/share/add-this.swig') }}
