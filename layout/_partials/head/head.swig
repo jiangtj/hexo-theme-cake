@@ -45,14 +45,6 @@
   <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}"/>
 {% endif %}
 
-{% if theme.fancybox %}
-  {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css') %}
-  {% if theme.vendors.fancybox_css %}
-    {% set fancybox_css_uri = theme.vendors.fancybox_css %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ fancybox_css_uri }}"/>
-{% endif %}
-
 {% set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}
 {% if theme.vendors.fontawesome %}
   {% set font_awesome_uri = theme.vendors.fontawesome %}
@@ -95,7 +87,6 @@
     sidebar: {{ theme.sidebar | json_encode }},
     back2top: {{ theme.back2top.enable }},
     back2top_sidebar: {{ theme.back2top.sidebar }},
-    fancybox: {{ theme.fancybox }},
     tabs: {{ theme.tabs.enable }},
     algolia: {
       applicationID: '{{ theme.algolia.applicationID }}',

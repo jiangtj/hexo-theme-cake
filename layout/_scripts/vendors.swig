@@ -12,10 +12,6 @@
   {% set js_vendors.fastclick = 'fastclick/lib/fastclick.min.js?v=1.0.6' %}
 {% endif %}
 
-{% if theme.fancybox %}
-  {% set js_vendors.fancybox = 'fancybox/source/jquery.fancybox.pack.js' %}
-{% endif %}
-
 {% if theme.reading_progress.enable %}
   {% set js_vendors.reading_progress = 'reading_progress/reading_progress.js' %}
 {% endif %}

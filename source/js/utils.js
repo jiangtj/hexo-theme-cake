@@ -3,39 +3,6 @@
 NexT.utils = NexT.$u = {
 
   /**
-   * Wrap images with fancybox support.
-   */
-  wrapImageWithFancyBox: function() {
-    $('.content img')
-      .not(':hidden')
-      .each(function() {
-        var $image = $(this);
-        var imageTitle = $image.attr('title') || $image.attr('alt');
-        var $imageWrapLink = $image.parent('a');
-
-        if ($imageWrapLink.length < 1) {
-          var imageLink = $image.attr('data-srcset')?$image.attr('data-srcset').split('?')[0]:$image.attr('src');
-          $imageWrapLink = $image.wrap('<a class="fancybox fancybox.image" href="' + imageLink + '" itemscope itemtype="http://schema.org/ImageObject" itemprop="url"></a>').parent('a');
-        }
-
-        if (imageTitle && $imageWrapLink.is('.fancybox')) {
-          $imageWrapLink.append('<p class="image-caption">' + imageTitle + '</p>');
-          // Make sure img title tag will show correctly in fancybox
-          $imageWrapLink.attr('title', imageTitle).attr('data-caption', imageTitle);
-        }
-      });
-
-    $('.fancybox').fancybox({
-      loop: true,
-      helpers: {
-        overlay: {
-          locked: false
-        }
-      }
-    });
-  },
-
-  /**
    * Tabs tag listener (without twitter bootstrap).
    */
   registerTabsTag: function() {
