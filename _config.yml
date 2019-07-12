@@ -639,11 +639,8 @@ tabs:
     labels: true
   border_radius: 0
 
-# Fancybox. There is support for old version 2 and new version 3.
-# Choose only one variant, do not need to install both.
-# To install 2.x: https://github.com/theme-next/theme-next-fancybox
-# To install 3.x: https://github.com/theme-next/theme-next-fancybox3
-fancybox: true
+# A JavaScript library for zooming images like Medium
+medium_zoom: true
 
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
@@ -674,16 +671,6 @@ vendors:
   # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
   jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-
-  # Internal version: 2.1.5 & 3.5.7
-  # See: https://fancyapps.com/fancybox
-  # Example:
-  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  # fancybox: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.js
-  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
-  # fancybox_css: //cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.6/jquery.fancybox.min.css
-  fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
-  fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
