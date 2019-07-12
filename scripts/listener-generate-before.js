@@ -7,6 +7,4 @@ hexo.on('generateBefore', function () {
   require('./config')(hexo);
   // Add filter type `theme_inject`.
   require('./injects')(hexo);
-  // Fix tags/c..s count.
-  require('./fix-count')(hexo);
 });
