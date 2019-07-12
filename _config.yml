@@ -639,6 +639,9 @@ tabs:
     labels: true
   border_radius: 0
 
+# A JavaScript library for zooming images like Medium
+medium_zoom: true
+
 # Progress bar in the top during page loading.
 # Dependencies: https://github.com/theme-next/theme-next-pace
 pace: true
