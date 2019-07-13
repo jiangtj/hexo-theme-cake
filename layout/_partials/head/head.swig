@@ -97,8 +97,3 @@
     }
   };
 </script>
-
-{# {{ partial('_custom/head.swig') }} #}
-{% for inject_item in theme.injects.head %}
-  {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-{% endfor %}

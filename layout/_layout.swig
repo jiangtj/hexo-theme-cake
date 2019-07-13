@@ -15,6 +15,9 @@
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: true}) }}
   {{ partial( '_partials/head/head-unique.swig') }}
+  {% for inject_item in theme.injects.head %}
+    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+  {% endfor %}
   <title>{% block title %}{% endblock %}</title>
   {{ partial( '_third-party/analytics/index.swig') }}
 </head>
