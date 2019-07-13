@@ -100,7 +100,6 @@
   {{ partial( '_third-party/analytics/firestore.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
-  {{ partial( '_third-party/pangu.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
   {% for inject_item in theme.injects.bodyEnd %}
