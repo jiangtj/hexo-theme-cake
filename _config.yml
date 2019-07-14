@@ -274,12 +274,6 @@ codeblock:
     # Style: only 'flat' is currently available, leave it blank if you prefer default theme
     style:
 
-# Wechat Subscriber
-wechat_subscriber:
-  enable: false
-  #qcode: /path/to/your/wechatqcode e.g. /uploads/wechat-qcode.jpg
-  #description: e.g. subscribe to my blog by scanning my public wechat account
-
 # Reward (Donate)
 reward_settings:
   # If true, reward would be displayed in every article by default.

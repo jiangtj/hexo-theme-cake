@@ -78,10 +78,6 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if theme.wechat_subscriber.enable and not is_index %}
-      {{ partial( '_partials/post/wechat-subscriber.swig') }}
-    {% endif %}
-
     {% if page.reward === undefined and theme.reward_settings.enable %}
       {% set reward_able = true %}
     {% else %}
