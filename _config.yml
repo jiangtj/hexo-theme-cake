@@ -241,12 +241,6 @@ scroll_to_more: true
 # Automatically saving scroll position on each post / page in cookies.
 save_scroll: false
 
-# Automatically Excerpt (Not recommend).
-# Use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: false
-  length: 150
-
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
 read_more_btn: true
