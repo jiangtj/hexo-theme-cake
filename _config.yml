@@ -599,6 +599,9 @@ pace:
 #! See: https://theme-next.org/docs/advanced-settings
 #! ---------------------------------------------------------------
 
+# Set jquery cdn
+jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+
 # Script Vendors. Set a CDN address for the vendor you want to customize.
 # For example
 #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
@@ -607,12 +610,6 @@ pace:
 vendors:
   # Internal path prefix. Please do not edit it.
   _internal: lib
-
-  # Internal version: 2.1.3
-  # Example:
-  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-  # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
-  jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
   # Internal version: 4.6.2
   # See: https://fontawesome.com
