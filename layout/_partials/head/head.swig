@@ -11,19 +11,6 @@
   <link rel="stylesheet" href="{{ needmoreshare2_css }}"/>
 {% endif %}
 
-{% if theme.pace %}
-  {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
-  {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}
-    {% if theme.vendors.pace %}
-      {% set pace_js_uri = theme.vendors.pace %}
-    {% endif %}
-    {% if theme.vendors.pace_css %}
-      {% set pace_css_uri = theme.vendors.pace_css %}
-    {% endif %}
-  <script src="{{ pace_js_uri }}"></script>
-  <link rel="stylesheet" href="{{ pace_css_uri }}"/>
-{% endif %}
-
 {% if theme.disable_baidu_transformation %}
   <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
