@@ -534,16 +534,6 @@ vkontakte_api:
 
 # ---------------------------------------------------------------
 
-# Another tool to show number of visitors to each article.
-# Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
-# Visit https://firebase.google.com/docs/firestore/ to get more information about firestore.
-firestore:
-  enable: false
-  collection: articles #required, a string collection name to access firestore database
-  apiKey: #required
-  projectId: #required
-  bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
-
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
@@ -560,9 +550,6 @@ busuanzi_count:
 
 # Tencent MTA ID
 #tencent_mta:
-
-# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: true
 
 # ---------------------------------------------------------------
 # Search Services
