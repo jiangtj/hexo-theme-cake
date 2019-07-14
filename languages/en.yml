@@ -2,7 +2,6 @@ title:
   archive: Archive
   category: Category
   tag: Tag
-  schedule: Schedule
 
 menu:
   home: Home
@@ -11,7 +10,6 @@ menu:
   tags: Tags
   about: About
   search: Search
-  schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
 

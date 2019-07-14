@@ -87,16 +87,12 @@
     {% endif %}
   </div>
 
-  {{ partial( '_scripts/vendors.swig', {}, {cache: true}) }}
   {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
-
   {% block script_extra %}{% endblock %}
-
   {{ partial( '_scripts/next-boot.swig', {}, {cache: true}) }}
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}
-  {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 

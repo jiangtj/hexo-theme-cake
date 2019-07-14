@@ -364,32 +364,6 @@ tagcloud:
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
 # ---------------------------------------------------------------
-# Third Party Services Settings
-# See: https://theme-next.org/docs/third-party-services/
-# You may need to install dependencies or set CDN URLs in `vendors`
-# There are two different CDN providers by default:
-#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China
-#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
-# ---------------------------------------------------------------
-
-# Google Calendar
-# Share your recent schedule to others via calendar page.
-# API Documentation: https://developers.google.com/google-apps/calendar/v3/reference/events/list
-# To get api_key: https://console.developers.google.com
-# Create & manage a public Google calendar: https://support.google.com/calendar/answer/37083
-calendar:
-  enable: false
-  calendar_id: <required> # Your Google account E-Mail
-  api_key: <required>
-  orderBy: startTime
-  offsetMax: 24 # Time Range
-  offsetMin: 4 # Time Range
-  showDeleted: false
-  singleEvents: true
-  maxResults: 250
-
-
-# ---------------------------------------------------------------
 # Comments and Widgets
 # See: https://theme-next.org/docs/third-party-services/comments-and-widgets
 # You can set one type to enable.

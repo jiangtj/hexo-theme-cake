@@ -7,8 +7,6 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === 'tags' and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% elif page.type === 'schedule' and not page.title %}{#
-    #}{{ __('title.schedule') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -58,8 +56,6 @@
               {{ list_categories() }}
             </div>
           </div>
-        {% elif page.type === 'schedule' %}
-          {{ partial( 'schedule.swig') }}
         {% else %}
           {{ page.content }}
         {% endif %}
