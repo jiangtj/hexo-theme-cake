@@ -96,7 +96,6 @@
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}
-  {{ partial( '_third-party/analytics/lean-analytics.swig') }}
   {{ partial( '_third-party/analytics/firestore.swig') }}
   {{ partial( '_third-party/schedule.swig') }}
   {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}

@@ -425,7 +425,6 @@ disqus:
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
-# When comments.type is set to valine, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.
 valine:
   appid:  # your leancloud application appid
   appkey:  # your leancloud application appkey
@@ -534,18 +533,6 @@ vkontakte_api:
   num_of_posts: 10
 
 # ---------------------------------------------------------------
-
-# Show number of visitors to each article.
-# You can visit https://leancloud.cn to get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
-  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
-  # If you don't care about security in leancloud counter and just want to use it directly
-  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
-  security: true
-  betterPerformance: false
 
 # Another tool to show number of visitors to each article.
 # Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
