@@ -614,13 +614,6 @@ vendors:
   # jquery: //cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
   jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
-  # Internal version: 1.0.6
-  # See: https://github.com/ftlabs/fastclick
-  # Example:
-  # fastclick: //cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js
-  # fastclick: //cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js
-  fastclick:
-
   # Internal version: 4.6.2
   # See: https://fontawesome.com
   # Example:
