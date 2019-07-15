@@ -175,7 +175,7 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: /images/avatar.jpg
+  url: /images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
   rounded: true
   # The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.
@@ -366,7 +366,7 @@ tagcloud:
 comments:
   # Type list:
   # disqus valine 
-  type: disqus
+  type:
   # If comment system support, show comments count in meta area
   count: 
     page: true
@@ -515,7 +515,7 @@ algolia_search:
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
 local_search:
-  enable: true
+  enable: false
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
