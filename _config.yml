@@ -374,7 +374,7 @@ comments:
 
 # Disqus
 disqus:
-  shortname: jiangtj
+  shortname: 
   lazyload: false
 
 # Valine
