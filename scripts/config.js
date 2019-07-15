@@ -1,6 +1,6 @@
 'use strict';
 
-const merge = require('lodash.merge');
+const { merge } = require("lodash");
 
 module.exports = function(hexo) {
 
