@@ -78,12 +78,6 @@
     {### END POST BODY ###}
     {#####################}
 
-    {% if theme.creative_commons.license and theme.creative_commons.post and not is_index %}
-      <div>
-        {{ partial( '_partials/post/post-copyright.swig', { post: post }) }}
-      </div>
-    {% endif %}
-
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">

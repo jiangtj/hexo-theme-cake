@@ -6,6 +6,8 @@ const path = require('path');
 
 const priority = hexo.config.inject_priority_reward || 20;
 
+console.log("reward:" + priority);
+
 // add to postBodyEnd
 hexo.extend.filter.register('theme_inject', function(injects) {
   injects.postBodyEnd.raw('reward', `
