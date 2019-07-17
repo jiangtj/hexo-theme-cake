@@ -15,9 +15,9 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     {% set reward_able = page.reward %}
   {% endif %}
   {% if reward_able and not is_index %}
-    {{ partial( '_partials/post/reward.swig') }}
+    {{ partial('_partials/post/reward.swig', {}, {cache: true}) }}
   {% endif %}
-  `, {}, {cache: true});
+  `);
 }, priority);
 
 // add to reward style
