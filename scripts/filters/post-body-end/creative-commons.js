@@ -2,9 +2,7 @@
 
 'use strict';
 
-const priority = hexo.config.inject_priority_creative_commons || 30;
-
-console.log("creative-commons:" + priority);
+const priority = hexo.config.inject_priority_creative_commons || 200;
 
 hexo.extend.filter.register('theme_inject', function(injects) {
   injects.postBodyEnd.raw('creative-commons', `
@@ -13,5 +11,5 @@ hexo.extend.filter.register('theme_inject', function(injects) {
       {{ partial( '_partials/post/post-copyright.swig', { post: post }) }}
     </div>
   {% endif %}
-  `, {}, {cache: true});
+  `);
 }, priority);
