@@ -3,14 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
 
-{% if theme.needmoreshare2.enable %}
-  {% set needmoreshare2_css = url_for(theme.vendors._internal + '/needsharebutton/needsharebutton.css') %}
-  {% if theme.vendors.needmoreshare2_css %}
-    {% set needmoreshare2_css = theme.vendors.needmoreshare2_css %}
-  {% endif %}
-  <link rel="stylesheet" href="{{ needmoreshare2_css }}"/>
-{% endif %}
-
 {% if theme.disable_baidu_transformation %}
   <meta http-equiv="Cache-Control" content="no-transform"/>
   <meta http-equiv="Cache-Control" content="no-siteapp"/>
@@ -57,11 +49,6 @@
 {% endif %}
 {% if theme.favicon.ms_browserconfig %}
   <meta name="msapplication-config" content="{{ url_for(theme.favicon.ms_browserconfig) }}"/>
-{% endif %}
-
-{% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
-  <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}"/>
-  <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}"/>
 {% endif %}
 
 {# Export some HEXO Configurations to Front-End #}

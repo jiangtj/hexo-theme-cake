@@ -397,54 +397,6 @@ valine:
 # See: https://theme-next.org/docs/third-party-services/content-sharing-services
 # ---------------------------------------------------------------
 
-# AddThis Share, See: https://www.addthis.com
-# Go to https://www.addthis.com/dashboard to customize your tools.
-#add_this_id:
-
-# Likely Share
-# See: https://ilyabirman.net/projects/likely/
-# Likely supports four looks, nine social networks, any button text
-# You are free to modify the text value and order of any network
-likely:
-  enable: false
-  look: normal # available values: normal, light, small, big
-  networks:
-    twitter: Tweet
-    facebook: Share
-    linkedin: Link
-    gplus: Plus
-    vkontakte: Share
-    odnoklassniki: Class
-    telegram: Send
-    whatsapp: Send
-    pinterest: Pin
-
-# NeedMoreShare2
-# Dependencies: https://github.com/theme-next/theme-next-needmoreshare2
-# iconStyle: default | box
-# boxForm: horizontal | vertical
-# position: top / middle / bottom + Left / Center / Right
-# networks:
-# Weibo,Wechat,Douban,QQZone,Twitter,Facebook,Linkedin,Mailto,Reddit,Delicious,StumbleUpon,Pinterest,
-# GooglePlus,Tumblr,GoogleBookmarks,Newsvine,Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
-needmoreshare2:
-  enable: false
-  postbottom:
-    enable: false
-    options:
-      iconStyle: box
-      boxForm: horizontal
-      position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
-  float:
-    enable: false
-    options:
-      iconStyle: box
-      boxForm: horizontal
-      position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
-
-
 # ---------------------------------------------------------------
 # Statistics and Analytics
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
@@ -468,24 +420,6 @@ needmoreshare2:
 # Application Insights
 # See: https://azure.microsoft.com/en-us/services/application-insights
 #application_insights:
-
-# Post widgets & FB/VK comments settings.
-# ---------------------------------------------------------------
-# Facebook SDK Support
-facebook_sdk:
-  enable:       false
-  app_id:       #<app_id>
-  fb_admin:     #<user_id>
-  like_button:  #true
-  webmaster:    #true
-
-# VKontakte API Support
-# To get your AppID visit https://vk.com/editapp?act=create
-vkontakte_api:
-  enable:       false
-  app_id:       #<app_id>
-  like:         true
-  num_of_posts: 10
 
 # ---------------------------------------------------------------
 
@@ -594,14 +528,6 @@ vendors:
   algolia_instant_js:
   algolia_instant_css:
 
-  # Internal version: 1.0.0
-  # See: https://github.com/revir/need-more-share2
-  # Example:
-  # needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-  # needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-  needmoreshare2_js: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js
-  needmoreshare2_css: //cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css
-
   # leancloud-storage
   # See: https://www.npmjs.com/package/leancloud-storage
   # Example:
@@ -614,14 +540,6 @@ vendors:
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
   valine:
-
-  # likely
-  # See: https://github.com/ilyabirman/Likely
-  # Example:
-  # likely_js: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js
-  # likely_css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css
-  likely_js:
-  likely_css:
 
 # Assets
 css: css

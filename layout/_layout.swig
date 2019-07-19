@@ -72,19 +72,6 @@
       </div>
     {% endif %}
 
-    {% if theme.needmoreshare2.enable and theme.needmoreshare2.float.enable %}
-      <div id="needsharebutton-float">
-        <span class="btn">
-          <i class="fa fa-share-alt" aria-hidden="true"></i>
-        </span>
-      </div>
-    {% endif %}
-
-    {% if theme.add_this_id %}
-      <div>
-        {{ partial( '_partials/share/add-this.swig') }}
-      </div>
-    {% endif %}
   </div>
 
   {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
@@ -93,7 +80,6 @@
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/comments/index.swig') }}
   {{ partial( '_third-party/search/index.swig') }}
-  {{ partial( '_third-party/needsharebutton.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
   {% for inject_item in theme.injects.bodyEnd %}
