@@ -36,8 +36,6 @@
       <div class="header-inner">{{ partial( '_partials/header/index.swig') }}</div>
     </header>
 
-    {{ partial('_partials/github-banner.swig', {}, {cache: true}) }}
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">

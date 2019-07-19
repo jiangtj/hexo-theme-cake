@@ -1,11 +1,5 @@
 # ---------------------------------------------------------------
-# Theme Core Configuration Settings
-# See: https://theme-next.org/docs/theme-settings/
-# ---------------------------------------------------------------
-
-# ---------------------------------------------------------------
-# Site Information Settings
-# See: https://theme-next.org/docs/getting-started/
+# Head
 # ---------------------------------------------------------------
 
 favicon:
@@ -15,6 +9,10 @@ favicon:
   #safari_pinned_tab: /images/favicon.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
+
+# ---------------------------------------------------------------
+# Footer
+# ---------------------------------------------------------------
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -65,13 +63,6 @@ creative_commons:
   sidebar: false
   post: true
   language:
-
-# `Follow me on GitHub` banner in the top-right corner.
-github_banner:
-  enable: false
-  permalink: https://github.com/yourname
-  title: Follow me on GitHub
-
 
 # ---------------------------------------------------------------
 # SEO Settings
