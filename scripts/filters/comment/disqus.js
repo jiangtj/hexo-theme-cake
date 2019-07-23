@@ -4,6 +4,8 @@
 
 const path = require('path');
 
+const {iconText} = require('./common');
+
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
@@ -29,15 +31,16 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   if (!theme.disqus.enable || !theme.disqus.shortname) return;
   
   injects.postMeta.raw('disqus', `
+  {% if post.comments %}
   <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-comment-o"></i>
-    </span>
-    <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span>
+    ${iconText}
     <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
     </a>
   </span>
-  `);
+  {% endif %}
+  `, {
+    disableDefaultLayout: true
+  });
 
 }, hexo.config.inject_priority_disqus_post_meta);
