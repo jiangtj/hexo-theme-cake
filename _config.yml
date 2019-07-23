@@ -348,40 +348,30 @@ tagcloud:
   end: "#111" # end color (hex, rgba, hsla or color keywords)
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
-# ---------------------------------------------------------------
-# Comments and Widgets
-# See: https://theme-next.org/docs/third-party-services/comments-and-widgets
-# You can set one type to enable.
-# And need to provide additional configurations are required for those types.
-# ---------------------------------------------------------------
-comments:
-  # Type list:
-  # disqus valine 
-  type:
-  # If comment system support, show comments count in meta area
-  count: 
-    page: true
-    post: true
 
 # Disqus
 disqus:
-  shortname: 
+  enable: false
+  shortname:
+  count: true
   lazyload: false
 
 # Valine
 # You can get your appid and appkey from https://leancloud.cn
 # More info available at https://valine.js.org
 valine:
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
-  notify: false # mail notifier, See: https://github.com/xCss/Valine/wiki
+  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
+  appid: # Your leancloud application appid
+  appkey: # Your leancloud application appkey
+  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
-  avatar: mm # gravatar style
-  guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
-  language: # language, available values: en, zh-cn
+  placeholder: Just go go # Comment box placeholder
+  avatar: mm # Gravatar style
+  guest_info: nick,mail,link # Custom comment header
+  pageSize: 10 # Pagination size
+  language: # Language, available values: en, zh-cn
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
+  comment_count: true # If false, comment count will only be displayed in post page, not in home page
 
 # ---------------------------------------------------------------
 # Content Sharing Services
