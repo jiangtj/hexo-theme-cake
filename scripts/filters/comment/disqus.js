@@ -19,7 +19,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     #}</noscript>
     </div>
   </div>
-  `);
+  `, {}, {cache: true});
 
   injects.bodyEnd.file('disqus', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqus.swig'));
 

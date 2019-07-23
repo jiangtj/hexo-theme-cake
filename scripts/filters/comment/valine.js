@@ -4,22 +4,16 @@
 
 const path = require('path');
 
+const {iconText} = require('./common');
+
 // Add comment
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   if (!theme.valine.enable) return;
   
-  injects.comment.raw('valine', `
-  <div class="comments" id="comments">
-    <div id="disqus_thread">
-      <noscript>{#
-      #}Please enable JavaScript to view the comments powered by Disqus.{#
-    #}</noscript>
-    </div>
-  </div>
-  `);
+  injects.comment.raw('valine', `<div class="comments" id="comments"></div>`, {}, {cache: true});
 
-  injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/disqus.swig'));
+  injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
 }, hexo.config.inject_priority_valine);
 
@@ -30,6 +24,12 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   
   injects.postMeta.raw('valine', `
   {% if post.comments %}
+  <span class="post-meta-item">
+    ${iconText}
+    <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+    </a>
+  </span>
   {% endif %}
   `, {
     disableDefaultLayout: true
