@@ -67,19 +67,14 @@
             </span>
           {% endif %}
 
-          {% if post.comments %}
-            {% set comments_count_post_enable = is_post() and theme.comments.count.post %}
-            {% set comments_count_page_enable = not is_post() and theme.comments.count.page %}
-            {% if theme.comments.type and (comments_count_post_enable or comments_count_page_enable) %}
-              {% set comments_count_path = '_third-party/comments/' + theme.comments.type|lower + '/count.swig' %}
-              {{ partial(comments_count_path,{ post: post }) }}
-            {% endif %}
-          {% endif %}
-
           {% for inject_item in theme.injects.postMeta %}
-            <span class="post-meta-item">
+            {% if inject_item.locals.disableDefaultLayout %}
               {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-            </span>
+            {% else %}
+              <span class="post-meta-item">
+                {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+              </span>
+            {% endif %}
           {% endfor %}
 
           {% if post.description %}
