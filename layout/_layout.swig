@@ -76,7 +76,6 @@
   {% block script_extra %}{% endblock %}
   {{ partial( '_scripts/next-boot.swig', {}, {cache: true}) }}
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
-  {{ partial( '_third-party/search/index.swig') }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
   {% for inject_item in theme.injects.bodyEnd %}

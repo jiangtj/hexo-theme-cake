@@ -20,27 +20,10 @@
         {%- endif -%}
       {%- endfor %}
 
-      {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.local_search.enable %}
-      {% if hasSearch %}
-        <li class="menu-item menu-item-search">
-          {% if theme.swiftype_key %}
-            <a href="javascript:;" class="st-search-show-outputs">
-          {% elif theme.local_search.enable || theme.algolia_search.enable %}
-            <a href="javascript:;" class="popup-trigger">
-          {% endif %}
-            {% if theme.menu_settings.icons %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>{#
-          #}{% endif %}{#
-          #}{{ __('menu.search') }}{#
-        #}</a>
-        </li>
-      {% endif %}
-    </ul>
-  {% endif %}
+      {% for inject_item in theme.injects.menu %}
+        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
+      {% endfor %}
 
-  {% if hasSearch %}
-    <div class="site-search">
-      {{ partial( '../search/index.swig') }}
-    </div>
+    </ul>
   {% endif %}
 </nav>
