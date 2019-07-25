@@ -22,8 +22,15 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
 // add to reward style
 hexo.extend.filter.register('theme_inject', function(injects) {
-  Object.keys(hexo.theme.config.reward).forEach((reward_name) => {
-    let reward_item = hexo.theme.config.reward[reward_name];
+  let rewards = hexo.theme.config.reward;
+  
+  if (!rewards) {
+    hexo.theme.config.reward_settings.enable = false;
+    return;
+  }
+
+  Object.keys(rewards).forEach((reward_name) => {
+    let reward_item = rewards[reward_name];
     let layout = reward_item.layout;
     injects.reward.file(reward_name, layout || path.join(hexo.theme_dir, 'layout/_partials/post/reward/simple.swig'), {
       reward_name,
