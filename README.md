@@ -16,7 +16,8 @@
 - [hexo-cake-math](https://github.com/jiangtj-lab/hexo-cake-math): Math支持
 - [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu): 新的右下角按钮(阅读进度与返回顶部按钮)
 - [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search): 本地搜索功能
-- More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next)
+
+*More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next)*
 
 ## Quick Start
 
