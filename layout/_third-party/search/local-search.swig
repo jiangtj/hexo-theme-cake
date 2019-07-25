@@ -108,6 +108,8 @@
                 var isMatch = false;
                 var hitCount = 0;
                 var searchTextCount = 0;
+                // only match articles with not empty titles
+                if (!data.title) return;
                 var title = data.title.trim();
                 var titleInLowerCase = title.toLowerCase();
                 var content = data.content.trim().replace(/<[^>]+>/g,"");
@@ -118,8 +120,6 @@
                 var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
                 var indexOfTitle = [];
                 var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
                   keywords.forEach(function(keyword) {
                     function getIndexByWord(word, text, caseSensitive) {
                       var wordLen = word.length;
@@ -145,7 +145,6 @@
                     isMatch = true;
                     hitCount = indexOfTitle.length + indexOfContent.length;
                   }
-                }
 
                 // show search results
 
