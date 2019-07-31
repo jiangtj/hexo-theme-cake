@@ -39,8 +39,6 @@ hexo.extend.filter.register('theme_inject', function(injects) {
     </a>
   </span>
   {% endif %}
-  `, {
-    disableDefaultLayout: true
-  });
+  `);
 
 }, hexo.config.inject_priority_disqus_post_meta);

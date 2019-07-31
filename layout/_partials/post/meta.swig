@@ -68,13 +68,7 @@
           {% endif %}
 
           {% for inject_item in theme.injects.postMeta %}
-            {% if inject_item.locals.disableDefaultLayout %}
-              {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-            {% else %}
-              <span class="post-meta-item">
-                {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-              </span>
-            {% endif %}
+            {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
           {% endfor %}
 
           {% if post.description %}
