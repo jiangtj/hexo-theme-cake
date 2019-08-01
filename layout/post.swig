@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ partial('_macro/sidebar.swig', {is_post: true}) }}
+  {{ partial('_macro/sidebar.swig') }}
 {% endblock %}
 
 {% block script_extra %}

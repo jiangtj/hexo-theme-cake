@@ -17,5 +17,5 @@
 {% endblock %}
 
 {% block sidebar %}
-  {{ partial('_macro/sidebar.swig', {is_post: false}) }}
+  {{ partial('_macro/sidebar.swig') }}
 {% endblock %}
