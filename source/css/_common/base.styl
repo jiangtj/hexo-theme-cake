@@ -1,0 +1,45 @@
+html, body { height: 100%; }
+
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+  position: relative; // Required by scrollspy
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background: $body-bg-color;
+
+  +tablet-mobile() { padding-right: 0 !important; }
+}
+
+main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 15px;
+  padding: 0;
+  font-weight: bold;
+  line-height: 1.5;
+  font-family: $font-family-headings;
+}
+
+p {
+  text-align: left;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+// Scaffolding
+@import "scaffolding";
+// Layout
+@import "outline";
+// Components
+@import "components";
