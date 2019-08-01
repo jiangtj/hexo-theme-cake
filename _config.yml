@@ -306,14 +306,6 @@ post_edit:
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
-
-# ---------------------------------------------------------------
-# Misc Theme Settings
-# ---------------------------------------------------------------
-
-# Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
-
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
 android_chrome_color: "#222"
 
