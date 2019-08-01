@@ -7,7 +7,7 @@ $scheme    = hexo-config('scheme') ? hexo-config('scheme') : 'Muse';
 // --------------------------------------------------
 @import "_variables/base";
 for $inject_variable in hexo-config('injects.variable')
-  @import "../../../../" + $inject_variable;
+  @import $inject_variable;
 
 @import url($font-family-import) if $font-family-import;
 
@@ -15,7 +15,7 @@ for $inject_variable in hexo-config('injects.variable')
 // --------------------------------------------------
 @import "_mixins/base";
 for $inject_mixin in hexo-config('injects.mixin')
-  @import "../../../../" + $inject_mixin;
+  @import $inject_mixin;
 
 
 // Common Layer
@@ -31,4 +31,4 @@ for $inject_mixin in hexo-config('injects.mixin')
 // Custom Layer
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
-  @import "../../../../" + $inject_style;
+  @import $inject_style;
