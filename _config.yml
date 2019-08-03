@@ -340,6 +340,10 @@ tagcloud:
   end: "#111" # end color (hex, rgba, hsla or color keywords)
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
+# Comments system
+comments:
+  # If you have mutli-comment-system, active this comment when page loaded
+  active:
 
 # Disqus
 disqus:
