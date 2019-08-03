@@ -344,6 +344,8 @@ tagcloud:
 comments:
   # If you want to enable mutli-comment-system, you can active one comment when page loaded.
   active:
+  # If true, storage user selected comment, and active this when page loaded.
+  storage: true
 
 # Disqus
 disqus:
