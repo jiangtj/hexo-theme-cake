@@ -3,11 +3,11 @@
 'use strict';
 
 const path = require('path');
-
 const {iconText} = require('./common');
+const priority = hexo.config.inject_priority || {};
 
 // Add comment
-hexo.extend.filter.register('theme_inject', function(injects) {
+hexo.extend.filter.register('theme_inject', injects => {
   let theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
 
@@ -15,22 +15,22 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 
   injects.bodyEnd.file('valine', path.join(hexo.theme_dir, 'layout/_third-party/comments/valine.swig'));
 
-}, hexo.config.inject_priority_valine);
+}, priority.valine);
 
 // Add post_meta
-hexo.extend.filter.register('theme_inject', function(injects) {
+hexo.extend.filter.register('theme_inject', injects => {
   let theme = hexo.theme.config;
   if (!theme.valine.enable || !theme.valine.appid || !theme.valine.appkey) return;
 
   injects.postMeta.raw('valine', `
   {% if post.comments and (is_post() or theme.valine.comment_count) %}
   <span class="post-meta-item">
-    ${iconText}
-    <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
+    ${iconText('comment-o', 'valine')}
+    <a title="valine" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count valine-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
     </a>
   </span>
   {% endif %}
   `);
 
-}, hexo.config.inject_priority_valine_post_meta);
+}, priority.valine_post_meta);
