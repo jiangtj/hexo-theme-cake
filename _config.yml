@@ -117,7 +117,7 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
-# Enable / Disable menu icons / item badges.
+# Enable / Disable menu icons.
 menu_settings:
   icons: true
 
