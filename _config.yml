@@ -120,7 +120,6 @@ menu:
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
 
 # ---------------------------------------------------------------
 # Sidebar Settings

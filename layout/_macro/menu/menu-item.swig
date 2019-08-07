@@ -13,10 +13,6 @@
       {% set menuIcon = '<i class="menu-item-icon fa fa-fw fa-' + value.split('||')[1] | trim | default('question-circle') + '"></i> <br/>' %}
     {% endif %}
 
-    {% if theme.menu_settings.badges %}
-      {% set menuBadge = partial('_macro/menu/menu-badge.swig', {name}) | trim %}
-    {% endif %}
-
     {{ next_url(menuURL, menuIcon + menuText + menuBadge, {rel: 'section'}) }}
 
   </li>

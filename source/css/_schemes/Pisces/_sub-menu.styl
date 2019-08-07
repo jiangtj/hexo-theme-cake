@@ -26,6 +26,11 @@
     background: initial !important;
     color: $sidebar-highlight;
   }
+
+  & a:after {
+    display:none !important;
+  }
+
 }
 
 .sub-menu .menu-item-active a {
@@ -38,10 +43,4 @@
     border-bottom-color: $sidebar-highlight;
   }
 
-  badges = hexo-config('menu_settings.badges');
-  if not badges {
-    &:after {
-      content: initial;
-    }
-  }
 }

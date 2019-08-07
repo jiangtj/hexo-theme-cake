@@ -15,23 +15,20 @@
 .menu-item-active a {
   background: #f9f9f9;
   border-bottom-color: white;
-
-  badges = hexo-config('menu_settings.badges');
-  if not badges {
-    &:after {
-      content: " ";
-      position: absolute;
-      top: 50%;
-      margin-top: -3px;
-      right: 15px;
-      width: 6px;
-      height: 6px;
-      background-color: $grey;
-      circle();
-    }
+  
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+    background-color: $grey;
+    circle();
   }
-}
 
+}
 .menu .menu-item {
   show();
   margin: 0;
