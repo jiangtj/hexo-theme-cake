@@ -339,12 +339,19 @@ tagcloud:
   end: "#111" # end color (hex, rgba, hsla or color keywords)
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
-# Comments system setting
+# Multiple Comment System Support
 comments:
-  # If you want to enable mutli-comment-system, you can active one comment when page loaded.
+  # Choose a comment system to be displayed by default
+  # Supported values: disqus | livere | valine
   active:
-  # If true, storage user selected comment, and active this when page loaded.
+  # Setting `true` means remembering the comment system selected by the visitor
   storage: true
+  # Modify icons and texts for any style, here are some examples
+  nav:
+    #disqus: disqus
+    #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #gitalk: Load Gitalk
+    #vkontakte: vkontakte
 
 # Disqus
 disqus:
