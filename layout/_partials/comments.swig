@@ -27,7 +27,7 @@
           {%- endif %}
         })
       })
-      let activeClass = '{{theme.comments.active}}';
+      let activeClass = '{{theme.comments.activeClass}}';
       {%- if theme.comments.storage %}
         activeClass = localStorage.getItem('comments_active') || activeClass;
       {%- endif %}
