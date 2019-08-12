@@ -16,6 +16,21 @@ $reward-padding=0.8rem
   margin: 0 auto;
   width: 20rem;
   display: none;
+  animation: reward-ai .3s;
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes reward-ai {
+  from {
+    bottom: 1.5rem;
+    opacity: 0;
+  }
+  to {
+    bottom: 2.5rem;
+    opacity: 1;
+  }
 }
 
 .reward-box-card {
@@ -80,8 +95,3 @@ $reward-padding=0.8rem
 .reward-button:last-child {
   padding-right: $reward-padding + 0.2rem;
 }
-
-// #reward-button span:hover {
-//   background: #F7877F;
-// }
-$reward-padding=1.8rem
