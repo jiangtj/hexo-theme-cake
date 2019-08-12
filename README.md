@@ -1,6 +1,6 @@
 # Hexo Theme Cake
 
-:cake: It's a lovely theme, based on [NexT:7.1.0](https://github.com/theme-next/hexo-theme-next).
+:cake: It's a lovely theme, based on [NexT:7.1.0](https://github.com/theme-next/hexo-theme-next), and some styles come from [inside](https://github.com/ikeq/hexo-theme-inside).
 
 ![Hexo](https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg)
 ![GitHub release](https://img.shields.io/github/release/jiangtj/hexo-theme-cake.svg)
