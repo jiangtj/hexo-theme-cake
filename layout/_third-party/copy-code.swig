@@ -1,4 +1,4 @@
-{% if theme.codeblock.copy_button.enable %}
+{%- if theme.codeblock.copy_button.enable %}
 <script>
   $('.highlight').not('.gist .highlight').each(function(i, e) {
     var $wrap = $('<div>').addClass('highlight-wrap');
@@ -19,10 +19,10 @@
       ta.setSelectionRange(0, code.length);
       ta.readOnly = false;
       var result = document.execCommand('copy');
-      {% if theme.codeblock.copy_button.show_result %}
+      {%- if theme.codeblock.copy_button.show_result %}
         if (result) $(this).text('{{__("post.copy_success")}}');
         else $(this).text('{{__("post.copy_failure")}}');
-      {% endif %}
+      {%- endif %}
       ta.blur(); // For iOS
       $(this).blur();
     })).on('mouseleave', function(e) {
@@ -33,4 +33,4 @@
     }).append(e);
   })
 </script>
-{% endif %}
+{%- endif %}

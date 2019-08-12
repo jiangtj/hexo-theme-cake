@@ -1,14 +1,14 @@
 /**
  * note.js | https://theme-next.org/docs/tag-plugins/note
  * 
- * {% note [type [title]] [icon:disable] %}
+ * {%- note [type [title]] [icon:disable] %}
  * content
- * {% endnote %}
+ * {%- endnote %}
  * 
  * Example:
- * {% note default default title icon:disable %}
+ * {%- note default default title icon:disable %}
  * content
- * {% endnote %}
+ * {%- endnote %}
  * 
  */
 

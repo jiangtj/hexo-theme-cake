@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * {% bilibili aid cid %}
+ * {%- bilibili aid cid %}
  */
 function renderBilibili(args) {
   var aid   = args[0];

@@ -1,21 +1,21 @@
-{% extends '_layout.swig' %}
+{%- extends '_layout.swig' %}
 
-{% block title %}{{ page.title }} | {{ title }}{% endblock %}
+{%- block title %}{{ page.title }} | {{ title }}{%- endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+{%- block page_class %}page-post-detail{%- endblock %}
 
-{% block content %}
+{%- block content %}
 
   <div id="posts" class="posts-expand">
     {{ partial('_macro/post.swig', {post: page}) }}
   </div>
 
-{% endblock %}
+{%- endblock %}
 
-{% block sidebar %}
+{%- block sidebar %}
   {{ partial('_macro/sidebar.swig') }}
-{% endblock %}
+{%- endblock %}
 
-{% block script_extra %}
+{%- block script_extra %}
   {{ partial( '_scripts/pages/post-details.swig', {}, {cache: true}) }}
-{% endblock %}
+{%- endblock %}

@@ -1,15 +1,15 @@
-{% extends '_layout.swig' %}
+{%- extends '_layout.swig' %}
 
-{% block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ title }}{% endblock %}
+{%- block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ title }}{%- endblock %}
 
-{% block content %}
+{%- block content %}
 
-  {% if theme.scheme === 'Neet' %}
+  {%- if theme.scheme === 'Neet' %}
     <div id="posts" class="posts-expand posts-categories-left page-sidebar-moblie-hidden">
       {{ partial( '_neet/page-tags.swig') }}
     </div>
     <div class="posts-categories-right">
-  {% endif %}
+  {%- endif %}
 
   {#################}
   {### TAG BLOCK ###}
@@ -18,15 +18,15 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
+        <{%- if theme.seo %}h2{%- else %}h1{%- endif %}>{#
         #}{{ page.tag }}{#
         #}<small>{{ __('title.tag') }}</small>
-        </{% if theme.seo %}h2{% else %}h1{% endif %}>
+        </{%- if theme.seo %}h2{%- else %}h1{%- endif %}>
       </div>
 
-      {% for post in page.posts %}
+      {%- for post in page.posts %}
         {{ partial('_macro/post-collapse.swig') }}
-      {% endfor %}
+      {%- endfor %}
     </div>
 
   </div>
@@ -34,14 +34,14 @@
   {### END TAG BLOCK ###}
   {#####################}
 
-  {% if theme.scheme === 'Neet' %}
+  {%- if theme.scheme === 'Neet' %}
     </div>
-  {% endif %}
+  {%- endif %}
 
   {{ partial( '_partials/pagination.swig') }}
 
-{% endblock %}
+{%- endblock %}
 
-{% block sidebar %}
+{%- block sidebar %}
   {{ partial('_macro/sidebar.swig') }}
-{% endblock %}
+{%- endblock %}

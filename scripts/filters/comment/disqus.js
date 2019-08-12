@@ -31,14 +31,14 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!theme.disqus.enable || !theme.disqus.shortname || !theme.disqus.count) return;
 
   injects.postMeta.raw('disqus', `
-  {% if post.comments %}
+  {%- if post.comments %}
   <span class="post-meta-item">
     ${iconText('comment-o', 'disqus')}
     <a title="disqus" href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
       <span class="post-comments-count disqus-comment-count" data-disqus-identifier="{{ post.path }}" itemprop="commentCount"></span>
     </a>
   </span>
-  {% endif %}
+  {%- endif %}
   `);
 
 }, priority.disqus_post_meta);

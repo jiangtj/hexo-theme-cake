@@ -12,9 +12,9 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   injects.menu.raw('algolia-search', `
   <li class="menu-item menu-item-search">
     <a href="javascript:;" class="popup-trigger">
-      {% if theme.menu_settings.icons %}
+      {%- if theme.menu_settings.icons %}
         <i class="menu-item-icon fa fa-search fa-fw"></i> <br/>
-      {% endif %}
+      {%- endif %}
       {{ __('menu.search') }}
     </a>
   </li>

@@ -1,27 +1,27 @@
-{% extends '_layout.swig' %}
+{%- extends '_layout.swig' %}
 
-  {% block title %}{#
-  #}{% set page_title_suffix = ' | ' + title %}{#
+  {%- block title %}{#
+  #}{%- set page_title_suffix = ' | ' + title %}{#
 
-  #}{% if page.type === 'categories' and not page.title %}{#
+  #}{%- if page.type === 'categories' and not page.title %}{#
     #}{{ __('title.category') + page_title_suffix }}{#
-  #}{% elif page.type === 'tags' and not page.title %}{#
+  #}{%- elif page.type === 'tags' and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{% else %}{#
+  #}{%- else %}{#
     #}{{ page.title + page_title_suffix }}{#
-  #}{% endif %}{#
-#}{% endblock %}
+  #}{%- endif %}{#
+#}{%- endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+{%- block page_class %}page-post-detail{%- endblock %}
 
-{% block content %}
+{%- block content %}
 
-  {% if theme.scheme === 'Neet' && page.type === 'categories-tags' %}
+  {%- if theme.scheme === 'Neet' && page.type === 'categories-tags' %}
     <div id="posts" class="posts-expand posts-categories-left">
       {{ partial( '_neet/page-categories.swig') }}
     </div>
     {{ partial( '_neet/page-categories-tags.swig') }}
-  {% else %}
+  {%- else %}
 
   <div id="posts" class="posts-expand">
     {##################}
@@ -32,22 +32,22 @@
       {#################}
       {### PAGE BODY ###}
       {#################}
-      <div class="post-body{% if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{% endif %}">
+      <div class="post-body{%- if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {# tagcloud page support #}
-        {% if page.type === 'tags' %}
+        {%- if page.type === 'tags' %}
           <div class="tag-cloud">
             <div class="tag-cloud-title">
               {{ _p('counter.tag_cloud', site.tags.length) }}
             </div>
             <div class="tag-cloud-tags">
-              {% if not theme.tagcloud %}
+              {%- if not theme.tagcloud %}
                 {{ tagcloud({min_font: 12, max_font: 30, amount: 200, color: true, start_color: '#ccc', end_color: '#111'}) }}
-              {% else %}
+              {%- else %}
                 {{ tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) }}
-              {% endif %}
+              {%- endif %}
             </div>
           </div>
-        {% elif page.type === 'categories' %}
+        {%- elif page.type === 'categories' %}
           <div class="category-all-page">
             <div class="category-all-title">
               {{ _p('counter.categories', site.categories.length) }}
@@ -56,13 +56,13 @@
               {{ list_categories() }}
             </div>
           </div>
-        {% else %}
+        {%- else %}
           {{ page.content }}
-        {% endif %}
+        {%- endif %}
     
-        {% if page.reward %}
+        {%- if page.reward %}
           {{ partial( '_partials/post/reward.swig') }}
-        {% endif %}
+        {%- endif %}
 
       </div>
       {#####################}
@@ -74,14 +74,14 @@
     {######################}
   </div>
 
-  {% endif %}
+  {%- endif %}
 
-{% endblock %}
+{%- endblock %}
 
-{% block sidebar %}
+{%- block sidebar %}
   {{ partial('_macro/sidebar.swig') }}
-{% endblock %}
+{%- endblock %}
 
-{% block script_extra %}
+{%- block script_extra %}
   {{ partial( '_scripts/pages/post-details.swig', {}, {cache: true}) }}
-{% endblock %}
+{%- endblock %}

@@ -1,7 +1,7 @@
-  {% set post_class = 'post post-type-' + post.type | default('normal') %}
-  {% if post_extra_class > 0 %}
-    {% set post_class = post_class + ' ' + post_extra_class | default('') %}
-  {% endif %}
+  {%- set post_class = 'post post-type-' + post.type | default('normal') %}
+  {%- if post_extra_class > 0 %}
+    {%- set post_class = post_class + ' ' + post_extra_class | default('') %}
+  {%- endif %}
 
   <article class="{{ post_class }}" itemscope itemtype="http://schema.org/Article">
   {##################}
@@ -25,21 +25,21 @@
       <header class="post-header">
 
         {# title #}
-        {% if post.title %}
+        {%- if post.title %}
           <h2 class="post-title" itemprop="name headline">
-           {% if post.link %}
-              {% set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
-              {% set postText = post.title or post.link %}
+           {%- if post.link %}
+              {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
+              {%- set postText = post.title or post.link %}
               {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {% else %}
-              {% if is_index %}
+            {%- else %}
+              {%- if is_index %}
                 {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
-              {% else -%}
+              {%- else -%}
                 {{- post.title -}}
-              {% endif %}
-            {% endif %}
+              {%- endif %}
+            {%- endif %}
           </h2>
-        {% endif %}
+        {%- endif %}
 
         {{ partial( '_partials/post/meta.swig') }}
 
@@ -48,31 +48,31 @@
     {#################}
     {### POST BODY ###}
     {#################}
-    <div class="post-body{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
+    <div class="post-body{%- if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}" itemprop="articleBody">
 
-      {% if is_index %}
-        {% if post.excerpt %}
+      {%- if is_index %}
+        {%- if post.excerpt %}
           {{ post.excerpt }}
-        {% else %}
-          {% if post.type === 'picture' %}
+        {%- else %}
+          {%- if post.type === 'picture' %}
             <a href="{{ url_for(post.path) }}">{{ post.content }}</a>
-          {% else %}
+          {%- else %}
             {{ post.content }}
-          {% endif %}
-        {% endif %}
+          {%- endif %}
+        {%- endif %}
 
         {{ partial( '_partials/post/read-more.swig') }}
 
-      {% else %}
+      {%- else %}
         {{ post.content }}
-      {% endif %}
+      {%- endif %}
     </div>
 
-    {% if not is_index %}
-      {% for inject_item in theme.injects.postBodyEnd %}
+    {%- if not is_index %}
+      {%- for inject_item in theme.injects.postBodyEnd %}
         {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-      {% endfor %}
-    {% endif %}
+      {%- endfor %}
+    {%- endif %}
 
     {#####################}
     {### END POST BODY ###}
@@ -80,32 +80,32 @@
 
     <footer class="post-footer">
 
-      {% if not is_index and (post.prev or post.next) %}
+      {%- if not is_index and (post.prev or post.next) %}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            {% if post.next %}
+            {%- if post.next %}
               <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
                 <i class="fa fa-chevron-left"></i> {{ post.next.title }}
               </a>
-            {% endif %}
+            {%- endif %}
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            {% if post.prev %}
+            {%- if post.prev %}
               <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
                 {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
               </a>
-            {% endif %}
+            {%- endif %}
           </div>
         </div>
-      {% endif %}
+      {%- endif %}
 
-      {% set isLast = loop.index % page.per_page === 0 %}
-      {% if is_index and not isLast %}
+      {%- set isLast = loop.index % page.per_page === 0 %}
+      {%- if is_index and not isLast %}
         <div class="post-eof"></div>
-      {% endif %}
+      {%- endif %}
     </footer>
   </div>
   {######################}

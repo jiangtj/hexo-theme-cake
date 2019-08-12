@@ -1,21 +1,21 @@
-{% extends '_layout.swig' %}
+{%- extends '_layout.swig' %}
 
-{% block title %}{{ title }}{% if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{% endif %}{% endblock %}
+{%- block title %}{{ title }}{%- if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{%- endif %}{%- endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+{%- block page_class %}
+  {%- if is_home() %}page-home{%- endif -%}
+{%- endblock %}
 
-{% block content %}
+{%- block content %}
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
+    {%- for post in page.posts %}
       {{ partial('_macro/post.swig', {is_index: true}) }}
-    {% endfor %}
+    {%- endfor %}
   </section>
 
   {{ partial( '_partials/pagination.swig') }}
-{% endblock %}
+{%- endblock %}
 
-{% block sidebar %}
+{%- block sidebar %}
   {{ partial('_macro/sidebar.swig') }}
-{% endblock %}
+{%- endblock %}

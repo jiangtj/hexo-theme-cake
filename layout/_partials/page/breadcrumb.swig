@@ -1,11 +1,11 @@
-{% if page.breadcrumb %}
+{%- if page.breadcrumb %}
   <ul class="breadcrumb">
-    {% for name,path in page.breadcrumb %}
-      {% if path %}
+    {%- for name,path in page.breadcrumb %}
+      {%- if path %}
         <li><a href="{{ url_for(path) }}">{{ name | upper }}</a></li>
-      {% else %}
+      {%- else %}
         <li>{{ name | upper }}</li>
-      {% endif %}
-    {% endfor %}
+      {%- endif %}
+    {%- endfor %}
   </ul>
-{% endif %}
+{%- endif %}
