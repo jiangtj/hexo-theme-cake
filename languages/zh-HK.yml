@@ -87,9 +87,3 @@ accessibility:
   nav_toggle: 切換導航欄
   prev_page: 上一頁
   next_page: 下一頁
-symbols_count_time:
-  count: 本文字數
-  count_total: 站點總字數
-  time: 閱讀時長
-  time_total: 站點閱讀時長
-  time_minutes: 分鍾
