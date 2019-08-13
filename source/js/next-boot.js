@@ -26,6 +26,7 @@ $(document).ready(function() {
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
   CONFIG.tabs && NexT.utils.registerTabsTag();
+  NexT.utils.registerActiveMenuItem();
 
   NexT.utils.embeddedVideoTransformer();
 
