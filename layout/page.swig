@@ -16,25 +16,13 @@
 
 {%- block content %}
 
-  {%- if theme.scheme === 'Neet' && page.type === 'categories-tags' %}
-    <div id="posts" class="posts-expand posts-categories-left">
-      {{ partial( '_neet/page-categories.swig') }}
-    </div>
-    {{ partial( '_neet/page-categories-tags.swig') }}
-  {%- else %}
 
+  {%- if page.type === 'tags' %}
   <div id="posts" class="posts-expand">
-    {##################}
-    {### PAGE BLOCK ###}
-    {##################}
     <div class="post-block page">
       {{ partial( '_partials/page/page-header.swig') }}
-      {#################}
-      {### PAGE BODY ###}
-      {#################}
       <div class="post-body{%- if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {# tagcloud page support #}
-        {%- if page.type === 'tags' %}
           <div class="tag-cloud">
             <div class="tag-cloud-title">
               {{ _p('counter.tag_cloud', site.tags.length) }}
@@ -47,7 +35,16 @@
               {%- endif %}
             </div>
           </div>
-        {%- elif page.type === 'categories' %}
+      </div>
+    </div>
+  </div>
+
+
+  {%- elif page.type === 'categories' %}
+  <div id="posts" class="posts-expand">
+    <div class="post-block page">
+      {{ partial( '_partials/page/page-header.swig') }}
+      <div class="post-body{%- if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
           <div class="category-all-page">
             <div class="category-all-title">
               {{ _p('counter.categories', site.categories.length) }}
@@ -56,24 +53,15 @@
               {{ list_categories() }}
             </div>
           </div>
-        {%- else %}
-          {{ page.content }}
-        {%- endif %}
-    
-        {%- if page.reward %}
-          {{ partial( '_partials/post/reward.swig') }}
-        {%- endif %}
-
       </div>
-      {#####################}
-      {### END PAGE BODY ###}
-      {#####################}
     </div>
-    {######################}
-    {### END PAGE BLOCK ###}
-    {######################}
   </div>
 
+  
+  {%- else %}
+    <div id="posts" class="posts-expand">
+      {{ partial('_macro/post.swig', {post: page}) }}
+    </div>
   {%- endif %}
 
 {%- endblock %}

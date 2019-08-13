@@ -1,3 +1,4 @@
+{%- if is_post() %}
 {%- set ccLicense = theme.creative_commons.license | lower %}
 {%- set ccLanguage = theme.creative_commons.language %}
 {%- set ccIcon = '<i class="fa fa-fw fa-creative-commons"></i>' %}
@@ -26,3 +27,4 @@
 #}</li>
 </ul>
 </div>
+{%- endif %}

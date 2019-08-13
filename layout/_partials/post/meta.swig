@@ -4,7 +4,7 @@
           {%- set time_diff = time(post.date) != time(post.updated) %}
           {%- set datetime_diff = date_diff or time_diff %}
 
-          {%- if theme.post_meta.created_at %}
+          {%- if theme.post_meta.created_at and is_post() %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
@@ -23,7 +23,7 @@
             </span>
           {%- endif %}
 
-            {%- if theme.post_meta.updated_at.enable && datetime_diff %}
+            {%- if theme.post_meta.updated_at.enable and datetime_diff and is_post() %}
               {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
 
               {%- if display_updated or !theme.post_meta.created_at %}
@@ -40,7 +40,7 @@
             {%- endif %}
           </span>
 
-          {%- if post.categories and post.categories.length and theme.post_meta.categories %}
+          {%- if is_post() and post.categories and post.categories.length and theme.post_meta.categories %}
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
