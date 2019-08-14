@@ -60,14 +60,14 @@
   
   {%- else %}
     <div id="posts" class="posts-expand">
-      {{ partial('_macro/post.swig', {post: page}) }}
+      {{ partial('_partials/post.swig', {post: page}) }}
     </div>
   {%- endif %}
 
 {%- endblock %}
 
 {%- block sidebar %}
-  {{ partial('_macro/sidebar.swig') }}
+  {{ partial('_partials/sidebar.swig') }}
 {%- endblock %}
 
 {%- block script_extra %}

@@ -25,7 +25,7 @@
       </div>
 
       {%- for post in page.posts %}
-        {{ partial('_macro/post-collapse.swig') }}
+        {{ partial('_partials/post-collapse.swig') }}
       {%- endfor %}
     </div>
 
@@ -43,5 +43,5 @@
 {%- endblock %}
 
 {%- block sidebar %}
-  {{ partial('_macro/sidebar.swig') }}
+  {{ partial('_partials/sidebar.swig') }}
 {%- endblock %}

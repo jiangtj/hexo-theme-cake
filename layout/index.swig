@@ -9,7 +9,7 @@
 {%- block content %}
   <section id="posts" class="posts-expand">
     {%- for post in page.posts %}
-      {{ partial('_macro/post.swig', {is_index: true}) }}
+      {{ partial('_partials/post.swig', {is_index: true}) }}
     {%- endfor %}
   </section>
 
@@ -17,5 +17,5 @@
 {%- endblock %}
 
 {%- block sidebar %}
-  {{ partial('_macro/sidebar.swig') }}
+  {{ partial('_partials/sidebar.swig') }}
 {%- endblock %}

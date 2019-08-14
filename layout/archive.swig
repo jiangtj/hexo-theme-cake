@@ -43,7 +43,7 @@
         {%- endif %}
         {# endshow #}
 
-        {{ partial('_macro/post-collapse.swig') }}
+        {{ partial('_partials/post-collapse.swig') }}
 
       {%- endfor %}
 
@@ -58,5 +58,5 @@
 {%- endblock %}
 
 {%- block sidebar %}
-  {{ partial('_macro/sidebar.swig') }}
+  {{ partial('_partials/sidebar.swig') }}
 {%- endblock %}
