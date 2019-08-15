@@ -1,6 +1,6 @@
 'use strict';
 
-const { merge } = require("lodash");
+const { merge } = require('lodash');
 
 module.exports = function(hexo) {
 
@@ -17,7 +17,7 @@ module.exports = function(hexo) {
   if (data && data.languages) {
     var lang = hexo.config.language;
     var i18n = hexo.theme.i18n;
-    var mergeLang = function (lang) {
+    var mergeLang = function(lang) {
       i18n.set(lang, merge(i18n.get([lang]), data.languages[lang]));
     };
     if (Array.isArray(lang)) {

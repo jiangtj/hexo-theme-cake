@@ -23,7 +23,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
 // add to reward style
 hexo.extend.filter.register('theme_inject', function(injects) {
   let rewards = hexo.theme.config.reward;
-  
+
   if (!rewards) {
     hexo.theme.config.reward_settings.enable = false;
     return;
@@ -36,5 +36,5 @@ hexo.extend.filter.register('theme_inject', function(injects) {
       reward_name,
       reward_item
     }, {cache: true});
-  })
+  });
 });

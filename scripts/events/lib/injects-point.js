@@ -14,8 +14,8 @@ module.exports = {
     'menu'
   ],
   styles: [
-    'variable', 
-    'mixin', 
+    'variable',
+    'mixin',
     'style'
   ]
 };

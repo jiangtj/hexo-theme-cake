@@ -1,15 +1,15 @@
 /**
  * note.js | https://theme-next.org/docs/tag-plugins/note
- * 
+ *
  * {%- note [type [title]] [icon:disable] %}
  * content
  * {%- endnote %}
- * 
+ *
  * Example:
  * {%- note default default title icon:disable %}
  * content
  * {%- endnote %}
- * 
+ *
  */
 
 /* global hexo */
