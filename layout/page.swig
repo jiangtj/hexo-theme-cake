@@ -25,7 +25,7 @@
         {# tagcloud page support #}
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              {{ _p('counter.tag_cloud', site.tags.length) }}
+              {{ _p('counter.tag_cloud', site.valid_tags.length) }}
             </div>
             <div class="tag-cloud-tags">
               {%- if not theme.tagcloud %}
@@ -47,7 +47,7 @@
       <div class="post-body{%- if page.direction && page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
           <div class="category-all-page">
             <div class="category-all-title">
-              {{ _p('counter.categories', site.categories.length) }}
+              {{ _p('counter.categories', site.valid_categories.length) }}
             </div>
             <div class="category-all">
               {{ list_categories() }}
