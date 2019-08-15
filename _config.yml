@@ -198,7 +198,7 @@ sidebar:
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
   display: post
-  
+
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: true
   # Click any blank part of the page to close sidebar (only for Muse | Mist).
@@ -224,9 +224,6 @@ text_align:
 
 # Automatically scroll page to section which is under <!-- more --> mark.
 scroll_to_more: true
-
-# Automatically saving scroll position on each post / page in cookies.
-save_scroll: false
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
