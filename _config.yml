@@ -462,6 +462,9 @@ pace:
 # Set jquery cdn
 jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
+# Set fontawesome cdn
+fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+
 # Script Vendors. Set a CDN address for the vendor you want to customize.
 # For example
 #   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
@@ -471,12 +474,6 @@ vendors:
   # Internal path prefix. Please do not edit it.
   _internal: lib
 
-  # Internal version: 4.6.2
-  # See: https://fontawesome.com
-  # Example:
-  # fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css
-  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
-  fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 
   # Internal version: 2.10.4
   # See: https://www.algolia.com
@@ -500,6 +497,4 @@ vendors:
   valine:
 
 # Assets
-css: css
 js: js
-images: images

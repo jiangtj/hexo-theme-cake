@@ -24,13 +24,8 @@
   <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}"/>
 {%- endif %}
 
-{%- set font_awesome_uri = url_for(theme.vendors._internal + '/font-awesome/css/font-awesome.min.css?v=4.6.2') %}
-{%- if theme.vendors.fontawesome %}
-  {%- set font_awesome_uri = theme.vendors.fontawesome %}
-{%- endif %}
-<link rel="stylesheet" href="{{ font_awesome_uri }}"/>
-
-<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css?v={{ version }}"/>
+<link rel="stylesheet" href="{{ theme.fontawesome }}"/>
+{{ css('css/main.css?v=' + version) }}
 
 {%- if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">

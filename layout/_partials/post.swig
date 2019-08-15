@@ -14,7 +14,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ author }}"/>
       <meta itemprop="description" content="{{ description }}"/>
-      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"/>
+      <meta itemprop="image" content="{{ url_for( theme.avatar.url | default('images/avatar.gif') ) }}"/>
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}"/>

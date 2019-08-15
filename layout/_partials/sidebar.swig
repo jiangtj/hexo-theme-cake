@@ -27,7 +27,7 @@
           <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
             {%- if theme.avatar.url %}
               <img class="site-author-image" itemprop="image"
-                src="{{ url_for( theme.avatar.url | default(theme.images + '/avatar.gif') ) }}"
+                src="{{ url_for( theme.avatar.url | default('images/avatar.gif') ) }}"
                 alt="{{ author }}"/>
             {%- endif %}
               <p class="site-author-name" itemprop="name">{{ author }}</p>
@@ -103,7 +103,7 @@
                 {%- set ccType = 'licenses/' + theme.creative_commons.license + '/4.0/' + ccLanguage %}
               {%- endif %}
               {%- set ccURL = 'https://creativecommons.org/' + ccType %}
-              {%- set ccImage = '<img src="' + url_for(theme.images + '/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons"/>' %}
+              {%- set ccImage = '<img src="' + url_for('images/cc-' + theme.creative_commons.license + '.svg') + '" alt="Creative Commons"/>' %}
               {{ next_url(ccURL, ccImage, {class: 'cc-opacity'}) }}
              </div>
           {%- endif %}
@@ -126,7 +126,7 @@
           {%- endif %}
 
           {{- next_inject('sidebar') }}
-          
+
         </div>
       </div>
 
