@@ -15,9 +15,7 @@
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: true}) }}
   {{ partial( '_partials/head/head-unique.swig') }}
-  {%- for inject_item in theme.injects.head %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('head') }}
   <title>{%- block title %}{%- endblock %}</title>
   {{ partial( '_third-party/analytics/index.swig') }}
 </head>
@@ -78,9 +76,7 @@
   {{ partial( '_scripts/scroll-cookie.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
 
-  {%- for inject_item in theme.injects.bodyEnd %}
-    {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-  {%- endfor %}
+  {{- next_inject('bodyEnd') }}
 
 </body>
 </html>

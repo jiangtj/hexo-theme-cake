@@ -69,9 +69,7 @@
     </div>
 
     {%- if not is_index %}
-      {%- for inject_item in theme.injects.postBodyEnd %}
-        {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
-      {%- endfor %}
+      {{- next_inject('postBodyEnd') }}
     {%- endif %}
 
     {#####################}
