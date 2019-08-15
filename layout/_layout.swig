@@ -71,9 +71,8 @@
   </div>
 
   {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
-  {%- block script_extra %}{%- endblock %}
-  {{ partial( '_scripts/next-boot.swig', {}, {cache: true}) }}
   {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
+  {%- block script_extra %}{%- endblock %}
 
   {{- next_inject('bodyEnd') }}
 

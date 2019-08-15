@@ -57,7 +57,7 @@
     </div>
   </div>
 
-  
+
   {%- else %}
     <div id="posts" class="posts-expand">
       {{ partial('_partials/post.swig', {post: page}) }}
@@ -71,5 +71,5 @@
 {%- endblock %}
 
 {%- block script_extra %}
-  {{ partial( '_scripts/pages/post-details.swig', {}, {cache: true}) }}
+  {{ partial( '_scripts/post.swig', {}, {cache: true}) }}
 {%- endblock %}

@@ -17,5 +17,5 @@
 {%- endblock %}
 
 {%- block script_extra %}
-  {{ partial( '_scripts/pages/post-details.swig', {}, {cache: true}) }}
+  {{ partial( '_scripts/post.swig', {}, {cache: true}) }}
 {%- endblock %}
