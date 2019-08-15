@@ -232,15 +232,6 @@ NexT.utils = NexT.$u = {
     return CONFIG.scheme === 'Gemini';
   },
 
-  getScrollbarWidth: function() {
-    var $div = $('<div />').addClass('scrollbar-measure').prependTo('body');
-    var div = $div[0];
-    var scrollbarWidth = div.offsetWidth - div.clientWidth;
-    $div.remove();
-
-    return scrollbarWidth;
-  },
-
   getContentVisibilityHeight: function() {
     var docHeight = $('.container').height();
     var winHeight = $(window).height();
@@ -292,15 +283,6 @@ $(document).ready(function() {
         updateSidebarHeight(sidebarWrapperHeight);
       }, 0);
     });
-
-    // Initialize Sidebar & TOC Width.
-    var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    if ($('.site-overview-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.site-overview').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
-    }
-    if ($('.post-toc-wrap').height() > (document.body.clientHeight - NexT.utils.getSidebarSchemePadding())) {
-      $('.post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
-    }
 
     // Initialize Sidebar & TOC Height.
     updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
