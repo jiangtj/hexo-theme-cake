@@ -39,7 +39,7 @@ function postNote(args, content) {
     }
 
     if (args.length > 0) {
-      title = "<header>" + args.join(" ") + "</header>";
+      title = '<header>' + args.join(' ') + '</header>';
     }
 
   }
