@@ -4,7 +4,7 @@
 
 hexo.on('generateBefore', function () {
   // Merge config.
-  require('./config')(hexo);
+  require('./lib/config')(hexo);
   // Add filter type `theme_inject`.
-  require('./injects')(hexo);
+  require('./lib/injects')(hexo);
 });
