@@ -5,8 +5,13 @@
 hexo.extend.filter.register('template_locals', (locals) => {
   const { page, theme } = locals;
   let key = page.include;
-  if (key) {
-    let data = hexo.locals.get('data');
-    Object.assign(page, theme[key], hexo.config[key], data[key]);
+  if (!key) return;
+
+  let data = hexo.locals.get('data');
+  if (!Array.isArray(key)) {
+    key = [key];
   }
+
+  key.forEach(item => Object.assign(page, theme[item], hexo.config[item], data[item]));
+
 });
