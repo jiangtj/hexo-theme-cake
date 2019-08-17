@@ -1,7 +1,6 @@
 @import "../Pisces/_layout";
 @import "../Pisces/_brand";
 @import "../Pisces/_menu";
-@import "../Pisces/_sub-menu";
 @import "../Pisces/_sidebar";
 
 // =================================================
@@ -94,22 +93,6 @@ use_seo = hexo-config('seo');
 }
 .footer {
   bottom: auto;
-}
-
-// Sub-menu(s).
-.sub-menu {
-  // Adapt submenu(s) with post-blocks.
-  &+ #content > #posts {
-    .post-block {
-      margin-top: $sidebar-offset;
-      +tablet() {
-        margin-top: $content-tablet-padding;
-      }
-      +mobile() {
-        margin-top: $content-mobile-padding;
-      }
-    }
-  }
 }
 
 // =================================================

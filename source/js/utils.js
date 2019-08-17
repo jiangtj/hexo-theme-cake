@@ -7,14 +7,19 @@ NexT.utils = NexT.$u = {
    * Todo simpler
    */
   registerActiveMenuItem: function() {
-    $('.menu-item').each(function() {
-      var target = $(this).find('a[href]')[0];
+    document.querySelectorAll('#menu .menu-item').forEach(element => {
+      var target = element.querySelector('a[href]');
       var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       var isSubPath = target.pathname !== '/' && location.pathname.indexOf(target.pathname) === 0;
       if (target.hostname === location.hostname && (isSamePath || isSubPath)) {
-        $(this).addClass('menu-item-active');
-      } else {
-        $(this).removeClass('menu-item-active');
+        element.classList.add('menu-item-active');
+      }
+    });
+    document.querySelectorAll('#sub-menu .menu-item').forEach(element => {
+      var target = element.querySelector('a[href]');
+      var isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
+      if (target.hostname === location.hostname && isSamePath) {
+        element.classList.add('menu-item-active');
       }
     });
   },
