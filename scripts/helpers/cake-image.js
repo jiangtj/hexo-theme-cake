@@ -2,14 +2,24 @@
 
 'use strict';
 
-hexo.extend.helper.register('cake_image', function(url) {
+hexo.extend.helper.register('cake_image', function(url, options) {
   let theme = hexo.theme.config;
   url = this.url_for(url);
   let src = `src="${url}"`;
+
+  let innerOptions = Object.assign({
+    zoomable: theme.medium_zoom.enable,
+    lozad   : theme.lozad.enable
+  }, options);
+
   let zoomable = '';
-  if (theme.medium_zoom.enable) {
-    src = `data-src="${url}"`;
+  if (innerOptions.zoomable) {
     zoomable = 'data-zoomable="true"';
   }
+
+  if (innerOptions.lozad) {
+    src = `data-src="${url}"`;
+  }
+
   return `<img ${src} ${zoomable} itemprop="image"/>`;
 });
