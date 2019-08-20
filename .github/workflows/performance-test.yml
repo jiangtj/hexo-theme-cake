@@ -1,0 +1,40 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install hexo
+      run: |
+        npm install -g hexo-cli
+        hexo init ./
+    - name: Checkout theme
+      uses: actions/checkout@v1
+      with:
+        path: themes/cake
+    - name: Init test env
+      run: |
+        git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
+    - name: Run test
+      run: |
+        hexo config theme cake
+        echo 'Test performance running ... '
+        hexo cl > /dev/null
+        cat _config.yml | grep '^theme:'
+        hexo g > run.log
+        cat run.log | grep 'Files loaded in'
+        cat run.log | grep 'generated in'
+        echo '-------------------------------------'
+
