@@ -20,14 +20,15 @@ jobs:
       run: |
         npm install -g hexo-cli
         hexo init ./
-        npm install
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
+        pwd
     - name: Checkout theme
       uses: actions/checkout@v1
       with:
         path: hexo-theme-cake/themes/cake
     - name: Run test
       run: |
+        pwd
         echo 'aaaaaaaa1'
         ls -al
         cd ../
@@ -36,10 +37,6 @@ jobs:
         cd ../
         echo 'aaaaaaaa3'
         ls -al
-        npm install
-        cd themes/cake
-        ls -al
-        cd ../../
         hexo config theme cake
         echo 'Test performance running ... '
         hexo cl > /dev/null
