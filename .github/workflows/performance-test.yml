@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v1
       with:
         path: themes/cake
-    - name: Run test
+    - name: Install hexo
       run: |
         cd ../../
         npm install -g hexo-cli
@@ -29,12 +29,14 @@ jobs:
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
-        
+    - name: Test default theme
+      run: |
         echo 'Test default theme'
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
-        
-        echo 'Test cake theme'
+    - name: Test cake theme
+      run: |
         hexo config theme cake
+        echo 'Test cake theme'
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
