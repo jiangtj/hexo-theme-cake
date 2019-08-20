@@ -25,7 +25,7 @@ jobs:
     - name: Checkout theme
       uses: actions/checkout@v1
       with:
-        path: themes/cake
+        path: hexo-theme-cake/themes/cake
     - name: Run test
       run: |
         echo 'aaaaaaaa1'
