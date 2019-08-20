@@ -29,8 +29,12 @@ jobs:
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
+        pwd
+        ls -al
     - name: Test default theme
       run: |
+        pwd
+        ls -al
         echo 'Test default theme'
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
