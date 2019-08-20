@@ -31,10 +31,10 @@ jobs:
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
         
         echo 'Test default theme'
-        ./sh/run-hexo
-        ./sh/run-hexo
+        ./sh/run-hexo.sh
+        ./sh/run-hexo.sh
         
         echo 'Test cake theme'
         hexo config theme cake
-        ./sh/run-hexo
-        ./sh/run-hexo
+        ./sh/run-hexo.sh
+        ./sh/run-hexo.sh
