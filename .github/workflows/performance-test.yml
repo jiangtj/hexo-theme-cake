@@ -20,6 +20,7 @@ jobs:
       run: |
         npm install -g hexo-cli
         hexo init ./
+        npm install
     - name: Checkout theme
       uses: actions/checkout@v1
       with:
