@@ -36,11 +36,13 @@ jobs:
         pwd
         ls -al
         echo 'Test default theme'
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
+        #sh ./sh/run-hexo.sh
+        #sh ./sh/run-hexo.sh
     - name: Test cake theme
       run: |
+        pwd
+        ls -al
         hexo config theme cake
         echo 'Test cake theme'
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
+        #sh ./sh/run-hexo.sh
+        #sh ./sh/run-hexo.sh
