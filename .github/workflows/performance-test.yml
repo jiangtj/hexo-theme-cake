@@ -1,9 +1,9 @@
-name: Node CI
+name: Performance Test
 
 on: [push]
 
 jobs:
-  build:
+  run:
 
     runs-on: ubuntu-latest
 
@@ -31,10 +31,10 @@ jobs:
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
         
         echo 'Test default theme'
-        sh sh/run-hexo.sh
-        sh sh/run-hexo.sh
+        ./sh/run-hexo
+        ./sh/run-hexo
         
         echo 'Test cake theme'
         hexo config theme cake
-        sh sh/run-hexo.sh
-        sh sh/run-hexo.sh
+        ./sh/run-hexo
+        ./sh/run-hexo
