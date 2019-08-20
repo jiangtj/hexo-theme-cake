@@ -1,9 +1,9 @@
-name: Node CI
+name: Performance Test
 
 on: [push]
 
 jobs:
-  build:
+  run:
 
     runs-on: ubuntu-latest
 
@@ -16,26 +16,25 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install hexo
-      run: |
-        npm install -g hexo-cli
-        hexo init ./
-        npm install
     - name: Checkout theme
       uses: actions/checkout@v1
       with:
         path: themes/cake
-    - name: Init test env
-      run: |
-        git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
     - name: Run test
       run: |
+        cd ../../
+        npm install -g hexo-cli
+        hexo init test
+        mv themes/cake test/themes/cake
+        cd test
+        git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
+        git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
+        
+        echo 'Test default theme'
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        
+        echo 'Test cake theme'
         hexo config theme cake
-        echo 'Test performance running ... '
-        hexo cl > /dev/null
-        cat _config.yml | grep '^theme:'
-        hexo g > run.log
-        cat run.log | grep 'Files loaded in'
-        cat run.log | grep 'generated in'
-        echo '-------------------------------------'
-
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
