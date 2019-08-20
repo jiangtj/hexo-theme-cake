@@ -16,27 +16,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install hexo
-      run: |
-        npm install -g hexo-cli
-        hexo init ./
-        git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
-        pwd
     - name: Checkout theme
       uses: actions/checkout@v1
       with:
-        path: hexo-theme-cake/themes/cake
+        path: themes/cake
     - name: Run test
       run: |
-        pwd
-        echo 'aaaaaaaa1'
-        ls -al
-        cd ../
-        echo 'aaaaaaaa2'
-        ls -al
-        cd ../
-        echo 'aaaaaaaa3'
-        ls -al
+        cd ../../
+        npm install -g hexo-cli
+        hexo init test
+        mv themes/cake test/themes/cake
+        cd test
+        git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         hexo config theme cake
         echo 'Test performance running ... '
         hexo cl > /dev/null
