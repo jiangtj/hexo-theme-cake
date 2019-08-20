@@ -28,12 +28,13 @@ jobs:
         mv themes/cake test/themes/cake
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
+        git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
+        
+        echo 'Test default theme'
+        sh sh/run-hexo.sh
+        sh sh/run-hexo.sh
+        
+        echo 'Test cake theme'
         hexo config theme cake
-        echo 'Test performance running ... '
-        hexo cl > /dev/null
-        cat _config.yml | grep '^theme:'
-        hexo g > run.log
-        cat run.log | grep 'Files loaded in'
-        cat run.log | grep 'generated in'
-        echo '-------------------------------------'
-
+        sh sh/run-hexo.sh
+        sh sh/run-hexo.sh
