@@ -17,11 +17,7 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   injects.bodyEnd.raw('medium-zoom', `
   <script src="${mediumZoom.cdn}" crossorigin="anonymous"></script>
   <script>
-    const images = [
-      ...document.querySelectorAll('.post-body img'),
-      ...document.querySelectorAll('[data-zoomable]'),
-    ]
-    mediumZoom(images);
+    mediumZoom('${mediumZoom.selector}');
   </script>
   `, {}, {cache: true});
 });
