@@ -57,6 +57,9 @@
     back2top: {{ theme.back2top.enable }},
     back2top_sidebar: {{ theme.back2top.sidebar }},
     tabs: {{ theme.tabs.enable }},
+    scroll: {
+      save: {{ theme.scroll.save }}
+    },
     algolia: {
       applicationID: '{{ theme.algolia.applicationID }}',
       apiKey: '{{ theme.algolia.apiKey }}',

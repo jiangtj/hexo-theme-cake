@@ -222,8 +222,10 @@ text_align:
   desktop: justify
   mobile: justify
 
-# Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
+# Scroll behavior.
+scroll:
+  more: true
+  save: false
 
 # Read more button
 # If true, the read more button would be displayed in excerpt section.
