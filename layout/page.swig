@@ -71,5 +71,5 @@
 {%- endblock %}
 
 {%- block script_extra %}
-  {{ partial( '_scripts/post.swig', {}, {cache: true}) }}
+  {{- next_js('scrollspy.js','post-details.js') }}
 {%- endblock %}
