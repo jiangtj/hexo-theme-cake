@@ -210,33 +210,6 @@ NexT.utils = NexT.$u = {
     return selector.replace(/[!"$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
   },
 
-  displaySidebar: function() {
-    if (!this.isDesktop() || this.isPisces() || this.isGemini()) {
-      return;
-    }
-    $('.sidebar-toggle').trigger('click');
-  },
-
-  isMuse: function() {
-    return CONFIG.scheme === 'Muse';
-  },
-
-  isNeet: function() {
-    return CONFIG.scheme === 'Neet';
-  },
-
-  isMist: function() {
-    return CONFIG.scheme === 'Mist';
-  },
-
-  isPisces: function() {
-    return CONFIG.scheme === 'Pisces';
-  },
-
-  isGemini: function() {
-    return CONFIG.scheme === 'Gemini';
-  },
-
   getContentVisibilityHeight: function() {
     var docHeight = $('.container').height();
     var winHeight = $(window).height();
@@ -254,9 +227,7 @@ NexT.utils = NexT.$u = {
     var sidebarInner = $('.sidebar-inner');
     var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
     var sidebarOffset = CONFIG.sidebar.offset ? CONFIG.sidebar.offset : 12;
-    var sidebarSchemePadding = this.isPisces() || this.isGemini()
-      ? (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight()
-      : (sidebarPadding * 2) + (sidebarNavHeight / 2);
+    var sidebarSchemePadding = (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight();
     return sidebarSchemePadding;
   }
 };

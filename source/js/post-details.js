@@ -80,7 +80,4 @@ $(document).ready(function() {
     var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
     display = isSidebarCouldDisplay && hasTOC;
   }
-  if (display) {
-    NexT.utils.displaySidebar();
-  }
 });
