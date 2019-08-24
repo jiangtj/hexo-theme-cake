@@ -133,28 +133,31 @@ NexT.utils = NexT.$u = {
       $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
     }
 
+    let intersectingTargets = [];
+
     function findIndex(entries) {
-      let index = 0;
-      let entry = entries[index];
-      if (entry.boundingClientRect.top > 0) {
-        index = sections.indexOf(entry.target);
-        return index === 0 ? 0 : index - 1;
-      }
-      for (;index < entries.length; index++) {
-        if (entries[index].boundingClientRect.top <= 0) {
-          entry = entries[index];
+      entries = entries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      entries.forEach(item => {
+        if (item.isIntersecting) {
+          intersectingTargets.push(item.target);
         } else {
-          return sections.indexOf(entry.target);
+          intersectingTargets = intersectingTargets.filter(target => target !== item.target);
         }
+      });
+      console.log(intersectingTargets);
+      if (intersectingTargets.length === 0) {
+        return 0;
       }
-      return sections.indexOf(entry.target);
+      let target = intersectingTargets[intersectingTargets.length - 1];
+      let index = sections.indexOf(target);
+      return index;
     }
 
     const intersectionObserver = new IntersectionObserver(entries => {
       let index = findIndex(entries);
       activateNavByIndex(navItems[index]);
     }, {
-      rootMargin: '0px 0px -100% 0px',
+      rootMargin: '100000px 0px -100% 0px',
       threshold : 0
     });
 
