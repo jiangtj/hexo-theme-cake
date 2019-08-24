@@ -2,31 +2,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="{{ theme.android_chrome_color }}"/>
-
-{%- if theme.disable_baidu_transformation %}
-  <meta http-equiv="Cache-Control" content="no-transform"/>
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
-{%- endif %}
-
-{%- if theme.google_site_verification %}
-  <meta name="google-site-verification" content="{{ theme.google_site_verification }}"/>
-{%- endif %}
-
-{%- if theme.bing_site_verification %}
-  <meta name="msvalidate.01" content="{{ theme.bing_site_verification }}"/>
-{%- endif %}
-
-{%- if theme.yandex_site_verification %}
-  <meta name="yandex-verification" content="{{ theme.yandex_site_verification }}"/>
-{%- endif %}
-
-{%- if theme.baidu_site_verification %}
-  <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}"/>
-{%- endif %}
-
 <link rel="stylesheet" href="{{ theme.fontawesome }}"/>
 {{ css('css/main.css?v=' + version) }}
-
 {%- if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
 {%- endif %}

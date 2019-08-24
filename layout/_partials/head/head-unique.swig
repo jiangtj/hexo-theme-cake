@@ -12,10 +12,3 @@
   {%- set without_html = without_index.replace('.html', '') %}
   <link rel="canonical" href="{{ without_html }}"/>
 {%- endif %}
-
-{# Exports some front-matter variables to Front-End #}
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: {{ page.sidebar | json_encode }},
-  };
-</script>

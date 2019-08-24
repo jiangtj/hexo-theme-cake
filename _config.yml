@@ -65,9 +65,6 @@ creative_commons:
 # SEO Settings
 # ---------------------------------------------------------------
 
-# Disable Baidu transformation on mobile devices.
-disable_baidu_transformation: false
-
 # Set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
@@ -79,22 +76,6 @@ seo: false
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
 index_with_subtitle: false
-
-# Google Webmaster tools verification.
-# See: https://www.google.com/webmasters
-#google_site_verification:
-
-# Bing Webmaster tools verification.
-# See: https://www.bing.com/webmaster
-#bing_site_verification:
-
-# Yandex Webmaster tools verification.
-# See: https://webmaster.yandex.ru
-#yandex_site_verification:
-
-# Baidu Webmaster tools verification.
-# See: https://ziyuan.baidu.com/site
-#baidu_site_verification:
 
 # ---------------------------------------------------------------
 # Menu Settings
