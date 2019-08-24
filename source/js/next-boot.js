@@ -21,6 +21,32 @@ $(document).ready(function() {
     });
   });
 
+  // sidebar nav
+  var TAB_ANIMATE_DURATION = 200;
+  $('.sidebar-nav li').on('click', event => {
+    var item = $(event.currentTarget);
+    var activeTabClassName = 'sidebar-nav-active';
+    var activePanelClassName = 'sidebar-panel-active';
+    if (item.hasClass(activeTabClassName)) return;
+
+    var target = $('.' + item.data('target'));
+    var currentTarget = target.siblings('.sidebar-panel');
+    currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, () => {
+      currentTarget.hide();
+      target
+        .stop()
+        .css({ 'opacity': 0, 'display': 'block' })
+        .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, () => {
+          // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
+          currentTarget.removeClass(activePanelClassName, 'motion-element');
+          target.addClass(activePanelClassName, 'motion-element');
+        });
+    });
+
+    item.siblings().removeClass(activeTabClassName);
+    item.addClass(activeTabClassName);
+  });
+
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
