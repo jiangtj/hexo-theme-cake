@@ -133,24 +133,21 @@ NexT.utils = NexT.$u = {
       $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
     }
 
-    let intersectingTargets = [];
-
     function findIndex(entries) {
-      entries = entries.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-      entries.forEach(item => {
-        if (item.isIntersecting) {
-          intersectingTargets.push(item.target);
-        } else {
-          intersectingTargets = intersectingTargets.filter(target => target !== item.target);
-        }
-      });
-      console.log(intersectingTargets);
-      if (intersectingTargets.length === 0) {
-        return 0;
+      let index = 0;
+      let entry = entries[index];
+      if (entry.boundingClientRect.top > 0) {
+        index = sections.indexOf(entry.target);
+        return index === 0 ? 0 : index - 1;
       }
-      let target = intersectingTargets[intersectingTargets.length - 1];
-      let index = sections.indexOf(target);
-      return index;
+      for (;index < entries.length; index++) {
+        if (entries[index].boundingClientRect.top <= 0) {
+          entry = entries[index];
+        } else {
+          return sections.indexOf(entry.target);
+        }
+      }
+      return sections.indexOf(entry.target);
     }
 
     const intersectionObserver = new IntersectionObserver(entries => {
