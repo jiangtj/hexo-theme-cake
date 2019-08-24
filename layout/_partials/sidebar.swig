@@ -140,9 +140,7 @@
       {%- if display_toc %}
       <!--noindex-->
         <div class="post-toc-wrap sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-            <div class="post-toc-content">{{ toc }}</div>
-          </div>
+          <div class="post-toc">{{ toc }}</div>
         </div>
       <!--/noindex-->
       {%- endif %}

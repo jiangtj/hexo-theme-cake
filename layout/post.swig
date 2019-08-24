@@ -15,7 +15,3 @@
 {%- block sidebar %}
   {{ partial('_partials/sidebar.swig') }}
 {%- endblock %}
-
-{%- block script_extra %}
-  {{- next_js('scrollspy.js','post-details.js') }}
-{%- endblock %}

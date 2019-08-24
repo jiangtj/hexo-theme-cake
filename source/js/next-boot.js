@@ -27,8 +27,7 @@ $(document).ready(function() {
    */
   CONFIG.tabs && NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
-
-  NexT.utils.embeddedVideoTransformer();
+  NexT.utils.registerSidebarTOC();
 
   $(document).trigger('bootstrap:after');
 });
