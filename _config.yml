@@ -395,6 +395,9 @@ pace:
 # Set jquery cdn
 jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
+# Set font (default)
+font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
+
 # Set fontawesome cdn
 fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
 
