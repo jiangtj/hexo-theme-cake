@@ -192,18 +192,6 @@ sidebar:
   # Pisces | Gemini: 240
   #width: 300
 
-  # Sidebar Display, available values (only for Muse | Mist):
-  #  - post    expand on posts automatically. Default.
-  #  - always  expand for all pages automatically.
-  #  - hide    expand only when click on the sidebar toggle icon.
-  #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
-
-  # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: true
-  # Click any blank part of the page to close sidebar (only for Muse | Mist).
-  dimmer: false
-
 back2top:
   enable: true
   # Back to top in sidebar.

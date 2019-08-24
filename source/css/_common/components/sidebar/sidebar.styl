@@ -16,10 +16,6 @@
       border-bottom-color: $gainsboro;
     }
   }
-
-  +tablet-mobile() {
-    hide() if not hexo-config('sidebar.onmobile');
-  }
 }
 
 .sidebar-inner {
@@ -60,4 +56,3 @@
 @import "sidebar-nav";
 @import "site-state" if hexo-config('site_state');
 @import "sidebar-toc" if hexo-config('toc.enable');
-@import "sidebar-dimmer" if hexo-config('sidebar.dimmer');

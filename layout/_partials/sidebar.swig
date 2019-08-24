@@ -158,6 +158,3 @@
 
     </div>
   </aside>
-  {%- if theme.sidebar.dimmer %}
-    <div id="sidebar-dimmer"></div>
-  {%- endif %}

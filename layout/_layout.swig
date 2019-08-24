@@ -45,9 +45,7 @@
           </div>
           {{ partial( '_partials/comments.swig') }}
         </div>
-        {%- if theme.sidebar.display !== 'remove' %}
-          {%- block sidebar %}{%- endblock %}
-        {%- endif %}
+        {%- block sidebar %}{%- endblock %}
       </div>
     </main>
 
