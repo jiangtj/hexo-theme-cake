@@ -353,11 +353,6 @@ valine:
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
 
 # ---------------------------------------------------------------
-# Content Sharing Services
-# See: https://theme-next.org/docs/third-party-services/content-sharing-services
-# ---------------------------------------------------------------
-
-# ---------------------------------------------------------------
 # Statistics and Analytics
 # See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
 # ---------------------------------------------------------------
@@ -405,9 +400,6 @@ algolia_search:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
-
-# Swiftype Search API Key
-#swiftype_key:
 
 # ---------------------------------------------------------------
 # Tags Settings
