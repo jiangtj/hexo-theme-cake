@@ -17,7 +17,6 @@
   {{ partial( '_partials/head/head-unique.swig') }}
   {{- next_inject('head') }}
   <title>{%- block title %}{%- endblock %}</title>
-  {{ partial( '_third-party/analytics/index.swig') }}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
@@ -52,7 +51,6 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {{ partial('_partials/footer.swig', {}, {cache: true}) }}
-        {{ partial( '_third-party/analytics/analytics-with-widget.swig') }}
         {%- block footer %}{%- endblock %}
       </div>
     </footer>

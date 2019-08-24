@@ -352,37 +352,6 @@ valine:
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
 
-# ---------------------------------------------------------------
-# Statistics and Analytics
-# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
-# ---------------------------------------------------------------
-
-# Baidu Analytics ID
-#baidu_analytics:
-
-# Growingio Analytics ID
-# Copyright 2015-2018 GrowingIO, Inc. More info available at https://www.growingio.com
-#growingio_analytics: #your projectId
-
-# Google Analytics
-#google_analytics:
-#  tracking_id:
-#  localhost_ignored: true
-
-# CNZZ count
-#cnzz_siteid:
-
-# Application Insights
-# See: https://azure.microsoft.com/en-us/services/application-insights
-#application_insights:
-
-# ---------------------------------------------------------------
-
-# Tencent analytics ID
-#tencent_analytics:
-
-# Tencent MTA ID
-#tencent_mta:
 
 # ---------------------------------------------------------------
 # Search Services
