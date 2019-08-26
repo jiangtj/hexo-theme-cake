@@ -4,8 +4,6 @@ $(document).ready(function() {
 
   $(document).trigger('bootstrap:before');
 
-  NexT.utils.registerESCKeyEvent();
-
   CONFIG.back2top && NexT.utils.registerBackToTop();
 
   // Mobile top menu bar.
