@@ -1,5 +1,23 @@
 /* global NexT, CONFIG */
 
+HTMLElement.prototype.outerHeight = function(flag) {
+  var height = this.offsetHeight;
+  if (!flag) return height;
+  var style = window.getComputedStyle(this);
+  height += parseInt(style.marginTop, 10) + parseInt(style.marginBottom, 10);
+  return height;
+};
+
+HTMLElement.prototype.css = function(dict) {
+  Object.assign(this.style, dict);
+};
+
+HTMLElement.prototype.wrap = function(wrapper) {
+  this.parentNode.insertBefore(wrapper, this);
+  this.parentNode.removeChild(this);
+  wrapper.appendChild(this);
+};
+
 NexT.utils = NexT.$u = {
 
   /**
