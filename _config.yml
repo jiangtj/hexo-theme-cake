@@ -210,14 +210,16 @@ post_meta:
   categories: true
 
 codeblock:
-  # Manual define the border radius in codeblock, leave it blank for the default value: 1
-  border_radius:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: normal
   # Add copy button on codeblock
   copy_button:
     enable: false
-    # Show text copy result
+    # Show text copy result.
     show_result: false
-    # Style: only 'flat' is currently available, leave it blank if you prefer default theme
+    # Available values: default | flat | mac
     style:
 
 # Reward (Donate)

@@ -77,6 +77,61 @@ NexT.utils = NexT.$u = {
     });
   },
 
+  /**
+   * One-click copy code support.
+   */
+  registerCopyCode: function() {
+    document.querySelectorAll('figure.highlight').forEach(e => {
+      const initButton = button => {
+        if (CONFIG.copycode.style === 'mac') {
+          button.innerHTML = '<i class="fa fa-clipboard"></i>';
+        } else {
+          button.innerText = CONFIG.translation.copy_button;
+        }
+      };
+      const box = document.createElement('div');
+      box.classList.add('highlight-wrap');
+      e.wrap(box);
+      e.parentNode.insertAdjacentHTML('beforeend', '<div class="copy-btn"></div>');
+      var button = e.parentNode.querySelector('.copy-btn');
+      button.addEventListener('click', event => {
+        var code = [...event.currentTarget.parentNode.querySelectorAll('.code .line')].map(element => {
+          return element.innerText;
+        }).join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.scrollY;
+        ta.style.top = yPosition + 'px'; // Prevent page scrolling
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.append(ta);
+        const selection = document.getSelection();
+        const selected = selection.rangeCount > 0 ? selection.getRangeAt(0) : false;
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        if (CONFIG.copycode.show_result) {
+          event.currentTarget.innerText = result ? CONFIG.translation.copy_success : CONFIG.translation.copy_failure;
+        }
+        ta.blur(); // For iOS
+        event.currentTarget.blur();
+        if (selected) {
+          selection.removeAllRanges();
+          selection.addRange(selected);
+        }
+        document.body.removeChild(ta);
+      });
+      button.addEventListener('mouseleave', event => {
+        setTimeout(() => {
+          initButton(event.target);
+        }, 300);
+      });
+      initButton(button);
+    });
+  },
+
   registerESCKeyEvent: function() {
     $(document).on('keyup', function(event) {
       var shouldDismissSearchPopup = event.which === 27

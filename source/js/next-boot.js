@@ -52,6 +52,7 @@ $(document).ready(function() {
    * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
    */
   CONFIG.tabs && NexT.utils.registerTabsTag();
+  CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
 
