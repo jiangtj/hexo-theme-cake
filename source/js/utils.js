@@ -43,41 +43,6 @@ NexT.utils = NexT.$u = {
   },
 
   /**
-   * Tabs tag listener (without twitter bootstrap).
-   */
-  registerTabsTag: function() {
-    var tNav = '.tabs ul.nav-tabs ';
-
-    // Binding `nav-tabs` & `tab-content` by real time permalink changing.
-    $(function() {
-      $(window).bind('hashchange', function() {
-        var tHash = location.hash;
-        if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-          $(tNav + 'li:has(a[href="' + tHash + '"])').addClass('active').siblings().removeClass('active');
-          $(tHash).addClass('active').siblings().removeClass('active');
-        }
-      }).trigger('hashchange');
-    });
-
-    $(tNav + '.tab').on('click', function(href) {
-      href.preventDefault();
-      // Prevent selected tab to select again.
-      if (!$(this).hasClass('active')) {
-
-        // Add & Remove active class on `nav-tabs` & `tab-content`.
-        $(this).addClass('active').siblings().removeClass('active');
-        var tActive = $(this).find('a').attr('href');
-        $(tActive).addClass('active').siblings().removeClass('active');
-
-        // Clear location hash in browser if #permalink exists.
-        if (location.hash !== '') {
-          history.pushState('', document.title, window.location.pathname + window.location.search);
-        }
-      }
-    });
-  },
-
-  /**
    * One-click copy code support.
    */
   registerCopyCode: function() {

@@ -35,7 +35,6 @@
     copycode: {{ theme.codeblock.copy_button | json_encode }},
     back2top: {{ theme.back2top.enable }},
     back2top_sidebar: {{ theme.back2top.sidebar }},
-    tabs: {{ theme.tabs.enable }},
     scroll: {
       save: {{ theme.scroll.save }}
     },
