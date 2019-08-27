@@ -4,10 +4,9 @@
 
 const path = require('path');
 
-const priority = hexo.config.inject_priority_reward || 120;
-
 // add to postBodyEnd
 hexo.extend.filter.register('theme_inject', function(injects) {
+  let theme = hexo.theme.config;
   injects.postBodyEnd.raw('reward', `
   {%- if page.reward === undefined and theme.reward_settings.enable %}
   {%- set reward_able = true %}
@@ -17,8 +16,8 @@ hexo.extend.filter.register('theme_inject', function(injects) {
   {%- if reward_able and not is_index %}
     {{ partial('_partials/post/reward.swig', {}, {cache: true}) }}
   {%- endif %}
-  `);
-}, priority);
+  `, {}, {}, theme.reward_settings.inject_order);
+}, 120);
 
 // add to reward style
 hexo.extend.filter.register('theme_inject', function(injects) {
