@@ -44,30 +44,17 @@ NexT.boot.registerEvents = function() {
     item.siblings().removeClass(activeTabClassName);
     item.addClass(activeTabClassName);
   });
+};
 
-  /**
-   * Register JS handlers by condition option.
-   * Need to add config option in Front-End at 'layout/_partials/head.swig' file.
-   */
+NexT.boot.refresh = function() {
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
+  NexT.utils.registerScrollSave();
 };
 
 // scroll
 window.addEventListener('DOMContentLoaded', () => {
   NexT.boot.registerEvents();
-  if (!CONFIG.scroll.save) return;
-  let scrollKey = 'scroll:' + location.pathname;
-  let timeout;
-  window.addEventListener('scroll', () => {
-    clearTimeout(timeout);
-    timeout = setTimeout(function() {
-      localStorage.setItem(scrollKey, window.scrollY);
-    }, 250);
-  });
-  let scrollToPosition = localStorage.getItem(scrollKey);
-  if (scrollToPosition !== undefined) {
-    window.scroll({top: scrollToPosition});
-  }
+  NexT.boot.refresh();
 });

@@ -124,6 +124,22 @@ NexT.utils = NexT.$u = {
     });
   },
 
+  registerScrollSave: function() {
+    if (!CONFIG.scroll.save) return;
+    let scrollKey = 'scroll:' + location.pathname;
+    let timeout;
+    window.addEventListener('scroll', () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(function() {
+        localStorage.setItem(scrollKey, window.scrollY);
+      }, 250);
+    });
+    let scrollToPosition = localStorage.getItem(scrollKey);
+    if (scrollToPosition !== undefined) {
+      window.scroll({top: scrollToPosition});
+    }
+  },
+
   registerSidebarTOC: function() {
 
     const navItems = document.querySelectorAll('.post-toc li');
