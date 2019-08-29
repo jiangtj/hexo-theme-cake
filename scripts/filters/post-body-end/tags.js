@@ -2,9 +2,8 @@
 
 'use strict';
 
-const priority = hexo.config.inject_priority_tags || 300;
-
 hexo.extend.filter.register('theme_inject', function(injects) {
+  let theme = hexo.theme.config;
   injects.postBodyEnd.raw('tags', `
     {%- if is_post() and page.tags and page.tags.length %}
       <div class="post-tags">
@@ -13,5 +12,5 @@ hexo.extend.filter.register('theme_inject', function(injects) {
         {%- endfor %}
       </div>
     {%- endif %}
-  `);
-}, priority);
+  `, {}, {}, theme.tags_inject_order);
+}, 300);
