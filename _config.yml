@@ -338,7 +338,7 @@ valine:
 # A JavaScript library for zooming images like Medium
 medium_zoom:
   enable: true
-  selector: .post-body img:not(a)>img, [data-zoomable]
+  selector: .post-body img:not([data-zoomable="false"]), [data-zoomable]:not([data-zoomable="false"])
   cdn: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
 # lozad lib
