@@ -141,25 +141,23 @@ NexT.utils = NexT.$u = {
   },
 
   registerSidebarTOC: function() {
-
     const navItems = document.querySelectorAll('.post-toc li');
-    if (!navItems) return;
     const sections = [...navItems].map(element => {
       var link = element.querySelector('a.nav-link');
       // TOC item animation navigate.
       link.addEventListener('click', event => {
         event.preventDefault();
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
-        var offset = $(target).offset().top;
-
-        $(document.documentElement).stop().animate({
-          scrollTop: offset + 10
-        }, 500);
+        var offset = target.getBoundingClientRect().top + window.scrollY;
+        window.scroll({
+          top     : offset,
+          behavior: 'smooth'
+        });
       });
       return document.getElementById(link.getAttribute('href').replace('#', ''));
     });
 
-    var $tocElement = $('.post-toc');
+    var tocElement = document.querySelector('.post-toc-wrap');
     function activateNavByIndex(target) {
       if (target.classList.contains('active-current')) return;
 
@@ -167,10 +165,16 @@ NexT.utils = NexT.$u = {
         element.classList.remove('active', 'active-current');
       });
       target.classList.add('active', 'active-current');
-      $(target).parents('li').addClass('active');
-
+      var parent = target.parentNode;
+      while (!parent.matches('.post-toc')) {
+        if (parent.matches('li')) parent.classList.add('active');
+        parent = parent.parentNode;
+      }
       // Scrolling to center active TOC element if TOC content is taller then viewport.
-      $tocElement.scrollTop($(target).offset().top - $tocElement.offset().top + $tocElement.scrollTop() - ($tocElement.height() / 2));
+      tocElement.scroll({
+        top     : tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top,
+        behavior: 'smooth'
+      });
     }
 
     function findIndex(entries) {
