@@ -241,26 +241,5 @@ NexT.utils = NexT.$u = {
 
   isDesktop: function() {
     return !this.isTablet() && !this.isMobile();
-  },
-
-  getContentVisibilityHeight: function() {
-    var docHeight = $('.container').height();
-    var winHeight = $(window).height();
-    var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : $(document).height() - winHeight;
-    return contentVisibilityHeight;
-  },
-
-  getSidebarb2tHeight: function() {
-    var sidebarb2tHeight = CONFIG.back2top && CONFIG.back2top_sidebar ? $('.back-to-top').height() : 0;
-    return sidebarb2tHeight;
-  },
-
-  getSidebarSchemePadding: function() {
-    var sidebarNavHeight = $('.sidebar-nav').css('display') === 'block' ? $('.sidebar-nav').outerHeight(true) : 0;
-    var sidebarInner = $('.sidebar-inner');
-    var sidebarPadding = sidebarInner.innerWidth() - sidebarInner.width();
-    var sidebarOffset = CONFIG.sidebar.offset ? CONFIG.sidebar.offset : 12;
-    var sidebarSchemePadding = (sidebarPadding * 2) + sidebarNavHeight + sidebarOffset + this.getSidebarb2tHeight();
-    return sidebarSchemePadding;
   }
 };
