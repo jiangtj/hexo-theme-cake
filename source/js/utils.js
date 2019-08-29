@@ -215,6 +215,14 @@ NexT.utils = NexT.$u = {
 
   },
 
+  wrapTableWithBox: function() {
+    document.querySelectorAll('table').forEach(table => {
+      const box = document.createElement('div');
+      box.className = 'table-container';
+      table.wrap(box);
+    });
+  },
+
   hasMobileUA: function() {
     var nav = window.navigator;
     var ua = nav.userAgent;
@@ -256,38 +264,3 @@ NexT.utils = NexT.$u = {
     return sidebarSchemePadding;
   }
 };
-
-$(document).ready(function() {
-
-  function wrapTable() {
-    $('table').not('.gist table').wrap('<div class="table-container"></div>');
-  }
-
-  /**
-   * Init Sidebar & TOC inner dimensions on all pages and for all schemes.
-   * Need for Sidebar/TOC inner scrolling if content taller then viewport.
-   */
-  function updateSidebarHeight(height) {
-    height = height || 'auto';
-    $('.site-overview, .post-toc').css('max-height', height);
-  }
-
-  function initSidebarDimension() {
-    var updateSidebarHeightTimer;
-
-    $(window).on('resize', function() {
-      updateSidebarHeightTimer && clearTimeout(updateSidebarHeightTimer);
-
-      updateSidebarHeightTimer = setTimeout(function() {
-        var sidebarWrapperHeight = document.body.clientHeight - NexT.utils.getSidebarSchemePadding();
-
-        updateSidebarHeight(sidebarWrapperHeight);
-      }, 0);
-    });
-
-    // Initialize Sidebar & TOC Height.
-    updateSidebarHeight(document.body.clientHeight - NexT.utils.getSidebarSchemePadding());
-  }
-  initSidebarDimension();
-  wrapTable();
-});

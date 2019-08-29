@@ -47,6 +47,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
   NexT.utils.registerScrollSave();
+  NexT.utils.wrapTableWithBox();
 };
 
 // scroll
