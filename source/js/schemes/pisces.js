@@ -1,57 +1,67 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
-
-  var sidebarInner = $('.sidebar-inner');
-  var sidebarOffset = CONFIG.sidebar.offset || 12;
-
-  function getHeaderOffset() {
-    return $('.header-inner').height() + sidebarOffset + 10;
-  }
-
-  function getFooterOffset() {
-    var footer = $('#footer');
-    var footerInner = $('.footer-inner');
-    var footerMargin = footer.outerHeight() - footerInner.outerHeight();
-    var footerOffset = footer.outerHeight() + footerMargin;
-    return footerOffset;
-  }
-
-  function initAffix() {
-    var headerOffset = getHeaderOffset();
-    var footerOffset = getFooterOffset();
-    var sidebarHeight = $('#sidebar').height() + NexT.utils.getSidebarb2tHeight();
-    var contentHeight = $('#content').height();
-
-    // Not affix if sidebar taller than content (to prevent bottom jumping).
-    if (headerOffset + sidebarHeight < contentHeight) {
-      sidebarInner.affix({
-        offset: {
-          top   : headerOffset - sidebarOffset,
-          bottom: footerOffset
-        }
-      });
-      sidebarInner.affix('checkPosition');
-    }
-
-    $('#sidebar').css({ 'margin-top': headerOffset, 'margin-left': 'auto' });
-  }
-
-  function recalculateAffixPosition() {
-    $(window).off('.affix');
-    sidebarInner.removeData('bs.affix').removeClass('affix affix-top affix-bottom');
-    initAffix();
-  }
-
-  function resizeListener() {
-    var mql = window.matchMedia('(min-width: 992px)');
-    mql.addListener(function(e) {
-      if (e.matches) {
-        recalculateAffixPosition();
+var Affix = {
+  init: function(element, options) {
+    this.options = Object.assign({
+      offset: 0
+    }, options);
+    window.addEventListener('scroll', this.checkPosition.bind(this));
+    window.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
+    window.matchMedia('(min-width: 992px)').addListener(event => {
+      if (event.matches) {
+        this.options = {
+          offset: NexT.utils.getAffixParam()
+        };
+        this.checkPosition();
       }
     });
+    this.element = element;
+    this.affixed = null;
+    this.unpin = null;
+    this.pinnedOffset = null;
+    this.checkPosition();
+  },
+  getState: function(offsetTop) {
+    let scrollTop = window.scrollY;
+    if (offsetTop != null && this.affixed === 'top') return scrollTop < offsetTop ? 'top' : false;
+    if (offsetTop != null && scrollTop <= offsetTop) return 'top';
+    return false;
+  },
+  getPinnedOffset: function() {
+    if (this.pinnedOffset) return this.pinnedOffset;
+    this.element.classList.remove('affix-top', 'affix-bottom');
+    this.element.classList.add('affix');
+    return (this.pinnedOffset = this.element.getBoundingClientRect().top);
+  },
+  checkPositionWithEventLoop() {
+    setTimeout(this.checkPosition.bind(this), 1);
+  },
+  checkPosition: function() {
+    if (window.getComputedStyle(this.element).display === 'none') return;
+    let offset = this.options.offset;
+    let offsetTop = offset.top;
+    let affix = this.getState(offsetTop);
+    if (this.affixed !== affix) {
+      if (this.unpin != null) this.element.style.top = '';
+      let affixType = 'affix' + (affix ? '-' + affix : '');
+      this.affixed = affix;
+      this.element.classList.remove('affix', 'affix-top', 'affix-bottom');
+      this.element.classList.add(affixType);
+    }
   }
+};
 
-  initAffix();
-  resizeListener();
+NexT.utils.getAffixParam = function() {
+  const sidebarOffset = CONFIG.sidebar.offset || 12;
+  let headerOffset = document.querySelector('.header-inner').offsetHeight + sidebarOffset + 10;
+  document.querySelector('.sidebar').style.marginTop = headerOffset + 'px';
+  return {
+    top: headerOffset - sidebarOffset
+  };
+};
+
+window.addEventListener('DOMContentLoaded', () => {
+  Affix.init(document.querySelector('.sidebar-inner'), {
+    offset: NexT.utils.getAffixParam()
+  });
 });

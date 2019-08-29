@@ -66,9 +66,7 @@
 
   </div>
 
-  {{ partial( '_scripts/commons.swig', {}, {cache: true}) }}
-  {{ partial( '_third-party/copy-code.swig', {}, {cache: true}) }}
-
+  {{- partial( '_scripts/commons.swig', {}, {cache: true}) }}
   {{- next_inject('bodyEnd') }}
 
 </body>

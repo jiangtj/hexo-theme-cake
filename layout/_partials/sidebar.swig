@@ -20,13 +20,21 @@
 
       {%- if display_toc %}
         <ul class="sidebar-nav">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active">
             {{ __('sidebar.toc') }}
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+          <li class="sidebar-nav-overview">
             {{ __('sidebar.overview') }}
           </li>
         </ul>
+      {%- endif %}
+
+      {%- if display_toc %}
+      <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel sidebar-panel-active">
+          <div class="post-toc">{{ toc }}</div>
+        </div>
+      <!--/noindex-->
       {%- endif %}
 
       <div class="site-overview-wrap sidebar-panel{%- if not display_toc %} sidebar-panel-active{%- endif %}">
@@ -136,14 +144,6 @@
 
         </div>
       </div>
-
-      {%- if display_toc %}
-      <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel sidebar-panel-active">
-          <div class="post-toc">{{ toc }}</div>
-        </div>
-      <!--/noindex-->
-      {%- endif %}
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top">

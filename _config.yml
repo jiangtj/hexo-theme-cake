@@ -210,14 +210,16 @@ post_meta:
   categories: true
 
 codeblock:
-  # Manual define the border radius in codeblock, leave it blank for the default value: 1
-  border_radius:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: normal
   # Add copy button on codeblock
   copy_button:
     enable: false
-    # Show text copy result
+    # Show text copy result.
     show_result: false
-    # Style: only 'flat' is currently available, leave it blank if you prefer default theme
+    # Available values: default | flat | mac
     style:
 
 # Reward (Donate)
@@ -333,41 +335,10 @@ valine:
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
 
-
-# ---------------------------------------------------------------
-# Search Services
-# See: https://theme-next.org/docs/third-party-services/search-services
-# ---------------------------------------------------------------
-
-# Algolia Search
-# See: https://theme-next.org/docs/third-party-services/search-services#Algolia-Search
-# Dependencies: https://github.com/theme-next/theme-next-algolia-instant-search
-algolia_search:
-  enable: false
-  hits:
-    per_page: 10
-  labels:
-    input_placeholder: Search for Posts
-    hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: "${hits} results found in ${time} ms"
-
-# ---------------------------------------------------------------
-# Tags Settings
-# See: https://theme-next.org/docs/tag-plugins/
-# ---------------------------------------------------------------
-
-# Tabs tag
-tabs:
-  enable: true
-  transition:
-    tabs: false
-    labels: true
-  border_radius: 0
-
 # A JavaScript library for zooming images like Medium
 medium_zoom:
   enable: true
-  selector: .post-body img:not(a)>img, [data-zoomable]
+  selector: .post-body img:not([data-zoomable="false"]), [data-zoomable]:not([data-zoomable="false"])
   cdn: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
 # lozad lib
@@ -391,9 +362,6 @@ pace:
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! See: https://theme-next.org/docs/advanced-settings
 #! ---------------------------------------------------------------
-
-# Set jquery cdn
-jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
