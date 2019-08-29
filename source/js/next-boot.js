@@ -1,10 +1,10 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+NexT.boot = {};
 
-  $(document).trigger('bootstrap:before');
+NexT.boot.registerEvents = function() {
 
-  CONFIG.back2top && NexT.utils.registerBackToTop();
+  NexT.utils.registerScrollPercent();
 
   // Mobile top menu bar.
   $('.site-nav-toggle button').on('click', function() {
@@ -52,12 +52,11 @@ $(document).ready(function() {
   CONFIG.copycode.enable && NexT.utils.registerCopyCode();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerSidebarTOC();
-
-  $(document).trigger('bootstrap:after');
-});
+};
 
 // scroll
 window.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.registerEvents();
   if (!CONFIG.scroll.save) return;
   let scrollKey = 'scroll:' + location.pathname;
   let timeout;

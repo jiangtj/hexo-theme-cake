@@ -97,32 +97,30 @@ NexT.utils = NexT.$u = {
     });
   },
 
-  registerBackToTop: function() {
+  registerScrollPercent: function() {
     var THRESHOLD = 50;
-    var $top = $('.back-to-top');
-
-    function initBackToTop() {
-      $top.toggleClass('back-to-top-on', window.pageYOffset > THRESHOLD);
-
-      var scrollTop = $(window).scrollTop();
-      var contentVisibilityHeight = NexT.utils.getContentVisibilityHeight();
-      var scrollPercent = scrollTop / contentVisibilityHeight;
-      var scrollPercentRounded = Math.round(scrollPercent * 100);
-      var scrollPercentMaxed = scrollPercentRounded > 100 ? 100 : scrollPercentRounded;
-      $('#scrollpercent>span').html(scrollPercentMaxed);
-    }
-
+    var backToTop = document.querySelector('.back-to-top');
     // For init back to top in sidebar if page was scrolled after page refresh.
-    $(window).on('load', function() {
-      initBackToTop();
+    window.addEventListener('scroll', () => {
+      var scrollPercent;
+      if (backToTop) {
+        var docHeight = document.querySelector('.container').offsetHeight;
+        var winHeight = window.innerHeight;
+        var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
+        var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
+        scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
+      }
+      if (backToTop) {
+        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
+        backToTop.querySelector('span').innerText = scrollPercent;
+      }
     });
 
-    $(window).on('scroll', function() {
-      initBackToTop();
-    });
-
-    $top.on('click', function() {
-      $('html, body').animate({ scrollTop: 0 });
+    backToTop && backToTop.addEventListener('click', () => {
+      window.scroll({
+        top     : 0,
+        behavior: 'smooth'
+      });
     });
   },
 
