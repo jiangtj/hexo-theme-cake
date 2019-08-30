@@ -4,6 +4,7 @@
 
 ![Hexo](https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg)
 ![GitHub release](https://img.shields.io/github/release/jiangtj/hexo-theme-cake.svg)
+![Size](https://badgen.net/packagephobia/install/hexo-theme-cake)
 
 ## Preview & Docs
 
@@ -27,7 +28,6 @@ hexo init <dir>
 cd <dir>
 # Add Cake as git submodule
 git init
-git add .
 git submodule add https://github.com/JiangTJ/hexo-theme-cake themes/cake
 ```
 
