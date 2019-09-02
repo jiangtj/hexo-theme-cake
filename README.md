@@ -37,3 +37,8 @@ Run `hexo s`, and preview.
 
 ## Browser Support
 Modern Browser (No IE)
+
+## Version
+The version number here does not refer to the standard version number. Since the theme is independent in NexT, it only processes the plugin related content. The version number is directly related to the plugin. The main version number represents the plugin scheme incompatibility update, and the minor version number represents a compatibility update for the plugin scenario, and the last version represents this topic content update (may not be compatible).
+
+
