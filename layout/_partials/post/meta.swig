@@ -10,31 +10,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">{{ __('post.posted') }}</span>
-
               {%- if !date_diff && time_diff && theme.post_meta.updated_at.enable && theme.post_meta.updated_at.another_day %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) + ' / ' + __('post.modified') + __('symbol.colon') + time(post.updated) %}
               {%- else %}
                 {%- set create_title = __('post.created') + __('symbol.colon') + full_date(post.date) %}
               {%- endif %}
-
-              <time title="{{ create_title }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{#
-              #}{{ date(post.date) -}}
-              </time>
+              <time title="{{ create_title }}">{{ date(post.date) -}}</time>
             </span>
           {%- endif %}
 
             {%- if (is_home() or is_post()) and theme.post_meta.updated_at.enable and datetime_diff %}
               {%- set display_updated = !theme.post_meta.updated_at.another_day || theme.post_meta.updated_at.another_day && date_diff %}
-
               {%- if display_updated or !theme.post_meta.created_at %}
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">{{ __('post.edited') }}</span>
-                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}" itemprop="dateModified" datetime="{{ moment(post.updated).format() }}">{#
-                #}{{ date(post.updated) -}}
-                </time>
+                <time title="{{ __('post.modified') + __('symbol.colon') + full_date(post.updated) }}">{{ date(post.updated) }}</time>
               </span>
               {%- endif %}
             {%- endif %}

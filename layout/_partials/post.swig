@@ -11,6 +11,8 @@
 
     {# POST info #}
     <link itemprop="mainEntityOfPage" href="{{ config.url }}{{ url_for(post.path) }}"/>
+    <meta itemprop="dateCreated datePublished" content="{{ moment(post.date).format() }}"/>
+    <meta itemprop="dateModified" content="{{ moment(post.updated).format() }}"/>
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="{{ author }}"/>
       <meta itemprop="description" content="{{ description }}"/>
@@ -18,6 +20,9 @@
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ title }}"/>
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="{{ url_for(theme.favicon.small) }}?v={{ version }}"/>
+      </span>
     </span>
 
     {{ partial( '_partials/post/banner.swig') }}

@@ -2,7 +2,7 @@
 
 'use strict';
 
-hexo.extend.helper.register('cake_image', function(url, options) {
+hexo.extend.helper.register('cake_image', function(url, options, extra) {
   let theme = hexo.theme.config;
   url = this.url_for(url);
   let src = `src="${url}"`;
@@ -21,5 +21,5 @@ hexo.extend.helper.register('cake_image', function(url, options) {
     src = `data-src="${url}"`;
   }
 
-  return `<img ${src} ${zoomable} itemprop="image"/>`;
+  return `<img ${src} ${zoomable} ${extra}/>`;
 });
