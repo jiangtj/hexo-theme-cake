@@ -263,8 +263,8 @@ post_edit:
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
-# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-android_chrome_color: "#222"
+# Header panel color.
+theme_color: "#414852"
 
 # Hide sticky headers and color the menu bar on Safari (iOS / macOS).
 safari_rainbow: false
