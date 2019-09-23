@@ -38,5 +38,5 @@ hexo.extend.helper.register('next_url', function(path, text, options) {
     attrs.target = '_blank';
   }
 
-  return htmlTag(tag, attrs, text);
+  return htmlTag(tag, attrs, text, false);
 });
