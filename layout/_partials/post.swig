@@ -32,16 +32,10 @@
         {# title #}
         {%- if post.title %}
           <h2 class="post-title" itemprop="name headline">
-           {%- if post.link %}
-              {%- set postTitleIcon = '<i class="fa fa-external-link"></i>' %}
-              {%- set postText = post.title or post.link %}
-              {{ next_url(post.link, postText + postTitleIcon, {class: 'post-title-link post-title-link-external', itemprop: 'url' }) }}
-            {%- else %}
-              {%- if is_index %}
-                {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
-              {%- else -%}
-                {{- post.title -}}
-              {%- endif %}
+            {%- if is_index %}
+              {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
+            {%- else -%}
+              {{- post.title -}}
             {%- endif %}
           </h2>
         {%- endif %}
@@ -88,7 +82,7 @@
           <div class="post-nav-next post-nav-item">
             {%- if post.next %}
               <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
+                <i class="fas fa-chevron-left"></i> {{ post.next.title }}
               </a>
             {%- endif %}
           </div>
@@ -98,7 +92,7 @@
           <div class="post-nav-prev post-nav-item">
             {%- if post.prev %}
               <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
+                {{ post.prev.title }} <i class="fas fa-chevron-right"></i>
               </a>
             {%- endif %}
           </div>

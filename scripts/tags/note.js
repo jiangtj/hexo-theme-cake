@@ -1,5 +1,5 @@
 /**
- * note.js | https://theme-next.org/docs/tag-plugins/note
+ * note.js
  *
  * {%- note [type [title]] [icon:disable] %}
  * content
@@ -16,11 +16,23 @@
 
 'use strict';
 
+function getIconName(style) {
+  switch (style) {
+    case 'primary': return 'plus-circle';
+    case 'info': return 'info-circle';
+    case 'success': return 'check-circle';
+    case 'warning': return 'exclamation-circle';
+    case 'danger': return 'minus-circle';
+    default: return 'arrow-circle-right';
+  }
+}
+
 function postNote(args, content) {
 
   let style = 'default';
   let title = '';
   let icon = true;
+  let iconBtn = '';
 
   if (Array.isArray(args)) {
 
@@ -34,7 +46,9 @@ function postNote(args, content) {
       style = args.shift();
     }
 
-    if (!icon) {
+    if (icon) {
+      iconBtn = `<i class="fas fa-${getIconName(style)}"></i>`;
+    } else {
       style += ' no-icon';
     }
 
@@ -44,7 +58,7 @@ function postNote(args, content) {
 
   }
 
-  return `<div class="note ${style}">${title}${hexo.render.renderSync({text: content, engine: 'markdown'}).split('\n').join('')}</div>`;
+  return `<div class="note ${style}">${iconBtn}${title}${hexo.render.renderSync({text: content, engine: 'markdown'}).split('\n').join('')}</div>`;
 }
 
 hexo.extend.tag.register('note', postNote, {ends: true});

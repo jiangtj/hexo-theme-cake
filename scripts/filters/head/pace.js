@@ -1,3 +1,7 @@
+/* global hexo */
+
+'use strict';
+
 hexo.extend.filter.register('theme_inject', function(injects) {
   let pace = hexo.theme.config.pace;
   if (!pace.enable) return;

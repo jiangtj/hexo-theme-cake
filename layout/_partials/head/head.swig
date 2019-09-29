@@ -2,7 +2,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="{{ theme.theme_color }}"/>
-<link rel="stylesheet" href="{{ theme.fontawesome }}"/>
 {{ css(theme.font) }}
 {{ css('css/main.css?v=' + version) }}
 {%- if theme.favicon.apple_touch_icon %}

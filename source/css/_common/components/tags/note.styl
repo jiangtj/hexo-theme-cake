@@ -27,84 +27,54 @@
 
   &:not(.no-icon) {
     padding-left: 45px;
-    &:before {
-      position: absolute;
-      font-family: $font-family-icons;
-      font-size: larger;
-      top: 13px;
-      left: 15px;
-    }
+  }
+
+  i {
+    position: absolute;
+    font-size: larger;
+    top: 1.2em;
+    left: 1em;
   }
 
   &.default {
     border-left-color: $note-default-border;
-    header, &:before {
+    header, i {
       color: $note-default-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content: $note-default-icon;
-      }
     }
   }
 
   &.primary {
     border-left-color: $note-primary-border;
-    header, &:before {
+    header, i {
       color: $note-primary-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content: $note-primary-icon;
-      }
     }
   }
 
   &.info {
     border-left-color: $note-info-border;
-    header, &:before {
+    header, i {
       color: $note-info-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content: $note-info-icon;
-      }
     }
   }
 
   &.success {
-    border-left-color:   $note-success-border;
-    header, &:before {
-      color:             $note-success-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content:         $note-success-icon;
-      }
+    border-left-color: $note-success-border;
+    header, i {
+      color: $note-success-text;
     }
   }
 
   &.warning {
-    border-left-color:   $note-warning-border;
-    header, &:before {
-      color:             $note-warning-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content:         $note-warning-icon;
-      }
+    border-left-color: $note-warning-border;
+    header, i {
+      color: $note-warning-text;
     }
   }
 
   &.danger {
-    border-left-color:   $note-danger-border;
-    header, &:before {
-      color:             $note-danger-text;
-    }
-    &:not(.no-icon) {
-      &:before {
-        content:         $note-danger-icon;
-      }
+    border-left-color: $note-danger-border;
+    header, i {
+      color: $note-danger-text;
     }
   }
 }

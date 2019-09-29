@@ -49,7 +49,7 @@ NexT.utils = NexT.$u = {
     document.querySelectorAll('figure.highlight').forEach(e => {
       const initButton = button => {
         if (CONFIG.copycode.style === 'mac') {
-          button.innerHTML = '<i class="fa fa-clipboard"></i>';
+          button.innerHTML = '<i class="fas fa-clipboard"></i>';
         } else {
           button.innerText = CONFIG.translation.copy_button;
         }

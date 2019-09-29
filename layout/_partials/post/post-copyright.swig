@@ -1,7 +1,7 @@
 {%- if is_post() %}
 {%- set ccLicense = theme.creative_commons.license | lower %}
 {%- set ccLanguage = theme.creative_commons.language %}
-{%- set ccIcon = '<i class="fa fa-fw fa-creative-commons"></i>' %}
+{%- set ccIcon = '<i class="fab fa-creative-commons"></i>' %}
 {%- set ccText = ccLicense | upper %}
 {%- if ccLicense === 'zero' %}
   {%- set ccType = 'publicdomain/zero/1.0/' + ccLanguage %}
