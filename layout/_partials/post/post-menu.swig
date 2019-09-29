@@ -6,7 +6,7 @@
         {%- if itemURL.indexOf('http') != 0 %}
           {%- set itemURL = itemURL | replace('//', '/', 'g') %}
         {%- endif %}
-        {%- set post_menu_icon = '<i class="menu-item-icon fa fa-fw fa-' + subvalue.split('||')[1] | trim | default('question-circle') + '"></i> <br/>' %}
+        {%- set post_menu_icon = '<i class="menu-item-icon ' + subvalue.split('||')[1] | trim | default('fas fa-question-circle') + '"></i> <br/>' %}
         {{ next_url(itemURL, post_menu_icon + subname, {rel: 'section'}) }}
       </li>
     {%- endfor %}

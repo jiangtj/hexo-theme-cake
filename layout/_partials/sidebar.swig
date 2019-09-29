@@ -101,7 +101,7 @@
                     {%- set sidebarText = name %}
                   {%- endif %}
                   {%- if theme.social_icons.enable %}
-                    {%- set sidebarIcon = '<i class="fa fa-fw fa-' + link.split('||')[1] | trim | default('globe') + '"></i>' %}
+                    {%- set sidebarIcon = '<i class="' + link.split('||')[1] | trim | default('fas fa-globe') + '"></i>' %}
                   {%- endif %}
                   {{ next_url(sidebarURL, sidebarIcon + sidebarText, {title: name + ' &rarr; ' + sidebarURL}) }}
                 </span>
@@ -125,9 +125,9 @@
 
           {# Blogroll #}
           {%- if theme.links %}
-            <div class="links-of-blogroll {{ "links-of-blogroll-" + theme.links_layout | default('inline') }}">
+            <div class="links-of-blogroll {{ 'links-of-blogroll-' + theme.links_layout | default('inline') }}">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-{{ theme.links_icon | default('globe') | lower }}"></i>
+                <i class="{{ theme.links_icon | default('fas fa-globe') | lower }}"></i>
                 {{ theme.links_title }}
               </div>
               <ul class="links-of-blogroll-list">
@@ -147,7 +147,7 @@
 
       {%- if theme.back2top.enable and theme.back2top.sidebar %}
         <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
+          <i class="fas fa-arrow-up"></i>
           {%- if theme.back2top.scrollpercent %}
             <span id="scrollpercent"><span>0</span>%</span>
           {%- endif %}

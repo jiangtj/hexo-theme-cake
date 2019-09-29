@@ -20,9 +20,7 @@ footer:
 
   # Icon between year and copyright info.
   icon:
-    # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `heart` is recommended with animation in red (#ff0000).
-    name: heart
+    name: fas fa-heart
     # If you want to animate the icon, set it to true.
     animated: true
     # Change the color of icon, using Hex Code.
@@ -88,12 +86,12 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 # External url should start with http:// or https://
 menu:
-  home: / || home
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  archives: /archives/ || archive
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  home: / || fas fa-home
+  #tags: /tags/ || fas fa-tags
+  #categories: /categories/ || fas fa-th
+  archives: /archives/ || fas fa-archive
+  #sitemap: /sitemap.xml || fas fa-sitemap
+  #commonweal: /404/ || fas fa-heartbeat
 
 # Enable / Disable menu icons.
 menu_settings:
@@ -113,17 +111,17 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
-  #Weibo: https://weibo.com/yourname || weibo
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
-  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
+  #GitHub: https://github.com/yourname || fab fa-github
+  #E-Mail: mailto:yourname@gmail.com || fas fa-envelope
+  #Weibo: https://weibo.com/yourname || fab fa-weibo
+  #Google: https://plus.google.com/yourname || fab fa-google
+  #Twitter: https://twitter.com/yourname || fab fa-twitter
+  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
+  #VK Group: https://vk.com/yourname || fab fa-vk
+  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
+  #YouTube: https://youtube.com/yourname || fab fa-youtube
+  #Instagram: https://instagram.com/yourname || fab fa-instagram
+  #Skype: skype:yourname?call|chat || fab fa-skype
 
 social_icons:
   enable: true
@@ -131,7 +129,7 @@ social_icons:
   transition: false
 
 # Blog rolls
-links_icon: link
+links_icon: fas fa-link
 links_title: Links
 links_layout: block
 #links_layout: inline
@@ -231,15 +229,15 @@ reward_settings:
 
 reward:
   # wechat:
-  #   icon: weixin
+  #   icon: fab fa-weixin
   #   image: /images/wechatpay.png
   # alipay:
-  #   name: 支
+  #   icon: fab fa-alipay
   #   image: /images/alipay.png
   #   url_name: 点击跳转
   #   url: HTTPS://QR.ALIPAY.COM/FKX06416WJNHOWKMRQQFFE
   # paypal:
-  #   icon: paypal
+  #   icon: fab fa-paypal
   #   image: /images/paypal.png
   #   url: https://www.paypal.me/jiangtj
 
@@ -255,13 +253,6 @@ related_posts:
     #isDate: false
     #isImage: false
     #isExcerpt: false
-
-# Post edit
-# Dependencies: https://github.com/hexojs/hexo-deployer-git
-post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source.
-  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit.
 
 # Header panel color.
 theme_color: "#414852"
@@ -307,7 +298,7 @@ comments:
   # Modify icons and texts for any style, here are some examples
   nav:
     #disqus: disqus
-    #facebook_comments_plugin: <i class="fa fa-facebook-official" aria-hidden="true"></i> facebook
+    #facebook_comments_plugin: <i class="fab fa-facebook-official" aria-hidden="true"></i> facebook
     #gitalk: Load Gitalk
     #vkontakte: vkontakte
 
@@ -367,7 +358,14 @@ pace:
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
 # Set fontawesome cdn
-fontawesome: //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+fontawesome:
+  # You can choose npm or kit. There are some example about them.
+  type: cdn
+  url: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css
+  #integrity: sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=
+  #type: kit
+  #url: https://kit.fontawesome.com/your-id.js
+  # todo npm
 
 # Script Vendors. Set a CDN address for the vendor you want to customize.
 # For example

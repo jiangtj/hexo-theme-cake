@@ -30,7 +30,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="{{ __('accessibility.nav_toggle') }}">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
