@@ -22,6 +22,8 @@
 
 ## Quick Start
 
+### Manual
+
 ```bash
 # Create a new hexo project
 hexo init <dir>
@@ -34,6 +36,10 @@ git submodule add https://github.com/JiangTJ/hexo-theme-cake themes/cake
 Modify `theme` to `cake` in `_config.yml`.
 
 Run `hexo s`, and preview.
+
+### Auto deploy to netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jiangtj-lab/hexo-theme-cake-example)
 
 ## Browser Support
 Modern Browser (No IE)
