@@ -31,13 +31,13 @@
 
         {# title #}
         {%- if post.title %}
-          <h2 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">
             {%- if is_index %}
               {{ next_url(post.path, post.title | default(__('post.untitled')), {class: 'post-title-link', itemprop: 'url' }) }}
             {%- else -%}
               {{- post.title -}}
             {%- endif %}
-          </h2>
+          </h1>
         {%- endif %}
 
         {{ partial( '_partials/post/meta.swig') }}
