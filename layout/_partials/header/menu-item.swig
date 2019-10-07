@@ -7,5 +7,5 @@
   {%- set menuIcon = '<i class="menu-item-icon ' + value.split('||')[1] | trim | default('tas fa-question-circle') + '"></i>' %}
 {%- endif %}
 <li class="menu-item menu-item-{{ name | replace(' ', '-', 'g') }}">
-  {{ next_url(itemURL, menuIcon + menuText + menuBadge, {rel: 'section'}) }}
+  {{ next_url(itemURL, menuIcon + menuText, {rel: 'section'}) }}
 </li>

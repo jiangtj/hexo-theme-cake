@@ -1,9 +1,11 @@
 .site-nav-toggle {
   hide();
   position: absolute;
-  top: 10px;
-  left: 10px;
-  +mobile() {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+
+  +tablet-mobile() {
     show();
   }
 
@@ -21,7 +23,21 @@
     margin: 0 -10px;
     padding: 0 10px;
     clear: both;
-    border-top: 1px solid $gray-lighter;
   }
   +desktop() { display: block !important; }
+}
+
+.site-nav-on {
+   display: block;
+}
+
+
+.btn-bar {
+  show();
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+
+  &+.btn-bar { margin-top: 4px; }
 }
