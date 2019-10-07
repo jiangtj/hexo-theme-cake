@@ -1,10 +1,4 @@
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
@@ -144,15 +138,6 @@
 
         </div>
       </div>
-
-      {%- if theme.back2top.enable and theme.back2top.sidebar %}
-        <div class="back-to-top">
-          <i class="fas fa-arrow-up"></i>
-          {%- if theme.back2top.scrollpercent %}
-            <span id="scrollpercent"><span>0</span>%</span>
-          {%- endif %}
-        </div>
-      {%- endif %}
 
     </div>
   </aside>

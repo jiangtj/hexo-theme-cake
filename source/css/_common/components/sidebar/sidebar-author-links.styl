@@ -1,5 +1,8 @@
 .links-of-author {
   margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   a {
     display: inline-block;
@@ -21,4 +24,29 @@
       background: rgb(random-color(0, 255) - 50%, random-color(0, 255) - 50%, random-color(0, 255) - 50%);
     }
   }
+}
+
+.links-of-author-item {
+  sidebar-inline-links-item();
+  a:before { display: none; }
+  a {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  a {
+    show();
+    text-decoration: none;
+
+    &:hover {
+      border-radius: 4px;
+      background: $gainsboro;
+    }
+  }
+
+  .fa {
+    margin-right: 2px;
+    font-size: 16px;
+  }
+  .fa-globe { font-size: 15px; }
 }

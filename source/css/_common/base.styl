@@ -27,11 +27,33 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 20px 0 15px;
+  margin: 1em 0;
   padding: 0;
   font-weight: bold;
-  line-height: 1.5;
   font-family: $font-family-headings;
+  line-height: 1.5;
+  code {
+    font-size: .95em;
+  }
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.4em;
+}
+h3 {
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.2em;
+}
+h5,h6 {
+  font-size: 1.1em;
+}
+h6 {
+  font-weight: normal;
 }
 
 p {
@@ -120,3 +142,16 @@ kbd {
 @import "outline";
 // Components
 @import "components";
+
+
+// todo move to other place
+.sidebar-position-right {
+  .header-inner { right: 0; }
+  .content-wrap { float: left; }
+  .sidebar { float: right; }
+
+  .footer-inner {
+    padding-left: 0;
+    padding-right: 260px;
+  }
+}

@@ -1,5 +1,23 @@
 // Menu
 // --------------------------------------------------
+
+.menu-item-active a {
+  background: #f9f9f9;
+  border-bottom-color: white;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+    background-color: $grey;
+    circle();
+  }
+}
+
 .menu {
   margin-top: 20px;
   padding-left: 0;
@@ -7,28 +25,37 @@
 }
 
 .menu .menu-item {
-  display: inline-block;
-  margin: 0 10px;
+  show();
+  margin: 0;
   list-style: none;
-
-  +mobile() {
-    margin-top: 10px;
-  }
 
   a {
     show();
+    position: relative;
     font-size: 13px;
     line-height: inherit;
-    border-bottom: 1px solid $menu-link-border;
-    transition-property: border-color;
+    border: 0;
+    box-sizing: border-box;
+    padding: 5px 20px;
+    text-align: left;
+    transition-property: background-color;
     the-transition();
 
-    &:hover { border-bottom-color: $menu-link-hover-border; }
+    &:hover {
+      @extend .menu-item-active a;
+    }
+
+    disable-touch-hover();
   }
 
   .fa,.fas,.fab,.far,.fal,.fad {
     margin-right: 5px;
     width: 1rem;
+  }
+
+  // 兼容next主题，后续可能删除
+  br {
+    display: none;
   }
 }
 

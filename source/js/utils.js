@@ -97,33 +97,6 @@ NexT.utils = NexT.$u = {
     });
   },
 
-  registerScrollPercent: function() {
-    var THRESHOLD = 50;
-    var backToTop = document.querySelector('.back-to-top');
-    // For init back to top in sidebar if page was scrolled after page refresh.
-    window.addEventListener('scroll', () => {
-      var scrollPercent;
-      if (backToTop) {
-        var docHeight = document.querySelector('.container').offsetHeight;
-        var winHeight = window.innerHeight;
-        var contentVisibilityHeight = docHeight > winHeight ? docHeight - winHeight : document.body.scrollHeight - winHeight;
-        var scrollPercentRounded = Math.round(100 * window.scrollY / contentVisibilityHeight);
-        scrollPercent = Math.min(scrollPercentRounded, 100) + '%';
-      }
-      if (backToTop) {
-        window.scrollY > THRESHOLD ? backToTop.classList.add('back-to-top-on') : backToTop.classList.remove('back-to-top-on');
-        backToTop.querySelector('span').innerText = scrollPercent;
-      }
-    });
-
-    backToTop && backToTop.addEventListener('click', () => {
-      window.scroll({
-        top     : 0,
-        behavior: 'smooth'
-      });
-    });
-  },
-
   registerScrollSave: function() {
     if (!CONFIG.scroll.save) return;
     let scrollKey = 'scroll:' + location.pathname;
@@ -148,7 +121,7 @@ NexT.utils = NexT.$u = {
       link.addEventListener('click', event => {
         event.preventDefault();
         var target = document.getElementById(event.currentTarget.getAttribute('href').replace('#', ''));
-        var offset = target.getBoundingClientRect().top + window.scrollY;
+        var offset = target.getBoundingClientRect().top + window.scrollY + 1;
         window.scroll({
           top     : offset,
           behavior: 'smooth'

@@ -1,28 +1,43 @@
 .sidebar {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-
-  width: 0;
+  position: static;
+  float: left;
+  width: $sidebar-desktop;
   z-index: $zindex-4;
-  background: $black-deep;
+  background: $body-bg-color;
+  margin-top: -100%;
 
   a {
-    color: $grey-dark;
+    color: $black-light;
     border-bottom-color: $black-light;
     &:hover {
-      color: $gainsboro;
-      border-bottom-color: $gainsboro;
+      color: $black-deep;
+      border-bottom-color: $black-deep;
     }
+  }
+
+  +tablet-mobile() {
+    hide();
   }
 }
 
 .sidebar-inner {
   position: relative;
   padding: 20px 10px;
-  color: $grey-dark;
   text-align: center;
+  box-sizing: border-box;
+  width: $sidebar-desktop;
+  color: $text-color;
+  background: white;
+  border-radius: $border-radius;
+
+  &.affix {
+    position: fixed;
+    top: $sidebar-offset;
+  }
+
+  &.affix-bottom {
+    position: absolute;
+  }
 }
 
 .site-overview-wrap {
@@ -32,6 +47,7 @@
 .site-overview {
   overflow-y: auto;
   overflow-x: hidden;
+  text-align: left;
 }
 
 .cc-license {
@@ -48,7 +64,6 @@
   img { display: inline-block; }
 }
 
-@import "sidebar-toggle";
 @import "sidebar-author";
 @import "sidebar-author-links";
 @import "sidebar-button";

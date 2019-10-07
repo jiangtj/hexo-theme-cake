@@ -4,8 +4,6 @@ NexT.boot = {};
 
 NexT.boot.registerEvents = function() {
 
-  NexT.utils.registerScrollPercent();
-
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle button').addEventListener('click', () => {
     var siteNav = document.querySelector('.site-nav');

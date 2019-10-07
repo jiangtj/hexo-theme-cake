@@ -1,13 +1,4 @@
-// TODO: Refactor.
-
-.posts-expand {
-  padding-top: 40px;
-}
-
 +mobile() {
-  .posts-expand {
-    margin: 0 20px;
-  }
 
   .post-body {
     pre {
@@ -27,6 +18,26 @@
   }
 }
 
++tablet() {
+  .posts-expand {
+    // Components inside Posts.
+    .post-button {
+      margin-top: ($content-tablet-padding * 2);
+    }
+  }
+}
++mobile() {
+  .posts-expand {
+    // Components inside Posts.
+    .post-button {
+      margin: $sidebar-offset 0px;
+    }
+    img {
+      padding: initial !important;
+    }
+  }
+}
+
 .posts-expand .post-body {
   +desktop() {
     text-align: unquote(hexo-config('text_align.desktop'));
@@ -36,8 +47,6 @@
   }
 
   h2, h3, h4, h5, h6 {
-    padding-top: 10px;
-
     .header-anchor {
       float: right;
       margin-left: 10px;
