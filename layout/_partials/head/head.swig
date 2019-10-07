@@ -32,8 +32,6 @@
     version: '{{ version }}',
     sidebar: {{ theme.sidebar | json_encode }},
     copycode: {{ theme.codeblock.copy_button | json_encode }},
-    back2top: {{ theme.back2top.enable }},
-    back2top_sidebar: {{ theme.back2top.sidebar }},
     scroll: {
       save: {{ theme.scroll.save }}
     },

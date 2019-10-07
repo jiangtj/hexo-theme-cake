@@ -171,12 +171,8 @@ sidebar:
   # Pisces | Gemini: 240
   #width: 300
 
-back2top:
-  enable: true
-  # Back to top in sidebar.
-  sidebar: false
-  # Scroll percent label in b2t button.
-  scrollpercent: false
+# back2top removed, you can use hexo-cake-moon-menu instead of it
+# See: https://github.com/jiangtj-lab/hexo-cake-moon-menu
 
 # ---------------------------------------------------------------
 # Post Settings
