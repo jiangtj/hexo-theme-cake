@@ -1,6 +1,8 @@
 .links-of-blogroll {
   margin-top: 10px;
   font-size: 13px;
+  text-align: center;
+  padding: 3px 0 0;
 }
 
 .links-of-blogroll-title {
@@ -15,7 +17,7 @@
 }
 
 .links-of-blogroll-item {
-  padding: 2px 10px;
+  padding: 0;
 
   a {
     max-width: 280px;
@@ -24,5 +26,15 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+  }
+}
+
+.links-of-blogroll-inline {
+  clearfix();
+
+  .links-of-blogroll-item {
+    sidebar-inline-links-item();
+    display: inline-block;
+    if !hexo-config('social_icons.icons_only') { width: unset; }
   }
 }

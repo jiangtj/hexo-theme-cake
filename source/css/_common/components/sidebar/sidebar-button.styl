@@ -1,12 +1,14 @@
 .feed-link, .chat {
   margin-top: 10px;
+  border-top: 1px dotted $grey-light;
+  border-bottom: 1px dotted $grey-light;
+  text-align: center;
 
   a {
-    display: inline-block;
+    show();
     padding: 0 15px;
-    color: rgb(252, 100, 35);
-    border: 1px solid rgb(252, 100, 35) !important;
-    border-radius: 4px;
+    color: $orange;
+    border: none !important;
 
     i {
       color: rgb(252, 100, 35);
@@ -14,10 +16,10 @@
     }
 
     &:hover {
-      color: white;
-      background: rgb(252, 100, 35);
+      background: none;
+      color: darken($orange, 20%);
 
-      i { color: white; }
+      i { color: darken($orange, 20%); }
     }
   }
 }
