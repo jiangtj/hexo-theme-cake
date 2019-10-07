@@ -52,20 +52,17 @@
 .content-wrap {
   float: right;
   box-sizing: border-box;
-  padding: $content-desktop-padding;
   width: $content-wrap;
-  background: white;
   min-height: 700px;
-  border-radius: $border-radius-inner;
 
   +tablet() {
     width: 100%;
-    padding: 20px;
+    padding: $content-tablet-padding;
     border-radius: initial;
   }
   +mobile() {
     width: 100%;
-    padding: 20px;
+    padding: $content-mobile-padding;
     min-height: auto;
     border-radius: initial;
   }
@@ -75,6 +72,7 @@
 // --------------------------------------------------
 .footer {
   padding: 20px 0;
+  bottom: auto;
 }
 .footer-inner {
   box-sizing: border-box;

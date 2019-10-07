@@ -1,13 +1,4 @@
-// TODO: Refactor.
-
-.posts-expand {
-  padding-top: 40px;
-}
-
 +mobile() {
-  .posts-expand {
-    margin: 0 20px;
-  }
 
   .post-body {
     pre {
@@ -23,6 +14,26 @@
       .gutter pre {
         padding-right: 10px;
       }
+    }
+  }
+}
+
++tablet() {
+  .posts-expand {
+    // Components inside Posts.
+    .post-button {
+      margin-top: ($content-tablet-padding * 2);
+    }
+  }
+}
++mobile() {
+  .posts-expand {
+    // Components inside Posts.
+    .post-button {
+      margin: $sidebar-offset 0px;
+    }
+    img {
+      padding: initial !important;
     }
   }
 }
