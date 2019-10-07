@@ -1,1 +1,1 @@
-{{- next_js('utils.js', 'schemes/pisces.js', 'next-boot.js') }}
+{{- next_js('utils.js', 'affix.js', 'next-boot.js') }}

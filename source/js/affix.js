@@ -1,4 +1,6 @@
 /* global NexT, CONFIG */
+// todo use sticky
+// https://www.runoob.com/css/css-positioning.html#position-sticky
 
 var Affix = {
   init: function(element, options) {
