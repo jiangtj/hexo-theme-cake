@@ -1,6 +1,45 @@
-.header { background: $head-bg; }
+.header {
+  background: $head-bg;
+  position: relative;
+  margin: 0 auto;
+  width: $content-desktop;
 
-.header-inner { position: relative; }
+  +desktop-large() {
+    width: $content-desktop-large;
+  }
+  +desktop-largest() {
+    width: $content-desktop-largest;
+  }
+  +tablet-mobile() {
+    width: auto;
+  }
+}
+
+.header-inner {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  padding: 0;
+  width: $sidebar-desktop;
+  background: white;
+  border-radius: $border-radius-inner;
+  margin-top: 10px;
+
+  +desktop-large() {
+    .container & { width: $sidebar-desktop; }
+  }
+  +tablet-mobile() {
+    position: relative;
+    width: auto;
+    border-radius: initial;
+  }
+}
+
++tablet-mobile() {
+  .header-inner {
+    margin-top: inherit;
+  }
+}
 
 @import "headerband";
 @import "site-meta";

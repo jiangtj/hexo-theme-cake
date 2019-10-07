@@ -1,11 +1,10 @@
 .sidebar {
-  position: fixed;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  width: 0;
+  position: static;
+  float: left;
+  width: $sidebar-desktop;
   z-index: $zindex-4;
-  background: initial;
+  background: $body-bg-color;
+  margin-top: -100%;
 
   a {
     color: $black-light;
@@ -14,6 +13,10 @@
       color: $black-deep;
       border-bottom-color: $black-deep;
     }
+  }
+
+  +tablet-mobile() {
+    hide();
   }
 }
 
@@ -61,7 +64,6 @@
   img { display: inline-block; }
 }
 
-@import "sidebar-toggle";
 @import "sidebar-author";
 @import "sidebar-author-links";
 @import "sidebar-button";
