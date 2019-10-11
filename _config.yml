@@ -162,16 +162,6 @@ toc:
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
   max_depth: 6
 
-sidebar:
-  # Sidebar Position, available values: left | right (only for Pisces | Gemini).
-  position: left
-  #position: right
-
-  # Manual define the sidebar width. If commented, will be default for:
-  # Muse | Mist: 320
-  # Pisces | Gemini: 240
-  #width: 300
-
 # back2top removed, you can use hexo-cake-moon-menu instead of it
 # See: https://github.com/jiangtj-lab/hexo-cake-moon-menu
 

@@ -141,9 +141,9 @@ $pagination-active-border       = $grey-light
 
 // Layout sizes
 // --------------------------------------------------
-$content-desktop                = 800px
-$content-desktop-large          = 960px
-$content-desktop-largest        = 1024px
+$content-desktop                = 560px
+$content-desktop-large          = 680px
+$content-desktop-largest        = 800px
 
 $content-desktop-padding        = 40px
 $content-tablet-padding         = 10px
@@ -194,7 +194,10 @@ $posts-collapse-left-mobile     = 5px
 // Sidebar
 // Variables for sidebar section elements.
 // --------------------------------------------------
-$sidebar-offset                       = 12px
+$sidebar-width = 240px
+$sidebar-offset = 12px
+$sidebar-pin-top = 10px
+$sidebar-direction = row  // or row-reverse
 $sidebar-nav-color                    = $black-light
 $sidebar-nav-hover-color              = $orange
 $sidebar-highlight                    = $orange
@@ -296,11 +299,6 @@ $label-info                 = lighten(spin($note-info-border, -10), 86%)
 $label-success              = lighten(spin($note-success-border, 10), 85%)
 $label-warning              = lighten(spin($note-warning-border, 10), 83%)
 $label-danger               = lighten(spin($note-danger-border, -10), 87%)
-
-// Sidebar
-$sidebar-width                = hexo-config('sidebar.width') is a 'unit' ? hexo-config('sidebar.width') : 240
-$sidebar-desktop              = unit($sidebar-width, 'px')
-$content-wrap                 = 'calc(100% - %s)' % unit($sidebar-width + $sidebar-offset, 'px')
 
 // Borders
 // --------------------------------------------------
