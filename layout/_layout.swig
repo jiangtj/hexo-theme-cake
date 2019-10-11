@@ -33,9 +33,11 @@
     <div class="flex-main">
 
       <main>
-        <div class="sub-menu-wrap">
-          {{ partial( '_partials/post/post-menu.swig') }}
-        </div>
+        {%- if not is_home() %}
+          <div class="sub-menu-wrap">
+            {{ partial( '_partials/post/post-menu.swig') }}
+          </div>
+        {%- endif %}
         <div id="content" class="content">
           {%- block content %}{%- endblock %}
         </div>
