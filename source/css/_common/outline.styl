@@ -1,30 +1,4 @@
-//
 // Layout
-// Note: Must name this file "outline" instead of "layout"
-//       Or Hexo will use it as template layout.
-// =================================================
-
-
-.container {
-  position: relative;
-}
-
-
-// Header Section
-// --------------------------------------------------
-.header-inner {
-  margin: 0 auto;
-  padding: 100px 0 70px;
-  width: $content-desktop;
-
-  +desktop-large() {
-    .container & { width: $content-desktop-large; }
-  }
-  +desktop-largest() {
-    .container & { width: $content-desktop-largest; }
-  }
-}
-
 .flex-container {
   display: flex;
   flex-direction: row;
@@ -32,8 +6,8 @@
 }
 
 .flex-container > aside {
-  width: $sidebar-desktop;
-  margin: 0 10px;
+  width: $sidebar-width;
+  margin: 0 $sidebar-offset 0 0;
 }
 
 .flex-container > .flex-main {
@@ -56,6 +30,11 @@
   .flex-container {
     padding: 10px;
   }
+}
+
+.header-inner {
+  margin: 0 auto;
+  padding: 100px 0 70px;
 }
 
 .footer {
