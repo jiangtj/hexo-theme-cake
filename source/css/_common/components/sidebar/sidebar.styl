@@ -1,10 +1,4 @@
 .sidebar {
-  position: static;
-  float: left;
-  width: $sidebar-desktop;
-  z-index: $zindex-4;
-  background: $body-bg-color;
-  margin-top: -100%;
 
   a {
     color: $black-light;
@@ -21,7 +15,10 @@
 }
 
 .sidebar-inner {
-  position: relative;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10px;
+  margin-top: 10px;
   padding: 20px 10px;
   text-align: center;
   box-sizing: border-box;
@@ -29,15 +26,6 @@
   color: $text-color;
   background: white;
   border-radius: $border-radius;
-
-  &.affix {
-    position: fixed;
-    top: $sidebar-offset;
-  }
-
-  &.affix-bottom {
-    position: absolute;
-  }
 }
 
 .site-overview-wrap {

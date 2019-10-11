@@ -21,39 +21,35 @@
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
 
-  {%- set container_class = 'container' %}
-  {%- if theme.sidebar.position %}
-    {%- set container_class = container_class + ' sidebar-position-' + theme.sidebar.position %}
-  {%- endif %}
+  <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="header-inner">{{ partial( '_partials/header/index.swig') }}</div>
+    {{- next_inject('header') }}
+  </header>
 
-  <div class="{{ container_class }} {%- block page_class %}{%- endblock %}">
-    <div class="headband"></div>
+  <div class="flex-container">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner">{{ partial( '_partials/header/index.swig') }}</div>
-    </header>
+    {%- block sidebar %}{%- endblock %}
 
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div class="sub-menu-wrap">
-            {{ partial( '_partials/post/post-menu.swig') }}
-          </div>
-          <div id="content" class="content">
-            {%- block content %}{%- endblock %}
-          </div>
-          {{ partial( '_partials/comments.swig') }}
+    <div class="flex-main">
+
+      <main>
+        <div class="sub-menu-wrap">
+          {{ partial( '_partials/post/post-menu.swig') }}
         </div>
-        {%- block sidebar %}{%- endblock %}
-      </div>
-    </main>
+        <div id="content" class="content">
+          {%- block content %}{%- endblock %}
+        </div>
+        {{ partial( '_partials/comments.swig') }}
+      </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        {{ partial('_partials/footer.swig', {}, {cache: true}) }}
-        {%- block footer %}{%- endblock %}
-      </div>
-    </footer>
+      <footer class="footer">
+        <div class="footer-inner">
+          {{ partial('_partials/footer.swig', {}, {cache: true}) }}
+          {%- block footer %}{%- endblock %}
+        </div>
+      </footer>
+
+    </div>
 
   </div>
 
