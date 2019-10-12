@@ -8,12 +8,7 @@ const path = require('path');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   injects.postBodyEnd.raw('reward', `
-  {%- if page.reward === undefined and theme.reward_settings.enable %}
-  {%- set reward_able = true %}
-  {%- else %}
-    {%- set reward_able = page.reward %}
-  {%- endif %}
-  {%- if reward_able and not is_index %}
+  {%- if page.reward_settings.enable and not is_index %}
     {{ partial('_partials/post/reward.swig', {}, {cache: true}) }}
   {%- endif %}
   `, {}, {}, theme.reward_settings.inject_order);

@@ -8,13 +8,9 @@
 
     <div class="sidebar-inner">
 
-      {%- set display_toc = is_post() and theme.toc.enable or is_page and theme.toc.enable %}
-      {%- set next_toc_number = theme.toc.number %}
-      {%- if page.toc_number !== undefined %}
-        {%- set next_toc_number = page.toc_number %}
-      {%- endif %}
-      {%- set next_toc_max_depth = page.toc_max_depth|default(theme.toc.max_depth)|default(6) %}
-      {%- set toc = toc(page.content, { "class": "nav", list_number: next_toc_number, max_depth: next_toc_max_depth }) %}
+      {%- set is_post_or_page = is_post() or is_page() %}
+      {%- set display_toc = is_post_or_page and page.toc.enable %}
+      {%- set toc = toc(page.content, { "class": "nav", list_number: page.toc.number, max_depth: page.toc.max_depth|default(6) }) %}
       {%- set display_toc = display_toc and toc.length > 1 %}
 
       {%- if display_toc %}

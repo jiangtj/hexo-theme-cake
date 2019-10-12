@@ -1,5 +1,5 @@
 <div class="reward-container">
-  <div>{{ theme.reward_settings.comment }}</div>
+  <div>{{ page.reward_settings.comment }}</div>
   <div class="reward-box"></div>
   <div class="reward-group">
     {%- for reward_name,reward_item in theme.reward %}
