@@ -9,6 +9,4 @@ hexo.on('generateBefore', () => {
   require('./lib/hexo-config')(hexo);
   // Add filter type `theme_inject`.
   require('./lib/injects')(hexo);
-  // Fix categories and tags.
-  require('./lib/fix-categories-tags')(hexo);
 });
