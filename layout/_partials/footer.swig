@@ -14,7 +14,7 @@
 {%- if theme.footer.powered.enable %}
   <div class="powered-by">
     {{ __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) }}
-    {%- if theme.footer.powered.version %} v{{ hexo_env('version') }}{%- endif %}
+    {%- if theme.footer.powered.version %} v{{ hexo_version }}{%- endif %}
   </div>
 {%- endif %}
 
@@ -25,7 +25,7 @@
 {%- if theme.footer.theme.enable %}
   <div class="theme-info">{#
   #}{{ __('footer.theme') }} – {{ next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) }}{#
-  #}{%- if theme.footer.theme.version %} v{{ version }}{%- endif %}{#
+  #}{%- if theme.footer.theme.version %} v{{ cake_version }}{%- endif %}{#
 #}</div>
 {%- endif %}
 

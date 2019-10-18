@@ -1,17 +1,5 @@
 <!DOCTYPE html>
-
-{# NexT version #}
-{%- set version = next_env('version') %}
-
-{# Language & Config #}
-{%- set title = __('title') !== 'title' && __('title') || config.title %}
-{%- set subtitle = __('subtitle') !== 'subtitle' && __('subtitle') || config.subtitle %}
-{%- set author = __('author') !== 'author' && __('author') || config.author %}
-{%- set description = __('description') !== 'description' && __('description') || config.description %}
-
-{%- set html_class = 'theme-next ' + theme.scheme %}
-
-<html class="{{ html_class | lower }}" lang="{{ config.language }}">
+<html lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: true}) }}
   {{ partial('_partials/head/head-unique.swig') }}
