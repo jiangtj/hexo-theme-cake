@@ -64,13 +64,7 @@ state:
   categories: 分類
 search:
   placeholder: 搜尋...
-cheers:
-  um: 嗯..
-  ok: 還行
-  nice: 好
-  good: 很好
-  great: 非常好
-  excellent: 太棒了
+cheers: 太棒了
 keep_on: 繼續努力。
 symbol:
   comma: "，"

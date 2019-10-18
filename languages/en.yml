@@ -74,13 +74,7 @@ state:
 search:
   placeholder: Searching...
 
-cheers:
-  um: Um..
-  ok: OK
-  nice: Nice
-  good: Good
-  great: Great
-  excellent: Excellent
+cheers: Nice
 
 keep_on: Keep on posting.
 
