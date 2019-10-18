@@ -42,7 +42,7 @@
 
   </div>
 
-  {{- partial( '_scripts/commons.swig', {}, {cache: true}) }}
+  {{- next_js('utils.js', 'next-boot.js') }}
   {{- next_inject('bodyEnd') }}
 
 </body>

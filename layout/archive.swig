@@ -1,7 +1,5 @@
 {%- extends '_layout.swig' %}
 
-{%- block page_class %}page-archive{%- endblock %}
-
 {%- block content %}
 
   {#####################}
