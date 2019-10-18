@@ -1,0 +1,12 @@
+<div class="post-block tag">
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h1><%= page.tag %><small><%= __('title.tag') %></small></h1>
+    </div>
+    <% page.posts.forEach((post) => { %>
+    <%- partial('_partials/post-collapse.swig', {post}) -%>
+    <% }) %>
+  </div>
+</div>
+
+<%- partial( '_partials/pagination.swig') -%>

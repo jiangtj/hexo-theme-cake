@@ -1,0 +1,7 @@
+<section id="posts" class="posts-expand">
+  <% page.posts.forEach(post => { %>
+  <%- partial('_partials/post.swig', {is_index: true, post}) -%>
+  <% }) %>
+</section>
+
+<%- partial( '_partials/pagination.swig') -%>
