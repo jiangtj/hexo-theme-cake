@@ -47,7 +47,6 @@
       <footer class="footer">
         <div class="footer-inner">
           {{ partial('_partials/footer.swig', {}, {cache: true}) }}
-          {%- block footer %}{%- endblock %}
         </div>
       </footer>
 
