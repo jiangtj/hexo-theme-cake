@@ -28,7 +28,7 @@
 
   <div class="flex-container">
 
-    {%- block sidebar %}{%- endblock %}
+    {{ partial('_partials/sidebar.swig') }}
 
     <div class="flex-main">
 

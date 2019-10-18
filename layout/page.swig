@@ -65,7 +65,3 @@
   {%- endif %}
 
 {%- endblock %}
-
-{%- block sidebar %}
-  {{ partial('_partials/sidebar.swig') }}
-{%- endblock %}

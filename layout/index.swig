@@ -15,7 +15,3 @@
 
   {{ partial( '_partials/pagination.swig') }}
 {%- endblock %}
-
-{%- block sidebar %}
-  {{ partial('_partials/sidebar.swig') }}
-{%- endblock %}
