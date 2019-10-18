@@ -1,0 +1,37 @@
+<% if (page.type === 'tags') { %>
+<div id="posts" class="posts-expand">
+  <div class="post-block page">
+    <%- partial( '_partials/page/page-header.swig') -%>
+    <div class="post-body">
+      <div class="tag-cloud">
+        <div class="tag-cloud-title">
+          <%= _p('counter.tag_cloud', site.tags.length) -%>
+        </div>
+        <div class="tag-cloud-tags">
+          <%- tagcloud({min_font: theme.tagcloud.min, max_font: theme.tagcloud.max, amount: theme.tagcloud.amount, color: true, start_color: theme.tagcloud.start, end_color: theme.tagcloud.end}) -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } else if (page.type === 'categories') { %>
+<div id="posts" class="posts-expand">
+  <div class="post-block page">
+    <%- partial( '_partials/page/page-header.swig') -%>
+    <div class="post-body">
+      <div class="category-all-page">
+        <div class="category-all-title">
+          <%= _p('counter.categories', site.categories.length) -%>
+        </div>
+        <div class="category-all">
+          <%- list_categories() -%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } else { %>
+<%- partial( 'post.ejs') -%>
+<% } %>
