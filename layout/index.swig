@@ -1,7 +1,5 @@
 {%- extends '_layout.swig' %}
 
-{%- block title %}{{ title }}{%- if theme.index_with_subtitle and subtitle %} – {{ subtitle }}{%- endif %}{%- endblock %}
-
 {%- block page_class %}
   {%- if is_home() %}page-home{%- endif -%}
 {%- endblock %}

@@ -14,9 +14,9 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: true}) }}
-  {{ partial( '_partials/head/head-unique.swig') }}
+  {{ partial('_partials/head/head-unique.swig') }}
+  {{ partial('_partials/head/title.swig') }}
   {{- next_inject('head') }}
-  <title>{%- block title %}{%- endblock %}</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">

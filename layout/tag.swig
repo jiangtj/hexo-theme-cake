@@ -1,7 +1,5 @@
 {%- extends '_layout.swig' %}
 
-{%- block title %}{{ __('title.tag') }}: {{ page.tag }} | {{ title }}{%- endblock %}
-
 {%- block content %}
 
   {%- if theme.scheme === 'Neet' %}

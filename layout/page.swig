@@ -1,17 +1,5 @@
 {%- extends '_layout.swig' %}
 
-  {%- block title %}{#
-  #}{%- set page_title_suffix = ' | ' + title %}{#
-
-  #}{%- if page.type === 'categories' and not page.title %}{#
-    #}{{ __('title.category') + page_title_suffix }}{#
-  #}{%- elif page.type === 'tags' and not page.title %}{#
-    #}{{ __('title.tag') + page_title_suffix }}{#
-  #}{%- else %}{#
-    #}{{ page.title + page_title_suffix }}{#
-  #}{%- endif %}{#
-#}{%- endblock %}
-
 {%- block page_class %}page-post-detail{%- endblock %}
 
 {%- block content %}

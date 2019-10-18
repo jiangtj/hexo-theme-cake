@@ -1,7 +1,5 @@
 {%- extends '_layout.swig' %}
 
-{%- block title %}{{ __('title.category') }}: {{ page.category }} | {{ title }}{%- endblock %}
-
 {%- block content %}
 
   {######################}
