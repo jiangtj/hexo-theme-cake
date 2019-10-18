@@ -2,7 +2,8 @@
   <div id="posts" class="posts-collapse">
     <span class="archive-move-on"></span>
 
-    <% if (theme.cheers) {
+    <%
+    if (theme.cheers) {
       let cheers
       let posts_length = site.posts.length
       switch (posts_length) {
@@ -12,16 +13,20 @@
         case 50: cheers = 'nice'; break;
         case 30: cheers = 'ok'; break;
         default: cheers = 'um'; break;
-      }%>
+      }
+    %>
     <span class="archive-page-counter">
       <%= __('cheers.' + cheers) %>! <%= _p("counter.archive_posts", site.posts.length) + " " +   __('keep_on') %>
     </span>
     <% } %>
 
-    <% page.posts.forEach(post => {
-      let post.year = date(post.date, 'YYYY');
+    <%
+    let year;
+    page.posts.forEach(post => {
+      post.year = date(post.date, 'YYYY');
       if (post.year !== year) {
-      let year = post.year; %>
+        year = post.year;
+    %>
     <div class="collection-title">
       <h1 class="archive-year" id="archive-year-<%= year %>"><%= year %><h1>
     </div>
