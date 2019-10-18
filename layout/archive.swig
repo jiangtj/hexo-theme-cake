@@ -1,6 +1,3 @@
-{%- extends '_layout.swig' %}
-
-{%- block content %}
 
   {#####################}
   {### ARCHIVE BLOCK ###}
@@ -51,4 +48,3 @@
 
   {{ partial( '_partials/pagination.swig') }}
 
-{%- endblock %}

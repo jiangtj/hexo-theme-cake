@@ -1,13 +1,3 @@
-{%- extends '_layout.swig' %}
-
-{%- block content %}
-
-  {%- if theme.scheme === 'Neet' %}
-    <div id="posts" class="posts-expand posts-categories-left page-sidebar-moblie-hidden">
-      {{ partial( '_neet/page-tags.swig') }}
-    </div>
-    <div class="posts-categories-right">
-  {%- endif %}
 
   {#################}
   {### TAG BLOCK ###}
@@ -32,10 +22,5 @@
   {### END TAG BLOCK ###}
   {#####################}
 
-  {%- if theme.scheme === 'Neet' %}
-    </div>
-  {%- endif %}
-
   {{ partial( '_partials/pagination.swig') }}
 
-{%- endblock %}

@@ -27,7 +27,7 @@
           </div>
         {%- endif %}
         <div id="content" class="content">
-          {%- block content %}{%- endblock %}
+          {{- body }}
         </div>
         {{ partial( '_partials/comments.swig') }}
       </main>

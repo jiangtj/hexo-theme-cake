@@ -1,6 +1,4 @@
-{%- extends '_layout.swig' %}
 
-{%- block content %}
 
   {######################}
   {### CATEGORY BLOCK ###}
@@ -27,4 +25,3 @@
 
   {{ partial( '_partials/pagination.swig') }}
 
-{%- endblock %}

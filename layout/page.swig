@@ -1,6 +1,4 @@
-{%- extends '_layout.swig' %}
 
-{%- block content %}
 
 
   {%- if page.type === 'tags' %}
@@ -50,4 +48,3 @@
     </div>
   {%- endif %}
 
-{%- endblock %}
