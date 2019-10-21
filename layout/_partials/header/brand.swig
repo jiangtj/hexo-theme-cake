@@ -1,13 +1,5 @@
 <div class="site-brand-wrapper">
   <div class="site-meta{%- if theme.custom_logo.enable %} custom-logo{%- endif %}">
-    {%- if theme.custom_logo.enable and theme.custom_logo.image and (theme.scheme === 'Muse' or theme.scheme === 'Neet') %}
-      <div class="site-meta-headline">
-        <a>
-          <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
-        </a>
-      </div>
-    {%- endif %}
-
     <div class="custom-logo-site-title">
       <a href="{{ config.root }}" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -22,11 +14,7 @@
         <p class="site-subtitle">{{ subtitle }}</p>
       {%- endif %}
     {%- endif %}
-    {%- if theme.custom_logo.enable and theme.custom_logo.image and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
-      </a>
-    {%- endif %}
+    <a><img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/></a>
   </div>
 
   <div class="site-nav-toggle">
