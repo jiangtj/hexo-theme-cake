@@ -1,6 +1,6 @@
 <section id="posts" class="posts-expand">
   <% page.posts.forEach(post => { %>
-  <%- partial('_partials/post.swig', {is_index: true, post}) -%>
+  <%- partial('_partials/post.ejs', {is_index: true, post}) -%>
   <% }) %>
 </section>
 

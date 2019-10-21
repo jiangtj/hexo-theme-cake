@@ -1,0 +1,76 @@
+<%
+let post_class = 'post post-type-' + (post.type || 'normal');
+%>
+
+<article class="<%= post_class %>" itemscope itemtype="http://schema.org/Article">
+  <div class="post-block">
+
+    <link itemprop="mainEntityOfPage" href="<%= config.url %><%= url_for(post.path) %>" />
+    <meta itemprop="dateCreated datePublished" content="<%= moment(post.date).format() %>" />
+    <meta itemprop="dateModified" content="<%= moment(post.updated).format() %>" />
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="<%= author %>" />
+      <meta itemprop="description" content="<%= description %>" />
+      <meta itemprop="image" content="<%= url_for(theme.avatar.url || 'images/avatar.gif') %>" />
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<%= title %>" />
+      <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="<%= url_for(theme.favicon.small) %>?v=<%= cake_version %>" />
+      </span>
+    </span>
+
+    <%- partial( '_partials/post/banner.swig') -%>
+
+    <header class="post-header">
+
+      <% if (post.title) { %>
+      <h1 class="post-title" itemprop="name headline">
+        <% if (is_index) { %>
+        <%- next_url(post.path, post.title || __('post.untitled'), {class: 'post-title-link', itemprop: 'url' }) -%>
+        <% } else { %>
+        <%= post.title %>
+        <% } %>
+      </h1>
+      <% } %>
+
+      <%- partial( '_partials/post/meta.swig') -%>
+
+    </header>
+
+    <div class="post-body" itemprop="articleBody">
+      <% if (is_index && post.excerpt) { %>
+      <%- post.excerpt -%>
+      <%- partial( '_partials/post/read-more.swig') -%>
+      <% } else { %>
+      <%- post.content -%>
+      <% } %>
+    </div>
+
+    <% if (!is_index) { %>
+    <%- next_inject('postBodyEnd') -%>
+    <% } %>
+
+    <% if (!is_index && (post.prev || post.next)) { %>
+    <footer class="post-footer">
+      <div class="post-nav">
+        <div class="post-nav-next post-nav-item">
+          <% if (post.next) { %>
+          <a href="<%= url_for(post.next.path) %>" rel="next" title="<%= post.next.title %>">
+            <i class="fas fa-chevron-left"></i> <%= post.next.title %>
+          </a>
+          <% } %>
+        </div>
+        <span class="post-nav-divider"></span>
+        <div class="post-nav-prev post-nav-item">
+          <% if (post.prev) { %>
+          <a href="<%= url_for(post.prev.path) %>" rel="prev" title="<%= post.prev.title %>">
+            <%= post.prev.title %> <i class="fas fa-chevron-right"></i>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </footer>
+    <% } %>
+  </div>
+</article>
