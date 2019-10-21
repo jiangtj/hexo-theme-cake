@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const points = require('./injects-point');
+const defaultRenderSuffix = '.swig';
 
 // Defining stylus types
 class StylusInject {
@@ -20,9 +21,15 @@ class ViewInject {
     this.raws = [];
   }
   raw(name, raw, ...args) {
+    if (path.extname(name) === '') {
+      name += defaultRenderSuffix;
+    }
     this.raws.push({name, raw, args});
   }
   file(name, file, ...args) {
+    if (path.extname(name) === '') {
+      name += path.extname(file);
+    }
     this.raw(name, fs.readFileSync(file, 'utf8'), ...args);
   }
 }
@@ -55,12 +62,8 @@ module.exports = hexo => {
     let configs = Object.create(null);
     hexo.theme.config.injects[type] = [];
     injects[type].raws.forEach((injectObj, index) => {
-      // If there is no suffix, will add `.swig`.
-      if (injectObj.name.indexOf('.') < 0) {
-        injectObj.name += '.swig';
-      }
-      let name = `inject/${type}/${injectObj.name}`;
       // Add or override view.
+      let name = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(name, injectObj.raw);
       configs[name] = {
         layout : name,
