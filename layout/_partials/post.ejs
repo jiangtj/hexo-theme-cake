@@ -15,11 +15,11 @@ let post_class = 'post post-type-' + (post.type || 'normal');
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="<%= title %>" />
+      <% if (theme.favicon.small) { %>
       <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-        <% if (theme.favicon.small) { %>
         <meta itemprop="url" content="<%= url_for(theme.favicon.small) %>?v=<%= cake_version %>" />
-        <% } %>
       </span>
+      <% } %>
     </span>
 
     <%- partial( '_partials/post/banner.ejs') -%>
