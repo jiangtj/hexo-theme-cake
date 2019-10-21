@@ -107,15 +107,6 @@ social_icons:
   icons_only: false
   transition: false
 
-# todo update links
-# Blog rolls
-links_icon: fas fa-link
-links_title: Links
-links_layout: block
-#links_layout: inline
-links:
-  #Title: http://example.com
-
 # Sidebar Avatar
 avatar:
   # In theme directory (source/images): /images/avatar.gif

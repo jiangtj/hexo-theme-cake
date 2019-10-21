@@ -110,23 +110,6 @@
              </div>
           {%- endif %}
 
-          {# Blogroll #}
-          {%- if theme.links %}
-            <div class="links-of-blogroll {{ 'links-of-blogroll-' + theme.links_layout | default('inline') }}">
-              <div class="links-of-blogroll-title">
-                <i class="{{ theme.links_icon | default('fas fa-globe') | lower }}"></i>
-                {{ theme.links_title }}
-              </div>
-              <ul class="links-of-blogroll-list">
-                {%- for blogrollText, blogrollURL in theme.links %}
-                  <li class="links-of-blogroll-item">
-                    {{ next_url(blogrollURL, blogrollText, {title: blogrollURL}) }}
-                  </li>
-                {%- endfor %}
-              </ul>
-            </div>
-          {%- endif %}
-
           {{- next_inject('sidebar') }}
 
         </div>
