@@ -343,6 +343,3 @@ vendors:
   # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
   # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
   valine:
-
-# Assets
-js: js
