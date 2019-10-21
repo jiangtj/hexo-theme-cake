@@ -149,12 +149,6 @@ toc:
 # See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
-# Set the text alignment in the posts.
-text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
-
 # Scroll behavior.
 scroll:
   more: true
