@@ -16,7 +16,9 @@ let post_class = 'post post-type-' + (post.type || 'normal');
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="<%= title %>" />
       <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <% if (theme.favicon.small) { %>
         <meta itemprop="url" content="<%= url_for(theme.favicon.small) %>?v=<%= cake_version %>" />
+        <% } %>
       </span>
     </span>
 
