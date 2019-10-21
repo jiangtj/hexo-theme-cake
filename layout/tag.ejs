@@ -4,7 +4,7 @@
       <h1><%= page.tag %><small><%= __('title.tag') %></small></h1>
     </div>
     <% page.posts.forEach((post) => { %>
-    <%- partial('_partials/post-collapse.swig', {post}) -%>
+    <%- partial('_partials/post-collapse.ejs', {post}) -%>
     <% }) %>
   </div>
 </div>
