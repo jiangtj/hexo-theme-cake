@@ -3,7 +3,7 @@
   <aside class="sidebar">
 
     <div class="header-inner">
-      {{ partial( '_partials/header/index.ejs') }}
+      {{ partial( '_partials/header/index.ejs', {}, {cache: 'cake-header-' + page.lang}) }}
     </div>
 
     <div class="sidebar-inner">
