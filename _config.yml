@@ -215,10 +215,7 @@ safari_rainbow: false
 custom_scrollbar: false
 
 # Custom Logo
-# Do not support Scheme Mist currently.
-custom_logo:
-  enable: false
-  image: #/uploads/custom-logo.jpg
+custom_logo: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
