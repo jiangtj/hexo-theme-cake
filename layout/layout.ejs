@@ -13,7 +13,7 @@
   <%- next_inject('header') -%>
 
   <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
-    <div class="header-inner"><%- partial( '_partials/header/index.swig') -%></div>
+    <div class="header-inner"><%- partial( '_partials/header/index.ejs', {}, {cache: true}) -%></div>
   </header>
 
   <div class="flex-container">

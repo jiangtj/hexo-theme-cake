@@ -3,7 +3,7 @@
   <aside class="sidebar">
 
     <div class="header-inner">
-      {{ partial( '_partials/header/index.swig') }}
+      {{ partial( '_partials/header/index.ejs', {}, {cache: true}) }}
     </div>
 
     <div class="sidebar-inner">
