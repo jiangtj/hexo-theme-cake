@@ -1,0 +1,39 @@
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="<%= theme.theme_color %>"/>
+<%- css(theme.font) -%>
+<%- css('css/main.css?v=' + cake_version) -%>
+<% if (theme.favicon.apple_touch_icon) { %>
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= url_for(theme.favicon.apple_touch_icon) %>?v=<%- cake_version %>">
+<% } %>
+<% if (theme.favicon.medium) { %>
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= url_for(theme.favicon.medium) %>?v=<%- cake_version %>">
+<% } %>
+<% if (theme.favicon.small) { %>
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= url_for(theme.favicon.small) %>?v=<%- cake_version %>">
+<% } %>
+<% if (theme.favicon.safari_pinned_tab) { %>
+  <link rel="mask-icon" href="<%= url_for(theme.favicon.safari_pinned_tab) %>?v=<%= cake_version %>" color="<%= theme.android_chrome_color %>">
+<% } %>
+<% if (theme.favicon.android_manifest) { %>
+  <link rel="manifest" href="<%= url_for(theme.favicon.android_manifest) %>">
+<% } %>
+<% if (theme.favicon.ms_browserconfig) { %>
+  <meta name="msapplication-config" content="<%= url_for(theme.favicon.ms_browserconfig) %>"/>
+<% } %>
+
+<%# Export some HEXO Configurations to Front-End #%>
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '<%= theme.root %>',
+    scheme: '<%= theme.scheme %>',
+    version: '<%= cake_version %>',
+    sidebar: <%- JSON.stringify(theme.sidebar) || '{}' %>,
+    copycode: <%- JSON.stringify(theme.codeblock.copy_button) %>,
+    scroll: {
+      save: '<%= theme.scroll.save %>'
+    }
+  };
+</script>

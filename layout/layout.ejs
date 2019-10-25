@@ -2,9 +2,9 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
-  <%- partial('_partials/head/head.swig', {}, {cache: true}) -%>
-  <%- partial('_partials/head/head-unique.swig') -%>
-  <%- partial('_partials/head/title.swig') -%>
+  <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
+  <%- partial('_partials/head/head-unique.ejs') -%>
+  <%- partial('_partials/head/title.ejs') -%>
   <%- next_inject('head') -%>
 </head>
 
