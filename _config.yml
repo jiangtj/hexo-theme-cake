@@ -155,7 +155,7 @@ post_meta:
   created_at: true
   updated_at:
     enable: false
-    another_day: true
+    hide_same: true
   categories: true
 
 codeblock:

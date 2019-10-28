@@ -1,0 +1,51 @@
+<div class="post-meta">
+
+  <% if ((is_home() || is_post()) && theme.post_meta.created_at) { %>
+  <% let create_title = __('post.created') + __('symbol.colon') + full_date(post.date); %>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="far fa-calendar"></i>
+    </span>
+    <span class="post-meta-item-text"><%= __('post.posted') %></span>
+    <time title="<%= create_title %>"><%= date(post.date) %></time>
+  </span>
+  <% } %>
+
+  <% if ((is_home() || is_post())
+      && theme.post_meta.updated_at.enable
+      && !(theme.post_meta.updated_at.hide_same && (post.date != post.updated))) { %>
+  <% let modified_title = __('post.modified') + __('symbol.colon') + full_date(post.updated); %>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="far fa-calendar-check"></i>
+    </span>
+    <span class="post-meta-item-text"><%= __('post.edited') %></span>
+    <time title="<%= modified_title %>"><%= date(post.updated) %></time>
+  </span>
+  <% } %>
+
+  <% if ((is_home() || is_post()) && post.categories && post.categories.length && theme.post_meta.categories) { %>
+  <%
+  let symbolComma = __('symbol.comma');
+  let categorieMetas = post.categories.map(cat => {
+    let name = `<span itemprop="name">${cat.name}</span>`;
+    let link = `<a href="${url_for(cat.path)}" itemprop="url" rel="index">${name}</a>`;
+    return `<span itemprop="about" itemscope itemtype="http://schema.org/Thing">${link}</span>`;
+  });
+  %>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="far fa-folder"></i>
+    </span>
+    <span class="post-meta-item-text"><%= __('post.in') %></span>
+    <%- categorieMetas.join(symbolComma) -%>
+  </span>
+  <% } %>
+
+  <%- next_inject('postMeta') -%>
+
+  <% if (post.description) { %>
+  <div class="post-description"><%- post.description -%></div>
+  <% } %>
+
+</div>
