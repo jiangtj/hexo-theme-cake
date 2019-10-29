@@ -163,13 +163,6 @@ codeblock:
   # Available values: normal | night | night eighties | night blue | night bright
   # See: https://github.com/chriskempson/tomorrow-theme
   highlight_theme: normal
-  # Add copy button on codeblock
-  copy_button:
-    enable: false
-    # Show text copy result.
-    show_result: false
-    # Available values: default | flat | mac
-    style:
 
 # Reward (Donate)
 reward_settings:
