@@ -1,0 +1,17 @@
+<% if (!is_home() && page.menu) { %>
+<ul id="sub-menu" class="sub-menu menu">
+  <% Object.keys(page.menu).forEach(subname => { %>
+  <%
+  let subvalue = page.menu[subname];
+  let itemURL = subvalue.split('||')[0].trim()
+  if (itemURL.indexOf('http') !== 0) {
+    itemURL = itemURL.replace(/\/\//g, '/');
+  }
+  let post_menu_icon = `<i class="menu-item-icon ${subvalue.split('||')[1].trim() || 'fas fa-question-circle'}"></i>`;
+  %>
+  <li class="menu-item">
+    <%- next_url(itemURL, post_menu_icon + subname, {rel: 'section'}) -%>
+  </li>
+  <% }) %>
+</ul>
+<% } %>
