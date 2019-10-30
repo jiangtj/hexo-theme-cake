@@ -151,9 +151,12 @@ NexT.utils = NexT.$u = {
         rewardBox.classList.add('active');
       });
     });
-    document.querySelector('.reward-container').addEventListener('mouseleave', () => {
-      rewardBox.classList.remove('active');
-    });
+    let rewardContainer = document.querySelector('.reward-container');
+    if (rewardContainer) {
+      rewardContainer.addEventListener('mouseleave', () => {
+        rewardBox.classList.remove('active');
+      });
+    }
   },
 
   wrapTableWithBox: function() {
