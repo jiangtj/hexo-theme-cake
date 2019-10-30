@@ -43,7 +43,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
     <div class="post-body" itemprop="articleBody">
       <% if (is_index && post.excerpt) { %>
       <%- post.excerpt -%>
-      <%- partial( '_partials/post/read-more.swig') -%>
+      <%- partial( '_partials/post/read-more.ejs') -%>
       <% } else { %>
       <%- post.content -%>
       <% } %>

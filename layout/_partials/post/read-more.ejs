@@ -1,0 +1,7 @@
+<% if (theme.read_more_btn && post.excerpt) { %>
+<div>
+  <a href="<%= url_for(post.path) %><% if (theme.scroll.more) { %>#more<% } %>" rel="contents">
+    <%= __('post.read_more') %> &raquo;
+  </a>
+</div>
+<% } %>
