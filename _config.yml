@@ -301,3 +301,7 @@ fontawesome:
   #type: kit
   #url: https://kit.fontawesome.com/your-id.js
   # todo npm
+
+# Be compatible with NexT
+next_compatible:
+  render: true
