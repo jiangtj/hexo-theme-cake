@@ -184,27 +184,9 @@ reward:
   #   image: /images/paypal.png
   #   url: https://www.paypal.me/jiangtj
 
-# Related popular posts
-# Dependencies: https://github.com/tea3/hexo-related-popular-posts
-related_posts:
-  enable: false
-  title: # custom header, leave empty to use the default one
-  display_in_home: false
-  params:
-    maxCount: 5
-    #PPMixingRate: 0.0
-    #isDate: false
-    #isImage: false
-    #isExcerpt: false
 
 # Header panel color.
 theme_color: "#414852"
-
-# Hide sticky headers and color the menu bar on Safari (iOS / macOS).
-safari_rainbow: false
-
-# Optimize the display of scrollbars on webkit based browsers.
-custom_scrollbar: false
 
 # Custom Logo
 custom_logo: #/uploads/custom-logo.jpg
@@ -243,23 +225,6 @@ disqus:
   shortname:
   count: true
   lazyload: false
-
-# Valine
-# You can get your appid and appkey from https://leancloud.cn
-# More info available at https://valine.js.org
-valine:
-  enable: false # When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
-  notify: false # Mail notifier. See: https://github.com/xCss/Valine/wiki
-  verify: false # Verification code
-  placeholder: Just go go # Comment box placeholder
-  avatar: mm # Gravatar style
-  guest_info: nick,mail,link # Custom comment header
-  pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
-  visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
-  comment_count: true # If false, comment count will only be displayed in post page, not in home page
 
 # A JavaScript library for zooming images like Medium
 medium_zoom:
@@ -301,7 +266,3 @@ fontawesome:
   #type: kit
   #url: https://kit.fontawesome.com/your-id.js
   # todo npm
-
-# Be compatible with NexT
-next_compatible:
-  render: true
