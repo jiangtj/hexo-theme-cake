@@ -33,9 +33,8 @@ footer:
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
 # Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
-  license: by-nc-sa
-  sidebar: false
   post: true
+  license: by-nc-sa
   language:
 
 # ---------------------------------------------------------------
