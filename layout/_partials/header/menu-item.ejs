@@ -1,0 +1,14 @@
+
+<%
+let itemURL = value.split('||')[0].trim();
+let menuText = __('menu.' + name);
+if (menuText.indexOf('menu.') == 0) {
+  menuText = titlecase(menuText.replace('menu.', ''));
+}
+if (theme.menu_settings.icons) {
+  menuText = `<i class="menu-item-icon ${value.split('||')[1].trim() || 'fas fa-question-circle'}"></i>${menuText}`
+}
+%>
+<li class="menu-item menu-item-<%= name.replace(/\s/g, '-') %>">
+  <%- next_url(itemURL, menuText, {rel: 'section'}) -%>
+</li>

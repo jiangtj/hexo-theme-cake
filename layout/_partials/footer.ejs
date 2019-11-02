@@ -1,0 +1,21 @@
+<div class="copyright">
+  <% let current = date(Date.now(), "YYYY") %>
+  &copy; <% if (theme.footer.since && theme.footer.since !== current) { %><%= theme.footer.since %> – <% } %>
+  <span itemprop="copyrightYear"><%= current %></span>
+  <span class="with-love" id="animate">
+    <i class="<%= theme.footer.icon.name %>"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"><%= author %></span>
+</div>
+
+<div class="powered-by">
+  <%- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) -%> v<%= hexo_version %>
+</div>
+
+<span class="post-meta-divider">|</span>
+
+<div class="theme-info">
+  <%= __('footer.theme') %> – <%- next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) -%> v<%= cake_version %>
+</div>
+
+<%- next_inject('footer') -%>

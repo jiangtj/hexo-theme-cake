@@ -1,0 +1,44 @@
+<%
+if (page.comments) {
+  if (theme.injects.comment.length === 1) {
+    inject_item = theme.injects.comment[0]
+%>
+<%- partial(inject_item.layout, inject_item.locals, inject_item.options) -%>
+<%
+  } else if (theme.injects.comment.length > 1) {
+%>
+<div class='comment-button-group'>
+  <% theme.injects.comment.forEach(inject_item => { %>
+  <a class='btn comment-button <%= inject_item.locals.class %>'><%- inject_item.locals.button -%></a>
+  <% }); %>
+</div>
+<% theme.injects.comment.forEach(inject_item => { %>
+<div class='comment-position <%= inject_item.locals.class %>'>
+  <%- partial(inject_item.layout, inject_item.locals, inject_item.options) -%>
+</div>
+<% }); %>
+<script>
+  let commentButton = document.querySelectorAll('.comment-button');
+  commentButton.forEach(item => {
+    let commentClass = item.classList[2];
+    item.addEventListener("click", () => {
+      commentButton.forEach(rmActive => rmActive.classList.remove('active'));
+      item.classList.add('active');
+      document.querySelectorAll('.comment-position').forEach(rmActive => rmActive.classList.remove('active'));
+      document.querySelector(`.comment-position.${commentClass}`).classList.add('active');
+      localStorage.setItem('comments_active', commentClass);
+    })
+  })
+  let activeClass = '{{theme.comments.activeClass}}';
+  activeClass = localStorage.getItem('comments_active') || activeClass;
+  if (activeClass) {
+    let activeButton = document.querySelector(`.comment-button.${activeClass}`);
+    if (activeButton) {
+      activeButton.click();
+    }
+  }
+</script>
+<%
+  }
+}
+%>

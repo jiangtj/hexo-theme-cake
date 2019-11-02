@@ -1,0 +1,65 @@
+<div class="site-overview">
+  <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <% if (theme.avatar.url) { %>
+    <img class="site-author-image" itemprop="image" src="<%= url_for(theme.avatar.url||'images/avatar.gif') %>"
+      alt="<%= author %>" />
+    <% } %>
+    <p class="site-author-name" itemprop="name"><%= author %></p>
+    <div class="site-description" itemprop="description"><%= description %></div>
+  </div>
+
+  <% if (theme.site_state) { %>
+  <nav class="site-state">
+    <% if (config.archive_dir != '/' && site.posts.length > 0) { %>
+    <div class="site-state-item site-state-posts">
+      <a href="<%= url_for(theme.menu.archives.split('||')[0].trim()) %>">
+        <span class="site-state-item-count"><%= site.posts.length %></span>
+        <span class="site-state-item-name"><%= __('state.posts') %></span>
+      </a>
+    </div>
+    <% } %>
+
+    <% if (site.categories.length > 0 && theme.menu.categories) { %>
+    <div class="site-state-item site-state-categories">
+      <a href="<%= url_for(theme.menu.categories.split('||')[0].trim()) %>">
+        <span class="site-state-item-count"><%= site.categories.length %></span>
+        <span class="site-state-item-name"><%= __('state.categories') %></span>
+      </a>
+    </div>
+    <% } %>
+
+    <% if (site.tags.length > 0 && theme.menu.tags) { %>
+    <div class="site-state-item site-state-tags">
+      <a href="<%= url_for(theme.menu.tags.split('||')[0].trim()) %>">
+        <span class="site-state-item-count"><%= site.tags.length %></span>
+        <span class="site-state-item-name"><%= __('state.tags') %></span>
+      </a>
+    </div>
+    <% } %>
+  </nav>
+  <% } %>
+
+  <% if (theme.social) { %>
+  <div class="links-of-author">
+    <% Object.keys(theme.social).forEach(name => { %>
+    <%
+      let link = theme.social[name];
+      let sidebarURL = link.split('||')[0].trim();
+      let sidebarText = '';
+      if (theme.social_icons.enable) {
+        sidebarText += `<i class="${(link.split('||')[1]||'fas fa-globe').trim()}"></i>`
+      }
+      if  (!theme.social_icons.enable || !theme.social_icons.icons_only) {
+        sidebarText += name
+      }
+      %>
+    <span class="links-of-author-item">
+      <%- next_url(sidebarURL, sidebarText, {title: name + ' &rarr; ' + sidebarURL}) -%>
+    </span>
+    <% }); %>
+  </div>
+  <% } %>
+
+  <%- next_inject('sidebar') -%>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="reward-container">
+  <div><%= theme.reward_settings.comment %></div>
+  <div class="reward-box">
+    <%- next_inject('reward') -%>
+  </div>
+  <div class="reward-group">
+    <% Object.keys(theme.reward).forEach(reward_name => { %>
+    <%
+    let reward_item = theme.reward[reward_name];
+    let reward_icon = reward_item.icon?`<i class="${reward_item.icon}" aria-hidden="true"></i>`:reward_item.name;
+    %>
+    <a class="reward-button <%= reward_name %>">
+      <span><%- reward_icon -%></span>
+    </a>
+    <% }) %>
+  </div>
+</div>

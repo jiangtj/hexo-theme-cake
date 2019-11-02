@@ -1,5 +1,0 @@
-
-  <div id="posts" class="posts-expand">
-    {{ partial('_partials/post.swig', {post: page}) }}
-  </div>
-

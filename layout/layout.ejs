@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="<%= page.lang || page.language || config.language %>">
+
+<head>
+  <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
+  <%- partial('_partials/head/head-unique.ejs') -%>
+  <%- partial('_partials/head/title.ejs') -%>
+  <%- next_inject('head') -%>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+  <%- next_inject('header') -%>
+
+  <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="header-inner"><%- partial( '_partials/header/index.ejs', {}, {cache: `cake-header-${page.lang}`}) -%></div>
+  </header>
+
+  <div class="flex-container">
+
+    <%- partial('_partials/sidebar.ejs') -%>
+
+    <div class="flex-main">
+
+      <main>
+        <% if (!is_home()) { %>
+        <div class="sub-menu-wrap">
+          <%- partial( '_partials/post/post-menu.ejs') -%>
+        </div>
+        <% } %>
+        <div id="content" class="content">
+          <%- body -%>
+        </div>
+        <%- partial( '_partials/comments.ejs') -%>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <%- partial('_partials/footer.ejs', {}, {cache: true}) -%>
+        </div>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <%- next_js('next-boot.js') -%>
+  <%- next_inject('bodyEnd') -%>
+
+</body>
+
+</html>

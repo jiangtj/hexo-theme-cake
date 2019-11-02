@@ -28,7 +28,6 @@ post:
   views: 閱讀次數
   comments_count: 評論數
   related_posts: 相關文章
-  copy_button: 複製
   copy_success: 複製成功
   copy_failure: 複製失敗
   copyright:
@@ -64,13 +63,7 @@ state:
   categories: 分類
 search:
   placeholder: 搜尋...
-cheers:
-  um: 嗯..
-  ok: 還行
-  nice: 好
-  good: 很好
-  great: 非常好
-  excellent: 太棒了
+cheers: 太棒了
 keep_on: 繼續努力。
 symbol:
   comma: "，"

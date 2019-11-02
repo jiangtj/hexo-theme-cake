@@ -1,0 +1,7 @@
+<section id="posts" class="posts-expand">
+  <% page.posts.forEach(post => { %>
+  <%- partial('_partials/post.ejs', {is_index: true, post}) -%>
+  <% }) %>
+</section>
+
+<%- partial( '_partials/pagination.ejs') -%>

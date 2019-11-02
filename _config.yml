@@ -26,27 +26,6 @@ footer:
     # Change the color of icon, using Hex Code.
     color: "#ff0000"
 
-  # If not defined, `author` from Hexo main config will be used.
-  copyright:
-
-  powered:
-    # Hexo link (Powered by Hexo).
-    enable: true
-    # Version info of Hexo after Hexo link (vX.X.X).
-    version: true
-
-  theme:
-    # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
-    # Version info of NexT after scheme info (vX.X.X).
-    version: true
-
-  # Beian icp information for Chinese users. In China, every legal website should have a beian icp in website footer.
-  # http://www.miitbeian.gov.cn
-  beian:
-    enable: false
-    icp:
-
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
@@ -54,9 +33,8 @@ footer:
 # CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
 # Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
-  license: by-nc-sa
-  sidebar: false
   post: true
+  license: by-nc-sa
   language:
 
 # ---------------------------------------------------------------
@@ -128,15 +106,6 @@ social_icons:
   icons_only: false
   transition: false
 
-# todo update links
-# Blog rolls
-links_icon: fas fa-link
-links_title: Links
-links_layout: block
-#links_layout: inline
-links:
-  #Title: http://example.com
-
 # Sidebar Avatar
 avatar:
   # In theme directory (source/images): /images/avatar.gif
@@ -170,12 +139,6 @@ toc:
 # See: https://theme-next.org/docs/theme-settings/posts
 # ---------------------------------------------------------------
 
-# Set the text alignment in the posts.
-text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
-
 # Scroll behavior.
 scroll:
   more: true
@@ -191,7 +154,7 @@ post_meta:
   created_at: true
   updated_at:
     enable: false
-    another_day: true
+    hide_same: true
   categories: true
 
 codeblock:
@@ -199,13 +162,6 @@ codeblock:
   # Available values: normal | night | night eighties | night blue | night bright
   # See: https://github.com/chriskempson/tomorrow-theme
   highlight_theme: normal
-  # Add copy button on codeblock
-  copy_button:
-    enable: false
-    # Show text copy result.
-    show_result: false
-    # Available values: default | flat | mac
-    style:
 
 # Reward (Donate)
 reward_settings:
@@ -251,18 +207,12 @@ safari_rainbow: false
 custom_scrollbar: false
 
 # Custom Logo
-# Do not support Scheme Mist currently.
-custom_logo:
-  enable: false
-  image: #/uploads/custom-logo.jpg
+custom_logo: #/uploads/custom-logo.jpg
 
 # Code Highlight theme
 # Available values: normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
 highlight_theme: normal
-
-# Enable "cheers" for archive page.
-cheers: true
 
 # TagCloud settings for tags page.
 tagcloud:
@@ -280,8 +230,6 @@ comments:
   # Choose a comment system to be displayed by default
   # Supported values: disqus | livere | valine
   active:
-  # Setting `true` means remembering the comment system selected by the visitor
-  storage: true
   # Modify icons and texts for any style, here are some examples
   nav:
     #disqus: disqus
@@ -354,36 +302,6 @@ fontawesome:
   #url: https://kit.fontawesome.com/your-id.js
   # todo npm
 
-# Script Vendors. Set a CDN address for the vendor you want to customize.
-# For example
-#   jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-# Be aware that you would better use the same version as internal ones to avoid potential problems.
-# Please use the https protocol of CDN files when you enable https on your site.
-vendors:
-  # Internal path prefix. Please do not edit it.
-  _internal: lib
-
-
-  # Internal version: 2.10.4
-  # See: https://www.algolia.com
-  # Example:
-  # algolia_instant_js: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js
-  # algolia_instant_css: //cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css
-  algolia_instant_js:
-  algolia_instant_css:
-
-  # leancloud-storage
-  # See: https://www.npmjs.com/package/leancloud-storage
-  # Example:
-  # leancloud: //cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js
-  leancloud:
-
-  # valine
-  # See: https://github.com/xCss/Valine
-  # Example:
-  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.4/Valine.min.js
-  valine:
-
-# Assets
-js: js
+# Be compatible with NexT
+next_compatible:
+  render: true

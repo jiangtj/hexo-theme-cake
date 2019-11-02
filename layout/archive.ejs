@@ -1,0 +1,24 @@
+<div class="post-block archive">
+  <div id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
+    <span class="archive-page-counter">
+      <%= __('cheers') %>! <%= _p("counter.archive_posts", site.posts.length) + " " +   __('keep_on') %>
+    </span>
+
+    <%
+    let year;
+    page.posts.forEach(post => {
+      post.year = date(post.date, 'YYYY');
+      if (post.year !== year) {
+        year = post.year;
+    %>
+    <div class="collection-title">
+      <h1 class="archive-year" id="archive-year-<%= year %>"><%= year %><h1>
+    </div>
+    <% } %>
+    <%- partial('_partials/post-collapse.ejs', {post}) -%>
+    <% }); %>
+  </div>
+</div>
+
+<%- partial( '_partials/pagination.ejs') -%>
