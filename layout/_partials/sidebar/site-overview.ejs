@@ -19,7 +19,7 @@
     </div>
     <% } %>
 
-    <% if (site.categories.length > 0) { %>
+    <% if (site.categories.length > 0 && theme.menu.categories) { %>
     <div class="site-state-item site-state-categories">
       <a href="<%= url_for(theme.menu.categories.split('||')[0].trim()) %>">
         <span class="site-state-item-count"><%= site.categories.length %></span>
@@ -28,7 +28,7 @@
     </div>
     <% } %>
 
-    <% if (site.tags.length > 0) { %>
+    <% if (site.tags.length > 0 && theme.menu.tags) { %>
     <div class="site-state-item site-state-tags">
       <a href="<%= url_for(theme.menu.tags.split('||')[0].trim()) %>">
         <span class="site-state-item-count"><%= site.tags.length %></span>
