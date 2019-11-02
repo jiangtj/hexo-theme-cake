@@ -8,8 +8,8 @@ const path = require('path');
 hexo.extend.filter.register('theme_inject', function(injects) {
   let theme = hexo.theme.config;
   injects.postBodyEnd.raw('reward.ejs', `
-  <% if (page.reward_settings.enable && !is_index) %>
-    <%- partial('_partials/post/reward.swig') -%>
+  <% if (page.reward_settings.enable && !is_index) { %>
+    <%- partial('_partials/post/reward.ejs') -%>
   <% } %>
   `, {}, {}, theme.reward_settings.inject_order);
 }, 120);
