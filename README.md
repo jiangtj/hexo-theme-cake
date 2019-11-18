@@ -14,14 +14,12 @@
 - https://cake.jiangtj.com/
 
 ## Plugins
-- [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon): Ribbon背景
-- [hexo-cake-math](https://github.com/jiangtj-lab/hexo-cake-math): Math支持
-- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu): 新的右下角按钮(阅读进度与返回顶部按钮)
-- [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search): 本地搜索功能
+- [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon): Ribbon background
+- [hexo-cake-math](https://github.com/jiangtj-lab/hexo-cake-math): Math Support
+- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu): A new style for back2top button and scrollpercent.
+- [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search): Local search function
 
-*More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next)*
-
-*Note: if has trouble in use NexT Plugins, may need to install [njk render](https://github.com/theme-next/hexo-renderer-njks)*
+*More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next) (if has trouble in use NexT Plugins, may need to install [njk render](https://github.com/theme-next/hexo-renderer-njks))*
 
 ## Quick Start
 
