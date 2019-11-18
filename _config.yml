@@ -224,7 +224,6 @@ disqus:
   enable: false
   shortname:
   count: true
-  lazyload: false
 
 # A JavaScript library for zooming images like Medium
 medium_zoom:

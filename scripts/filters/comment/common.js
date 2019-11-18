@@ -10,14 +10,16 @@ module.exports = {
       defaultValue = capitalize(key);
     }
     return `
+      <%
+      let post_meta_comment = __('post.comments.${key}')
+      if (post_meta_comment == 'post.comments.${key}') {
+        post_meta_comment = '${defaultValue}'
+      }
+      %>
       <span class="post-meta-item-icon">
         <i class="${icon}"></i>
       </span>
-      {%- set post_meta_comment = __('post.comments.${key}') %}
-      {%- if post_meta_comment == 'post.comments.${key}' %}
-        {%- set post_meta_comment = '${defaultValue}' %}
-      {%- endif %}
-      <span class="post-meta-item-text">{{ post_meta_comment + __('symbol.colon') }}</span>
+      <span class="post-meta-item-text"><%= post_meta_comment + __('symbol.colon') %></span>
     `;
   }
 };
