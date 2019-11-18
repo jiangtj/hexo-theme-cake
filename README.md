@@ -21,6 +21,8 @@
 
 *More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next)*
 
+*Note: if has trouble in use NexT Plugins, may need to install [njk render](https://github.com/theme-next/hexo-renderer-njks)*
+
 ## Quick Start
 
 ### Manual
