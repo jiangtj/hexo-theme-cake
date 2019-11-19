@@ -208,12 +208,6 @@ pace:
   # set: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/${theme—name}.css
   theme: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
 
-#! ---------------------------------------------------------------
-#! DO NOT EDIT THE FOLLOWING SETTINGS
-#! UNLESS YOU KNOW WHAT YOU ARE DOING
-#! See: https://theme-next.org/docs/advanced-settings
-#! ---------------------------------------------------------------
-
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
