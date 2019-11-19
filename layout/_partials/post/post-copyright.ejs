@@ -1,14 +1,13 @@
 <% if (is_post()) { %>
 <%
 let ccLicense = theme.creative_commons.license.toLowerCase();
-let ccLanguage = theme.creative_commons.language;
 let ccIcon = '<i class="fab fa-creative-commons"></i>';
 let ccText = ccLicense.toUpperCase();
 let ccType;
 if (ccLicense === 'zero') {
-  ccType = 'publicdomain/zero/1.0/' + ccLanguage;
+  ccType = 'publicdomain/zero/1.0/';
 } else {
-  ccType = 'licenses/' + ccLicense + '/4.0/' + ccLanguage;
+  ccType = 'licenses/' + ccLicense + '/4.0/';
 }
 let ccURL = 'https://creativecommons.org/' + ccType;
 let postURL = page.url || page.permalink;

@@ -1,7 +1,3 @@
-# ---------------------------------------------------------------
-# Head
-# ---------------------------------------------------------------
-
 favicon:
   #small: /images/favicon-64.png
   #medium: /images/favicon-128.png
@@ -9,10 +5,6 @@ favicon:
   #safari_pinned_tab: /images/favicon.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
-
-# ---------------------------------------------------------------
-# Footer
-# ---------------------------------------------------------------
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -30,32 +22,17 @@ footer:
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 # You can set a language value if you prefer a translated version of CC license.
-# CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.
-# Valid values of language: deed.zh, deed.fr, deed.de, etc.
 creative_commons:
   post: true
   license: by-nc-sa
-  language:
-
-# ---------------------------------------------------------------
-# SEO Settings
-# ---------------------------------------------------------------
 
 # Set a canonical link tag in your hexo, you could use it for your SEO of blog.
 # See: https://support.google.com/webmasters/answer/139066
 # Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
 canonical: true
 
-# Change headers hierarchy on site-subtitle (will be main site description) and on all post / page titles for better SEO-optimization.
-seo: false
-
 # If true, will add site-subtitle to index page, added in main hexo config.
-# subtitle: Subtitle
 index_with_subtitle: false
-
-# ---------------------------------------------------------------
-# Menu Settings
-# ---------------------------------------------------------------
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
@@ -74,11 +51,6 @@ menu:
 # Enable / Disable menu icons.
 menu_settings:
   icons: true
-
-# ---------------------------------------------------------------
-# Sidebar Settings
-# See: https://theme-next.org/docs/theme-settings/sidebar
-# ---------------------------------------------------------------
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -134,11 +106,6 @@ toc:
 # back2top removed, you can use hexo-cake-moon-menu instead of it
 # See: https://github.com/jiangtj-lab/hexo-cake-moon-menu
 
-# ---------------------------------------------------------------
-# Post Settings
-# See: https://theme-next.org/docs/theme-settings/posts
-# ---------------------------------------------------------------
-
 # Scroll behavior.
 scroll:
   more: true
@@ -156,12 +123,6 @@ post_meta:
     enable: false
     hide_same: true
   categories: true
-
-codeblock:
-  # Code Highlight theme
-  # Available values: normal | night | night eighties | night blue | night bright
-  # See: https://github.com/chriskempson/tomorrow-theme
-  highlight_theme: normal
 
 # Reward (Donate)
 reward_settings:
