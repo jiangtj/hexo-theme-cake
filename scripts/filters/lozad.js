@@ -3,6 +3,7 @@
 'use strict';
 
 hexo.extend.filter.register('marked:image', function(data) {
+  if (!hexo.theme.config.lozad.enable) return;
   let { href, text } = data;
   data.content = `<img data-src="${href}" alt="${text}">`;
 }, 99);
