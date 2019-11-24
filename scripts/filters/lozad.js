@@ -2,23 +2,11 @@
 
 'use strict';
 
-hexo.extend.filter.register('after_post_render', function(data) {
-
+hexo.extend.filter.register('marked:image', function(data) {
   if (!hexo.theme.config.lozad.enable) return;
-
-  var cheerio;
-  if (!cheerio) cheerio = require('cheerio');
-
-  var $ = cheerio.load(data.content, {decodeEntities: false});
-
-  $('img').each(function() {
-    let $image = $(this);
-    let $imageSrc = $image.attr('src');
-    $image.attr('data-src', $imageSrc).removeAttr('src');
-  });
-
-  data.content = $.html();
-}, 0);
+  let { href, text } = data;
+  data.content = `<img data-src="${href}" alt="${text}">`;
+}, 99);
 
 hexo.extend.filter.register('theme_inject', function(injects) {
   let lozad = hexo.theme.config.lozad;
