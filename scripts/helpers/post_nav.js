@@ -14,7 +14,7 @@ hexo.extend.helper.register('post_nav', function(post) {
     </a>` : '';
   const right = next ? `
     <a href="${this.url_for(next.path)}" rel="next" title="${next.title}">
-      ${next.title.length > 20 ? next.title.substring(0, 18) + '...' : next.titlee}
+      ${next.title.length > 20 ? next.title.substring(0, 18) + '...' : next.title}
       <i class="fa fa-chevron-right"></i>
     </a>` : '';
   return `
