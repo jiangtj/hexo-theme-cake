@@ -4,9 +4,7 @@
 <meta name="theme-color" content="<%= theme.theme_color %>"/>
 <%- css(theme.font) -%>
 <%- css('css/main.css?v=' + cake_version) -%>
-<% if (theme.favicon) { %>
-  <%- partial('favicon.ejs') -%>
-<% } %>
+<%- favicon() -%>
 
 <%# Export some HEXO Configurations to Front-End #%>
 <script id="hexo.configurations">

@@ -2,13 +2,6 @@
   "name": "hexo-theme-cake",
   "version": "1.5.1",
   "description": "🍰Cake is lovely hexo theme, sweet.",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "gulp"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JiangTJ/hexo-theme-cake.git"

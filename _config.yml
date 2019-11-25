@@ -1,10 +1,19 @@
-favicon:
-  #small: /images/favicon-64.png
-  #medium: /images/favicon-128.png
-  #apple_touch_icon: /images/favicon-128.png
-  #safari_pinned_tab: /images/favicon.svg
-  #android_manifest: /images/manifest.json
-  #ms_browserconfig: /images/browserconfig.xml
+# Set web site favicon
+#favicons:
+#  - rel: icon
+#    type: image/png
+#    sizes: 64x64
+#    href: /images/favicon-64.png
+#  - rel: icon
+#    type: image/png
+#    sizes: 128x128
+#    href: /images/favicon-128.png
+#  - rel: apple-touch-icon
+#    sizes: 180x180
+#    href: /images/favicon-180.png
+#  - rel: mask-icon
+#    color: red
+#    href: /images/favicon.svg
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
