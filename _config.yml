@@ -168,6 +168,10 @@ tagcloud:
   end: "#111" # end color (hex, rgba, hsla or color keywords)
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
+# Show previous post and next post in post footer if exists
+# Available values: left | right | false
+post_navigation: left
+
 # Multiple Comment System Support
 comments:
   # Choose a comment system to be displayed by default
