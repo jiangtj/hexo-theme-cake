@@ -9,11 +9,13 @@ hexo.extend.helper.register('post_nav', function(post) {
   const next = theme.post_navigation === 'right' ? post.next : post.prev;
   const left = prev ? `
     <a href="${this.url_for(prev.path)}" rel="prev" title="${prev.title}">
-      <i class="fa fa-chevron-left"></i> ${prev.title}
+      <i class="fa fa-chevron-left"></i>
+      ${prev.title.length > 20 ? prev.title.substring(0, 18) + '...' : prev.title}
     </a>` : '';
   const right = next ? `
     <a href="${this.url_for(next.path)}" rel="next" title="${next.title}">
-      ${next.title} <i class="fa fa-chevron-right"></i>
+      ${next.title.length > 20 ? next.title.substring(0, 18) + '...' : next.titlee}
+      <i class="fa fa-chevron-right"></i>
     </a>` : '';
   return `
     <div class="post-nav">
