@@ -2,9 +2,9 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
-  <%- partial('_partials/head/head.ejs', {config, theme, cake_version}, {cache: true, only: true}) -%>
-  <%- partial('_partials/head/head-unique.ejs', {config, page, url}, {cache: false, only: true}) -%>
-  <%- partial('_partials/head/title.ejs') -%>
+  <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
+  <%- partial('_partials/head/head-unique.ejs') -%>
+  <%- next_title() -%>
   <%- next_inject('head') -%>
 </head>
 
