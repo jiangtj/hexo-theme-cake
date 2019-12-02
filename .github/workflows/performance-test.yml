@@ -29,12 +29,28 @@ jobs:
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
-        
-        echo 'Test default theme'
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        
-        echo 'Test cake theme'
+        git clone https://github.com/jiangtj/hexo-theme-cake.git --depth=1 --quiet themes/cake-master
+
+        echo '-----------------------------'
+        echo 'Test cake-current'
+        echo '-----------------------------'
         hexo config theme cake
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
+        echo ''
+
+        echo '-----------------------------'
+        echo 'Test cake-master'
+        echo '-----------------------------'
+        hexo config theme cake-master
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        echo '-----------------------------'
+        echo 'Test default theme'
+        echo '-----------------------------'
+        hexo config theme landscape
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
