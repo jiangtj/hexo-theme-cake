@@ -3,7 +3,8 @@
 
 <head>
   <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
-  <%- partial('_partials/head/head-unique.ejs') -%>
+  <%- open_graph() -%>
+  <%- canonical() -%>
   <%- cake_title() -%>
   <%- next_inject('head') -%>
 </head>
