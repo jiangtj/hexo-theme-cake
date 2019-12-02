@@ -50,6 +50,7 @@ jobs:
         echo '-----------------------------'
         echo 'Test default theme'
         echo '-----------------------------'
+        hexo config theme landscape
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
