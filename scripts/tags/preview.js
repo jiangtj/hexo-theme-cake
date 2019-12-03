@@ -30,7 +30,7 @@ function preview(args, content) {
   if (css) {
     out += '<header style="margin-bottom: -20px">css</header>' + hexo.render.renderSync({text: `\`\`\`js${css}\`\`\``, engine: 'markdown'});
   }
-  return `${out}<style>${css}</style><header style="margin-bottom: -20px">result</header>${html}<script>${js}</script>`;
+  return `${out}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
 }
 
 hexo.extend.tag.register('preview', preview, {ends: true});
