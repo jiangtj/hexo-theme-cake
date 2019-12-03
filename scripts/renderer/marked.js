@@ -6,7 +6,8 @@
 if (hexo.config.disable_cake_marked) return;
 
 const marked = require('marked');
-const {highlight} = require('hexo-util');
+const {highlight, escapeHTML} = require('hexo-util');
+const stripIndent = require('strip-indent');
 
 const renderer = new marked.Renderer();
 
@@ -28,20 +29,28 @@ renderer.image = function(href, title, text) {
   return data.content;
 };
 
+// renderer.code = function(code, infostring, escaped) {
+//   let content = highlight(stripIndent(code), {
+//     lang      : infostring,
+//     gutter    : true,
+//     wrap      : true,
+//     tab       : null,
+//     autoDetect: false
+//   }).replace(/{/g, '&#123;').replace(/}/g, '&#125;');
+//   return content;
+// };
+
+// renderer.codespan = function(code) {
+//   return code.replace(/{/g, '&#123;').replace(/}/g, '&#125;');
+// };
+
 hexo.config.marked = Object.assign({
   // hexo
   modifyAnchors: '',
   autolink     : true,
   // marked
   renderer     : renderer,
-  langPrefix   : '',
-  highlight(code, lang) {
-    return highlight(code, {
-      lang,
-      gutter: false,
-      wrap  : false
-    });
-  }
+  langPrefix   : ''
 }, hexo.config.marked);
 
 marked.setOptions(hexo.config.marked);
