@@ -48,4 +48,4 @@ filter.register('marked:link', (data, options) => {
   let { href, text } = data;
   let extAttr = getExternalLink(href);
   data.content = data.content.replace(`>${text}</a>`, `${extAttr}>${text}</a>`);
-});
+}, 20);
