@@ -1,8 +1,18 @@
-/**
- * center-quote.js | https://theme-next.org/docs/tag-plugins/
- */
-
 /* global hexo */
+
+/**
+ * {% preview %}
+ * <template>
+ *   html code
+ * </template>
+ * <style>
+ *   css code
+ * </style>
+ * <script>
+ *   js code
+ * </script>
+ * {% endpreview %}
+ */
 
 'use strict';
 
