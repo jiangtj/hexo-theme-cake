@@ -6,9 +6,9 @@
 if (hexo.config.disable_cake_marked) return;
 
 const marked = require('marked');
-const {highlight} = require('hexo-util');
 
 const renderer = new marked.Renderer();
+const defaultRenderer = new marked.Renderer();
 
 renderer.heading = function(text, level) {
   let data = { text, level };
@@ -28,20 +28,20 @@ renderer.image = function(href, title, text) {
   return data.content;
 };
 
+renderer.code = function(code, infostring, escaped) {
+  let content = defaultRenderer.code(code, infostring, escaped);
+  let data = { code, infostring, escaped, content };
+  hexo.execFilterSync('marked:code', data, { args: [this.options] });
+  return data.content;
+};
+
 hexo.config.marked = Object.assign({
   // hexo
   modifyAnchors: '',
   autolink     : true,
   // marked
   renderer     : renderer,
-  langPrefix   : '',
-  highlight(code, lang) {
-    return highlight(code, {
-      lang,
-      gutter: false,
-      wrap  : false
-    });
-  }
+  langPrefix   : ''
 }, hexo.config.marked);
 
 marked.setOptions(hexo.config.marked);
