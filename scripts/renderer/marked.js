@@ -10,6 +10,7 @@ const {highlight, escapeHTML} = require('hexo-util');
 const stripIndent = require('strip-indent');
 
 const renderer = new marked.Renderer();
+const defaultRenderer = new marked.Renderer();
 
 renderer.heading = function(text, level) {
   let data = { text, level };
@@ -29,16 +30,12 @@ renderer.image = function(href, title, text) {
   return data.content;
 };
 
-// renderer.code = function(code, infostring, escaped) {
-//   let content = highlight(stripIndent(code), {
-//     lang      : infostring,
-//     gutter    : true,
-//     wrap      : true,
-//     tab       : null,
-//     autoDetect: false
-//   }).replace(/{/g, '&#123;').replace(/}/g, '&#125;');
-//   return content;
-// };
+renderer.code = function(code, infostring, escaped) {
+  let content = defaultRenderer.code(code, infostring, escaped);
+  let data = { code, infostring, escaped, content };
+  hexo.execFilterSync('marked:code', data, { args: [this.options] });
+  return data.content;
+};
 
 // renderer.codespan = function(code) {
 //   return code.replace(/{/g, '&#123;').replace(/}/g, '&#125;');
