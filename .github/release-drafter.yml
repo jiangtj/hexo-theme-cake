@@ -19,7 +19,6 @@ categories:
       - 'improvement'
 
 change-template: '- $TITLE (#$NUMBER)'
-no-changes-template: '- No changes'
 template: |
   $CHANGES
   ***
