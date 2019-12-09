@@ -29,8 +29,7 @@ if (page.comments) {
       localStorage.setItem('comments_active', commentClass);
     })
   })
-  let activeClass = '{{theme.comments.activeClass}}';
-  activeClass = localStorage.getItem('comments_active') || activeClass;
+  let activeClass = localStorage.getItem('comments_active') || CONFIG.comments.activeClass;
   if (activeClass) {
     let activeButton = document.querySelector(`.comment-button.${activeClass}`);
     if (activeButton) {
