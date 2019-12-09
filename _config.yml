@@ -186,6 +186,8 @@ comments:
   # Choose a comment system to be displayed by default
   # Supported values: disqus | livere | valine
   active:
+  # Lazyload all comment systems.
+  lazyload: false
   # Modify icons and texts for any style, here are some examples
   nav:
     #disqus: disqus
