@@ -13,10 +13,11 @@ categories:
       - 'bugfix'
       - 'bug'
   - title: '🧰 Maintenance'
-    label:
+    labels:
       - 'chore'
       - 'docs'
       - 'improvement'
+      - 'dependencies'
 
 change-template: '- $TITLE (#$NUMBER)'
 template: |
