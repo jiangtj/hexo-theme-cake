@@ -41,7 +41,7 @@ hexo.config.marked = Object.assign({
   autolink     : true,
   // marked
   renderer     : renderer,
-  langPrefix   : ''
+  langPrefix   : 'language-'
 }, hexo.config.marked);
 
 marked.setOptions(hexo.config.marked);
