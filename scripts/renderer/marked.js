@@ -6,8 +6,6 @@
 if (hexo.config.disable_cake_marked) return;
 
 const marked = require('marked');
-const {highlight, escapeHTML} = require('hexo-util');
-const stripIndent = require('strip-indent');
 
 const renderer = new marked.Renderer();
 const defaultRenderer = new marked.Renderer();
@@ -36,10 +34,6 @@ renderer.code = function(code, infostring, escaped) {
   hexo.execFilterSync('marked:code', data, { args: [this.options] });
   return data.content;
 };
-
-// renderer.codespan = function(code) {
-//   return code.replace(/{/g, '&#123;').replace(/}/g, '&#125;');
-// };
 
 hexo.config.marked = Object.assign({
   // hexo

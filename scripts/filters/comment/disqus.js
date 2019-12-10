@@ -11,7 +11,7 @@ hexo.extend.filter.register('theme_inject', injects => {
   if (!theme.disqus.enable || !theme.disqus.shortname) return;
 
   injects.comment.raw('disqus.ejs', `
-  <div class="comments" id="comments">
+  <div class="comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>

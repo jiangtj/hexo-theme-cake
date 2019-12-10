@@ -1,0 +1,28 @@
+# Configuration for Release Drafter - https://github.com/toolmantim/release-drafter
+
+name-template: 'v$NEXT_MINOR_VERSION'
+tag-template: 'v$NEXT_MINOR_VERSION'
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+      - 'bugfix'
+      - 'bug'
+  - title: '🧰 Maintenance'
+    labels:
+      - 'chore'
+      - 'docs'
+      - 'improvement'
+      - 'dependencies'
+
+change-template: '- $TITLE (#$NUMBER)'
+template: |
+  $CHANGES
+  ***
+  For full changes, see the [comparison between $PREVIOUS_TAG and v$NEXT_MINOR_VERSION](https://github.com/theme-next/hexo-theme-next/compare/$PREVIOUS_TAG...v$NEXT_MINOR_VERSION)
+exclude-labels:
+  - 'Skip Release'
