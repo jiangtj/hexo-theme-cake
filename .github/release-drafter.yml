@@ -16,6 +16,7 @@ categories:
     labels:
       - 'chore'
       - 'docs'
+      - 'documentation'
       - 'improvement'
       - 'dependencies'
 
@@ -25,4 +26,4 @@ template: |
   
   For full changes, see the [comparison between $PREVIOUS_TAG and v$NEXT_MINOR_VERSION](https://github.com/jiangtj/hexo-theme-cake/compare/$PREVIOUS_TAG...v$NEXT_MINOR_VERSION)
 exclude-labels:
-  - 'Skip Release'
+  - 'skip release'
