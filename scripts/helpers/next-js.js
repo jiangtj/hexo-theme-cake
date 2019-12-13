@@ -4,5 +4,16 @@
 
 hexo.extend.helper.register('next_js', function(...urls) {
   let version = hexo.locals.get('cake').theme.version;
-  return urls.map((url) => this.js(`js/${url}?v=${version}`)).join('');
+  let cdn = hexo.theme.config.cdn;
+  return urls
+    .map((url) => {
+      if (cdn && cdn.js) {
+        return cdn.js
+          .replace(/\$\{version\}/g, version)
+          .replace(/\$\{file\}/g, url);
+      }
+      return `js/${url}?v=${version}`;
+    })
+    .map((url) => this.js(url))
+    .join('');
 });

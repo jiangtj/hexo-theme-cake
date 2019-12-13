@@ -235,3 +235,10 @@ fontawesome:
   #type: kit
   #url: https://kit.fontawesome.com/your-id.js
   # todo npm
+
+# Config cdn
+cdn:
+  # js cdn
+  # version: cake theme version e.g. 1.6.0
+  # file: js file name e.g. next-boot.js
+  #js: https://cdn.jsdelivr.net/gh/jiangtj/hexo-theme-cake@${version}/source/js/${file}
