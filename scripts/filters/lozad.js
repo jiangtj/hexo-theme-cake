@@ -2,10 +2,13 @@
 
 'use strict';
 
-hexo.extend.filter.register('marked:image', function(data) {
+const {encodeURL} = require('hexo-util');
+
+hexo.extend.filter.register('marked:renderer', function(renderer) {
   if (!hexo.theme.config.lozad.enable) return;
-  let { href, text } = data;
-  data.content = `<img data-src="${href}" alt="${text}">`;
+  renderer.image = function(href, title, text) {
+    return `<img data-src="${encodeURL(href)}" alt="${text}">`;
+  };
 }, 99);
 
 hexo.extend.filter.register('theme_inject', function(injects) {
