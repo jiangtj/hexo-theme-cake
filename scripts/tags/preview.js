@@ -41,16 +41,6 @@ function preview(args, content) {
   //   out += '<header style="margin-bottom: -20px">css</header>' + hexo.render.renderSync({text: `\`\`\`css${css}\`\`\``, engine: 'markdown'});
   // }
   // return `${out}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
-  // return hexo.render.render({text: `\`\`\`html${html}\`\`\``, engine: 'markdown'}).then(result => {
-  //   out += '<header style="margin-bottom: -20px">html</header>' + result;
-  //   return hexo.render.render({text: `\`\`\`js${js}\`\`\``, engine: 'markdown'});
-  // }).then(result => {
-  //   out += '<header style="margin-bottom: -20px">js</header>' + result;
-  //   return hexo.render.render({text: `\`\`\`css${css}\`\`\``, engine: 'markdown'});
-  // }).then(result => {
-  //   out += '<header style="margin-bottom: -20px">css</header>' + result;
-  //   return `${out}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
-  // });
   return Promise.all([
     Promise.resolve(html)
       .then(html => {
