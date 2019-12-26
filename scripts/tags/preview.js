@@ -30,17 +30,6 @@ function preview(args, content) {
   let css = getContent(content, 'style');
   let html = getContent(content, 'template');
 
-  // let out = '';
-  // if (html) {
-  //   out += '<header style="margin-bottom: -20px">html</header>' + hexo.render.renderSync({text: `\`\`\`html${html}\`\`\``, engine: 'markdown'});
-  // }
-  // if (js) {
-  //   out += '<header style="margin-bottom: -20px">js</header>' + hexo.render.renderSync({text: `\`\`\`js${js}\`\`\``, engine: 'markdown'});
-  // }
-  // if (css) {
-  //   out += '<header style="margin-bottom: -20px">css</header>' + hexo.render.renderSync({text: `\`\`\`css${css}\`\`\``, engine: 'markdown'});
-  // }
-  // return `${out}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
   return Promise.all([
     Promise.resolve(html)
       .then(html => {
