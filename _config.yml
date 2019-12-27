@@ -17,15 +17,9 @@
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
-
+  #since: 2019
   # Icon between year and copyright info.
-  icon:
-    name: fas fa-heart
-    # If you want to animate the icon, set it to true.
-    animated: true
-    # Change the color of icon, using Hex Code.
-    color: "#ff0000"
+  icon: fas fa-heart
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
