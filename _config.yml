@@ -114,10 +114,6 @@ scroll:
   more: true
   save: false
 
-# Read more button
-# If true, the read more button would be displayed in excerpt section.
-read_more_btn: true
-
 # Post meta display settings
 post_meta:
   item_text: false
