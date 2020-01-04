@@ -18,8 +18,8 @@
   },
   "homepage": "https://www.dnocm.com/cake",
   "devDependencies": {
-    "js-yaml": "^3.8.1",
-    "jshint-stylish": "^2.1.0",
-    "stylint": "^2.0.0"
+    "js-yaml": "3.13.1",
+    "jshint-stylish": "2.2.1",
+    "stylint": "2.0.0"
   }
 }
