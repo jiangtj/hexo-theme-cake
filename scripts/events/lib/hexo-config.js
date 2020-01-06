@@ -7,4 +7,7 @@ module.exports = function(hexo) {
     hexo.log.warn('`relative_link` has been set to false for better generate speed.');
   }
 
+  // Only Gemini.
+  hexo.theme.config.scheme = 'Gemini';
+
 };
