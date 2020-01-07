@@ -32,4 +32,4 @@ hexo.extend.filter.register('marked:renderer', function(renderer) {
     });
     return `{% raw %}${rendered}{% endraw %}`;
   };
-}, 99);
+});
