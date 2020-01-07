@@ -5,17 +5,4 @@
 <%- css(theme.font) -%>
 <%- css('css/main.css?v=' + cake_version) -%>
 <%- favicon() -%>
-<%# Export some HEXO Configurations to Front-End #%>
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '<%= theme.root %>',
-    scheme: '<%= theme.scheme %>',
-    version: '<%= cake_version %>',
-    sidebar: <%- JSON.stringify(theme.sidebar) || '{}' %>,
-    comments: <%- JSON.stringify(theme.comments) %>,
-    scroll: {
-      save: '<%= theme.scroll.save %>'
-    }
-  };
-</script>
+<%- next_config() -%>
