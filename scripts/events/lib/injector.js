@@ -16,11 +16,11 @@ class Injector {
       .filter(item => item.predicate(ctx))
       .sort((a, b) => a.priority - b.priority);
     let rendered = (ctx) => bind(ctx).map(item => {
-      let value = item.value;
-      if (typeof value === 'function') {
-        item.value = value(ctx);
+      let renderItem = Object.assign({}, item);
+      if (typeof item.value === 'function') {
+        renderItem.value = item.value(ctx);
       }
-      return item;
+      return renderItem;
     });
     let text = (ctx) => rendered(ctx).map(item => item.value).join('');
     return {list, bind, rendered, text};
