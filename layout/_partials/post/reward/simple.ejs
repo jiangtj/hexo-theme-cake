@@ -1,6 +1,6 @@
-<div class="reward-box-card <%= reward_name %>">
-  <img class="reward-image" src="<%= url_for(reward_item.image) %>" />
-  <% if (reward_item.url) { %>
-  <a class="reward-image-url" href="<%= reward_item.url %>"><%= reward_item.url_name || reward_item.url %></a>
+<div class="reward-box-card <%= name %>">
+  <img class="reward-image" src="<%= options.image %>" />
+  <% if (options.url) { %>
+  <a class="reward-image-url" href="<%= options.url %>"><%= options.url_name || options.url %></a>
   <% } %>
 </div>
