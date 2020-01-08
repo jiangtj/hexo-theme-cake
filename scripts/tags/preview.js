@@ -53,7 +53,13 @@ function preview(args, content) {
         if (result) return Promise.resolve('<header style="margin-bottom: -20px">css</header>' + result);
       })
   ]).then((values) => {
-    return `${values.join('')}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
+    let code = values.map(item => {
+      if (!item) return item;
+      item = item.replace('{% raw %}', '');
+      item = item.replace('{% endraw %}', '');
+      return item;
+    }).join('');
+    return `${code}<style>${css}</style><header style="margin-bottom: -20px">result</header><div class="template">${html}</div><script>${js}</script>`;
   });
 }
 
