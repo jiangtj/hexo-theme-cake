@@ -52,9 +52,9 @@ module.exports = hexo => {
 
   // Inject stylus
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type] = injector.get(type).map(item => item.value);
+    hexo.theme.config.injects[type] = injector.get(type).list().map(item => item.value);
   });
 
-  // set injector
-  hexo.theme.config.injector = injector;
+  // Set injector
+  hexo.theme.injector = injector;
 };

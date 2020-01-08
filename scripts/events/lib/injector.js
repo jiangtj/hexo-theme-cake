@@ -10,21 +10,20 @@ class Injector {
   }
 
   get(entry) {
-    return Array.from(this.store[entry] || []);
-  }
-
-  getText(entry, locals) {
-    return this.get(entry)
-      .filter(item => item.predicate(locals))
-      .sort((a, b) => a.priority - b.priority)
-      .map(item => {
-        let value = item.value;
-        if (typeof value === 'function') {
-          value = value(locals);
-        }
-        return value;
-      })
-      .join('');
+    let entries = Array.from(this.store[entry] || []);
+    let list = () => entries;
+    let bind = (ctx) => list()
+      .filter(item => item.predicate(ctx))
+      .sort((a, b) => a.priority - b.priority);
+    let rendered = (ctx) => bind(ctx).map(item => {
+      let value = item.value;
+      if (typeof value === 'function') {
+        item.value = value(ctx);
+      }
+      return item;
+    });
+    let text = (ctx) => rendered(ctx).map(item => item.value).join('');
+    return {list, bind, rendered, text};
   }
 
   register(entry, value, predicate = () => true, priority = 10) {

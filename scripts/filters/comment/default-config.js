@@ -5,7 +5,7 @@
 const path = require('path');
 
 hexo.extend.filter.register('theme_inject', injector => {
-  injector.get('comment').forEach(element => {
+  injector.get('comment').list().forEach(element => {
     // Set default button content
     let injectName = path.basename(element.name, path.extname(element.name));
     element.locals = Object.assign({
