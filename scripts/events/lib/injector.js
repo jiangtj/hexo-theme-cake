@@ -10,6 +10,7 @@ class Injector {
   }
 
   get(entry) {
+    entry = this.formatKey(entry);
     let entries = Array.from(this.store[entry] || []);
     let list = () => entries;
     let bind = (ctx) => list()
@@ -28,6 +29,7 @@ class Injector {
 
   register(entry, value, predicate = () => true, priority = 10) {
     if (!entry) throw new TypeError('entry is required');
+    entry = this.formatKey(entry);
     this.store[entry] = this.store[entry] || [];
 
     if (typeof predicate === 'string') {
@@ -54,6 +56,10 @@ class Injector {
       }
       return false;
     };
+  }
+
+  formatKey(entry) {
+    return entry.replace('-', '').replace('_', '').toLowerCase();
   }
 }
 

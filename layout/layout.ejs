@@ -2,15 +2,18 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
+  <%- next_inject('head-begin') -%>
   <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
   <%- open_graph() -%>
   <%- canonical() -%>
   <%- cake_title() -%>
   <%- next_inject('head') -%>
+  <%- next_inject('head-end') -%>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
 
+  <%- next_inject('body-begin') -%>
   <%- next_inject('header') -%>
 
   <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
@@ -46,7 +49,7 @@
   </div>
 
   <%- next_js('next-boot.js') -%>
-  <%- next_inject('bodyEnd') -%>
+  <%- next_inject('body-end') -%>
 
 </body>
 
