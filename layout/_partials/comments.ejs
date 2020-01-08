@@ -1,18 +1,19 @@
 <%
 if (page.comments) {
-  if (theme.injects.comment.length === 1) {
-    inject_item = theme.injects.comment[0]
+  let commentList = next_inject_list('comment');
+  if (commentList.length === 1) {
+    inject_item = commentList[0]
 %>
 <%- partial(inject_item.layout, inject_item.locals, inject_item.options) -%>
 <%
-  } else if (theme.injects.comment.length > 1) {
+  } else if (commentList.length > 1) {
 %>
 <div class='comment-button-group'>
-  <% theme.injects.comment.forEach(inject_item => { %>
+  <% commentList.forEach(inject_item => { %>
   <a class='btn comment-button <%= inject_item.locals.class %>'><%- inject_item.locals.button -%></a>
   <% }); %>
 </div>
-<% theme.injects.comment.forEach(inject_item => { %>
+<% commentList.forEach(inject_item => { %>
 <div class='comment-position <%= inject_item.locals.class %>'>
   <%- partial(inject_item.layout, inject_item.locals, inject_item.options) -%>
 </div>

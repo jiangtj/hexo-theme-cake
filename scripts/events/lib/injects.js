@@ -23,13 +23,13 @@ function initInject(hexo) {
         if (path.extname(name) === '') {
           name += defaultExtname;
         }
-        let view = `inject/${item}/${name}`;
-        hexo.theme.setView(view, raw);
+        let layout = `inject/${item}/${name}`;
+        hexo.theme.setView(layout, raw);
         let locals = args[0];
         let options = args[1] || {};
         let priority = args[2];
-        let value = ctx => ctx.partial(view, locals, options);
-        injector.register(item, { value, priority, name, locals, options });
+        let value = ctx => ctx.partial(layout, locals, options);
+        injector.register(item, { value, priority, name, layout, locals, options });
       },
       file: (name, file, ...args) => {
         // Set default extname from file's extname

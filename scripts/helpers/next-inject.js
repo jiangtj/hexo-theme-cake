@@ -9,3 +9,9 @@ hexo.extend.helper.register('next_inject', function(point) {
   //   .map(item => this.partial(item.layout, item.locals, item.options))
   //   .join('');
 });
+
+hexo.extend.helper.register('next_inject_list', function(point) {
+  let list = hexo.theme.config.injector.get(point);
+  console.log(list);
+  return list;
+});
