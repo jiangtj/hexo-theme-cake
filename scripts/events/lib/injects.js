@@ -3,19 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const points = require('./injects-point');
+const Injector = require('./injector');
 const defaultExtname = '.swig';
-
-// Defining stylus types
-class StylusInject {
-  constructor(base_dir) {
-    this.base_dir = base_dir;
-    this.files = [];
-  }
-  push(file) {
-    // Get absolute path base on hexo dir
-    this.files.push(path.resolve(this.base_dir, file));
-  }
-}
 
 // Defining view types
 class ViewInject {
@@ -42,25 +31,29 @@ class ViewInject {
 
 // Init injects
 function initInject(base_dir) {
-  let injects = {};
+  let injector = new Injector();
   points.styles.forEach(item => {
-    injects[item] = new StylusInject(base_dir);
+    injector[item] = {
+      push: (file) => {
+        injector.register(item, path.resolve(base_dir, file));
+      }
+    };
   });
   points.views.forEach(item => {
-    injects[item] = new ViewInject(base_dir);
+    injector[item] = new ViewInject(base_dir);
   });
-  return injects;
+  return injector;
 }
 
 module.exports = hexo => {
   // Exec theme_inject filter
-  let injects = initInject(hexo.base_dir);
-  hexo.execFilterSync('theme_inject', injects);
+  let injector = initInject(hexo.base_dir);
+  hexo.execFilterSync('theme_inject', injector);
   hexo.theme.config.injects = {};
 
   // Inject stylus
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type] = injects[type].files;
+    hexo.theme.config.injects[type] = injector.get(type).map(item => item.value);
   });
 
   // Inject views
@@ -68,7 +61,7 @@ module.exports = hexo => {
     let configs = Object.create(null);
     hexo.theme.config.injects[type] = [];
     // Add or override view.
-    injects[type].raws.forEach((injectObj, index) => {
+    injector[type].raws.forEach((injectObj, index) => {
       let name = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(name, injectObj.raw);
       configs[name] = {
