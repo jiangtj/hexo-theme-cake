@@ -20,7 +20,7 @@ class Injector {
       .map(item => {
         let value = item.value;
         if (typeof value === 'function') {
-          return value(locals);
+          value = value(locals);
         }
         return value;
       })
@@ -37,6 +37,7 @@ class Injector {
 
     if (typeof value === 'object') {
       this.store[entry].push(Object.assign({ predicate, priority }, value));
+      return;
     }
     this.store[entry].push({ value, predicate, priority });
   }
