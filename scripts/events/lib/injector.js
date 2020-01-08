@@ -41,17 +41,19 @@ class Injector {
     this.store[entry].push({ value, predicate, priority });
   }
 
-  is(type) {
-    let predicate = locals => locals.page[type];
-    switch (type) {
-      case 'home': predicate = locals => locals.page.__index; break;
-      case 'post': predicate = locals => locals.page.__post; break;
-      case 'page': predicate = locals => locals.page.__page; break;
-      case 'archive': predicate = locals => locals.page.archive; break;
-      case 'category': predicate = locals => locals.page.category; break;
-      case 'tag': predicate = locals => locals.page.tag; break;
-    }
-    return predicate;
+  is(...types) {
+    return locals => {
+      for (const type of types) {
+        if (type === 'home' && locals.page.__index) return true;
+        if (type === 'post' && locals.page.__post) return true;
+        if (type === 'page' && locals.page.__page) return true;
+        if (type === 'archive' && locals.page.archive) return true;
+        if (type === 'category' && locals.page.category) return true;
+        if (type === 'tag' && locals.page.tag) return true;
+        if (locals.page[type]) return true;
+      }
+      return false;
+    };
   }
 }
 
