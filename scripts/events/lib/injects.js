@@ -28,11 +28,8 @@ function initInject(hexo) {
         let locals = args[0];
         let options = args[1] || {};
         let priority = args[2];
-        injector.register(item, {
-          value: (ctx) => ctx.partial(view, locals, options),
-          priority
-        });
-        //this.raws.push({name, raw, args});
+        let value = ctx => ctx.partial(view, locals, options);
+        injector.register(item, { value, priority, name, locals, options });
       },
       file: (name, file, ...args) => {
         // Set default extname from file's extname
@@ -60,24 +57,4 @@ module.exports = hexo => {
 
   // set injector
   hexo.theme.config.injector = injector;
-
-  // Inject views
-  // points.views.forEach(type => {
-  //   let configs = Object.create(null);
-  //   hexo.theme.config.injects[type] = [];
-  //   // Add or override view.
-  //   injector[type].raws.forEach((injectObj, index) => {
-  //     let name = `inject/${type}/${injectObj.name}`;
-  //     hexo.theme.setView(name, injectObj.raw);
-  //     configs[name] = {
-  //       layout : name,
-  //       locals : injectObj.args[0],
-  //       options: injectObj.args[1],
-  //       order  : injectObj.args[2] || index
-  //     };
-  //   });
-  //   // Views sort.
-  //   hexo.theme.config.injects[type] = Object.values(configs)
-  //     .sort((x, y) => x.order - y.order);
-  // });
 };
