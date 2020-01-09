@@ -59,7 +59,7 @@ class Injector {
   }
 
   formatKey(entry) {
-    return entry.replace('-', '').replace('_', '').toLowerCase();
+    return entry.replace(/[-| |_]/g, '').toLowerCase();
   }
 }
 
