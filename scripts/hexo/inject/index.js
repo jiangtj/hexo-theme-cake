@@ -2,6 +2,8 @@
 
 'use strict';
 
+const path = require('path');
+
 hexo.on('generateBefore', () => {
   require('./core')(hexo);
 });
@@ -15,7 +17,7 @@ hexo.extend.filter.register('injector', (injector) => {
   // stylus
   points.styles.forEach(type => {
     hexo.theme.config.injects[type].forEach(file => injector.register(type, file));
-    hexo.theme.config.injects[type] = injector.get(type).list().map(item => item.value);
+    hexo.theme.config.injects[type] = injector.get(type).list().map(item => path.resolve(hexo.base_dir, item.value));
   });
   // view
   points.views.forEach(type => {
