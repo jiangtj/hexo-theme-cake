@@ -7,13 +7,13 @@ const {Cache} = require('hexo-util');
 const cache = new Cache();
 
 // add to postBodyEnd
-hexo.extend.filter.register('theme_inject', function(injector) {
+hexo.extend.filter.register('injector', function(injector) {
   let theme = hexo.theme.config;
   injector.register('postBodyEnd', {
     predicate: ctx => ctx.page.reward_settings.enable && !ctx.is_index,
     value    : ctx => {
       let comment = `<div>${theme.reward_settings.comment}</div>`;
-      let box = `<div class="reward-box">${hexo.theme.injector.get('reward').text(ctx)}</div>`;
+      let box = `<div class="reward-box">${injector.get('reward').text(ctx)}</div>`;
       let buttons = Object.keys(theme.reward).map(name => {
         let options = theme.reward[name];
         let icon = options.icon ? `<i class="${options.icon}" aria-hidden="true"></i>` : options.name;
@@ -26,7 +26,7 @@ hexo.extend.filter.register('theme_inject', function(injector) {
 }, 120);
 
 // add to reward style
-hexo.extend.filter.register('theme_inject', function(injector) {
+hexo.extend.filter.register('injector', function(injector) {
   let rewards = hexo.theme.config.reward;
 
   if (!rewards) {

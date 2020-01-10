@@ -2,7 +2,7 @@
 
 'use strict';
 
-hexo.extend.filter.register('theme_inject', function(injector) {
+hexo.extend.filter.register('injector', function(injector) {
   let config = hexo.theme.config.fontawesome;
   if (config.type === 'cdn') {
     let integrity = config.integrity ? ` integrity="${config.integrity}"` : '';

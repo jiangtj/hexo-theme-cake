@@ -5,7 +5,7 @@
 const {Cache} = require('hexo-util');
 const cache = new Cache();
 
-hexo.extend.filter.register('theme_inject', function(injector) {
+hexo.extend.filter.register('injector', function(injector) {
   let mediumZoom = hexo.theme.config.medium_zoom;
   if (!mediumZoom.enable) return;
   injector.register('bodyEnd', () => {

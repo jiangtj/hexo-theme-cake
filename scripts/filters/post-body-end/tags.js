@@ -2,7 +2,7 @@
 
 'use strict';
 
-hexo.extend.filter.register('theme_inject', function(injector) {
+hexo.extend.filter.register('injector', function(injector) {
   injector.register('postBodyEnd', ctx => {
     let tagContent = ctx.page.tags.map(tag => {
       return `<a href="${ctx.url_for(tag.path)}" rel="tag"># ${tag.name}</a>`;
