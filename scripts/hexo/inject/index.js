@@ -2,17 +2,26 @@
 
 'use strict';
 
+const Injector = require('./injector');
 const path = require('path');
+const {helper, filter} = hexo.extend;
 
 hexo.on('generateBefore', () => {
-  require('./core')(hexo);
+  const injector = new Injector();
+  hexo.extend.injector2 = injector;
+  hexo.execFilterSync('injector', injector);
 });
+
+helper.register('inject_list', function(point) { return hexo.extend.injector2.get(point).list(); });
+helper.register('inject_bind', function(point) { return hexo.extend.injector2.get(point).bind(this); });
+helper.register('inject_rendered', function(point) { return hexo.extend.injector2.get(point).rendered(this); });
+helper.register('inject_text', function(point) { return hexo.extend.injector2.get(point).text(this); });
 
 /**
  * Compatible with next theme injector
  */
 const points = require('./next-point');
-hexo.extend.filter.register('injector', (injector) => {
+filter.register('injector', (injector) => {
   require('./next-injects')(hexo);
   // stylus
   points.styles.forEach(type => {

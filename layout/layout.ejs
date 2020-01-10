@@ -2,19 +2,19 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
-  <%- next_inject('head-begin') -%>
+  <%- inject_text('head-begin') -%>
   <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
   <%- open_graph() -%>
   <%- canonical() -%>
   <%- cake_title() -%>
-  <%- next_inject('head') -%>
-  <%- next_inject('head-end') -%>
+  <%- inject_text('head') -%>
+  <%- inject_text('head-end') -%>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
 
-  <%- next_inject('body-begin') -%>
-  <%- next_inject('header') -%>
+  <%- inject_text('body-begin') -%>
+  <%- inject_text('header') -%>
 
   <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="header-inner"><%- partial( '_partials/header/index.ejs', {}, {cache: `cake-header-${page.lang}`}) -%></div>
@@ -49,7 +49,7 @@
   </div>
 
   <%- next_js('next-boot.js') -%>
-  <%- next_inject('body-end') -%>
+  <%- inject_text('body-end') -%>
 
 </body>
 
