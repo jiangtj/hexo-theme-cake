@@ -3,8 +3,10 @@
 'use strict';
 
 const Injector = require('./injector');
+const {Cache} = require('hexo-util');
 const path = require('path');
 const {helper, filter} = hexo.extend;
+const cache = new Cache();
 
 hexo.on('generateBefore', () => {
   const injector = new Injector();
@@ -15,7 +17,12 @@ hexo.on('generateBefore', () => {
 helper.register('inject_list', function(point) { return hexo.extend.injector2.get(point).list(); });
 helper.register('inject_bind', function(point) { return hexo.extend.injector2.get(point).bind(this); });
 helper.register('inject_rendered', function(point) { return hexo.extend.injector2.get(point).rendered(this); });
-helper.register('inject_text', function(point) { return hexo.extend.injector2.get(point).text(this); });
+helper.register('inject_text', function(point) {
+  let injector = hexo.extend.injector2;
+  cache.set(`${injector.formatKey(point)}`, true);
+  return hexo.extend.injector2.get(point).text(this);
+});
+filter.register('after_route_render', require('./filter')(hexo, cache));
 
 /**
  * Compatible with next theme injector
