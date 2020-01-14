@@ -4,43 +4,44 @@
 
 const Injector = require('./injector');
 const {Cache} = require('hexo-util');
-const path = require('path');
 const {helper, filter} = hexo.extend;
 const cache = new Cache();
 
+const injector = new Injector();
+hexo.extend.injector2 = injector;
+
 hexo.on('generateBefore', () => {
-  const injector = new Injector();
-  hexo.extend.injector2 = injector;
   hexo.execFilterSync('injector', injector);
 });
 
-helper.register('inject_list', function(point) { return hexo.extend.injector2.get(point).list(); });
-helper.register('inject_bind', function(point) { return hexo.extend.injector2.get(point).bind(this); });
-helper.register('inject_rendered', function(point) { return hexo.extend.injector2.get(point).rendered(this); });
+helper.register('inject_list', function(point) { return injector.get(point).list(); });
+helper.register('inject_bind', function(point) { return injector.get(point).bind(this); });
+helper.register('inject_rendered', function(point) { return injector.get(point).rendered(this); });
 helper.register('inject_text', function(point) {
-  let injector = hexo.extend.injector2;
   cache.set(`${injector.formatKey(point)}`, true);
-  return hexo.extend.injector2.get(point).text(this);
+  return injector.get(point).text(this);
 });
 filter.register('after_route_render', require('./filter')(hexo, cache));
 
 /**
  * Compatible with next theme injector
  */
-const points = require('./next-point');
-filter.register('injector', (injector) => {
-  require('./next-injects')(hexo);
+const points = require('../../events/lib/injects-point');
+filter.register('theme_inject', injects => {
   // stylus
   points.styles.forEach(type => {
-    hexo.theme.config.injects[type].forEach(file => injector.register(type, file));
-    hexo.theme.config.injects[type] = injector.get(type).list().map(item => path.resolve(hexo.base_dir, item.value));
+    injects[type].files.forEach(file => injector.register(type, file));
   });
   // view
   points.views.forEach(type => {
-    hexo.theme.config.injects[type].forEach(item => {
-      let {name, layout, locals, options, order} = item;
+    injects[type].raws.forEach((injectObj, index) => {
+      let name = injectObj.name;
+      let layout = `inject/${type}/${name}`;
+      let locals = injectObj.args[0];
+      let options = injectObj.args[1];
+      let order = injectObj.args[2] || index;
       let value = ctx => ctx.partial(layout, locals, options);
       injector.register(type, {value, priority: order, name, layout, locals, options});
     });
   });
-});
+}, Number.MAX_VALUE);

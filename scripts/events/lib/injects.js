@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const points = require('./next-point');
+const points = require('./injects-point');
 const defaultExtname = '.swig';
 
 // Defining stylus types
@@ -72,7 +72,6 @@ module.exports = hexo => {
       let name = `inject/${type}/${injectObj.name}`;
       hexo.theme.setView(name, injectObj.raw);
       configs[name] = {
-        name,
         layout : name,
         locals : injectObj.args[0],
         options: injectObj.args[1],

@@ -1,6 +1,3 @@
-/**
- * Compatible with next theme injector
- */
 'use strict';
 
 module.exports = {
@@ -12,7 +9,6 @@ module.exports = {
     'postBodyEnd',
     'footer',
     'bodyEnd',
-    'reward',
     'comment',
     'menu'
   ],
