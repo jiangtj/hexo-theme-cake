@@ -50,6 +50,7 @@ filter.register('theme_inject', injects => {
   });
 }, Number.MAX_VALUE);
 filter.register('before_generate', () => {
+  if (!hexo.theme.config.injects) return;
   points.styles.forEach(type => {
     hexo.theme.config.injects[type] = injector.get(type).list().map(item => resolve(hexo.base_dir, item.value));
   });

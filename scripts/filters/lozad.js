@@ -17,7 +17,6 @@ hexo.extend.filter.register('marked:renderer', function(renderer) {
 hexo.extend.filter.register('before_generate', () => {
   const injector = hexo.extend.injector2;
   let lozad = hexo.theme.config.lozad;
-  console.log('exce ---------- lozad');
   if (!lozad.enable) return;
   injector.register('bodyEnd', {
     value: () => cache.apply('cache', () => [
