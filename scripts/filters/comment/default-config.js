@@ -4,17 +4,17 @@
 
 const path = require('path');
 
-hexo.extend.filter.register('injector', injector => {
-  injector.get('comment').list().forEach(element => {
+hexo.extend.filter.register('theme_inject', injects => {
+  injects.comment.raws.forEach(element => {
     // Set default button content
     let injectName = path.basename(element.name, path.extname(element.name));
-    element.locals = Object.assign({
+    element.args[0] = Object.assign({
       configKey: injectName,
       class    : injectName,
       button   : injectName
-    }, element.locals);
+    }, element.args[0]);
     // Get locals and config
-    let locals = element.locals;
+    let locals = element.args[0];
     let config = hexo.theme.config.comments;
     // Set activeClass
     if (config.active === locals.configKey) {
@@ -24,7 +24,7 @@ hexo.extend.filter.register('injector', injector => {
     if (config.nav) {
       let nav = config.nav[locals.configKey] || {};
       if (nav.order) {
-        element.priority = nav.order;
+        element.args[2] = nav.order;
       }
       if (nav.text) {
         locals.button = nav.text;

@@ -2,17 +2,20 @@
 
 class Injector {
   constructor() {
-    this.store = {};
+    this._store = {};
+    this._run = {};
   }
 
-  list() {
-    return this.store;
+  clean() {
+    this._run = {};
+    console.log(this);
   }
 
   get(entry) {
     entry = this.formatKey(entry);
-    let entries = Array.from(this.store[entry] || []);
-    let list = () => entries;
+    let _storeEntries = Array.from(this._store[entry] || []);
+    let _runEntries = Array.from(this._run[entry] || []);
+    let list = () => _storeEntries.concat(_runEntries);
     let bind = (ctx) => list()
       .filter(item => item.predicate(ctx))
       .sort((a, b) => a.priority - b.priority);
@@ -27,20 +30,24 @@ class Injector {
     return {list, bind, rendered, text};
   }
 
-  register(entry, value, predicate = () => true, priority = 10) {
+  register(entry, value, predicate = () => true, priority = 10, isRun) {
     if (!entry) throw new TypeError('entry is required');
     entry = this.formatKey(entry);
-    this.store[entry] = this.store[entry] || [];
 
-    if (typeof predicate === 'string') {
-      predicate = this.is(predicate);
+    if (typeof value !== 'object') {
+      value = { value };
+    }
+    let options = Object.assign({ predicate, priority, isRun }, value);
+
+    let store = options.isRun ? this._run : this._store;
+    store[entry] = store[entry] || [];
+
+    if (typeof options.predicate === 'string') {
+      options.predicate = this.is(options.predicate);
     }
 
-    if (typeof value === 'object') {
-      this.store[entry].push(Object.assign({ predicate, priority }, value));
-      return;
-    }
-    this.store[entry].push({ value, predicate, priority });
+    store[entry].push(options);
+    return this;
   }
 
   is(...types) {

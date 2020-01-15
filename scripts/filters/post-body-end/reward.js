@@ -7,7 +7,8 @@ const {Cache} = require('hexo-util');
 const cache = new Cache();
 
 // add to postBodyEnd
-hexo.extend.filter.register('injector', function(injector) {
+hexo.extend.filter.register('before_generate', () => {
+  const injector = hexo.extend.injector2;
   let theme = hexo.theme.config;
   injector.register('postBodyEnd', {
     predicate: ctx => ctx.page.reward_settings.enable && !ctx.is_index,
@@ -21,12 +22,14 @@ hexo.extend.filter.register('injector', function(injector) {
       });
       let group = `<div class="reward-group">${buttons.join('')}</div>`;
       return `<div class="reward-container">${comment}${box}${group}</div>`;
-    }
+    },
+    isRun: true
   });
 }, 120);
 
 // add to reward style
-hexo.extend.filter.register('injector', function(injector) {
+hexo.extend.filter.register('before_generate', () => {
+  const injector = hexo.extend.injector2;
   let rewards = hexo.theme.config.reward;
 
   if (!rewards) {
@@ -37,13 +40,16 @@ hexo.extend.filter.register('injector', function(injector) {
   Object.keys(rewards).forEach(name => {
     let options = rewards[name];
     let layout = options.layout || path.join(hexo.theme_dir, 'layout/_partials/post/reward/simple.ejs');
-    injector.register('reward', (ctx) => {
-      return cache.apply(name, () => {
-        if (options.image) {
-          options.image = ctx.url_for(options.image);
-        }
-        return hexo.render.renderSync({path: layout}, {name, options});
-      });
+    injector.register('reward', {
+      value: ctx => {
+        return cache.apply(name, () => {
+          if (options.image) {
+            options.image = ctx.url_for(options.image);
+          }
+          return hexo.render.renderSync({path: layout}, {name, options});
+        });
+      },
+      isRun: true
     });
   });
 });

@@ -14,13 +14,17 @@ hexo.extend.filter.register('marked:renderer', function(renderer) {
   };
 }, 99);
 
-hexo.extend.filter.register('injector', function(injector) {
+hexo.extend.filter.register('before_generate', () => {
+  const injector = hexo.extend.injector2;
   let lozad = hexo.theme.config.lozad;
+  console.log('exce ---------- lozad');
   if (!lozad.enable) return;
-  injector.register('bodyEnd', () => {
-    return cache.apply('cache', () => [
+  injector.register('bodyEnd', {
+    value: () => cache.apply('cache', () => [
       `<script src="${lozad.cdn}" crossorigin="anonymous"></script>`,
       '<script>lozad(\'[data-src]\').observe();</script>'
-    ].join(''));
+    ].join('')),
+    isRun: true
   });
+
 });

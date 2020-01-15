@@ -2,14 +2,21 @@
 
 'use strict';
 
-hexo.extend.filter.register('injector', function(injector) {
+hexo.extend.filter.register('before_generate', () => {
+  const injector = hexo.extend.injector2;
   let config = hexo.theme.config.fontawesome;
   if (config.type === 'cdn') {
     let integrity = config.integrity ? ` integrity="${config.integrity}"` : '';
-    injector.register('head', `<link rel="stylesheet" href="${config.url}"${integrity} crossorigin="anonymous">`);
+    injector.register('head', {
+      value: `<link rel="stylesheet" href="${config.url}"${integrity} crossorigin="anonymous">`,
+      isRun: true
+    });
     return;
   }
   if (config.type === 'kit') {
-    injector.register('head', `<script src="${config.url}" crossorigin="anonymous"></script>`);
+    injector.register('head', {
+      value: `<script src="${config.url}" crossorigin="anonymous"></script>`,
+      isRun: true
+    });
   }
 });

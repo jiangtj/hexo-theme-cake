@@ -2,7 +2,6 @@
 
 'use strict';
 
-hexo.on('generateBefore', () => {
-  // Add filter type `theme_inject`
+hexo.extend.filter.register('before_generate', () => {
   require('./lib/injects')(hexo);
 });
