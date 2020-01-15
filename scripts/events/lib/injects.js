@@ -60,9 +60,7 @@ module.exports = hexo => {
 
   // Inject stylus
   points.styles.forEach(type => {
-    //hexo.theme.config.injects[type] = injects[type].files;
-    //console.log(hexo.extend.injector2.get(type).list().map(item => path.resolve(hexo.base_dir, item.value)));
-    hexo.theme.config.injects[type] = hexo.extend.injector2.get(type).list().map(item => path.resolve(hexo.base_dir, item.value));
+    hexo.theme.config.injects[type] = injects[type].files;
   });
 
   // Inject views

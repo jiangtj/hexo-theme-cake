@@ -8,7 +8,6 @@ class Injector {
 
   clean() {
     this._run = {};
-    console.log(this);
   }
 
   get(entry) {

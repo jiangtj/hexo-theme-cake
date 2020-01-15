@@ -49,3 +49,8 @@ filter.register('theme_inject', injects => {
       .forEach(data => injector.register(type, data));
   });
 }, Number.MAX_VALUE);
+filter.register('before_generate', () => {
+  points.styles.forEach(type => {
+    hexo.theme.config.injects[type] = injector.get(type).list().map(item => resolve(hexo.base_dir, item.value));
+  });
+}, Number.MAX_VALUE);
