@@ -2,8 +2,7 @@
 
 'use strict';
 
-const {encodeURL, Cache} = require('hexo-util');
-const cache = new Cache();
+const {encodeURL} = require('hexo-util');
 
 hexo.extend.filter.register('marked:renderer', function(renderer) {
   if (!hexo.theme.config.lozad.enable) return;
@@ -18,12 +17,10 @@ hexo.extend.filter.register('before_generate', () => {
   const injector = hexo.extend.injector2;
   let lozad = hexo.theme.config.lozad;
   if (!lozad.enable) return;
-  injector.register('bodyEnd', {
-    value: () => cache.apply('cache', () => [
-      `<script src="${lozad.cdn}" crossorigin="anonymous"></script>`,
-      '<script>lozad(\'[data-src]\').observe();</script>'
-    ].join('')),
-    isRun: true
-  });
-
+  let value = [
+    `<script src="${lozad.cdn}" crossorigin="anonymous"></script>`,
+    '<script>lozad(\'[data-src]\').observe();</script>'
+  ].join('');
+  let isRun = true;
+  injector.register('bodyEnd', {value, isRun});
 });
