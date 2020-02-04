@@ -21,7 +21,7 @@ helper.register('injector', function(point) {
 
 filter.register('after_route_render', require('./filter')(hexo, cache));
 
-filter.register('stylus', style => {
+filter.register('stylus:renderer', style => {
   style.define('injector', data => {
     return injector.get(data.val).list().map(item => resolve(hexo.base_dir, item.value));;
   });
