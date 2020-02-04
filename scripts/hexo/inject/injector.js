@@ -10,23 +10,23 @@ class Injector {
     this._run = {};
   }
 
-  get(entry) {
+  get(entry, options = {context: {}}) {
     entry = this.formatKey(entry);
+    let ctx = options.context;
     let _storeEntries = Array.from(this._store[entry] || []);
     let _runEntries = Array.from(this._run[entry] || []);
-    let list = () => _storeEntries.concat(_runEntries);
-    let bind = (ctx) => list()
+    let list = () => _storeEntries.concat(_runEntries)
       .filter(item => item.predicate(ctx))
       .sort((a, b) => a.priority - b.priority);
-    let rendered = (ctx) => bind(ctx).map(item => {
+    let rendered = () => list().map(item => {
       let renderItem = Object.assign({}, item);
       if (typeof item.value === 'function') {
         renderItem.value = item.value(ctx);
       }
       return renderItem;
     });
-    let text = (ctx) => rendered(ctx).map(item => item.value).join('');
-    return {list, bind, rendered, text};
+    let text = () => rendered().map(item => item.value).join('');
+    return {list, rendered, text};
   }
 
   register(entry, value, predicate = () => true, priority = 10, isRun) {

@@ -6,14 +6,14 @@
   <%- open_graph() -%>
   <%- canonical() -%>
   <%- cake_title() -%>
-  <%- inject_text('head') -%>
-  <%- inject_text('head-end') -%>
+  <%- injector('head').text() -%>
+  <%- injector('head-end').text() -%>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
 
-  <%- inject_text('body-begin') -%>
-  <%- inject_text('header') -%>
+  <%- injector('body-begin').text() -%>
+  <%- injector('header').text() -%>
 
   <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="header-inner"><%- partial( '_partials/header/index.ejs', {}, {cache: `cake-header-${page.lang}`}) -%></div>
@@ -48,7 +48,7 @@
   </div>
 
   <%- next_js('next-boot.js') -%>
-  <%- inject_text('body-end') -%>
+  <%- injector('body-end').text() -%>
 
 </body>
 

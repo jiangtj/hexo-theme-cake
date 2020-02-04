@@ -1,6 +1,6 @@
 <% if (page.comments) {%>
 <%
-let commentList = inject_rendered('comment');
+let commentList = injector('comment').rendered();
 %>
 <% if (commentList.length === 1) { %>
 <%- commentList[0].value -%>

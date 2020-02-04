@@ -14,7 +14,7 @@ hexo.extend.filter.register('before_generate', () => {
     predicate: ctx => ctx.page.reward_settings.enable && !ctx.is_index,
     value    : ctx => {
       let comment = `<div>${theme.reward_settings.comment}</div>`;
-      let box = `<div class="reward-box">${injector.get('reward').text(ctx)}</div>`;
+      let box = `<div class="reward-box">${injector.get('reward', {context: ctx}).text()}</div>`;
       let buttons = Object.keys(theme.reward).map(name => {
         let options = theme.reward[name];
         let icon = options.icon ? `<i class="${options.icon}" aria-hidden="true"></i>` : options.name;

@@ -42,7 +42,7 @@
   </span>
   <% } %>
 
-  <%- inject_text('postMeta') -%>
+  <%- injector('postMeta').text() -%>
 
   <% if (post.description) { %>
   <div class="post-description"><%- post.description -%></div>

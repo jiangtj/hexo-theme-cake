@@ -14,13 +14,9 @@ hexo.on('generateBefore', () => {
   injector.clean();
 });
 
-
-helper.register('inject_list', function(point) { return injector.get(point).list(); });
-helper.register('inject_bind', function(point) { return injector.get(point).bind(this); });
-helper.register('inject_rendered', function(point) { return injector.get(point).rendered(this); });
-helper.register('inject_text', function(point) {
+helper.register('injector', function(point) {
   cache.set(`${injector.formatKey(point)}`, true);
-  return injector.get(point).text(this);
+  return injector.get(point, {context: this});
 });
 filter.register('after_route_render', require('./filter')(hexo, cache));
 

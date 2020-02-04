@@ -5,7 +5,7 @@ const injectFilter = (hexo, cache) => (data, locals) => {
 
   function inject(data, pattern, flag, isBegin = true) {
     if (cache.has(`${injector.formatKey(flag)}`)) return data;
-    const code = injector.get(flag).text(locals);
+    const code = injector.get(flag, {context: locals}).text();
     if (!code.length) return data;
     return data.replace(pattern, str => { return isBegin ? str + code : code + str; });
   }
