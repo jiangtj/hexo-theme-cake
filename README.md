@@ -24,13 +24,11 @@
 
 ### Require
 
-- Node: suggest latest lts version
-- Hexo: suggest latest version
-- Master branch need PR [stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), if they don't release a new version, you need to install the following
-  ```bash
-  yarn add jiangtj-lab/hexo-renderer-stylus#fiter
-  yarn add hexojs/hexo-renderer-marked
-  ```
+Master branch need PR [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), if they don't release a new version, you need to install the following
+```bash
+yarn add jiangtj-lab/hexo-renderer-stylus#fiter
+yarn add hexojs/hexo-renderer-marked
+```
 
 ### Manual
 
