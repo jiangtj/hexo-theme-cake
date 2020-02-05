@@ -25,11 +25,15 @@ helper.register('injector', function(point) {
 filter.register('stylus:renderer', style => {
   style.define('injector', data => {
     let expr = new nodes.Expression()
+    expr.isList = true;
     injector.get(data.val).list()
       .map(item => resolve(hexo.base_dir, item.value))
-      .map(item => new nodes.Import(item))
+      .map(item => new nodes.String(item))
       .forEach(item => expr.push(item));
-    return expr;
+    let each = new nodes.Each('$inject_val', '$inject_key', expr,
+      new nodes.Import(new nodes.Ident('$inject_val'))
+    );
+    return each;
   });
 });
 
