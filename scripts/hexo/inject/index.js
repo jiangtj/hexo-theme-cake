@@ -5,6 +5,7 @@
 const Injector = require('./injector');
 const {resolve} = require('path');
 const {Cache} = require('hexo-util');
+const {nodes} = require('stylus');
 const {helper, filter} = hexo.extend;
 const cache = new Cache();
 
@@ -23,7 +24,12 @@ helper.register('injector', function(point) {
 
 filter.register('stylus:renderer', style => {
   style.define('injector', data => {
-    return injector.get(data.val).list().map(item => resolve(hexo.base_dir, item.value));;
+    let expr = new nodes.Expression()
+    injector.get(data.val).list()
+      .map(item => resolve(hexo.base_dir, item.value))
+      .map(item => new nodes.Import(item))
+      .forEach(item => expr.push(item));
+    return expr;
   });
 });
 

@@ -1,20 +1,6 @@
-// Variables Layer
-// --------------------------------------------------
 @import "_variables/base";
-for $inject_variable in injector('variable')
-  @import $inject_variable;
-
-// Mixins Layer
-// --------------------------------------------------
+injector('variable')
 @import "_mixins/base";
-for $inject_mixin in injector('mixin')
-  @import $inject_mixin;
-
-// Common Layer
-// --------------------------------------------------
+injector('mixin')
 @import "_common/base";
-
-// Custom Layer
-// --------------------------------------------------
-for $inject_style in injector('style')
-  @import $inject_style;
+injector('style')
