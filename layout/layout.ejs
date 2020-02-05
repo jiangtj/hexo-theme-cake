@@ -2,6 +2,7 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
+  <%- injector('head-begin').text() -%>
   <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
   <%- open_graph() -%>
   <%- canonical() -%>

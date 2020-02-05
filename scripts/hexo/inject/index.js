@@ -19,7 +19,7 @@ helper.register('injector', function(point) {
   return injector.get(point, {context: this});
 });
 
-filter.register('after_route_render', require('./filter')(hexo, cache));
+//filter.register('after_route_render', require('./filter')(hexo, cache));
 
 filter.register('stylus:renderer', style => {
   style.define('injector', data => {
