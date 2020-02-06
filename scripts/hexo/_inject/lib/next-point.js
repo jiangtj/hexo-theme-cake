@@ -9,8 +9,7 @@ module.exports = {
     'postBodyEnd',
     'footer',
     'bodyEnd',
-    'comment',
-    'menu'
+    'comment'
   ],
   styles: [
     'variable',
