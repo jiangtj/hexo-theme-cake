@@ -3,6 +3,7 @@
 'use strict';
 
 const {encodeURL} = require('hexo-util');
+const injector = require('../hexo/_inject/index')(hexo);
 
 hexo.extend.filter.register('marked:renderer', function(renderer) {
   if (!hexo.theme.config.lozad.enable) return;
@@ -14,7 +15,6 @@ hexo.extend.filter.register('marked:renderer', function(renderer) {
 }, 99);
 
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let lozad = hexo.theme.config.lozad;
   if (!lozad.enable) return;
   let value = [

@@ -2,8 +2,9 @@
 
 'use strict';
 
+const injector = require('../../hexo/_inject/index')(hexo);
+
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let config = hexo.theme.config.fontawesome;
   if (config.type === 'cdn') {
     let integrity = config.integrity ? ` integrity="${config.integrity}"` : '';

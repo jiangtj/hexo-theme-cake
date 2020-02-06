@@ -2,8 +2,9 @@
 
 'use strict';
 
+const injector = require('../../hexo/_inject/index')(hexo);
+
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let pace = hexo.theme.config.pace;
   if (!pace.enable) return;
   injector.register('head', {

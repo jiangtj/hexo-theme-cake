@@ -2,8 +2,9 @@
 
 'use strict';
 
+const injector = require('../hexo/_inject/index')(hexo);
+
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let mediumZoom = hexo.theme.config.medium_zoom;
   if (!mediumZoom.enable) return;
   let value = [

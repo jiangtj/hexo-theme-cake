@@ -5,10 +5,10 @@
 const path = require('path');
 const {Cache} = require('hexo-util');
 const cache = new Cache();
+const injector = require('../../hexo/_inject/index')(hexo);
 
 // add to postBodyEnd
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let theme = hexo.theme.config;
   injector.register('postBodyEnd', {
     predicate: ctx => ctx.page.reward_settings.enable && !ctx.is_index,
@@ -29,7 +29,6 @@ hexo.extend.filter.register('before_generate', () => {
 
 // add to reward style
 hexo.extend.filter.register('before_generate', () => {
-  const injector = hexo.extend.injector2;
   let rewards = hexo.theme.config.reward;
 
   if (!rewards) {
