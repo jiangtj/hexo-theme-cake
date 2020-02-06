@@ -29,7 +29,7 @@ const initInjector = ctx => {
   });
 
   injector.loadStylusPlugin = () => require('./lib/stylus')(ctx, filter, injector);
-  injector.loadNexTPlugin = () => require('./lib/next')(filter, injector);
+  injector.loadNexTPlugin = () => require('./lib/next')(ctx, injector);
 
   return injector;
 }

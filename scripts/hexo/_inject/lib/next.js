@@ -70,6 +70,9 @@ module.exports = (ctx, injector) => {
         .map((injectObj, index) => {
           let name = injectObj.name;
           let layout = `inject/${type}/${name}`;
+          if (!ctx.theme.getView(layout)) {
+            ctx.theme.setView(layout, injectObj.raw);
+          }
           let locals = injectObj.args[0];
           let options = injectObj.args[1];
           let order = injectObj.args[2] || index;
