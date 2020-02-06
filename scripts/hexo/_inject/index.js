@@ -1,9 +1,7 @@
 'use strict';
 
-const Injector = require('./injector');
-const { resolve } = require('path');
+const Injector = require('./lib/injector');
 const { Cache } = require('hexo-util');
-const { nodes } = require('stylus');
 const cache = new Cache();
 
 const initInjector = ctx => {
@@ -13,37 +11,19 @@ const initInjector = ctx => {
 
   const injector = new Injector();
   ctx.extend.injector2 = injector;
-  const { helper, filter } = ctx.extend;
-
   ctx.on('generateBefore', () => {
     injector.clean();
   });
+
+  const { helper, filter } = ctx.extend;
 
   helper.register('injector', function (point) {
     cache.set(`${injector.formatKey(point)}`, true);
     return injector.get(point, { context: this });
   });
 
-  injector.loadStylusPlugin = () => {
-    filter.register('stylus:renderer', style => {
-      style.define('injector', data => {
-        let expr = new nodes.Expression()
-        expr.isList = true;
-        injector.get(data.val).list()
-          .map(item => resolve(ctx.base_dir, item.value))
-          .map(item => new nodes.String(item))
-          .forEach(item => expr.push(item));
-        return new nodes.Each('$inject_val', '$inject_key', expr,
-          new nodes.Import(new nodes.Ident('$inject_val'))
-        );
-      });
-    });
-  }
-
-  injector.loadNexTPlugin = () => {
-    require('./next')(filter, injector);
-  }
-
+  injector.loadStylusPlugin = () => require('./lib/stylus')(ctx, filter, injector);
+  injector.loadNexTPlugin = () => require('./lib/next')(filter, injector);
   //filter.register('after_route_render', require('./filter')(ctx, cache));
 
   return injector;

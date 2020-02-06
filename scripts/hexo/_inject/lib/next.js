@@ -2,7 +2,7 @@
  * Compatible with next theme injector
  */
 
-const points = require('../../events/lib/injects-point');
+const points = require('../../../events/lib/injects-point');
 
 module.exports = (filter, injector) => {
 
