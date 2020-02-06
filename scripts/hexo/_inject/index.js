@@ -9,6 +9,12 @@ const initInjector = ctx => {
     return ctx.extend.injector2;
   }
 
+  try {
+    return require('hexo-extend-injector2')(ctx);
+  } catch (error) {
+    ctx.log.info('Not found hexo-extend-injector2, load build in injector2.')
+  }
+
   const injector = new Injector();
   ctx.extend.injector2 = injector;
   ctx.on('generateBefore', () => {
