@@ -30,7 +30,6 @@ const initInjector = ctx => {
 
   injector.loadStylusPlugin = () => require('./lib/stylus')(ctx, filter, injector);
   injector.loadNexTPlugin = () => require('./lib/next')(filter, injector);
-  //filter.register('after_route_render', require('./filter')(ctx, cache));
 
   return injector;
 }
