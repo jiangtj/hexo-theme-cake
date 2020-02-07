@@ -21,5 +21,8 @@
     "js-yaml": "^3.8.1",
     "jshint-stylish": "^2.1.0",
     "stylint": "^2.0.0"
+  },
+  "dependencies": {
+    "hexo-extend-injector2": "^0.0.4"
   }
 }
