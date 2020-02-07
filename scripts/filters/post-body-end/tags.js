@@ -2,7 +2,7 @@
 
 'use strict';
 
-const injector = require('../../hexo/_inject/index')(hexo);
+const injector = require('hexo-extend-injector2')(hexo);
 
 injector.register('postBodyEnd', ctx => {
   let tagContent = ctx.page.tags.map(tag => {

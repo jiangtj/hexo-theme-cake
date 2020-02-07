@@ -2,7 +2,7 @@
 
 'use strict';
 
-const injector = require('../hexo/_inject/index')(hexo);
+const injector = require('hexo-extend-injector2')(hexo);
 
 hexo.extend.filter.register('before_generate', () => {
   let mediumZoom = hexo.theme.config.medium_zoom;

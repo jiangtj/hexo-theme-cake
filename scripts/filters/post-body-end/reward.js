@@ -5,7 +5,7 @@
 const path = require('path');
 const {Cache} = require('hexo-util');
 const cache = new Cache();
-const injector = require('../../hexo/_inject/index')(hexo);
+const injector = require('hexo-extend-injector2')(hexo);
 
 // add to postBodyEnd
 hexo.extend.filter.register('before_generate', () => {
