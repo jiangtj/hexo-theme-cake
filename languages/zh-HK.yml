@@ -9,7 +9,6 @@ menu:
   categories: 分類
   tags: 標籤
   about: 關於
-  search: 檢索
   sitemap: 站點地圖
   commonweal: 公益 404
 sidebar:
@@ -61,8 +60,6 @@ state:
   pages: 頁面
   tags: 標籤
   categories: 分類
-search:
-  placeholder: 搜索...
 cheers: 太棒了
 keep_on: 繼續努力。
 symbol:

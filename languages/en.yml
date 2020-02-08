@@ -9,7 +9,6 @@ menu:
   categories: Categories
   tags: Tags
   about: About
-  search: Search
   sitemap: Sitemap
   commonweal: Commonweal 404
 
@@ -69,9 +68,6 @@ state:
   pages: pages
   tags: tags
   categories: categories
-
-search:
-  placeholder: Searching...
 
 cheers: Nice
 
