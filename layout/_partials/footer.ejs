@@ -18,4 +18,4 @@
   <%= __('footer.theme') %> – <%- next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) -%> v<%= cake_version %>
 </div>
 
-<%- next_inject('footer') -%>
+<%- injector('footer').text() -%>

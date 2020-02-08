@@ -2,22 +2,15 @@
 
 'use strict';
 
-// images.forEach(element => {
-//   let hdAttr = element.getAttribute(mediumZoom.hd_attr);
-//   if (hdAttr) {
-//     element.setAttribute('data-zoom-src', hdAttr);
-//   }
-// });
+const injector = require('hexo-extend-injector2')(hexo);
 
-hexo.extend.filter.register('theme_inject', function(injects) {
+hexo.extend.filter.register('before_generate', () => {
   let mediumZoom = hexo.theme.config.medium_zoom;
-
   if (!mediumZoom.enable) return;
-
-  injects.bodyEnd.raw('medium-zoom', `
-  <script src="${mediumZoom.cdn}" crossorigin="anonymous"></script>
-  <script>
-    mediumZoom('${mediumZoom.selector}');
-  </script>
-  `, {}, {cache: true});
+  let value = [
+    `<script src="${mediumZoom.cdn}" crossorigin="anonymous"></script>`,
+    `<script>mediumZoom('${mediumZoom.selector}');</script>`
+  ].join('');
+  let isRun = true;
+  injector.register('bodyEnd', {value, isRun});
 });

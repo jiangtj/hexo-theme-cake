@@ -45,7 +45,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
     </div>
 
     <% if (!is_index) { %>
-    <%- next_inject('postBodyEnd') -%>
+    <%- injector('postBodyEnd').text() -%>
     <% } %>
 
     <% if (!is_index && (post.prev || post.next)) { %>

@@ -2,7 +2,6 @@
 
 :cake: It's a lovely theme, based on [NexT:7.1.0](https://github.com/theme-next/hexo-theme-next), and some styles come from [inside](https://github.com/ikeq/hexo-theme-inside).
 
-![Hexo](https://img.shields.io/badge/hexo-%3E%3D%203.5.0-blue.svg)
 ![GitHub release](https://img.shields.io/github/release/jiangtj/hexo-theme-cake.svg)
 ![Size](https://badgen.net/packagephobia/install/hexo-theme-cake)
 
@@ -22,6 +21,24 @@
 *More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next) (if has trouble in use NexT Plugins, may need to install [njk render](https://github.com/theme-next/hexo-renderer-njks))*
 
 ## Quick Start
+
+### Require
+
+Require `hexo-extend-injector2` dependency, please install it (after [hexo:4111](https://github.com/hexojs/hexo/pull/4111) merged, suggest load theme by npm, this issue would be unimportant).
+
+```bash
+# load all theme needed dependencies
+yarn add jiangtj/hexo-theme-cake
+# or load injector2 directly
+yarn add hexo-extend-injector2
+```
+
+Require some renderer feature to support, [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), if they don't release a new version, you need to install the following
+
+```bash
+yarn add jiangtj-lab/hexo-renderer-stylus#fiter
+yarn add hexojs/hexo-renderer-marked
+```
 
 ### Manual
 

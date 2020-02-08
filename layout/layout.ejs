@@ -2,16 +2,19 @@
 <html lang="<%= page.lang || page.language || config.language %>">
 
 <head>
+  <%- injector('head-begin').text() -%>
   <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
   <%- open_graph() -%>
   <%- canonical() -%>
   <%- cake_title() -%>
-  <%- next_inject('head') -%>
+  <%- injector('head').text() -%>
+  <%- injector('head-end').text() -%>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
 
-  <%- next_inject('header') -%>
+  <%- injector('body-begin').text() -%>
+  <%- injector('header').text() -%>
 
   <header class="main-header" itemscope itemtype="http://schema.org/WPHeader">
     <div class="header-inner"><%- partial( '_partials/header/index.ejs', {}, {cache: `cake-header-${page.lang}`}) -%></div>
@@ -46,7 +49,7 @@
   </div>
 
   <%- next_js('next-boot.js') -%>
-  <%- next_inject('bodyEnd') -%>
+  <%- injector('body-end').text() -%>
 
 </body>
 
