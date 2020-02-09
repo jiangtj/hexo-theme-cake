@@ -23,6 +23,6 @@
     "stylint": "^2.0.0"
   },
   "dependencies": {
-    "hexo-extend-injector2": "^0.0.4"
+    "hexo-extend-injector2": "^0.1.0"
   }
 }
