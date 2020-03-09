@@ -24,6 +24,6 @@
     "stylint": "^2.0.0"
   },
   "dependencies": {
-    "hexo-extend-injector2": "^0.1.0"
+    "hexo-extend-injector2": "^0.1.6"
   }
 }
