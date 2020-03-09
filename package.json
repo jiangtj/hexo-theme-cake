@@ -2,6 +2,7 @@
   "name": "hexo-theme-cake",
   "version": "1.6.0",
   "description": "🍰Cake is lovely hexo theme, sweet.",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JiangTJ/hexo-theme-cake.git"

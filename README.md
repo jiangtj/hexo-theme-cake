@@ -24,15 +24,6 @@
 
 ### Require
 
-Require `hexo-extend-injector2` dependency, please install it (after [hexo:4111](https://github.com/hexojs/hexo/pull/4111) merged, suggest load theme by npm, this issue would be unimportant).
-
-```bash
-# load all theme needed dependencies
-yarn add jiangtj/hexo-theme-cake
-# or load injector2 directly
-yarn add hexo-extend-injector2
-```
-
 Require some renderer feature to support, [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), if they don't release a new version, you need to install the following
 
 ```bash
@@ -40,24 +31,19 @@ yarn add jiangtj-lab/hexo-renderer-stylus#fiter
 yarn add hexojs/hexo-renderer-marked
 ```
 
-### Manual
+### Install & Run
 
 ```bash
 # Create a new hexo project
 hexo init <dir>
 cd <dir>
-# Add Cake as git submodule
-git init
-git submodule add https://github.com/JiangTJ/hexo-theme-cake themes/cake
+# Install hexo-theme-cake
+yarn add hexo-theme-cake
 ```
 
-Modify `theme` to `cake` in `_config.yml`.
+Modify `theme` to `cake`.
 
 Run `hexo s`, and preview.
-
-### Auto deploy to netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jiangtj-lab/hexo-theme-cake-example)
 
 ## Browser Support
 Modern Browser (No IE)
