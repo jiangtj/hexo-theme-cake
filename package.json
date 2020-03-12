@@ -3,6 +3,9 @@
   "version": "2.0.1",
   "description": "🍰Cake is lovely hexo theme, sweet.",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha test/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JiangTJ/hexo-theme-cake.git"
@@ -19,8 +22,13 @@
   },
   "homepage": "https://www.dnocm.com/cake",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-theme-next": "^1.1.4",
+    "hexo": "^4.2.0",
     "js-yaml": "^3.8.1",
     "jshint-stylish": "^2.1.0",
+    "mocha": "^7.1.0",
     "stylint": "^2.0.0"
   },
   "dependencies": {

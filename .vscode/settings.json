@@ -1,0 +1,10 @@
+{
+  "eslint.options": {
+    "rules": {
+      "linebreak-style": "off"
+    }
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
