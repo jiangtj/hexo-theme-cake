@@ -16,41 +16,39 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Checkout theme
-      uses: actions/checkout@v1
-      with:
-        path: themes/cake
     - name: Run test
       run: |
-        cd ../../
         npm install -g hexo-cli
         hexo init test
-        mv themes/cake test/themes/cake
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
-        git clone https://github.com/jiangtj/hexo-theme-cake.git --depth=1 --quiet themes/cake-master
 
         echo '-----------------------------'
-        echo 'Test cake-current'
+        echo 'Test default theme'
+        echo '-----------------------------'
+        hexo config theme landscape
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        npm install jiangtj/hexo-theme-cake#${{github.ref}}
+
+        echo '-----------------------------'
+        echo 'Test current branch'
         echo '-----------------------------'
         hexo config theme cake
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
 
-        echo '-----------------------------'
-        echo 'Test cake-master'
-        echo '-----------------------------'
-        hexo config theme cake-master
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        echo ''
+
+        npm install hexo-theme-cake
 
         echo '-----------------------------'
-        echo 'Test default theme'
+        echo 'Test latest version'
         echo '-----------------------------'
-        hexo config theme landscape
+        hexo config theme cake-master
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
