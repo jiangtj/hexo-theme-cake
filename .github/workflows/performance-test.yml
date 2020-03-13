@@ -16,41 +16,40 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Checkout theme
-      uses: actions/checkout@v1
-      with:
-        path: themes/cake
     - name: Run test
+      env:
+        CODE_REF: ${{ github.ref }}
       run: |
-        cd ../../
-        npm install -g hexo-cli
+        npm install hexo-cli -g --silent
         hexo init test
-        mv themes/cake test/themes/cake
         cd test
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
-        git clone https://github.com/jiangtj/hexo-theme-cake.git --depth=1 --quiet themes/cake-master
-
-        echo '-----------------------------'
-        echo 'Test cake-current'
-        echo '-----------------------------'
-        hexo config theme cake
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        echo ''
-
-        echo '-----------------------------'
-        echo 'Test cake-master'
-        echo '-----------------------------'
-        hexo config theme cake-master
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        echo ''
 
         echo '-----------------------------'
         echo 'Test default theme'
         echo '-----------------------------'
         hexo config theme landscape
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        hexo config theme cake
+        npm install jiangtj/hexo-theme-cake#$CODE_REF --silent
+
+        echo "-----------------------------"
+        echo "Test current branch: $CODE_REF"
+        echo "-----------------------------"
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+
+        npm install hexo-theme-cake --silent
+
+        echo '-----------------------------'
+        echo 'Test latest version'
+        echo '-----------------------------'
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
