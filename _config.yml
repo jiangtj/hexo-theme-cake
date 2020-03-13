@@ -29,14 +29,6 @@ creative_commons:
   post: true
   license: by-nc-sa
 
-# Set a canonical link tag in your hexo, you could use it for your SEO of blog.
-# See: https://support.google.com/webmasters/answer/139066
-# Tips: Before you open this tag, remember set up your URL in hexo _config.yml (e.g. url: http://yourdomain.com)
-canonical: true
-
-# If true, will add site-subtitle to index page, added in main hexo config.
-index_with_subtitle: false
-
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
 # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
@@ -54,9 +46,6 @@ menu:
 # Enable / Disable menu icons.
 menu_settings:
   icons: true
-
-# Posts / Categories / Tags in sidebar.
-site_state: true
 
 # Social Links
 # Usage: `Key: permalink || icon`
@@ -105,9 +94,6 @@ toc:
   expand_all: false
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
   max_depth: 6
-
-# back2top removed, you can use hexo-cake-moon-menu instead of it
-# See: https://github.com/jiangtj-lab/hexo-cake-moon-menu
 
 # Scroll behavior.
 scroll:
@@ -174,16 +160,9 @@ post_navigation: left
 # Multiple Comment System Support
 comments:
   # Choose a comment system to be displayed by default
-  # Supported values: disqus | livere | valine
   active:
   # Lazyload all comment systems.
   lazyload: false
-  # Modify icons and texts for any style, here are some examples
-  nav:
-    #disqus: disqus
-    #facebook_comments_plugin: <i class="fab fa-facebook-official" aria-hidden="true"></i> facebook
-    #gitalk: Load Gitalk
-    #vkontakte: vkontakte
 
 # Disqus
 disqus:

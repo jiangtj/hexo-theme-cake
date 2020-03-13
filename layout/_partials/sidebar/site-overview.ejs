@@ -8,7 +8,6 @@
     <div class="site-description" itemprop="description"><%= description %></div>
   </div>
 
-  <% if (theme.site_state) { %>
   <nav class="site-state">
     <% if (config.archive_dir != '/' && site.posts.length > 0) { %>
     <div class="site-state-item site-state-posts">
@@ -37,7 +36,6 @@
     </div>
     <% } %>
   </nav>
-  <% } %>
 
   <% if (theme.social) { %>
   <div class="links-of-author">
