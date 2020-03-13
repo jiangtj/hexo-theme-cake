@@ -6,6 +6,15 @@
   "scripts": {
     "test": "mocha test/index.js"
   },
+  "files": [
+    "languages",
+    "layout",
+    "lib",
+    "scripts",
+    "source",
+    "_config.yml",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JiangTJ/hexo-theme-cake.git"
