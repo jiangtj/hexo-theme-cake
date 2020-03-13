@@ -17,6 +17,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Run test
+      env:
+        CODE_REF: ${{ github.ref }}
       run: |
         npm install -g hexo-cli
         hexo init test
@@ -32,12 +34,12 @@ jobs:
         sh ./sh/run-hexo.sh
         echo ''
 
-        npm install jiangtj/hexo-theme-cake#${{github.ref}}
+        hexo config theme cake
+        npm install jiangtj/hexo-theme-cake#${CODE_REF}
 
         echo '-----------------------------'
-        echo 'Test current branch'
+        echo 'Test current branch: ${CODE_REF}'
         echo '-----------------------------'
-        hexo config theme cake
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
@@ -48,7 +50,6 @@ jobs:
         echo '-----------------------------'
         echo 'Test latest version'
         echo '-----------------------------'
-        hexo config theme cake-master
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
