@@ -18,10 +18,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Run test
       env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
         CODE_REF: ${{ github.ref }}
       run: |
-        echo "$GITHUB_CONTEXT"
         npm install hexo-cli -g --silent
         hexo init test
         cd test
