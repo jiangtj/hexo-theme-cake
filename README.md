@@ -9,16 +9,15 @@
 
 ![image](https://user-images.githubusercontent.com/15902347/61528469-74ca5200-aa51-11e9-8248-061679a4ac73.png)
 
-- https://www.dnocm.com/cake/
-- https://cake.jiangtj.com/
+- docs: https://www.dnocm.com/cake/
+- example: https://cake.jiangtj.com/
+- example source: https://github.com/jiangtj-lab/hexo-theme-cake-example
 
-## Plugins
-- [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon): Ribbon background
-- [hexo-cake-math](https://github.com/jiangtj-lab/hexo-cake-math): Math Support
-- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu): A new style for back2top button and scrollpercent.
-- [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search): Local search function
-
-*More in [Dnocm Plugins Site](https://www.dnocm.com/cake/plugins) or [Awesome NexT](https://github.com/theme-next/awesome-next) (if has trouble in use NexT Plugins, may need to install [njk render](https://github.com/theme-next/hexo-renderer-njks))*
+## Features
+- :sparkles: very easy to install or upgrade, just `npm i`.
+- :leaves: small and lightweight, the lines of configuration ≈ 200.
+- :boom: powerful plugin system, thanks to [hexo-extend-injector2](https://github.com/jiangtj/hexo-extend-injector2) plugin.
+- :zap: faster than the default theme, about improve 9% (default configuration and no plugin installed).
 
 ## Quick Start
 
