@@ -3,7 +3,7 @@
 :cake: It's a lovely theme, based on [NexT:7.1.0](https://github.com/theme-next/hexo-theme-next), and some styles come from [inside](https://github.com/ikeq/hexo-theme-inside).
 
 ![npm](https://img.shields.io/npm/v/hexo-theme-cake)
-![size](https://badgen.net/packagephobia/install/hexo-theme-cake)
+![size](https://badgen.net/packagephobia/publish/hexo-theme-cake)
 
 ## Preview & Docs
 
