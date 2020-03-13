@@ -2,8 +2,8 @@
 
 :cake: It's a lovely theme, based on [NexT:7.1.0](https://github.com/theme-next/hexo-theme-next), and some styles come from [inside](https://github.com/ikeq/hexo-theme-inside).
 
-![GitHub release](https://img.shields.io/github/release/jiangtj/hexo-theme-cake.svg)
-![Size](https://badgen.net/packagephobia/install/hexo-theme-cake)
+![npm](https://img.shields.io/npm/v/hexo-theme-cake)
+![size](https://badgen.net/packagephobia/install/hexo-theme-cake)
 
 ## Preview & Docs
 
@@ -24,26 +24,17 @@
 
 ### Require
 
-Require some renderer feature to support, [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), if they don't release a new version, you need to install the following
-
-```bash
-yarn add jiangtj-lab/hexo-renderer-stylus#fiter
-yarn add hexojs/hexo-renderer-marked
-```
+Require some renderer feature to support, [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), when they release a new version, I will update the [dependencies](https://github.com/jiangtj/hexo-theme-cake/blob/master/package.json).
 
 ### Install & Run
 
 ```bash
-# Create a new hexo project
-hexo init <dir>
-cd <dir>
-# Install hexo-theme-cake
+# Install hexo-theme-cake by npm or yarn cmd
+npm install hexo-theme-cake
 yarn add hexo-theme-cake
 ```
 
 Modify `theme` to `cake`.
-
-Run `hexo s`, and preview.
 
 ## Browser Support
 Modern Browser (No IE)
