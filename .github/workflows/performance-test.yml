@@ -34,11 +34,14 @@ jobs:
         sh ./sh/run-hexo.sh
         echo ''
 
+        echo "${CODE_REF}"
+        echo "$CODE_REF"
+
         hexo config theme cake
-        npm install jiangtj/hexo-theme-cake#${CODE_REF}
+        npm install jiangtj/hexo-theme-cake#$CODE_REF
 
         echo '-----------------------------'
-        echo 'Test current branch: ${CODE_REF}'
+        echo 'Test current branch: $CODE_REF'
         echo '-----------------------------'
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
