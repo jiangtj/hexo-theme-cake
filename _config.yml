@@ -50,27 +50,20 @@ menu_settings:
   icons: true
 
 # Social Links
-# Usage: `Key: permalink || icon`
-# Key is the link label showing to end users.
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fas fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
-  #VK Group: https://vk.com/yourname || fab fa-vk
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
-  #Skype: skype:yourname?call|chat || fab fa-skype
-
-social_icons:
-  enable: true
-  icons_only: false
-  transition: false
+  enable: false
+  items:
+    # - icon:
+    #     name: github
+    #     options: {prefix: 'fab'}
+    #   name: GitHub
+    #   link: https://github.com/yourname
+    # - name: Twitter
+    #   link: https://twitter.com/yourname
+    # - icon:
+    #     name: github
+    #     options: {prefix: 'fab'}
+    #   link: https://github.com/yourname
 
 # Sidebar Avatar
 avatar:
