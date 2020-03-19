@@ -1,8 +1,8 @@
 <% if (page.prev || page.next) { %>
 <nav class="pagination">
   <%- paginator({
-        prev_text: '<i class="fas fa-angle-left"></i>',
-        next_text: '<i class="fas fa-angle-right"></i>',
+        prev_text: fa_inline('angle-left', {prefix: 'fas'}),
+        next_text: fa_inline('angle-right', {prefix: 'fas'}),
         mid_size: 1,
         escape: false
       }) -%>

@@ -29,10 +29,14 @@
     color: $pagination-active-color;
     background: $pagination-active-bg;
   }
+
+  svg {
+    vertical-align: -0.15em
+  }
 }
 
 +mobile() {
-  .pagination { 
+  .pagination {
     .prev, .next, .page-number {
       width: 2em;
       height: 2em;
