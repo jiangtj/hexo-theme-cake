@@ -19,7 +19,9 @@ footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2019
   # Icon between year and copyright info.
-  icon: fas fa-heart
+  icon:
+    name: heart
+    options: {prefix: 'fas'}
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
