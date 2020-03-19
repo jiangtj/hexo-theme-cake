@@ -194,13 +194,3 @@ pace:
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
-
-# Set fontawesome cdn
-fontawesome:
-  # You can choose npm or kit. There are some example about them.
-  type: cdn
-  url: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css
-  #integrity: sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=
-  #type: kit
-  #url: https://kit.fontawesome.com/your-id.js
-  # todo npm
