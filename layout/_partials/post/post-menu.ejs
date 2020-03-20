@@ -7,7 +7,12 @@
   if (itemURL.indexOf('http') !== 0) {
     itemURL = itemURL.replace(/\/\//g, '/');
   }
-  let post_menu_icon = `<i class="menu-item-icon ${subvalue.split('||')[1].trim() || 'fas fa-question-circle'}"></i>`;
+  let menuIcon = params => {
+    let css = params.split('||')[1].trim() || 'fas fa-question-circle';
+    let data = css.split(' ');
+    return fa_inline(data[1].substring(3), {prefix: data[0]});
+  }
+  let post_menu_icon = menuIcon(subvalue);
   %>
   <li class="menu-item">
     <%- next_url(itemURL, post_menu_icon + subname, {rel: 'section'}) -%>

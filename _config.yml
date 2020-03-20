@@ -19,7 +19,9 @@ footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
   #since: 2019
   # Icon between year and copyright info.
-  icon: fas fa-heart
+  icon:
+    name: heart
+    options: {prefix: 'fas'}
 
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
@@ -48,27 +50,20 @@ menu_settings:
   icons: true
 
 # Social Links
-# Usage: `Key: permalink || icon`
-# Key is the link label showing to end users.
-# Value before `||` delimeter is the target permalink.
-# Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
-  #E-Mail: mailto:yourname@gmail.com || fas fa-envelope
-  #Weibo: https://weibo.com/yourname || fab fa-weibo
-  #Google: https://plus.google.com/yourname || fab fa-google
-  #Twitter: https://twitter.com/yourname || fab fa-twitter
-  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
-  #VK Group: https://vk.com/yourname || fab fa-vk
-  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
-  #YouTube: https://youtube.com/yourname || fab fa-youtube
-  #Instagram: https://instagram.com/yourname || fab fa-instagram
-  #Skype: skype:yourname?call|chat || fab fa-skype
-
-social_icons:
-  enable: true
-  icons_only: false
-  transition: false
+  enable: false
+  items:
+    # - icon:
+    #     name: github
+    #     options: {prefix: 'fab'}
+    #   name: GitHub
+    #   link: https://github.com/yourname
+    # - name: Twitter
+    #   link: https://twitter.com/yourname
+    # - icon:
+    #     name: github
+    #     options: {prefix: 'fab'}
+    #   link: https://github.com/yourname
 
 # Sidebar Avatar
 avatar:
@@ -118,15 +113,15 @@ reward_settings:
 
 reward:
   # wechat:
-  #   icon: fab fa-weixin
+  #   icon: {name: weixin, options: {prefix: 'fab'}}
   #   image: /images/wechatpay.png
   # alipay:
-  #   icon: fab fa-alipay
+  #   icon: {name: alipay, options: {prefix: 'fab'}}
   #   image: /images/alipay.png
   #   url_name: 点击跳转
   #   url: HTTPS://QR.ALIPAY.COM/FKX06416WJNHOWKMRQQFFE
   # paypal:
-  #   icon: fab fa-paypal
+  #   icon: {name: paypal, options: {prefix: 'fab'}}
   #   image: /images/paypal.png
   #   url: https://www.paypal.me/jiangtj
 
@@ -174,33 +169,23 @@ disqus:
 medium_zoom:
   enable: true
   selector: .post-body img:not([data-zoomable="false"]), [data-zoomable]:not([data-zoomable="false"])
-  cdn: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  cdn: https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
 # lozad lib
 lozad:
   enable: true
-  cdn: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
 # Progress bar in the top during page loading.
 pace:
   enable: true
-  cdn: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  cdn: https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
   # Themes list:
   # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
   # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
   # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
   # set: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/${theme—name}.css
-  theme: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+  theme: https://cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
-
-# Set fontawesome cdn
-fontawesome:
-  # You can choose npm or kit. There are some example about them.
-  type: cdn
-  url: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css
-  #integrity: sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=
-  #type: kit
-  #url: https://kit.fontawesome.com/your-id.js
-  # todo npm

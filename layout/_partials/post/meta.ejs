@@ -4,7 +4,7 @@
   <% let create_title = __('post.created') + __('symbol.colon') + full_date(post.date); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="far fa-calendar"></i>
+      <%- fa_inline('calendar', {prefix: 'far'}) %>
     </span>
     <span class="post-meta-item-text"><%= __('post.posted') %></span>
     <time title="<%= create_title %>"><%= date(post.date) %></time>
@@ -17,7 +17,7 @@
   <% let modified_title = __('post.modified') + __('symbol.colon') + full_date(post.updated); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="far fa-calendar-check"></i>
+      <%- fa_inline('calendar-check', {prefix: 'far'}) %>
     </span>
     <span class="post-meta-item-text"><%= __('post.edited') %></span>
     <time title="<%= modified_title %>"><%= date(post.updated) %></time>
@@ -35,7 +35,7 @@
   %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="far fa-folder"></i>
+      <%- fa_inline('folder', {prefix: 'far'}) %>
     </span>
     <span class="post-meta-item-text"><%= __('post.in') %></span>
     <%- categorieMetas.join(symbolComma) -%>

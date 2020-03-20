@@ -5,8 +5,13 @@ let menuText = __('menu.' + name);
 if (menuText.indexOf('menu.') == 0) {
   menuText = titlecase(menuText.replace('menu.', ''));
 }
+let menuIcon = params => {
+  let css = params.split('||')[1].trim() || 'fas fa-question-circle';
+  let data = css.split(' ');
+  return fa_inline(data[1].substring(3), {prefix: data[0]});
+}
 if (theme.menu_settings.icons) {
-  menuText = `<i class="menu-item-icon ${value.split('||')[1].trim() || 'fas fa-question-circle'}"></i>${menuText}`
+  menuText = menuIcon(value) + menuText;
 }
 %>
 <li class="menu-item menu-item-<%= name.replace(/\s/g, '-') %>">
