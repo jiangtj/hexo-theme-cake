@@ -152,13 +152,6 @@ tagcloud:
 # Available values: left | right | false
 post_navigation: left
 
-# Multiple Comment System Support
-comments:
-  # Choose a comment system to be displayed by default
-  active:
-  # Lazyload all comment systems.
-  lazyload: false
-
 # Disqus
 disqus:
   enable: false
