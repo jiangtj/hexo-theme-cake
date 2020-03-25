@@ -182,3 +182,12 @@ pace:
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
+
+highlight:
+  engine: highlight.js
+  options:
+    # For highlight.js
+    # see ./node_modules/highlight.js/lib/languages/*, default including all languages.
+    #register: ['html','js','css','java','sql']
+    # see ./node_modules/highlight.js/styles/*, default github.
+    #style: github
