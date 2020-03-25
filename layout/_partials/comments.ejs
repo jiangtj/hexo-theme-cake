@@ -2,5 +2,7 @@
 <%
 let commentList = injector('comment').rendered();
 %>
+<% if (commentList.length === 1) {%>
 <%- commentList[0].value -%>
+<% } %>
 <% } %>
