@@ -184,7 +184,7 @@ pace:
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
 highlight:
-  engine: highlight.js # prismjs
+  engine: highlight # prism
   options:
     ### highlight.js ###
     ## see ./node_modules/highlight.js/lib/languages/*, default including all languages.
