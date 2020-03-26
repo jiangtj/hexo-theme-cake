@@ -184,10 +184,22 @@ pace:
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
 highlight:
-  engine: highlight.js
+  engine: highlight.js # prismjs
   options:
-    # For highlight.js
-    # see ./node_modules/highlight.js/lib/languages/*, default including all languages.
+    ### highlight.js ###
+    ## see ./node_modules/highlight.js/lib/languages/*, default including all languages.
     #register: ['html','js','css','java','sql']
-    # see ./node_modules/highlight.js/styles/*, default github.
+    ## see ./node_modules/highlight.js/styles/*, default github.
     #style: github
+    #
+    ### prismjs ##
+    #load: bundler # node or cdn (node don't support plugin)
+    ## see ./node_modules/prismjs/themes/*, dark coy etc.
+    #theme: default
+    ## see ./node_modules/prismjs/components/*. you also can not to set it, if use autoloader plugin and cdn load.
+    #languages: ['html','js','css']
+    ## see ./node_modules/prismjs/plugins/*.
+    #plugins
+    #  - name: autoloader # only cdn load support.
+    #  - name: line-numbers
+    #    css: true # if plugin has css style, please set css to true for load it.

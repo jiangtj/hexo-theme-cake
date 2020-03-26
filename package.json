@@ -47,6 +47,7 @@
     "hexo-renderer-marked": "hexojs/hexo-renderer-marked",
     "hexo-renderer-stylus": "jiangtj-lab/hexo-renderer-stylus#fiter",
     "highlight.js": "^9.18.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "prismjs": "^1.19.0"
   }
 }
