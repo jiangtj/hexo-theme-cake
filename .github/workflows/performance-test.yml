@@ -23,6 +23,7 @@ jobs:
         npm install hexo-cli -g --silent
         hexo init test
         cd test
+        npm install
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
         git clone https://github.com/jiangtj-lab/performance-test.git --depth=1 --quiet sh
 
