@@ -77,11 +77,3 @@ symbol:
   comma: ", "
   period: ". "
   colon: ": "
-
-reward:
-  donate: Donate
-  wechatpay: WeChat Pay
-  alipay: Alipay
-  bitcoin: Bitcoin
-
-gitmentbutton: Show comments from Gitment
