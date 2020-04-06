@@ -1,3 +1,0 @@
-files:
-  - source: /languages/en.yml
-    translation: /languages/%language%.yml
