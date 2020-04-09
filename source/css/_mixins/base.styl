@@ -80,16 +80,6 @@ random-color($min, $max) {
   return floor(math(0, 'random') * ($max - $min + 1) + $min);
 }
 
-// Clearfix. http://nicolasgallagher.com/micro-clearfix-hack/
-clearfix() {
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after { clear: both; }
-}
-
 word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
