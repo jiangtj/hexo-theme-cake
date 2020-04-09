@@ -56,19 +56,15 @@ ul, ol {
 
 a {
   word-wrap();
-  // Remove the gray background color from active links in IE 10.
-  background-color: transparent;
-  color: $link-color;
+  color: var(--color);
   text-decoration: none;
   outline: none;
   border: 0;
+  cursor: pointer;
 
   &:hover {
-    color: $link-hover-color;
+    color: var(--color-hover);
   }
-
-  // For spanned external links.
-  cursor: pointer;
 }
 
 a.un-decoration {
