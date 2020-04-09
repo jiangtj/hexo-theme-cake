@@ -141,8 +141,45 @@ svg {
 
 // Scaffolding
 @import "scaffolding";
+
 // Layout
-@import "outline";
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.flex-container > aside {
+  width: $sidebar-width;
+}
+
+.flex-container > .flex-main {
+  width: $content-desktop;
+  margin: 0 $sidebar-offset;
+  +desktop-large() {
+    width: $content-desktop-large;
+  }
+  +desktop-largest() {
+    width: $content-desktop-largest;
+  }
+  +tablet-mobile() {
+    width: 100%;
+  }
+}
+
++tablet-mobile() {
+  .flex-container > aside {
+    display: none;
+  }
+  .flex-container {
+    padding: 10px;
+  }
+}
+
+.header-inner {
+  margin: 0 auto;
+  padding: 100px 0 70px;
+}
+
 // Components
 @import "components";
-@import "footer";
