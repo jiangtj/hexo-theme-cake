@@ -1,25 +1,19 @@
 ::selection {
-  background: $selection-bg;
-  color: $selection-color;
+  background: var(--selection-bg);
+  color: var(--selection-color);
 }
 
-html, body { height: 100%; }
-
-html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+html, body {
+  height: 100%;
 }
 
 body {
   margin: 0;
-  position: relative; // Required by scrollspy
-  font-family: $font-family-base;
-  font-size: $font-size-base;
-  line-height: $line-height-base;
-  color: $text-color;
-  background: $body-bg-color;
-
-  +tablet-mobile() { padding-right: 0 !important; }
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--color);
+  background: var(--bg-color);
 }
 
 main {
