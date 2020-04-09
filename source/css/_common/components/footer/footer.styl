@@ -1,11 +1,8 @@
 .footer {
-  font-size: 14px;
-  color: $grey-dark;
-
-  img { border: none; }
+  font-size: var(--font-size);
+  color: var(--color);
+  text-align: center;
 }
-
-.footer-inner { text-align: center; }
 
 @keyframes iconAnimate {
   0%, 100% { transform: scale(1); }
@@ -24,5 +21,6 @@
   }
 }
 
-.powered-by,
-.theme-info { display: inline-block; }
+.powered-by, .theme-info {
+  display: inline-block;
+}
