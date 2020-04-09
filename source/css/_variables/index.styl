@@ -25,7 +25,7 @@ pre, code {
 }
 
 .center-quote {
-  --border-color: #ccc
+  --border-color: #ccc;
 }
 
 // Colors
@@ -258,40 +258,10 @@ $b2t-sidebar-bg-color         = $body-bg-color
 $post-eof-margin-top          = 80px  //  or 160px for more white space
 $post-eof-margin-bottom       = 60px  //  or 120px for less white space
 
-
-// Default
-$note-default-border        = #777
-$note-default-bg            = lighten(spin($note-default-border, 0), 94%)
-$note-default-text          = $note-default-border
-
-// Primary
-$note-primary-border        = #6f42c1
-$note-primary-bg            = lighten(spin($note-primary-border, 10), 92%)
-$note-primary-text          = $note-primary-border
-
-// Info
-$note-info-border           = #428bca
-$note-info-bg               = lighten(spin($note-info-border, -10), 91%)
-$note-info-text             = $note-info-border
-
-// Success
-$note-success-border        = #5cb85c
-$note-success-bg            = lighten(spin($note-success-border, 10), 90%)
-$note-success-text          = $note-success-border
-
-// Warning
-$note-warning-border        = #f0ad4e
-$note-warning-bg            = lighten(spin($note-warning-border, 10), 88%)
-$note-warning-text          = $note-warning-border
-
-// Danger
-$note-danger-border         = #d9534f
-$note-danger-bg             = lighten(spin($note-danger-border, -10), 92%)
-$note-danger-text           = $note-danger-border
-
 // Borders
 // --------------------------------------------------
 $border-radius-inner              = .5rem
 $border-radius                    = .5rem
 
-@import "post.styl";
+@import "post";
+@import "note";
