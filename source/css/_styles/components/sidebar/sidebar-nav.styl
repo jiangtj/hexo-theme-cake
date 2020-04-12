@@ -1,30 +1,26 @@
-// Sidebar Navigation
-
 .sidebar-nav {
   margin: 0 0 20px;
-  padding-left: 0;
+  padding: 0;
 }
 
 .sidebar-nav li {
   display: inline-block;
   cursor: pointer;
   border-bottom: 1px solid transparent;
-  font-size: 14px;
-  color: $sidebar-nav-color;
+  font-size: 1em;
 
-  &:hover { color: $sidebar-nav-hover-color; }
+  &:hover {
+    color: var(--link-color-hover);
+  }
 }
 
 .sidebar-nav .sidebar-nav-active {
-  color: $sidebar-highlight;
-  border-bottom-color: $sidebar-highlight;
-
-  &:hover { color: $sidebar-highlight; }
+  color: var(--link-color-hover);
+  border-bottom-color: var(--link-color-hover);
 }
 
 .sidebar-panel {
   display: none;
-  //animation: opacity-hide .2s;
   animation-fill-mode: forwards;
 }
 .sidebar-panel-active {
@@ -43,14 +39,3 @@
     opacity: 1;
   }
 }
-
-// @keyframes opacity-hide {
-//   from {
-//     display: block;
-//     opacity: 1;
-//   }
-//   to {
-//     display: none;
-//     opacity: 0;
-//   }
-// }
