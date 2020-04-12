@@ -4,28 +4,27 @@
   overflow: hidden;
   line-height: 1.4;
   white-space: nowrap;
-  text-align: $site-state-align;
+  text-align: center;
   margin-top: 10px;
 }
 
 .site-state-item {
   padding: 0 10px;
-  border-left: 1px solid $site-state-item-border-color;
+  border-left: 1px solid var(--border-color);
 
-  &:first-child { border-left: none; }
-
-  a { border-bottom: none; }
+  &:first-child {
+    border-left: none;
+  }
 }
 
 .site-state-item-count {
   show();
   text-align: center;
-  color: $site-state-item-count-color;
-  font-weight: $font-weight-bold;
-  font-size: $site-state-item-count-font-size;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .site-state-item-name {
-  font-size: $site-state-item-name-font-size;
-  color: $site-state-item-name-color;
+  font-size: 0.9em;
+  color: var(--description-color);
 }
