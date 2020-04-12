@@ -12,12 +12,24 @@ a {
   --color-hover: #7a8088;
 }
 
+pre, code {
+  --font-family: 'Inconsolata', 'consolas', 'PingFang SC', 'Microsoft YaHei', 'monospace';
+}
+
 .site-title {
   --font-family: 'Lobster', 'Itim', 'PingFang SC', 'Microsoft YaHei', 'sans-serif';
 }
 
-pre, code {
-  --font-family: 'Inconsolata', 'consolas', 'PingFang SC', 'Microsoft YaHei', 'monospace';
+.site-author-name {
+  --color: #222;
+}
+
+.site-author-image {
+  --border-color: #eee;
+}
+
+.site-description {
+  --color: #999;
 }
 
 .footer {
@@ -32,11 +44,9 @@ pre, code {
 // colors for use across theme.
 // --------------------------------------------------
 $whitesmoke   = #f5f5f5
-$gainsboro    = #eee
 $gray-lighter = #ddd
 $grey-light   = #ccc
 $grey         = #bbb
-$grey-dark    = #999
 $grey-dim     = #666
 $black-light  = #555
 $black-dim    = #333
@@ -99,7 +109,7 @@ $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
 $table-cell-padding             = 8px
-$table-cell-border-right-color  = $gainsboro
+$table-cell-border-right-color  = #eee
 $table-cell-border-bottom-color = $gray-lighter
 $table-row-odd-bg-color         = #f9f9f9
 $table-row-hover-bg-color       = $whitesmoke
@@ -110,7 +120,7 @@ $table-row-hover-bg-color       = $whitesmoke
 $code-font-size                 = 95%
 $code-border-radius             = 3px
 $code-foreground                = $black-light
-$code-background                = $gainsboro
+$code-background                = #eee
 
 
 // Buttons
@@ -130,11 +140,11 @@ $btn-default-hover-border-color = $black-deep
 
 // Pagination
 // --------------------------------------------------
-$pagination-border              = $gainsboro
+$pagination-border              = #eee
 
 $pagination-link-bg             = transparent
 $pagination-link-color          = $link-color
-$pagination-link-border         = $gainsboro
+$pagination-link-border         = #eee
 
 $pagination-link-hover-bg       = transparent
 $pagination-link-hover-color    = $link-color
@@ -159,7 +169,7 @@ $content-mobile-padding         = 8px
 // Headband
 // --------------------------------------------------
 $headband-height                = 3px
-$headband-bg                    = $gainsboro
+$headband-bg                    = #eee
 
 
 // Section Header
@@ -176,7 +186,7 @@ $brand-bg                       = $black-deep
 //logo
 $logo-font-size=24px
 
-$site-subtitle-color            = $grey-dark
+$site-subtitle-color            = #999
 $subtitle-font-size             = 13px
 $subtitle-color                 = $gray-lighter
 
@@ -207,19 +217,8 @@ $sidebar-nav-color                    = $black-light
 $sidebar-nav-hover-color              = $orange
 $sidebar-highlight                    = $orange
 
-$site-author-image-padding            = 2px
-$site-author-image-width              = 120px
-$site-author-image-height             = auto
-$site-author-image-border-width       = 1px
-$site-author-image-border-color       = $gainsboro
-
-$site-author-name-margin              = 0
-$site-author-name-color               = $black-deep
-$site-author-name-align               = center
-$site-author-name-weight              = $font-weight-bold
-
 $site-description-font-size           = 13px
-$site-description-color               = $grey-dark
+$site-description-color               = #999
 $site-description-margin-top          = 0
 $site-description-align               = center
 
@@ -227,8 +226,8 @@ $site-state-align                     = center
 $site-state-item-count-font-size      = 16px
 $site-state-item-count-color          = inherit
 $site-state-item-name-font-size       = 13px
-$site-state-item-name-color           = $grey-dark
-$site-state-item-border-color         = $gainsboro
+$site-state-item-name-color           = #999
+$site-state-item-border-color         = #eee
 
 $toc-link-color                       = $grey-dim
 $toc-link-border-color                = $grey-light
