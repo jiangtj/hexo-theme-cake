@@ -1,5 +1,7 @@
 :root {
   --color: #59606a;
+  --link-color: #252525;
+  --link-color-hover: #7a8088;
   --bg-color: #eeeff0;
   --description-color: #999;
   --border-color: #eee;
@@ -7,15 +9,16 @@
   --selection-color: white;
   --font-family: 'Itim', 'PingFang SC', 'Microsoft YaHei', 'sans-serif';
   --font-size: 14px;
-}
-
-a {
-  --color: #252525;
-  --color-hover: #7a8088;
+  --radius: 0.5em;
 }
 
 pre, code {
   --font-family: 'Inconsolata', 'consolas', 'PingFang SC', 'Microsoft YaHei', 'monospace';
+}
+
+.sidebar {
+  --link-color: #555;
+  --link-color-hover: #222;
 }
 
 .site-title {
@@ -38,9 +41,7 @@ $gray-lighter = #ddd
 $grey-light   = #ccc
 $grey         = #bbb
 $grey-dim     = #666
-$black-light  = #555
 $black-dim    = #333
-$black-deep   = #222
 $red          = #ff2a2a
 $blue-bright  = #87daff
 $blue         = #0684bd
@@ -109,7 +110,7 @@ $table-row-hover-bg-color       = $whitesmoke
 // --------------------------------------------------
 $code-font-size                 = 95%
 $code-border-radius             = 3px
-$code-foreground                = $black-light
+$code-foreground                = #555
 $code-background                = #eee
 
 
@@ -123,9 +124,9 @@ $btn-default-color              = $text-color
 $btn-default-font-size          = 14px
 $btn-default-border-width       = 2px
 $btn-default-border-color       = $text-color
-$btn-default-hover-bg           = $black-deep
+$btn-default-hover-bg           = #222
 $btn-default-hover-color        = white
-$btn-default-hover-border-color = $black-deep
+$btn-default-hover-border-color = #222
 
 
 // Pagination
@@ -138,7 +139,7 @@ $pagination-link-border         = #eee
 
 $pagination-link-hover-bg       = transparent
 $pagination-link-hover-color    = $link-color
-$pagination-link-hover-border   = $black-deep
+$pagination-link-hover-border   = #222
 
 $pagination-active-bg           = $grey-light
 $pagination-active-color        = white
@@ -171,7 +172,7 @@ $head-bg                        = transparent
 $site-meta-text-align           = center
 $brand-color                    = white
 $brand-hover-color              = white
-$brand-bg                       = $black-deep
+$brand-bg                       = #222
 
 //logo
 $logo-font-size=24px
@@ -182,7 +183,7 @@ $subtitle-color                 = $gray-lighter
 
 // Menu
 $menu-link-border               = transparent
-$menu-link-hover-border         = $black-deep
+$menu-link-hover-border         = #222
 
 
 // Posts Expand
@@ -203,7 +204,7 @@ $sidebar-width = 240px
 $sidebar-offset = 12px
 $sidebar-pin-top = 10px
 $sidebar-direction = row  // or row-reverse
-$sidebar-nav-color                    = $black-light
+$sidebar-nav-color                    = #555
 $sidebar-nav-hover-color              = $orange
 $sidebar-highlight                    = $orange
 
@@ -227,18 +228,13 @@ $b2t-position-right           = 30px
 $b2t-position-right-mobile    = 20px
 $b2t-font-size                = 12px
 $b2t-color                    = white
-$b2t-bg-color                 = $black-deep
+$b2t-bg-color                 = #222
 $b2t-sidebar-bg-color         = $body-bg-color
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
 $post-eof-margin-top          = 80px  //  or 160px for more white space
 $post-eof-margin-bottom       = 60px  //  or 120px for less white space
-
-// Borders
-// --------------------------------------------------
-$border-radius-inner              = .5rem
-$border-radius                    = .5rem
 
 @import "post";
 @import "note";
