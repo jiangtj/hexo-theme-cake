@@ -10,28 +10,21 @@
     line-height: 2.5;
     border: 0;
     border-radius: 100%
-    background: white;
+    background: var(--bg-color);
     transition-property: background;
     the-transition();
     &:hover {
-      color: $pagination-active-color;
-      background: $pagination-active-bg;
+      color: var(--color-active);
+      background: var(--bg-color-active);
     }
-  }
-
-  .space {
   }
 
   .prev { margin-left: 0; }
   .next { margin-right: 0; }
 
   .page-number.current {
-    color: $pagination-active-color;
-    background: $pagination-active-bg;
-  }
-
-  svg {
-    vertical-align: -0.15em
+    color: var(--color-active);
+    background: var(--bg-color-active);
   }
 }
 
