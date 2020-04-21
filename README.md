@@ -8,7 +8,7 @@
 
 ## Preview & Docs
 
-![image](https://user-images.githubusercontent.com/15902347/61528469-74ca5200-aa51-11e9-8248-061679a4ac73.png)
+![image](https://user-images.githubusercontent.com/15902347/79832683-8a074f00-83dc-11ea-8561-6a9bd2076941.png)
 
 - docs: https://www.dnocm.com/cake/
 - example: https://cake.jiangtj.com/
