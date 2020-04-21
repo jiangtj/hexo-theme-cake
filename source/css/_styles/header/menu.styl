@@ -1,10 +1,5 @@
-// Menu
-// --------------------------------------------------
-
 .menu-item-active a {
-  background: #f9f9f9;
-  border-bottom-color: white;
-
+  background: var(--bg-color-hover);
   &:after {
     content: " ";
     position: absolute;
@@ -21,21 +16,16 @@
 .menu {
   margin-top: 20px;
   padding-left: 0;
-  text-align: center;
 }
 
-.menu .menu-item {
-  show();
+.menu-item {
   margin: 0;
   list-style: none;
 
   a {
-    show();
+    display: block;
     position: relative;
-    font-size: 13px;
-    line-height: inherit;
-    border: 0;
-    box-sizing: border-box;
+    font-size: 0.95em;
     padding: 5px 20px;
     text-align: left;
     transition-property: background-color;
@@ -44,24 +34,12 @@
     &:hover {
       @extend .menu-item-active a;
     }
-
-    disable-touch-hover();
-  }
-
-  .fa,.fas,.fab,.far,.fal,.fad {
-    margin-right: 5px;
-    width: 1.1em;
   }
 
   svg {
     margin-right: 5px;
-    width: 1.1em;
-    height: 1.1em;
-  }
-
-  // 兼容next主题，后续可能删除
-  br {
-    display: none;
+    width: 1em;
+    height: 1em;
   }
 }
 
