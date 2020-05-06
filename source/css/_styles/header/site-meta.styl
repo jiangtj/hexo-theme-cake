@@ -3,39 +3,26 @@
 }
 .site-meta {
   margin: 0;
-  text-align: $site-meta-text-align;
+  text-align: center;
   padding: 20px 0;
-  color: white;
-  background: #48505b;
+  color: var(--color);
+  background: var(--bg-color);
 
   +mobile() { text-align: center; }
-}
-
-.brand {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  color: $brand-color;
-  background: none;
-  border-bottom: none;
-
-  &:hover {
-   color: white;
-  }
 }
 
 .logo {
   display: inline-block;
   margin-right: 5px;
-  line-height: 36px;
+  line-height: 1.5;
   vertical-align: top;
 }
 
 .site-title {
   display: inline-block;
   vertical-align: top;
-  line-height: 36px;
-  font-size: $logo-font-size;
+  line-height: 1.5;
+  font-size: 1.5rem;
   font-weight: normal;
   font-family: var(--font-family);
   color: white;
@@ -43,8 +30,7 @@
 
 .site-subtitle {
   margin: 10px 10px 0;
-  font-weight: initial;
-  color: $subtitle-color;
+  color: var(--description-color);
   text-align: center;
 }
 
