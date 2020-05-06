@@ -26,11 +26,7 @@
     <div class="flex-main">
 
       <main>
-        <% if (!is_home()) { %>
-        <div class="sub-menu-wrap">
-          <%- partial( '_partials/post/post-menu.ejs') -%>
-        </div>
-        <% } %>
+        <%- partial( '_partials/post/post-menu.ejs') -%>
         <div id="content" class="content">
           <%- body -%>
         </div>
