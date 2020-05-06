@@ -14,7 +14,7 @@
 
 .posts-collapse {
   position: relative;
-  z-index: $zindex-1;
+  z-index: 1010;
 
   &::after {
     content: " ";
@@ -25,10 +25,10 @@
     width: 4px;
     height: 100%;
     background: #f5f5f5;
-    z-index: $zindex-bottom;
+    z-index: -1;
   }
 
-  margin-left: $posts-collapse-left;
+  margin-left: 55px;
   +mobile() { margin: 0 20px; }
 
   .collection-title {
