@@ -159,13 +159,13 @@ code {
 }
 
 .flex-container > .flex-main {
-  width: $content-desktop;
+  width: var(--post-body-sizes-small);
   margin: 0 12px;
   +desktop-large() {
-    width: $content-desktop-large;
+    width: var(--post-body-sizes-normal);
   }
   +desktop-largest() {
-    width: $content-desktop-largest;
+    width: var(--post-body-sizes-large);
   }
   +tablet-mobile() {
     width: 100%;
