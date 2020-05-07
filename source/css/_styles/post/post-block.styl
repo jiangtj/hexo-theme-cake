@@ -3,31 +3,8 @@
   margin-top: 10px;
 }
 
-// When blocks are siblings (homepage).
-#posts > article + article {
-  .post-block {
-    margin-top: 12px;
-    border-radius: var(--radius);
-  }
-}
-
-+tablet() {
-  // Only if blocks are siblings need bottom margin (homepage).
-  #posts > article + article {
-    .post-block {
-      margin-top: 10px;
-    }
-  }
-}
-
 +mobile() {
   .post-block {
     min-height: auto;
-  }
-  // Only if blocks are siblings need bottom margin (homepage).
-  #posts > article + article {
-    .post-block {
-      margin-top: 8px;
-    }
   }
 }
