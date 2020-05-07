@@ -1,7 +1,5 @@
 // Post & Comments blocks.
 .post-block {
-  background: white;
-  border-radius: var(--radius);
   margin-top: 10px;
 }
 
@@ -14,10 +12,6 @@
 }
 
 +tablet() {
-  .post-block {
-    border-radius: var(--radius);
-  }
-
   // Only if blocks are siblings need bottom margin (homepage).
   #posts > article + article {
     .post-block {
@@ -29,9 +23,7 @@
 +mobile() {
   .post-block {
     min-height: auto;
-    border-radius: var(--radius);
   }
-
   // Only if blocks are siblings need bottom margin (homepage).
   #posts > article + article {
     .post-block {

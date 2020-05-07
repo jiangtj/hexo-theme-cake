@@ -3,7 +3,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
 %>
 
 <article class="<%= post_class %>" itemscope itemtype="http://schema.org/Article">
-  <div class="post-block">
+  <div class="card post-block">
 
     <link itemprop="mainEntityOfPage" href="<%= config.url %><%= url_for(post.path) %>" />
     <meta itemprop="dateCreated datePublished" content="<%= moment(post.date).format() %>" />
