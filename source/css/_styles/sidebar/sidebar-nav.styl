@@ -1,0 +1,41 @@
+.sidebar-nav {
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  font-size: 1em;
+
+  &:hover {
+    color: var(--link-color-hover);
+  }
+}
+
+.sidebar-nav .sidebar-nav-active {
+  color: var(--link-color-hover);
+  border-bottom-color: var(--link-color-hover);
+}
+
+.sidebar-panel {
+  display: none;
+  animation-fill-mode: forwards;
+}
+.sidebar-panel-active {
+  display: block;
+  animation: opacity-show .2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opacity-show {
+  from {
+    display: none;
+    opacity: 0;
+  }
+  to {
+    display: block;
+    opacity: 1;
+  }
+}

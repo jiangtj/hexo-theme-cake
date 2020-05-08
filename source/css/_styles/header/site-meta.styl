@@ -1,0 +1,42 @@
+.site-brand-wrapper {
+  position: relative;
+}
+.site-meta {
+  margin: 0;
+  text-align: center;
+  padding: 20px 0;
+  color: var(--color);
+  background: var(--bg-color);
+
+  +mobile() { text-align: center; }
+}
+
+.logo {
+  display: inline-block;
+  margin-right: 5px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.site-title {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: normal;
+  font-family: var(--font-family);
+  color: white;
+}
+
+.site-subtitle {
+  margin: 10px 10px 0;
+  color: var(--description-color);
+  text-align: center;
+}
+
+.custom-logo-image {
+  margin-top: 20px;
+  +tablet-mobile() {
+    display: none;
+  }
+}

@@ -1,3 +1,11 @@
+<%
+let sidebar_toc = [];
+if (page.toc.enable && (is_post() || is_page())) {
+  sidebar_toc = toc(page.content, {'class': 'nav', 'list_number': page.toc.number, 'max_depth': page.toc.max_depth});
+}
+let display_toc = sidebar_toc.length > 1;
+%>
+
 <aside class="sidebar">
 
   <div class="header-inner">
@@ -6,17 +14,8 @@
 
   <div class="sidebar-inner">
 
-    <%
-    let is_post_or_page = is_post() || is_page();
-    let display_toc = is_post_or_page && page.toc.enable;
-    let sidebar_toc = [];
-    if (is_post_or_page) {
-      sidebar_toc = toc(page.content, {'class': 'nav', 'list_number': page.toc.number, 'max_depth': page.toc.max_depth});
-    }
-    display_toc = display_toc && (sidebar_toc.length > 1)
-    %>
-
     <% if (display_toc) { %>
+
     <ul class="sidebar-nav">
       <li class="sidebar-nav-toc sidebar-nav-active">
         <%= __('sidebar.toc') %>
@@ -25,17 +24,20 @@
         <%= __('sidebar.overview') %>
       </li>
     </ul>
-    <% } %>
-
-    <% if (display_toc) { %>
     <div class="post-toc-wrap sidebar-panel sidebar-panel-active">
       <div class="post-toc"><%- sidebar_toc -%></div>
     </div>
-    <% } %>
-
-    <div class="site-overview-wrap sidebar-panel<% if (!display_toc) { %> sidebar-panel-active <% } %>">
+    <div class="site-overview-wrap sidebar-panel">
       <%- partial( '_partials/sidebar/site-overview.ejs', {}, {cache: `site-overview-${page.lang}`}) -%>
     </div>
+
+    <% } else { %>
+
+    <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <%- partial( '_partials/sidebar/site-overview.ejs', {}, {cache: `site-overview-${page.lang}`}) -%>
+    </div>
+
+    <% } %>
 
   </div>
 </aside>

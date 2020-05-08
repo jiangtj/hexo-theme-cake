@@ -1,0 +1,43 @@
+.site-nav-toggle {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+
+  +tablet-mobile() {
+    display: block;
+  }
+
+  button {
+    margin-top: 2px;
+    padding: 9px 10px;
+    background: transparent;
+    border: none;
+  }
+}
+
+.site-nav {
+  +tablet-mobile() {
+    display: none;
+    margin: 0 -10px;
+    padding: 0 10px;
+    clear: both;
+  }
+  +desktop() { display: block !important; }
+}
+
+.site-nav-on {
+   display: block;
+}
+
+
+.btn-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--bg-color);
+  border-radius: 1px;
+
+  &+.btn-bar { margin-top: 4px; }
+}

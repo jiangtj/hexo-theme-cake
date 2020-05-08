@@ -1,4 +1,3 @@
-
 <%
 let itemURL = value.split('||')[0].trim();
 let menuText = __('menu.' + name);
@@ -15,5 +14,5 @@ if (theme.menu_settings.icons) {
 }
 %>
 <li class="menu-item menu-item-<%= name.replace(/\s/g, '-') %>">
-  <%- next_url(itemURL, menuText, {rel: 'section'}) -%>
+  <a href="<%= itemURL %>"><%- menuText -%></a>
 </li>

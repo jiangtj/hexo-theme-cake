@@ -1,0 +1,39 @@
+.pagination {
+  margin: 1em 0 0;
+  text-align: center;
+
+  .prev, .next, .page-number {
+    display: inline-block;
+    margin: 0 0.5em;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5;
+    border: 0;
+    border-radius: 100%
+    background: var(--bg-color);
+    transition-property: background;
+    the-transition();
+    &:hover {
+      color: var(--color-active);
+      background: var(--bg-color-active);
+    }
+  }
+
+  .prev { margin-left: 0; }
+  .next { margin-right: 0; }
+
+  .page-number.current {
+    color: var(--color-active);
+    background: var(--bg-color-active);
+  }
+}
+
++mobile() {
+  .pagination {
+    .prev, .next, .page-number {
+      width: 2em;
+      height: 2em;
+      line-height: 2;
+    }
+  }
+}

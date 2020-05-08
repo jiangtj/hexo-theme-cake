@@ -1,0 +1,33 @@
+.sidebar {
+  width: 240px;
+  +tablet-mobile() {
+    display: none;
+  }
+}
+
+.sidebar-inner {
+  position: sticky;
+  top: 10px;
+  margin-top: 10px;
+  padding: 20px 10px;
+  text-align: center;
+  box-sizing: border-box;
+  background: white;
+  border-radius: var(--radius);
+}
+
+.site-overview-wrap {
+  overflow: hidden;
+}
+
+.site-overview {
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: left;
+}
+
+@import "sidebar-author";
+@import "sidebar-social-links";
+@import "sidebar-nav";
+@import "site-state";
+@import "sidebar-toc" if hexo-config('toc.enable');

@@ -1,0 +1,46 @@
+.menu-item-active a {
+  color: var(--link-color-hover);
+  background: var(--bg-color-hover);
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 15px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--description-color);
+    circle();
+  }
+}
+
+.menu {
+  margin-top: 20px;
+  padding-left: 0;
+}
+
+.menu-item {
+  margin: 0;
+  list-style: none;
+
+  a {
+    display: block;
+    position: relative;
+    font-size: 0.95em;
+    padding: 5px 20px;
+    text-align: left;
+    transition-property: background-color;
+    color: var(--link-color);
+    the-transition();
+
+    &:hover {
+      @extend .menu-item-active a;
+    }
+  }
+
+  svg.svg-inline--fa {
+    margin-right: 5px;
+    width: 1em;
+    height: 1em;
+  }
+}

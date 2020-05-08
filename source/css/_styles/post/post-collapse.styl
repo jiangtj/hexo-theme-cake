@@ -1,0 +1,97 @@
+.posts-collapse {
+  position: relative;
+  z-index: 1010;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 20px;
+    left: 0;
+    margin-left: -2px;
+    width: 4px;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+  }
+
+  margin-left: 55px;
+
+  .collection-title {
+    position: relative;
+    margin: 0;
+
+    h1, h2 { margin-left: 20px; }
+
+    small { color: var(--description-color); margin-left: 5px; }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-left: -4px;
+      margin-top: -4px;
+      width: 8px;
+      height: 8px;
+      background: var(--description-color);
+      circle();
+    }
+  }
+
+  .post-collapse-header {
+    position: relative;
+    the-transition();
+    transition-property: border;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      margin-left: -3px;
+      background: var(--description-color);
+      circle();
+      the-transition();
+      transition-property: background;
+    }
+  }
+
+  .post-collapse-header:hover {
+    &::before { background: var(--link-color-hover); }
+  }
+
+  .post-collapse-time {
+    color: var(--link-color-hover);
+    position: absolute;
+    font-size: 0.9rem;
+    left: 20px;
+  }
+
+  .post-collapse-title {
+    margin-left: 4.5rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: inherit;
+
+    &::after {
+      margin-left: 3px;
+      opacity: 0.6;
+    }
+
+    a {
+      color: var(--link-color);
+      &:hover {
+        color: var(--link-color-hover);
+      }
+    }
+  }
+}
+
++mobile() {
+  .posts-collapse {
+    margin: 0 20px;
+  }
+}

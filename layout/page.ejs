@@ -1,6 +1,6 @@
 <% if (page.type === 'tags') { %>
-<div id="posts" class="posts-expand">
-  <div class="post-block page">
+<div>
+  <div class="card post-block page">
     <%- partial( '_partials/post/page-header.ejs') -%>
     <div class="post-body">
       <div class="tag-cloud">
@@ -16,8 +16,8 @@
 </div>
 
 <% } else if (page.type === 'categories') { %>
-<div id="posts" class="posts-expand">
-  <div class="post-block page">
+<div>
+  <div class="card post-block page">
     <%- partial( '_partials/post/page-header.ejs') -%>
     <div class="post-body">
       <div class="category-all-page">

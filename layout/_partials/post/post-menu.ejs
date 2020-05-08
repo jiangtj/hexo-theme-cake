@@ -1,22 +1,24 @@
 <% if (!is_home() && page.menu) { %>
-<ul id="sub-menu" class="sub-menu menu">
-  <% Object.keys(page.menu).forEach(subname => { %>
-  <%
-  let subvalue = page.menu[subname];
-  let itemURL = subvalue.split('||')[0].trim()
-  if (itemURL.indexOf('http') !== 0) {
-    itemURL = itemURL.replace(/\/\//g, '/');
-  }
-  let menuIcon = params => {
-    let css = params.split('||')[1].trim() || 'fas fa-question-circle';
-    let data = css.split(' ');
-    return fa_inline(data[1].substring(3), {prefix: data[0]});
-  }
-  let post_menu_icon = menuIcon(subvalue);
-  %>
-  <li class="menu-item">
-    <%- next_url(itemURL, post_menu_icon + subname, {rel: 'section'}) -%>
-  </li>
-  <% }) %>
-</ul>
+<div class="card">
+  <ul class="post-menu">
+    <% Object.keys(page.menu).forEach(subname => { %>
+    <%
+    let subvalue = page.menu[subname];
+    let itemURL = subvalue.split('||')[0].trim()
+    if (itemURL.indexOf('http') !== 0) {
+      itemURL = itemURL.replace(/\/\//g, '/');
+    }
+    let menuIcon = params => {
+      let css = params.split('||')[1].trim() || 'fas fa-question-circle';
+      let data = css.split(' ');
+      return fa_inline(data[1].substring(3), {prefix: data[0]});
+    }
+    let post_menu_icon = menuIcon(subvalue);
+    %>
+    <li>
+      <a href="<%= itemURL %>"><%- post_menu_icon + subname -%></a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
 <% } %>
