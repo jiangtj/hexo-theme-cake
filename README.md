@@ -22,12 +22,6 @@
 
 ## Quick Start
 
-### Require
-
-Require some renderer feature to support, [hexo-renderer-stylus:45](https://github.com/hexojs/hexo-renderer-stylus/pull/45) and [hexo-renderer-marked:129](https://github.com/hexojs/hexo-renderer-marked/pull/129), when they release a new version, I will update the [dependencies](https://github.com/jiangtj/hexo-theme-cake/blob/master/package.json).
-
-### Install & Run
-
 ```bash
 # Install hexo-theme-cake by npm or yarn cmd
 npm install hexo-theme-cake
