@@ -1,14 +1,22 @@
-.site-brand-wrapper {
+.brand {
   position: relative;
+  background: var(--bg-color);
 }
+
+.brand svg {
+  color: var(--color);
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
 .site-meta {
   margin: 0;
   text-align: center;
   padding: 20px 0;
-  color: var(--color);
-  background: var(--bg-color);
 
-  +mobile() { text-align: center; }
+  +mobile() {
+    text-align: center;
+  }
 }
 
 .logo {
@@ -19,13 +27,13 @@
 }
 
 .site-title {
+  color: var(--color);
   display: inline-block;
   vertical-align: top;
   line-height: 1.5;
   font-size: 1.5rem;
   font-weight: normal;
   font-family: var(--font-family);
-  color: white;
 }
 
 .site-subtitle {
