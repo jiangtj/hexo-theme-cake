@@ -8,11 +8,10 @@
 
 ## Preview & Docs
 
-![image](https://user-images.githubusercontent.com/15902347/79832683-8a074f00-83dc-11ea-8561-6a9bd2076941.png)
+![image](https://user-images.githubusercontent.com/15902347/81540257-f48c2900-93a3-11ea-8f7a-8f17636344ff.png)
 
 - docs: https://www.dnocm.com/cake/
-- example: https://cake.jiangtj.com/
-- example source: https://github.com/jiangtj-lab/hexo-theme-cake-example
+- [demo example](https://cake.jiangtj.com/) [source](https://github.com/jiangtj-lab/hexo-theme-cake-example)
 
 ## Features
 - :sparkles: very easy to install or upgrade, just `npm i`.
