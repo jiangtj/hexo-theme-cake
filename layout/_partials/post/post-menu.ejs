@@ -16,7 +16,7 @@
     let post_menu_icon = menuIcon(subvalue);
     %>
     <li>
-      <a href="<%= itemURL %>"><%- post_menu_icon + subname -%></a>
+      <a href="<%= url_for(itemURL) %>"><%- post_menu_icon + subname -%></a>
     </li>
     <% }) %>
   </ul>

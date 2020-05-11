@@ -14,5 +14,5 @@ if (theme.menu_settings.icons) {
 }
 %>
 <li class="menu-item menu-item-<%= name.replace(/\s/g, '-') %>">
-  <a href="<%= itemURL %>"><%- menuText -%></a>
+  <a href="<%= url_for(itemURL) %>"><%- menuText -%></a>
 </li>

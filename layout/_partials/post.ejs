@@ -24,7 +24,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
       <% if (post.title) { %>
       <h1 class="post-title" itemprop="name headline">
         <% if (is_index) { %>
-        <a href="<%= post.path %>"><%= post.title || __('post.untitled') %></a>
+        <a href="<%= url_for(post.path) %>"><%= post.title || __('post.untitled') %></a>
         <% } else { %>
         <%= post.title %>
         <% } %>
