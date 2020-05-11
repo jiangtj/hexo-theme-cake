@@ -3,6 +3,8 @@
 let commentList = injector('comment').rendered();
 %>
 <% if (commentList.length === 1) {%>
-<%- commentList[0].value -%>
+<div class="card">
+  <%- commentList[0].value -%>
+</div>
 <% } %>
 <% } %>
