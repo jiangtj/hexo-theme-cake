@@ -8,11 +8,11 @@ let display_toc = sidebar_toc.length > 1;
 
 <aside class="sidebar">
 
-  <div class="header-inner">
+  <div class="header-inner card">
     <%- partial( '_partials/header/index.ejs', {}, {cache: 'cake-header-' + page.lang}) -%>
   </div>
 
-  <div class="sidebar-inner">
+  <div class="sidebar-inner card">
 
     <% if (display_toc) { %>
 
