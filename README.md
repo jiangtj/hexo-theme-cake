@@ -10,8 +10,7 @@
 
 ![image](https://user-images.githubusercontent.com/15902347/81540257-f48c2900-93a3-11ea-8f7a-8f17636344ff.png)
 
-- docs: https://www.dnocm.com/cake/
-- [demo](https://cake.jiangtj.com/) | [source](https://github.com/jiangtj-lab/hexo-theme-cake-example)
+- [docs](https://www.dnocm.com/cake/) | [demo](https://hexo-cake.netlify.com/) | [source](https://github.com/jiangtj-lab/hexo-theme-cake-example)
 
 ## Features
 - :sparkles: very easy to install or upgrade, just `npm i`.
