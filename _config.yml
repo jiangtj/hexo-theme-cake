@@ -168,7 +168,8 @@ medium_zoom:
 # lozad lib
 lozad:
   enable: true
-  cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  load: bundler # set bundler or cdn, if cdn is setted, please set a href for lozad.cdn
+  #cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
