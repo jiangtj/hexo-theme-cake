@@ -15,7 +15,7 @@
 ## Features
 - :sparkles: very easy to install or upgrade, just `npm i`.
 - :leaves: small and lightweight, the lines of configuration ≈ 200.
-- :boom: powerful plugin system, thanks to [hexo-extend-injector2](https://github.com/jiangtj/hexo-extend-injector2) plugin.
+- :boom: powerful plugin system, take a look at [extend modules](lib/extend).
 - :zap: [hexo-filter-marked-highlight](https://github.com/jiangtj/hexo-filter-marked-highlight) provide mutli-highlight and faster render.
 
 ## Quick Start
