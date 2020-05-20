@@ -165,11 +165,5 @@ medium_zoom:
   selector: .post-body img:not([data-zoomable="false"]), [data-zoomable]:not([data-zoomable="false"])
   cdn: https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
 
-# lozad lib
-lozad:
-  enable: true
-  load: bundler # set bundler or cdn, if cdn is setted, please set a href for lozad.cdn
-  #cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
