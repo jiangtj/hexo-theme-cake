@@ -4,10 +4,8 @@ if (theme.scroll.more) {
   readMoreHref += '#more';
 }
 %>
-<% if (post.excerpt) { %>
 <div class="read-more-btn">
   <a href="<%= readMoreHref %>" rel="contents">
     <%= __('post.read_more') %> &raquo;
   </a>
 </div>
-<% } %>
