@@ -6,4 +6,5 @@ Here is an independent module, it can belong to the cake theme, but can also be 
 
 ## List
 
-- [Lozad](lozad)
+- [lozad](lozad)
+- [medium-zoom](medium-zoom)
