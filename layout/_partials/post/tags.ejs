@@ -1,0 +1,7 @@
+<% if (is_post() && page.tags && page.tags.length) { %>
+<div class="post-tags">
+  <% page.tags.forEach(tag => { %>
+  <a href="<%= url_for(tag.path) %>" rel="tag"># <%= tag.name %></a>
+  <% }); %>
+</div>
+<% } %>
