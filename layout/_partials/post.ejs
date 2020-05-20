@@ -44,6 +44,8 @@ let post_class = 'post post-type-' + (post.type || 'normal');
       <% } %>
     </div>
 
+    <%- partial('_partials/post/copyright.ejs') -%>
+
     <% if (!is_index) { %>
     <%- injector('postBodyEnd').text() -%>
     <% } %>

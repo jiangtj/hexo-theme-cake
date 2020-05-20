@@ -1,4 +1,4 @@
-<% if (is_post()) { %>
+<% if (theme.creative_commons.license && theme.creative_commons.post && is_post()) { %>
 <%
 let ccLicense = theme.creative_commons.license.toLowerCase();
 let ccIcon = fa_inline('creative-commons', {prefix: 'fab'});
