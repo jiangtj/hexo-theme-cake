@@ -170,16 +170,5 @@ lozad:
   enable: true
   cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
 
-# Progress bar in the top during page loading.
-pace:
-  enable: true
-  cdn: https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
-  # Themes list:
-  # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
-  # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
-  # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
-  # set: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/${theme—name}.css
-  theme: https://cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
-
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
