@@ -31,10 +31,7 @@ footer:
 # Creative Commons 4.0 International License.
 # See: https://creativecommons.org/share-your-work/licensing-types-examples
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-# You can set a language value if you prefer a translated version of CC license.
-creative_commons:
-  post: true
-  license: by-nc-sa
+#cc: by-nc-sa
 
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash from link value (/archives -> archives).
 # Usage: `Key: /link/ || icon`
@@ -107,28 +104,6 @@ post_meta:
     hide_same: true
   categories: true
 
-# Reward (Donate)
-reward_settings:
-  # If true, reward would be displayed in every article by default.
-  # You can show or hide reward in a specific article throuth `reward: true | false` in Front Matter.
-  enable: false
-  comment: Donate comment here
-
-reward:
-  # wechat:
-  #   icon: {name: weixin, options: {prefix: 'fab'}}
-  #   image: /images/wechatpay.png
-  # alipay:
-  #   icon: {name: alipay, options: {prefix: 'fab'}}
-  #   image: /images/alipay.png
-  #   url_name: 点击跳转
-  #   url: HTTPS://QR.ALIPAY.COM/FKX06416WJNHOWKMRQQFFE
-  # paypal:
-  #   icon: {name: paypal, options: {prefix: 'fab'}}
-  #   image: /images/paypal.png
-  #   url: https://www.paypal.me/jiangtj
-
-
 # Header panel color.
 theme_color: "#414852"
 
@@ -158,28 +133,6 @@ disqus:
   enable: false
   shortname:
   count: true
-
-# A JavaScript library for zooming images like Medium
-medium_zoom:
-  enable: true
-  selector: .post-body img:not([data-zoomable="false"]), [data-zoomable]:not([data-zoomable="false"])
-  cdn: https://cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
-
-# lozad lib
-lozad:
-  enable: true
-  cdn: https://cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
-
-# Progress bar in the top during page loading.
-pace:
-  enable: true
-  cdn: https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
-  # Themes list:
-  # pace-theme-big-counter | pace-theme-bounce | pace-theme-barber-shop | pace-theme-center-atom
-  # pace-theme-center-circle | pace-theme-center-radar | pace-theme-center-simple | pace-theme-corner-indicator
-  # pace-theme-fill-left | pace-theme-flash | pace-theme-loading-bar | pace-theme-mac-osx | pace-theme-minimal
-  # set: //cdn.jsdelivr.net/npm/pace-js@1.0.2/themes/blue/${theme—name}.css
-  theme: https://cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
 
 # Set font (default)
 font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster

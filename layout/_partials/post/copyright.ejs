@@ -1,6 +1,6 @@
-<% if (is_post()) { %>
+<% if (theme.cc && is_post()) { %>
 <%
-let ccLicense = theme.creative_commons.license.toLowerCase();
+let ccLicense = theme.cc.toLowerCase();
 let ccIcon = fa_inline('creative-commons', {prefix: 'fab'});
 let ccText = ccLicense.toUpperCase();
 let ccType;
