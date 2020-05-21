@@ -14,7 +14,10 @@ let post_class = 'post post-type-' + (post.type || 'normal');
       <meta itemprop="image" content="<%= url_for(theme.avatar.url || 'images/avatar.gif') %>" />
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<%= title %>" />
+      <meta itemprop="name" content="<%= author %>" />
+      <span hidden itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+        <meta itemprop="url" content="<%= url_for(theme.avatar.url || 'images/avatar.gif') %>" />
+      </span>
     </span>
 
     <%- partial( '_partials/post/banner.ejs') -%>
@@ -22,7 +25,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
     <header class="post-header">
 
       <% if (post.title) { %>
-      <h1 class="post-title" itemprop="name headline">
+      <h1 class="post-title" itemprop="headline">
         <% if (is_index) { %>
         <a href="<%= url_for(post.path) %>"><%= post.title || __('post.untitled') %></a>
         <% } else { %>
