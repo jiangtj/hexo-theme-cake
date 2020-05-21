@@ -6,8 +6,9 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Buildin List
 
-- [lozad](lozad)
-- [medium-zoom](medium-zoom)
+- [lozad](lozad) (default enable)
+- [medium-zoom](medium-zoom) (default enable)
+- [reward](reward)
 - [hexo-filter-marked-highlight](https://github.com/jiangtj/hexo-filter-marked-highlight)
 
 ## Outside
