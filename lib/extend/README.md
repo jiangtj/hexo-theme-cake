@@ -8,6 +8,7 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 - [lozad](lozad) (default enable)
 - [medium-zoom](medium-zoom) (default enable)
+- [json-ld](json-ld) (default enable)
 - [reward](reward)
 - [hexo-filter-marked-highlight](https://github.com/jiangtj/hexo-filter-marked-highlight)
 
@@ -17,4 +18,4 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Others
 
-- [Used in landscape theme](https://github.com/jiangtj-lab/hexo-cake-extend-others-example) 
+- [Used in landscape theme](https://github.com/jiangtj-lab/hexo-cake-extend-others-example)
