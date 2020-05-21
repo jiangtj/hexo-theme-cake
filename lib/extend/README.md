@@ -14,3 +14,7 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 ## Outside
 
 > waiting
+
+## Others
+
+- [Used in landscape theme](https://github.com/jiangtj-lab/hexo-cake-extend-others-example) 
