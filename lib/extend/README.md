@@ -13,8 +13,10 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Outside
 
-> waiting
+- [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon)
+- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu)
+- [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search)
 
 ## Others
 
-- [Used in landscape theme](https://github.com/jiangtj-lab/hexo-cake-extend-others-example) 
+- [Used in landscape theme](https://github.com/jiangtj-lab/hexo-cake-extend-others-example)
