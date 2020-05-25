@@ -16,10 +16,3 @@ pre, code {
 }
 
 @import "help";
-
-@import "../color/" + hexo-config('color.default');
-if (hexo-config('color.autodark')) {
-  @media (prefers-color-scheme: dark) {
-    @import "../color/dark"
-  }
-}
