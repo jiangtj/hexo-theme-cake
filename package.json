@@ -41,7 +41,6 @@
     "stylint": "^2.0.0"
   },
   "dependencies": {
-    "@jiangtj/hexo-renderer-marked": "^2.0.1",
     "@jiangtj/hexo-renderer-stylus": "^1.1.0",
     "hexo-extend-injector2": "^0.1.6",
     "hexo-filter-marked-highlight": "^1.0.0",
