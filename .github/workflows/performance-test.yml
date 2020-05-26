@@ -36,6 +36,16 @@ jobs:
         echo ''
 
         hexo config theme cake
+
+        npm install hexo-theme-cake --silent
+
+        echo '-----------------------------'
+        echo 'Test latest version'
+        echo '-----------------------------'
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+        
         npm install jiangtj/hexo-theme-cake#$CODE_REF --silent
 
         echo "-----------------------------"
@@ -44,13 +54,12 @@ jobs:
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
+        
+        npm install hexojs/hexo --silent
 
-
-        npm install hexo-theme-cake --silent
-
-        echo '-----------------------------'
-        echo 'Test latest version'
-        echo '-----------------------------'
+        echo "-----------------------------"
+        echo "Test current branch: $CODE_REF" with hexo@master
+        echo "-----------------------------"
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
