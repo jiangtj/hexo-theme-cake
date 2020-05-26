@@ -1,4 +1,4 @@
-name: Performance Test
+name: 0x
 
 on: [push]
 
