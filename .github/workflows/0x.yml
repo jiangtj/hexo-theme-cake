@@ -27,15 +27,16 @@ jobs:
         npm install
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
 
-        hexo config theme cake
-        npm install jiangtj/hexo-theme-cake --silent
 
         echo "- Generating cake flamegraph..."
+        hexo config theme cake
+        npm install jiangtj/hexo-theme-cake --silent
         0x --output-dir 'dist' -- node ./node_modules/.bin/hexo g
         mv dist/flamegraph.html dist/index.html
         
-        hexo config theme landscape
         echo "- Generating landscape flamegraph..."
+        hexo config theme landscape
+        npm uninstall hexo-theme-cake --silent
         0x --output-dir 'dist/default' -- node ./node_modules/.bin/hexo g
         mv dist/default/flamegraph.html dist/default/index.html
         
