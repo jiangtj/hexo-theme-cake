@@ -1,6 +1,9 @@
 name: 0x
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   run:
@@ -25,7 +28,7 @@ jobs:
         git clone https://github.com/jiangtj-lab/hexo-many-posts.git --depth=1 --quiet source/_posts/skk
 
         hexo config theme cake
-        npm install jiangtj/hexo-theme-cake#$CODE_REF --silent
+        npm install jiangtj/hexo-theme-cake --silent
 
         echo "- Generating flamegraph..."
         0x --output-dir 'dist' -- node ./node_modules/.bin/hexo g
