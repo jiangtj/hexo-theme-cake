@@ -35,5 +35,5 @@ jobs:
       with:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         DOMAIN_NAME: cake-0x.surge.sh
-        BUILD_DIRECTORY: dist
+        BUILD_DIRECTORY: test/dist
 
