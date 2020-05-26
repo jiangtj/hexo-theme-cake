@@ -30,9 +30,15 @@ jobs:
         hexo config theme cake
         npm install jiangtj/hexo-theme-cake --silent
 
-        echo "- Generating flamegraph..."
+        echo "- Generating cake flamegraph..."
         0x --output-dir 'dist' -- node ./node_modules/.bin/hexo g
         mv dist/flamegraph.html dist/index.html
+        
+        hexo config theme landscape
+        echo "- Generating landscape flamegraph..."
+        0x --output-dir 'dist/default' -- node ./node_modules/.bin/hexo g
+        mv dist/default/flamegraph.html dist/default/index.html
+        
     - name: Deploy Surge
       uses: yg/deploy-surge@master
       with:
