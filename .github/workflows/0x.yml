@@ -31,7 +31,7 @@ jobs:
         0x --output-dir 'dist' -- node ./node_modules/.bin/hexo g
         mv dist/flamegraph.html dist/index.html
     - name: Deploy Surge
-      uses: yg/deploy-surge@v1.0.0
+      uses: yg/deploy-surge@v1
       with:
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
         DOMAIN_NAME: cake-0x.surge.sh
