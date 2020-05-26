@@ -48,6 +48,7 @@
     "hexo-renderer-ejs": "^1.0.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
+    "marked": "^1.1.0",
     "medium-zoom": "^1.0.5"
   }
 }
