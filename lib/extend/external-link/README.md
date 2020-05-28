@@ -13,4 +13,10 @@ marked_external_link:
   exclude: []
 ```
 
+| Condition | Files loaded | Generated |
+| :--- | :--- | :--- |
+| enable:true | 7.8 | 4.6 |
+| faster:false | 12 | 4.6 |
+| enable:false | 7.9 | 5.2 |
 
+latest performance test: https://github.com/jiangtj/hexo-theme-cake/actions
