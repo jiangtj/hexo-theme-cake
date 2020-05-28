@@ -1,11 +1,11 @@
 <div class="site-overview">
-  <div class="site-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="site-author">
     <% if (theme.avatar.url) { %>
-    <img class="site-author-image" itemprop="image" src="<%= url_for(theme.avatar.url||'images/avatar.gif') %>"
+    <img class="site-author-image" src="<%= url_for(theme.avatar.url||'images/avatar.gif') %>"
       alt="<%= author %>" />
     <% } %>
-    <p class="site-author-name" itemprop="name"><%= author %></p>
-    <div class="site-description" itemprop="description"><%= description %></div>
+    <p class="site-author-name"><%= author %></p>
+    <div class="site-description"><%= description %></div>
   </div>
 
   <nav class="site-state">
