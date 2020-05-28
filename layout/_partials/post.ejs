@@ -2,30 +2,15 @@
 let post_class = 'post post-type-' + (post.type || 'normal');
 %>
 
-<article class="<%= post_class %>" itemscope itemtype="http://schema.org/Article">
+<article class="<%= post_class %>">
   <div class="card post-block">
-
-    <link itemprop="mainEntityOfPage" href="<%= config.url %><%= url_for(post.path) %>" />
-    <meta itemprop="dateCreated datePublished" content="<%= moment(post.date).format() %>" />
-    <meta itemprop="dateModified" content="<%= moment(post.updated).format() %>" />
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="<%= author %>" />
-      <meta itemprop="description" content="<%= description %>" />
-      <meta itemprop="image" content="<%= url_for(theme.avatar.url || 'images/avatar.gif') %>" />
-    </span>
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<%= author %>" />
-      <span hidden itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-        <meta itemprop="url" content="<%= url_for(theme.avatar.url || 'images/avatar.gif') %>" />
-      </span>
-    </span>
 
     <%- partial( '_partials/post/banner.ejs') -%>
 
     <header class="post-header">
 
       <% if (post.title) { %>
-      <h1 class="post-title" itemprop="headline">
+      <h1 class="post-title">
         <% if (is_index) { %>
         <a href="<%= url_for(post.path) %>"><%= post.title || __('post.untitled') %></a>
         <% } else { %>
@@ -38,7 +23,7 @@ let post_class = 'post post-type-' + (post.type || 'normal');
 
     </header>
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
       <% if (is_index && post.excerpt) { %>
       <%- post.excerpt -%>
       <%- partial( '_partials/post/read-more.ejs') -%>

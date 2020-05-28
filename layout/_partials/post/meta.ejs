@@ -28,9 +28,9 @@
   <%
   let symbolComma = __('symbol.comma');
   let categorieMetas = post.categories.map(cat => {
-    let name = `<span itemprop="name">${cat.name}</span>`;
-    let link = `<a href="${url_for(cat.path)}" itemprop="url" rel="index">${name}</a>`;
-    return `<span itemprop="about" itemscope itemtype="http://schema.org/Thing">${link}</span>`;
+    let name = `<span>${cat.name}</span>`;
+    let link = `<a href="${url_for(cat.path)}" rel="index">${name}</a>`;
+    return `<span>${link}</span>`;
   });
   %>
   <span class="post-meta-item">
