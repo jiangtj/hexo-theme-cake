@@ -58,6 +58,15 @@ jobs:
 
         echo "-----------------------------"
         echo "Test current branch: $CODE_REF"
+        echo "disable buildin external_link.faster"
+        echo "-----------------------------"
+        hexo config marked_external_link.faster false
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        echo "-----------------------------"
+        echo "Test current branch: $CODE_REF"
         echo "disable buildin external_link, use default external_link"
         echo "-----------------------------"
         hexo config marked_external_link.enable false

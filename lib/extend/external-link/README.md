@@ -7,6 +7,7 @@ external link, may be for SEO? it will faster handle than default. If you want t
 ```yml
 marked_external_link:
   enable: true
+  faster: true # if true, use String.replace, else use chreeio.load
   target: _blank
   rel: noopener # noopener external nofollow noreferrer
   exclude: []
