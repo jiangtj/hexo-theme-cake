@@ -9,9 +9,9 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 - [lozad](lozad) (default enable)
 - [medium-zoom](medium-zoom) (default enable)
 - [external-link](external-link) (default enable)
+- [highlight](highlight) (default enable)
 - [reward](reward)
 - [marked](marked)
-- [hexo-filter-marked-highlight](https://github.com/jiangtj/hexo-filter-marked-highlight)
 
 ## Outside
 
