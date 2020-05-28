@@ -36,6 +36,7 @@ jobs:
         echo ''
 
         hexo config theme cake
+        cp _config.yml _config.default
 
         npm install hexo-theme-cake --silent
 
@@ -45,21 +46,43 @@ jobs:
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
-        
+
         npm install jiangtj/hexo-theme-cake#$CODE_REF --silent
 
         echo "-----------------------------"
         echo "Test current branch: $CODE_REF"
+        echo "default config"
         echo "-----------------------------"
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
-        
-        npm install hexojs/hexo --silent
 
         echo "-----------------------------"
-        echo "Test current branch: $CODE_REF" with hexo@master
+        echo "Test current branch: $CODE_REF"
+        echo "disable buildin external_link.faster"
         echo "-----------------------------"
+        cp _config.default _config.yml
+        hexo config marked_external_link.faster false
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        echo "-----------------------------"
+        echo "Test current branch: $CODE_REF"
+        echo "disable buildin external_link, use default external_link"
+        echo "-----------------------------"
+        cp _config.default _config.yml
+        hexo config marked_external_link.enable false
+        sh ./sh/run-hexo.sh
+        sh ./sh/run-hexo.sh
+        echo ''
+
+        echo "-----------------------------"
+        echo "Test current branch: $CODE_REF"
+        echo "disable buildin highlight, use default highlight"
+        echo "-----------------------------"
+        cp _config.default _config.yml
+        hexo config disable_marked_highlight true
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
