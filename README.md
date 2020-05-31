@@ -14,7 +14,7 @@
 
 ## Features
 - :sparkles: very easy to install or upgrade, just `npm i`.
-- :leaves: small and lightweight, the lines of configuration ≈ 200.
+- :leaves: small and lightweight.
 - :boom: powerful plugin system, take a look at [extend modules](lib/extend).
 
 ## Quick Start

@@ -110,11 +110,6 @@ theme_color: "#414852"
 # Custom Logo
 custom_logo: #/uploads/custom-logo.jpg
 
-# Code Highlight theme
-# Available values: normal | night | night eighties | night blue | night bright
-# https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
-
 # TagCloud settings for tags page.
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
