@@ -1,3 +1,27 @@
+# Set your personal info.
+# So that it can be display in your site.
+author:
+  # optional, if not set, we will read author from hexo's _config.yml
+  name:
+  # Set your sns.
+  # Example:
+  # 1. set a sns link with name
+  #   sns:
+  #     - name: Twitter
+  #       link: https://twitter.com/yourname
+  # 2. set a sns link with a icon
+  #   sns:
+  #     - icon:
+  #         name: github
+  #         options: {prefix: 'fab'}
+  #       link: https://twitter.com/yourname
+  # 3. you can alse set both icon and name
+  #   sns:
+  #     - icon: {name: github, options: {prefix: 'fab'}}
+  #       name: GitHub
+  #       link: https://twitter.com/yourname
+  sns:
+
 # light or dark
 color:
   default: light
