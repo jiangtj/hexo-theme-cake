@@ -97,10 +97,8 @@ toc:
   # Maximum heading depth of generated toc. You can set it in one post through `toc_max_depth` in Front Matter.
   max_depth: 6
 
-# Scroll behavior.
-scroll:
-  more: true
-  save: false
+# Add #more for read more button.
+jump_to_more: false
 
 # Post meta display settings
 post_meta:
