@@ -1,8 +1,17 @@
 # Set your personal info.
 # So that it can be display in your site.
 author:
-  # optional, if not set, we will read author from hexo's _config.yml
+  # Optional, if not set, we will read author from hexo's _config.yml
   name:
+  # Display your avatar
+  avatar:
+    # In theme or site directory (source/images): /images/avatar.gif
+    # You can also use other linking images.
+    url: /images/avatar.gif
+    # If true, the avatar would be dispalyed in circle.
+    rounded: true
+    # If true, the avatar would be rotated with the cursor.
+    rotated: false
   # Set your sns.
   # Example:
   # 1. set a sns link with name
@@ -81,33 +90,6 @@ menu:
   #commonweal:
   #  path: /404/
   #  icon: {name: heartbeat, options: {prefix: 'fas'}}
-
-# Social Links
-social:
-  enable: false
-  items:
-    # - icon:
-    #     name: github
-    #     options: {prefix: 'fab'}
-    #   name: GitHub
-    #   link: https://github.com/yourname
-    # - name: Twitter
-    #   link: https://twitter.com/yourname
-    # - icon:
-    #     name: github
-    #     options: {prefix: 'fab'}
-    #   link: https://github.com/yourname
-
-# Sidebar Avatar
-avatar:
-  # In theme directory (source/images): /images/avatar.gif
-  # In site directory (source/uploads): /uploads/avatar.gif
-  # You can also use other linking images.
-  url: /images/avatar.gif
-  # If true, the avatar would be dispalyed in circle.
-  rounded: true
-  # If true, the avatar would be rotated with the cursor.
-  rotated: false
 
 # Table Of Contents in the Sidebar
 toc:

@@ -1,10 +1,10 @@
 <div class="site-overview">
   <div class="site-author">
-    <% if (theme.avatar.url) { %>
-    <img class="site-author-image" src="<%= url_for(theme.avatar.url||'images/avatar.gif') %>"
-      alt="<%= author %>" />
+    <% if (author.avatar.url) { %>
+    <img class="site-author-image" src="<%= url_for(author.avatar.url||'images/avatar.gif') %>"
+      alt="<%= author.name %>" />
     <% } %>
-    <p class="site-author-name"><%= author %></p>
+    <p class="site-author-name"><%= author.name %></p>
     <div class="site-description"><%= description %></div>
   </div>
 
