@@ -36,22 +36,29 @@ color:
   default: light
   autodark: true
 
-# Set web site favicon
-#favicons:
-#  - rel: icon
-#    type: image/png
-#    sizes: 64x64
-#    href: /images/favicon-64.png
-#  - rel: icon
-#    type: image/png
-#    sizes: 128x128
-#    href: /images/favicon-128.png
-#  - rel: apple-touch-icon
-#    sizes: 180x180
-#    href: /images/favicon-180.png
-#  - rel: mask-icon
-#    color: red
-#    href: /images/favicon.svg
+head:
+  # Set web site favicon
+  favicons:
+  #  - rel: icon
+  #    type: image/png
+  #    sizes: 64x64
+  #    href: /images/favicon-64.png
+  #  - rel: icon
+  #    type: image/png
+  #    sizes: 128x128
+  #    href: /images/favicon-128.png
+  #  - rel: apple-touch-icon
+  #    sizes: 180x180
+  #    href: /images/favicon-180.png
+  #  - rel: mask-icon
+  #    color: red
+  #    href: /images/favicon.svg
+  # Header panel color.
+  theme_color:
+  # Set font.
+  # These font family used in stylus
+  # If you change them, please update stylus too.
+  font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -115,9 +122,6 @@ post_meta:
     hide_same: true
   categories: true
 
-# Custom Logo
-custom_logo: #/uploads/custom-logo.jpg
-
 # TagCloud settings for tags page.
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
@@ -137,5 +141,3 @@ disqus:
   shortname:
   count: true
 
-# Set font (default)
-font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
