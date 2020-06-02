@@ -68,11 +68,6 @@ footer:
     name: heart
     options: {prefix: 'fas'}
 
-# Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#cc: by-nc-sa
-
 post:
   # Meta display settings
   meta:
