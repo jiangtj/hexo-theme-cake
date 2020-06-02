@@ -1,24 +1,64 @@
+# Set your personal info.
+# So that it can be display in your site.
+author:
+  # Optional, if not set, we will read author from hexo's _config.yml
+  name:
+  # Display your avatar
+  avatar:
+    # In theme or site directory (source/images): /images/avatar.gif
+    # You can also use other linking images.
+    url: /images/avatar.gif
+    # If true, the avatar would be dispalyed in circle.
+    rounded: true
+    # If true, the avatar would be rotated with the cursor.
+    rotated: false
+  # Set your sns.
+  # Example:
+  # 1. set a sns link with name
+  #   sns:
+  #     - name: Twitter
+  #       link: https://twitter.com/yourname
+  # 2. set a sns link with a icon
+  #   sns:
+  #     - icon:
+  #         name: github
+  #         options: {prefix: 'fab'}
+  #       link: https://twitter.com/yourname
+  # 3. you can alse set both icon and name
+  #   sns:
+  #     - icon: {name: github, options: {prefix: 'fab'}}
+  #       name: GitHub
+  #       link: https://twitter.com/yourname
+  sns:
+
 # light or dark
 color:
   default: light
   autodark: true
 
-# Set web site favicon
-#favicons:
-#  - rel: icon
-#    type: image/png
-#    sizes: 64x64
-#    href: /images/favicon-64.png
-#  - rel: icon
-#    type: image/png
-#    sizes: 128x128
-#    href: /images/favicon-128.png
-#  - rel: apple-touch-icon
-#    sizes: 180x180
-#    href: /images/favicon-180.png
-#  - rel: mask-icon
-#    color: red
-#    href: /images/favicon.svg
+head:
+  # Set web site favicon
+  favicons:
+  #  - rel: icon
+  #    type: image/png
+  #    sizes: 64x64
+  #    href: /images/favicon-64.png
+  #  - rel: icon
+  #    type: image/png
+  #    sizes: 128x128
+  #    href: /images/favicon-128.png
+  #  - rel: apple-touch-icon
+  #    sizes: 180x180
+  #    href: /images/favicon-180.png
+  #  - rel: mask-icon
+  #    color: red
+  #    href: /images/favicon.svg
+  # Header panel color.
+  theme_color:
+  # Set font.
+  # These font family used in stylus
+  # If you change them, please update stylus too.
+  font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -28,10 +68,22 @@ footer:
     name: heart
     options: {prefix: 'fas'}
 
-# Creative Commons 4.0 International License.
-# See: https://creativecommons.org/share-your-work/licensing-types-examples
-# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#cc: by-nc-sa
+post:
+  # Meta display settings
+  meta:
+    item_text: false
+    created_at: true
+    updated_at:
+      enable: false
+      hide_same: true
+    categories: true
+  # Show previous post and next post in post footer if exists
+  # Available values: left | right | false
+  navigation: left
+  # Creative Commons 4.0 International License.
+  # See: https://creativecommons.org/share-your-work/licensing-types-examples
+  # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+  cc:
 
 # sidebar menu
 menu:
@@ -58,33 +110,6 @@ menu:
   #  path: /404/
   #  icon: {name: heartbeat, options: {prefix: 'fas'}}
 
-# Social Links
-social:
-  enable: false
-  items:
-    # - icon:
-    #     name: github
-    #     options: {prefix: 'fab'}
-    #   name: GitHub
-    #   link: https://github.com/yourname
-    # - name: Twitter
-    #   link: https://twitter.com/yourname
-    # - icon:
-    #     name: github
-    #     options: {prefix: 'fab'}
-    #   link: https://github.com/yourname
-
-# Sidebar Avatar
-avatar:
-  # In theme directory (source/images): /images/avatar.gif
-  # In site directory (source/uploads): /uploads/avatar.gif
-  # You can also use other linking images.
-  url: /images/avatar.gif
-  # If true, the avatar would be dispalyed in circle.
-  rounded: true
-  # If true, the avatar would be rotated with the cursor.
-  rotated: false
-
 # Table Of Contents in the Sidebar
 toc:
   enable: true
@@ -100,21 +125,6 @@ toc:
 # Add #more for read more button.
 jump_to_more: false
 
-# Post meta display settings
-post_meta:
-  item_text: false
-  created_at: true
-  updated_at:
-    enable: false
-    hide_same: true
-  categories: true
-
-# Header panel color.
-theme_color: "#414852"
-
-# Custom Logo
-custom_logo: #/uploads/custom-logo.jpg
-
 # TagCloud settings for tags page.
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
@@ -124,15 +134,9 @@ tagcloud:
   max: 30 # max font size in px
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
-# Show previous post and next post in post footer if exists
-# Available values: left | right | false
-post_navigation: left
-
 # Disqus
 disqus:
   enable: false
   shortname:
   count: true
 
-# Set font (default)
-font: https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster

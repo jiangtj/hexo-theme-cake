@@ -1,6 +1,6 @@
 <div class="post-meta">
 
-  <% if ((is_home() || is_post()) && theme.post_meta.created_at) { %>
+  <% if ((is_home() || is_post()) && theme.post.meta.created_at) { %>
   <% let create_title = __('post.created') + __('symbol.colon') + full_date(post.date); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -12,8 +12,8 @@
   <% } %>
 
   <% if ((is_home() || is_post())
-      && theme.post_meta.updated_at.enable
-      && !(theme.post_meta.updated_at.hide_same && (post.date != post.updated))) { %>
+      && theme.post.meta.updated_at.enable
+      && !(theme.post.meta.updated_at.hide_same && (post.date != post.updated))) { %>
   <% let modified_title = __('post.modified') + __('symbol.colon') + full_date(post.updated); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -24,7 +24,7 @@
   </span>
   <% } %>
 
-  <% if ((is_home() || is_post()) && post.categories && post.categories.length && theme.post_meta.categories) { %>
+  <% if ((is_home() || is_post()) && post.categories && post.categories.length && theme.post.meta.categories) { %>
   <%
   let symbolComma = __('symbol.comma');
   let categorieMetas = post.categories.map(cat => {

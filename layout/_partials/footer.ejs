@@ -6,17 +6,17 @@
     <%- fa_inline(theme.footer.icon.name, theme.footer.icon.options) %>
     <i class="<%= theme.footer.icon %>"></i>
   </span>
-  <span class="author"><%= author %></span>
+  <span class="author"><%= author.name %></span>
 </div>
 
 <div class="powered-by">
-  <%- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) -%> v<%= hexo_version %>
+  <%- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) -%> v<%= hexo_pkg.hexo.version %>
 </div>
 
 <span class="post-meta-divider">|</span>
 
 <div class="theme-info">
-  <%= __('footer.theme') %> – <%- next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) -%> v<%= cake_version %>
+  <%= __('footer.theme') %> – <%- next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) -%> v<%= theme_pkg.version %>
 </div>
 
 <%- injector('footer').text() -%>
