@@ -73,6 +73,23 @@ footer:
 # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
 #cc: by-nc-sa
 
+post:
+  # Meta display settings
+  meta:
+    item_text: false
+    created_at: true
+    updated_at:
+      enable: false
+      hide_same: true
+    categories: true
+  # Show previous post and next post in post footer if exists
+  # Available values: left | right | false
+  navigation: left
+  # Creative Commons 4.0 International License.
+  # See: https://creativecommons.org/share-your-work/licensing-types-examples
+  # Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+  cc:
+
 # sidebar menu
 menu:
   home:
@@ -113,15 +130,6 @@ toc:
 # Add #more for read more button.
 jump_to_more: false
 
-# Post meta display settings
-post_meta:
-  item_text: false
-  created_at: true
-  updated_at:
-    enable: false
-    hide_same: true
-  categories: true
-
 # TagCloud settings for tags page.
 tagcloud:
   # If true, font size, font color and amount of tags can be customized
@@ -130,10 +138,6 @@ tagcloud:
   min: 12 # min font size in px
   max: 30 # max font size in px
   amount: 200 # amount of tags, chage it if you have more than 200 tags
-
-# Show previous post and next post in post footer if exists
-# Available values: left | right | false
-post_navigation: left
 
 # Disqus
 disqus:
