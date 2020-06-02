@@ -140,3 +140,14 @@ disqus:
   shortname:
   count: true
 
+# Comment Systems
+# Available list: lib/extend/comment
+# You can defined comment, by set a Object
+# Here is a disqus example
+#   comment:
+#     - name: disqus
+#       options:
+#         shortname: your name
+#       meta:
+#         enable: true/false
+comment:
