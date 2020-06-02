@@ -115,9 +115,6 @@ post_meta:
     hide_same: true
   categories: true
 
-# Header panel color.
-theme_color: "#414852"
-
 # Custom Logo
 custom_logo: #/uploads/custom-logo.jpg
 
