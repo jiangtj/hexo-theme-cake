@@ -2,6 +2,14 @@
 
 This a buildin comment system for cake theme. All configurations can be found in the comments plugin folder.
 
+## List
+
+- [disqus](disqus)
+- [livere](livere)
+- [utteranc](utteranc)
+
+## Example
+
 You cam config it in your hexo or theme `_config.yml`.
 
 Here is a disqus example
