@@ -6,9 +6,9 @@ See: https://utteranc.es/
 comment:
   - name: utteranc
     options:
-        src: https://utteranc.es/client.js
-        repo: # ENTER REPO HERE
-        issue_term: pathname
-        label: # options
-        theme: github-light
+      src: https://utteranc.es/client.js
+      repo: # ENTER REPO HERE
+      issue_term: pathname
+      label: # options
+      theme: github-light
 ```
