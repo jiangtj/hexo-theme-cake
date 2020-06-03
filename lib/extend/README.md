@@ -13,6 +13,7 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 - [json-ld](json-ld) (default enable)
 - [reward](reward)
 - [marked](marked)
+- [comment](comment)
 
 ## Outside
 

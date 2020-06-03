@@ -1,10 +1,22 @@
 <% if (page.comments) {%>
 <%
-let commentList = injector('comment').rendered();
+let commentList = injector('comment-body').rendered();
 %>
+<% if (commentList && commentList.length > 0) {%>
 <% if (commentList.length === 1) {%>
-<div class="card">
-  <%- commentList[0].value -%>
+<%# body %>
+<div class="card comment-body <%= commentList[0].name %> active"><%- commentList[0].value -%></div>
+<% } else { %>
+<%# button %>
+<div class="comment-button-group">
+  <% for (item of commentList) { %>
+  <a class="btn comment-button <%= item.name %>"><%= item.button %></a>
+  <% } %>
 </div>
+<%# body %>
+<% for (item of commentList) { %>
+<div class="card comment-body <%= item.name %>"><%- item.value -%></div>
+<% } %>
+<% } %>
 <% } %>
 <% } %>

@@ -140,3 +140,16 @@ disqus:
   shortname:
   count: true
 
+# Comment Systems
+# Available list: https://github.com/jiangtj/hexo-theme-cake/tree/master/lib/extend/comment
+# You can defined comment, by set a Object
+# Here is a disqus example
+#   comment:
+#     - name: disqus # require
+#       button: # options, button content, if you use mutli-comment, it will be display
+#       # name and button are defined by common handler, other config are defined by plugin self.
+#       options:
+#         shortname: your name
+#       meta:
+#         enable: true/false
+comment:
