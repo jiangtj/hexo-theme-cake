@@ -4,8 +4,24 @@
   padding: 40px;
   overflow: hidden;
   display: none;
+  &.active {
+    display: block;
+  }
 }
 
-.comment-body.active {
-  display: block;
+.comment-button-group {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  margin: 1em 0;
+
+  .comment-button {
+    margin: .1em .2em;
+
+    &.active {
+      border-color: var(--border-color-hover);
+      color: var(--color-hover);
+      background: var(--bg-color-hover);
+    }
+  }
 }
