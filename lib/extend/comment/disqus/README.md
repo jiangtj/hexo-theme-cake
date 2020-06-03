@@ -10,5 +10,7 @@ You cam config it in your hexo or theme `_config.yml`
 comment:
   - name: disqus
     options:
-      shortname: your-name
+      shortname: your-name # require
+    meta:
+      enable: true # default false
 ```
