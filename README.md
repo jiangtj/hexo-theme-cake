@@ -28,7 +28,7 @@ yarn add hexo-theme-cake
 
 Modify `theme` to `cake`.
 
-**If you use cake theme fristly, you can exec `hexo check` to check whether the environment is complete.**
+**If you use cake theme for the first time, you can exec `hexo check` to check whether the environment is complete.**
 
 ## Browser Support
 Modern Browser (No IE)
