@@ -134,12 +134,6 @@ tagcloud:
   max: 30 # max font size in px
   amount: 200 # amount of tags, chage it if you have more than 200 tags
 
-# Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
-
 # Comment Systems
 # Available list: https://github.com/jiangtj/hexo-theme-cake/tree/master/lib/extend/comment
 # You can defined comment, by set a Object

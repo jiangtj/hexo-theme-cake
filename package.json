@@ -35,22 +35,25 @@
     "eslint": "^7.0.0",
     "eslint-config-theme-next": "^1.1.4",
     "hexo": "^4.2.0",
-    "js-yaml": "^3.8.1",
     "jshint-stylish": "^2.1.0",
     "mocha": "^7.1.2",
     "stylint": "^2.0.0"
   },
   "dependencies": {
     "@jiangtj/hexo-renderer-stylus": "^1.1.0",
+    "ajv": "^6.12.2",
     "cheerio": "^1.0.0-rc.3",
     "hexo-extend-injector2": "^0.1.6",
     "hexo-filter-marked-highlight": "^1.2.0",
     "hexo-fontawesome": "^2.1.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-util": "^2.1.0",
+    "inquirer": "^7.1.0",
+    "js-yaml": "^3.14.0",
     "lodash": "^4.17.15",
     "lozad": "^1.14.0",
     "marked": "^1.1.0",
-    "medium-zoom": "^1.0.5"
+    "medium-zoom": "^1.0.5",
+    "semver": "^7.3.2"
   }
 }
