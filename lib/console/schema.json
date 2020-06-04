@@ -249,21 +249,28 @@
       }
     },
     "comment": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": [
-          "name"
-        ],
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "button": {
-            "type": "string"
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "button": {
+                "type": "string"
+              }
+            }
           }
         }
-      }
+      ]
     }
   }
 }
