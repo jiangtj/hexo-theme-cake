@@ -6,14 +6,15 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Buildin List
 
-- [lozad](lozad) (default enable)
-- [medium-zoom](medium-zoom) (default enable)
-- [external-link](external-link) (default enable)
-- [highlight](highlight) (default enable)
-- [json-ld](json-ld) (default enable)
+- [lozad](lozad) (enable)
+- [medium-zoom](medium-zoom) (enable)
+- [external-link](external-link) (enable)
+- [highlight](highlight) (enable)
+- [json-ld](json-ld) (enable)
 - [reward](reward)
 - [marked](marked)
 - [comment](comment)
+- [font-size-ol-edit](font-size-preview) (preview)
 
 ## Outside
 
