@@ -1,0 +1,160 @@
+definitions:
+  icon:
+    type: object
+    required:
+    - name
+    properties:
+      name:
+        type: string
+      options:
+        type: object
+        properties:
+          prefix:
+            type: string
+type: object
+properties:
+  author:
+    type: object
+    properties:
+      name:
+        anyOf:
+        - type: 'null'
+        - type: string
+        - type: number
+      avatar:
+        type: object
+        properties:
+          url:
+            type: string
+          rounded:
+            type: boolean
+          rotated:
+            type: boolean
+      sns:
+        anyOf:
+        - type: 'null'
+        - type: array
+          items:
+            type: object
+            required:
+            - link
+            properties:
+              icon:
+                "$ref": "#/definitions/icon"
+              name:
+                type: string
+              link:
+                type: string
+  color:
+    type: object
+    properties:
+      default:
+        type: string
+      autodark:
+        type: boolean
+  head:
+    type: object
+    properties:
+      favicons:
+        anyOf:
+        - type: 'null'
+        - type: array
+          items:
+            type: object
+            properties:
+              rel:
+                type: string
+              type:
+                type: string
+              href:
+                type: string
+      theme_color:
+        anyOf:
+        - type: 'null'
+        - type: string
+      font:
+        type: string
+  footer:
+    type: object
+    properties:
+      since:
+        type: number
+      icon:
+        "$ref": "#/definitions/icon"
+  post:
+    type: object
+    properties:
+      meta:
+        type: object
+        properties:
+          item_text:
+            type: boolean
+          created_at:
+            type: boolean
+          updated_at:
+            type: object
+            properties:
+              enable:
+                type: boolean
+              hide_same:
+                type: boolean
+          categories:
+            type: boolean
+      navigation:
+        type: string
+      cc:
+        anyOf:
+        - type: 'null'
+        - type: string
+  menu:
+    type: object
+    additionalProperties:
+      type: object
+      properties:
+        enable:
+          type: boolean
+        path:
+          type: string
+        icon:
+          "$ref": "#/definitions/icon"
+        priority:
+          type: integer
+  toc:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      number:
+        type: boolean
+      wrap:
+        type: boolean
+      expand_all:
+        type: boolean
+      max_depth:
+        type: integer
+  jump_to_more:
+    type: boolean
+  tagcloud:
+    type: object
+    properties:
+      enable:
+        type: boolean
+      min:
+        type: integer
+      max:
+        type: integer
+      amount:
+        type: integer
+  comment:
+    anyOf:
+    - type: 'null'
+    - type: array
+      items:
+        type: object
+        required:
+        - name
+        properties:
+          name:
+            type: string
+          button:
+            type: string
