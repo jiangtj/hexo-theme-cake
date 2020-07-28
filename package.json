@@ -34,6 +34,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^7.5.0",
+    "eslint-config-hexo": "^4.1.0",
     "hexo": "^4.2.0",
     "jshint-stylish": "^2.1.0",
     "mocha": "^8.0.0",
@@ -42,7 +43,6 @@
   "dependencies": {
     "ajv": "^6.12.3",
     "cheerio": "^1.0.0-rc.3",
-    "eslint-config-hexo": "^4.1.0",
     "hexo-extend-injector2": "^0.2.0",
     "hexo-filter-marked-highlight": "^1.2.1",
     "hexo-fontawesome": "^2.1.0",
