@@ -1,4 +1,5 @@
 /* global hexo */
+'use strict';
 
 if (hexo.config.theme !== 'cake') {
   return;
@@ -7,6 +8,7 @@ if (hexo.config.theme !== 'cake') {
 const { deepMerge } = require('hexo-util');
 
 const { sep, join } = require('path');
+// eslint-disable-next-line node/no-extraneous-require
 const { makeRe } = require('micromatch');
 const Theme = require(join(hexo.plugin_dir, 'hexo/lib/theme'));
 

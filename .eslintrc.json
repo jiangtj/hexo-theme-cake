@@ -1,5 +1,5 @@
 {
-  "extends": "theme-next",
+  "extends": "hexo",
   "root": true,
   "rules": {
     "linebreak-style":"off"
