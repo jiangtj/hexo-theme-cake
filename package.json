@@ -44,7 +44,6 @@
     "ajv": "^6.12.3",
     "cheerio": "^1.0.0-rc.3",
     "hexo-extend-injector2": "^0.2.1",
-    "hexo-filter-marked-highlight": "^1.2.2",
     "hexo-fontawesome": "^2.1.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-util": "^2.2.0",
