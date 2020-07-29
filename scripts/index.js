@@ -1,4 +1,4 @@
 /* global hexo */
 'use strict';
 
-require('../lib/load')(hexo);
+return require('../lib/load')(hexo);
