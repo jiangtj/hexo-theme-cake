@@ -10,7 +10,6 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 - [medium-zoom](medium-zoom) (enable)
 - [external-link](external-link) (enable)
 - [json-ld](json-ld) (enable)
-- [highlight](highlight)
 - [reward](reward)
 - [marked](marked)
 - [comment](comment)
@@ -18,6 +17,7 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Outside
 
+- [highlight](https://github.com/jiangtj-lab/hexo-patch-load-highlight-style)
 - [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon)
 - [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu)
 - [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search)

@@ -41,6 +41,7 @@
     "stylint": "^2.0.0"
   },
   "dependencies": {
+    "@jiangtj/hexo-patch-load-highlight-style": "^1.1.0",
     "ajv": "^6.12.3",
     "cheerio": "^1.0.0-rc.3",
     "hexo-extend-injector2": "^0.2.1",
