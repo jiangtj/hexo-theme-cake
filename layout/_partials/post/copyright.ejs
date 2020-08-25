@@ -1,6 +1,23 @@
-<% if (theme.post.cc && is_post()) { %>
+<% if (is_post()) { %>
+
 <%
-let ccLicense = theme.post.cc.toLowerCase();
+let isNotAdditional = false;
+
+post.copyright = Object.assign({
+  author: author.name,
+  url: (page.url || page.permalink)
+}, post.copyright)
+
+if (post.copyright.cc === undefined) {
+  post.copyright.cc = theme.post.cc;
+  isNotAdditional = true;
+}
+%>
+
+<% if (post.copyright.cc) { %>
+
+<%
+let ccLicense = post.copyright.cc.toLowerCase();
 let ccIcon = fa_inline('creative-commons', {prefix: 'fab'});
 let ccText = ccLicense.toUpperCase();
 let ccType;
@@ -10,23 +27,22 @@ if (ccLicense === 'zero') {
   ccType = 'licenses/' + ccLicense + '/4.0/';
 }
 let ccURL = 'https://creativecommons.org/' + ccType;
-let postURL = page.url || page.permalink;
 %>
 
 <div>
   <ul class="post-copyright">
     <li class="post-copyright-author">
       <strong><%= __('post.copyright.author') + __('symbol.colon') %> </strong>
-      <%= author.name %>
+      <%= post.copyright.author %>
     </li>
     <li class="post-copyright-link">
       <strong><%= __('post.copyright.link') + __('symbol.colon') %></strong>
-      <%- next_url(postURL, postURL, {title: page.title}) -%>
-    </li>
+      <a href="<%= post.copyright.url %>"><%= post.copyright.url %></a>
     <li class="post-copyright-license">
       <strong><%= __('post.copyright.license_title') + __('symbol.colon') %> </strong>
-      <%- __('post.copyright.license_content', next_url(ccURL, ccIcon + ccText)) -%>
+      <%- __(isNotAdditional?'post.copyright.license_content':'post.copyright.license_additional_content', `<a href="${ccURL}">${ccIcon + ccText}</a>`) -%>
     </li>
   </ul>
 </div>
+<% } %>
 <% } %>

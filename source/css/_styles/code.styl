@@ -1,28 +1,45 @@
-figure.highlight  {
-  margin: 0.5rem 0;
+code {
+  font-family: var(--font-family);
+  background: var(--bg-color);
+  border-radius: 0.2em;
+  margin: auto 0.2em;
+  padding: 0.2em 0.3em 0.1em;
+}
+
+pre>code {
+  background: inherit;
+  border-radius: 0;
+  margin: 0;
   padding: 0;
 }
 
-.highlight td {
+figure.highlight  {
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+figure.highlight td {
   padding: 0;
   border: 0;
 }
 
-.highlight pre {
-  padding: 0 0 0 5px;
+figure.highlight pre {
   margin: 0;
   border-radius: 0;
 }
 
-.highlight .gutter pre, .gutter {
-  width: 1rem;
+figure.highlight .gutter pre, .gutter {
+  padding: 0.2em 5px 0.2em 0;
+  width: 1.8em;
+  text-align: right;
+  overflow-x: hidden;
 }
 
-.highlight code {
+figure.highlight .code pre {
   padding: 0;
-  border-radius: 0;
 }
 
-.highlight td.code pre code {
-  padding-left: 5px;
+figure.highlight .code code {
+  padding: 0.2em 0 0.2em 0.5em;
+  border-radius: 0;
 }
