@@ -1,6 +1,6 @@
 # external-link
 
-external link, may be for SEO? it will faster handle than default. If you want to use default external link, please disable this.
+external link for [hexo-renderer-marked-mini](https://github.com/jiangtj-lab/hexo-renderer-marked-mini), may be for SEO?
 
 ## config
 
@@ -12,11 +12,3 @@ marked_external_link:
   rel: noopener # noopener external nofollow noreferrer
   exclude: []
 ```
-
-| Condition | Files loaded | Generated |
-| :--- | :--- | :--- |
-| enable:true | 7.8 | 4.6 |
-| faster:false | 12 | 4.6 |
-| enable:false | 7.9 | 5.2 |
-
-latest performance test: https://github.com/jiangtj/hexo-theme-cake/actions

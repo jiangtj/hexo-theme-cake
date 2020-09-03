@@ -60,26 +60,6 @@ jobs:
 
         echo "-----------------------------"
         echo "Test current branch: $CODE_REF"
-        echo "disable buildin external_link.faster"
-        echo "-----------------------------"
-        cp _config.default _config.yml
-        hexo config marked_external_link.faster false
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        echo ''
-
-        echo "-----------------------------"
-        echo "Test current branch: $CODE_REF"
-        echo "disable buildin external_link, use default external_link"
-        echo "-----------------------------"
-        cp _config.default _config.yml
-        hexo config marked_external_link.enable false
-        sh ./sh/run-hexo.sh
-        sh ./sh/run-hexo.sh
-        echo ''
-
-        echo "-----------------------------"
-        echo "Test current branch: $CODE_REF"
         echo "disable buildin highlight, use default highlight"
         echo "-----------------------------"
         cp _config.default _config.yml
