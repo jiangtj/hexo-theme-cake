@@ -61,7 +61,7 @@ jobs:
         npm install hexo-renderer-marked-mini --silent
 
         echo "-----------------------------"
-        echo "Test hexo-renderer-marked-mini
+        echo "Test hexo-renderer-marked-mini"
         echo "-----------------------------"
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
