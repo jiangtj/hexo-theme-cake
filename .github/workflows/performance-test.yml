@@ -52,18 +52,17 @@ jobs:
 
         echo "-----------------------------"
         echo "Test current branch: $CODE_REF"
-        echo "default config"
         echo "-----------------------------"
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
 
+        npm remove hexo-renderer-marked --silent
+        npm install hexo-renderer-marked-mini --silent
+
         echo "-----------------------------"
-        echo "Test current branch: $CODE_REF"
-        echo "disable buildin highlight, use default highlight"
+        echo "Test hexo-renderer-marked-mini
         echo "-----------------------------"
-        cp _config.default _config.yml
-        hexo config disable_marked_highlight true
         sh ./sh/run-hexo.sh
         sh ./sh/run-hexo.sh
         echo ''
