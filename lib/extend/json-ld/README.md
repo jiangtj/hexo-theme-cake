@@ -3,7 +3,7 @@
 Structured article data for better SEO
 - https://developers.google.com/search/docs/data-types/article
 
-**dependent on buildin marked**
+[hexo-renderer-marked-mini](https://github.com/jiangtj-lab/hexo-renderer-marked-mini) renderer support `image`
 
 ## config
 
