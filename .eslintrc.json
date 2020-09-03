@@ -1,7 +1,15 @@
 {
   "extends": "hexo",
   "root": true,
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
-    "linebreak-style":"off"
+    "linebreak-style": "off",
+    "node/no-extraneous-require": ["error", {
+        "allowModules": ["inferno"]
+    }]
   }
 }
