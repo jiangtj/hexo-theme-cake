@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= page.lang || page.language || config.language %>">
 
-<head>
-  <%- injector('head-begin').text() -%>
-  <%- partial('_partials/head/head.ejs', {}, {cache: true}) -%>
-  <%- open_graph() -%>
-  <%- cake_title() -%>
-  <%- injector('head').text() -%>
-  <%- injector('head-end').text() -%>
-</head>
+<%- partial('_partials/head/head.jsx') -%>
 
 <body>
 

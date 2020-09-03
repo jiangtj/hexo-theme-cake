@@ -47,6 +47,7 @@
     "hexo-extend-injector2": "^0.2.4",
     "hexo-fontawesome": "^2.1.0",
     "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-inferno": "^0.1.3",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-util": "^2.4.0",
     "inquirer": "^7.3.3",
