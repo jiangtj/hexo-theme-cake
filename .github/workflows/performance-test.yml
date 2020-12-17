@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2.1.1
+      uses: actions/setup-node@v2.1.4
       with:
         node-version: ${{ matrix.node-version }}
         check-latest: true
