@@ -57,5 +57,8 @@
     "lozad": "^1.16.0",
     "medium-zoom": "^1.0.6",
     "semver": "^7.3.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
