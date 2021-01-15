@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "eslint": "eslint .",
-    "test": "mocha test/index.js"
+    "test": "mocha test/index.js",
+    "upgrade-l": "yarn upgrade --latest --registry=https://registry.yarnpkg.com",
+    "upgrade-lp": "yarn upgrade --latest --proxy=http://localhost:1080 --registry=https://registry.yarnpkg.com"
   },
   "files": [
     "languages",
@@ -33,27 +35,27 @@
   "homepage": "https://www.dnocm.com/cake",
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^7.5.0",
+    "eslint": "^7.17.0",
     "eslint-config-hexo": "^4.1.0",
-    "hexo": "^5.0.0",
+    "hexo": "^5.3.0",
     "jshint-stylish": "^2.1.0",
-    "mocha": "^8.0.0",
+    "mocha": "^8.2.1",
     "stylint": "^2.0.0"
   },
   "dependencies": {
     "@jiangtj/hexo-patch-load-highlight-style": "^1.1.0",
-    "ajv": "^6.12.4",
-    "cheerio": "^1.0.0-rc.3",
+    "ajv": "^7.0.3",
+    "cheerio": "^1.0.0-rc.5",
     "hexo-extend-injector2": "^0.2.4",
     "hexo-fontawesome": "^2.1.0",
     "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-renderer-stylus": "^2.0.1",
     "hexo-util": "^2.4.0",
     "inquirer": "^7.3.3",
-    "js-yaml": "^3.14.0",
+    "js-yaml": "^4.0.0",
     "lodash": "^4.17.19",
-    "lozad": "^1.15.0",
+    "lozad": "^1.16.0",
     "medium-zoom": "^1.0.6",
-    "semver": "^7.3.2"
+    "semver": "^7.3.4"
   }
 }
