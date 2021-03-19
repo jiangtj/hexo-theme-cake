@@ -18,7 +18,6 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 ## Dependencies
 
 - [hexo-patch-load-highlight-style](https://github.com/jiangtj-lab/hexo-patch-load-highlight-style)
-- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu)
 - [hexo-extend-injector2](https://github.com/jiangtj/hexo-extend-injector2)
 - [hexo-fontawesome](https://github.com/hexojs/hexo-fontawesome)
 - [hexo-renderer-ejs](https://github.com/hexojs/hexo-renderer-ejs)
@@ -26,6 +25,7 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Outside
 
+- [hexo-cake-moon-menu](https://github.com/jiangtj-lab/hexo-cake-moon-menu)
 - [hexo-cake-canvas-ribbon](https://github.com/jiangtj-lab/hexo-cake-canvas-ribbon)
 - [hexo-cake-local-search](https://github.com/jiangtj-lab/hexo-cake-local-search)
 
