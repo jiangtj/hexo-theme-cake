@@ -20,30 +20,50 @@ code, td.gutter {
 figure.highlight  {
   margin: 0.5em 0;
   padding: 0;
-}
 
-figure.highlight td {
-  padding: 0;
-  border: 0;
-}
+  .table-container, table, tr {
+    border-radius: 0.5em;
+  }
 
-figure.highlight pre {
-  margin: 0;
-  border-radius: 0;
-}
+  td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
 
-figure.highlight .gutter pre, .gutter {
-  padding: 0.2em 5px 0.2em 0;
-  width: 1.8em;
-  text-align: right;
-  overflow-x: hidden;
-}
+  pre {
+    margin: 0;
+  }
 
-figure.highlight .code pre {
-  padding: 0;
-}
+  .gutter {
+    width: 1.8em;
 
-figure.highlight .code code {
-  padding: 0.2em 0 0.2em 0.5em;
-  border-radius: 0;
+    pre {
+      width: 1.8em;
+      text-align: right;
+      overflow-x: hidden;
+      padding: 0.5em 5px 0.5em 0;
+      border-top-left-radius: 0.5em;
+      border-bottom-left-radius: 0.5em;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .code {
+    pre {
+      padding: 0;
+    }
+
+    code {
+      padding: 0.5em 0 0.5em 0.5em;
+    }
+
+    pre,code {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 0.5em;
+      border-bottom-right-radius: 0.5em;
+    }
+  }
 }
