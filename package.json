@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "@jiangtj/hexo-patch-load-highlight-style": "^1.1.0",
-    "ajv": "^7.2.1",
+    "ajv": "^8.2.0",
     "cheerio": "^1.0.0-rc.5",
     "hexo-extend-injector2": "^0.3.0",
     "hexo-fontawesome": "^2.1.0",
