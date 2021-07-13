@@ -1,0 +1,24 @@
+name: Hexo Check Test
+
+on: [push]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 14
+          check-latest: true
+      - name: Run test
+        env:
+          CODE_REF: ${{ github.ref }}
+        run: |
+          npm install hexo-cli -g --silent
+          hexo init test
+          cd test
+          npm install
+          npm install jiangtj/hexo-theme-cake#$CODE_REF --silent
+          sed -ri 's/^theme:.*/theme: cake/g' _config.yml
+          echo -e "\n" | hexo check
