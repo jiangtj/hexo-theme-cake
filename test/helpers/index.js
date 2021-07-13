@@ -2,4 +2,5 @@
 
 describe('Helpers', () => {
   require('./post-nav');
+  require('./favicon');
 });
