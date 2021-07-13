@@ -1,5 +1,5 @@
 'use strict';
 
 describe('Helpers', () => {
-  // require('./font');
+  require('./post-nav');
 });
