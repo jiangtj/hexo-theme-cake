@@ -10,13 +10,13 @@
 </div>
 
 <div class="powered-by">
-  <%- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'})) -%> v<%= hexo_pkg.hexo.version %>
+  <%- __('footer.powered', '<a href="https://hexo.io" class="theme-link">Hexo</a>') -%> v<%= hexo_pkg.hexo.version %>
 </div>
 
 <span class="post-meta-divider">|</span>
 
 <div class="theme-info">
-  <%= __('footer.theme') %> – <%- next_url('https://github.com/JiangTJ/hexo-theme-cake', 'Cake', {class: 'theme-link'}) -%> v<%= theme_pkg.version %>
+  <%= __('footer.theme') %> – <a href="https://github.com/JiangTJ/hexo-theme-cake" class="theme-link">Cake</a> v<%= theme_pkg.version %>
 </div>
 
 <%- injector('footer').text() -%>
