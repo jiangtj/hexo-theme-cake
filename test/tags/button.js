@@ -2,6 +2,7 @@
 
 const Hexo = require('hexo');
 const hexo = new Hexo();
+const { iconRender } = require('../../lib/utils');
 
 describe('button', () => {
 
@@ -19,12 +20,8 @@ describe('button', () => {
     postButton('#, Hello world'.split(' ')).should.eql('<a class="btn" href="#">Hello world</a>');
   });
 
-  it('url and icon (Font Awesome 4)', () => {
-    postButton('#,, home fa-5x'.split(' ')).should.eql('<a class="btn" href="#"><i class="fa fa-home fa-5x"></i></a>');
-  });
-
   it('url and icon', () => {
-    postButton('#,, fab fa-fort-awesome fa-5x'.split(' ')).should.eql('<a class="btn" href="#"><i class="fab fa-fort-awesome fa-5x"></i></a>');
+    postButton('#,, fab fa-fort-awesome'.split(' ')).should.eql(`<a class="btn" href="#">${iconRender('fab fa-fort-awesome')}</a>`);
   });
 
   it('url, text and title', () => {
@@ -32,6 +29,6 @@ describe('button', () => {
   });
 
   it('url, text, icon and title', () => {
-    postButton('#, Hello world, home, Title'.split(' ')).should.eql('<a class="btn" href="#" title="Title"><i class="fa fa-home"></i>Hello world</a>');
+    postButton('#, Hello world, fas fa-home, Title'.split(' ')).should.eql(`<a class="btn" href="#" title="Title">${iconRender('fas fa-home')}Hello world</a>`);
   });
 });
