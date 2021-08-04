@@ -2,6 +2,9 @@
   "extends": "hexo",
   "root": true,
   "rules": {
-    "linebreak-style":"off"
+    "linebreak-style":"off",
+    "node/no-missing-require": ["error", {
+        "allowModules": ["hexo-extend-injector2", "@jiangtj/hexo-icon-svg-core"]
+    }]
   }
 }
