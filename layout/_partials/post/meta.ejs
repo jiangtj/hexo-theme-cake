@@ -4,7 +4,7 @@
   <% let create_title = __('post.created') + __('symbol.colon') + full_date(post.date); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <%- icon('calendar', {type: 'fa'}) %>
+      <%- icon('far fa-calendar', {type: 'fa'}) %>
     </span>
     <span class="post-meta-item-text"><%= __('post.posted') %></span>
     <time title="<%= create_title %>"><%= date(post.date) %></time>
@@ -17,7 +17,7 @@
   <% let modified_title = __('post.modified') + __('symbol.colon') + full_date(post.updated); %>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <%- icon('calendar-check', {type: 'fa'}) %>
+      <%- icon('far fa-calendar-check', {type: 'fa'}) %>
     </span>
     <span class="post-meta-item-text"><%= __('post.edited') %></span>
     <time title="<%= modified_title %>"><%= date(post.updated) %></time>

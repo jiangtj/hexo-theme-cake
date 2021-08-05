@@ -21,12 +21,12 @@ author:
   # 2. set a sns link with a icon
   #   sns:
   #     - icon:
-  #         name: github
+  #         name: fab fa-github
   #         options: {type: 'fa'}
   #       link: https://twitter.com/yourname
   # 3. you can alse set both icon and name
   #   sns:
-  #     - icon: {name: github, options: {type: 'fa'}}
+  #     - icon: {name: fab fa-github, options: {type: 'fa'}}
   #       name: GitHub
   #       link: https://twitter.com/yourname
   sns:
