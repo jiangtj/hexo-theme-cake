@@ -9,9 +9,8 @@
       itemURL = itemURL.replace(/\/\//g, '/');
     }
     let menuIcon = params => {
-      let css = params.split('||')[1].trim() || 'fas fa-question-circle';
-      let data = css.split(' ');
-      return fa_inline(data[1].substring(3), {prefix: data[0]});
+      let iconName = params.split('||')[1].trim() || 'fas fa-question-circle';
+      return icon(iconName);
     }
     let post_menu_icon = menuIcon(subvalue);
     %>

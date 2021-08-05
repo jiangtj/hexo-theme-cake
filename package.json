@@ -42,11 +42,11 @@
     "stylint": "^2.0.0"
   },
   "dependencies": {
+    "@jiangtj/hexo-icon-svg-core": "^1.0.0",
     "@jiangtj/hexo-patch-load-highlight-style": "^1.1.0",
     "ajv": "^8.6.1",
     "cheerio": "^1.0.0-rc.5",
     "hexo-extend-injector2": "^0.3.0",
-    "hexo-fontawesome": "^2.1.0",
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-stylus": "^2.0.1",
     "hexo-util": "^2.4.0",

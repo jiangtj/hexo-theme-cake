@@ -17,19 +17,19 @@ reward:
   # Set available reward items, example as follows.
   items:
     #wechat:
-    #  icon: {name: weixin, options: {prefix: 'fab'}}
+    #  icon: {name: fab fa-weixin, options: {type: 'fa'}}
     #  image: /images/wechatpay.png
     #alipay:
-    #  icon: {name: alipay, options: {prefix: 'fab'}}
+    #  icon: {name: fab fa-alipay, options: {type: 'fa'}}
     #  image: /images/alipay.png
     #  url_name: 点击跳转
     #  url: HTTPS://QR.ALIPAY.COM/FKX06416WJNHOWKMRQQFFE
     #paypal:
-    #  icon: {name: paypal, options: {prefix: 'fab'}}
+    #  icon: {name: fab fa-paypal, options: {type: 'fa'}}
     #  image: /images/paypal.png
     #  url: https://www.paypal.me/jiangtj
     #kofi:
-    #  icon: {name: coffee, options: {prefix: 'fas'}}
+    #  icon: {name: coffee, options: {type: 'fa'}}
     #  image: /images/kofi.png
     #  url: https://ko-fi.com/jiangtj
     #other:

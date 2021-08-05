@@ -21,12 +21,12 @@ author:
   # 2. set a sns link with a icon
   #   sns:
   #     - icon:
-  #         name: github
-  #         options: {prefix: 'fab'}
+  #         name: fab fa-github
+  #         options: {type: 'fa'}
   #       link: https://twitter.com/yourname
   # 3. you can alse set both icon and name
   #   sns:
-  #     - icon: {name: github, options: {prefix: 'fab'}}
+  #     - icon: {name: fab fa-github, options: {type: 'fa'}}
   #       name: GitHub
   #       link: https://twitter.com/yourname
   sns:
@@ -66,7 +66,7 @@ footer:
   # Icon between year and copyright info.
   icon:
     name: heart
-    options: {prefix: 'fas'}
+    options: {type: 'fa'}
 
 post:
   # Meta display settings
@@ -90,25 +90,25 @@ menu:
   home:
     enable: true # default is true
     path: /
-    icon: {name: home, options: {prefix: 'fas'}}
+    icon: {name: home, options: {type: 'fa'}}
     priority: 1 # default 10
   tags:
     enable: false
     path: /tags/
-    icon: {name: tags, options: {prefix: 'fas'}}
+    icon: {name: tags, options: {type: 'fa'}}
     priority: 2
   categories:
     enable: false
     path: /categories/
-    icon: {name: th, options: {prefix: 'fas'}}
+    icon: {name: th, options: {type: 'fa'}}
     priority: 3
   archives:
     path: /archives/
-    icon: {name: archive, options: {prefix: 'fas'}}
+    icon: {name: archive, options: {type: 'fa'}}
     priority: 5
   #commonweal:
   #  path: /404/
-  #  icon: {name: heartbeat, options: {prefix: 'fas'}}
+  #  icon: {name: heartbeat, options: {type: 'fa'}}
 
 # Table Of Contents in the Sidebar
 toc:
