@@ -15,6 +15,7 @@
 ## Features
 - :sparkles: very easy to install or upgrade, just `npm i`.
 - :leaves: small and lightweight.
+- :tada: many [icons](https://github.com/jiangtj-lab/hexo-icon-svg-core) support.
 - :boom: powerful plugin system, take a look at [extend modules](lib/extend).
 
 ## Quick Start
