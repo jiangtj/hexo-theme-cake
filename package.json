@@ -34,7 +34,7 @@
   "homepage": "https://www.dnocm.com/cake",
   "devDependencies": {
     "chai": "^4.3.4",
-    "eslint": "^7.22.0",
+    "eslint": "^8.22.0",
     "eslint-config-hexo": "^4.1.0",
     "hexo": "^5.3.0",
     "jshint-stylish": "^2.1.0",
