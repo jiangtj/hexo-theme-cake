@@ -6,7 +6,6 @@ Here is an independent module based on [hexo-extend-injector2](https://github.co
 
 ## Buildin List
 
-- [lozad](lozad) (enable)
 - [medium-zoom](medium-zoom) (enable)
 - [external-link](external-link) (enable)
 - [json-ld](json-ld) (enable)

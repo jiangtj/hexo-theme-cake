@@ -41,9 +41,6 @@ importers:
       lodash:
         specifier: ^4.17.23
         version: 4.17.23
-      lozad:
-        specifier: ^1.16.0
-        version: 1.16.0
       medium-zoom:
         specifier: ^1.1.0
         version: 1.1.0
@@ -1217,9 +1214,6 @@ packages:
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
-
-  lozad@1.16.0:
-    resolution: {integrity: sha512-JBr9WjvEFeKoyim3svo/gsQPTkgG/mOHJmDctZ/+U9H3ymUuvEkqpn8bdQMFsvTMcyRJrdJkLv0bXqGm0sP72w==}
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -3048,8 +3042,6 @@ snapshots:
   lower-case@2.0.2:
     dependencies:
       tslib: 2.8.1
-
-  lozad@1.16.0: {}
 
   lru-cache@10.4.3: {}
 
